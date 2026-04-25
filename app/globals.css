@@ -24,7 +24,12 @@
     #00001f 50%,
     rgba(0, 0, 31, 1) 100%
   );
-  --button-gradient: linear-gradient(110deg, #0ea5e9 0%, #7c3cff 45%, #ef2fff 100%);
+  --button-gradient: linear-gradient(
+    110deg,
+    #001173 0%,
+    #08015e 48%,
+    #220067 100%
+  );
 }
 
 * {
@@ -33,12 +38,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background: var(--site-gradient);
   background-attachment: fixed;
   color: hsl(var(--foreground));
+  overflow-x: clip;
 }
 
 a,
@@ -50,5 +57,5 @@ textarea {
 
 ::selection {
   background: var(--neon-cyan);
-  color: #00001f;
+  color: #000000;
 }
