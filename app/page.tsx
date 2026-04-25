@@ -75,22 +75,22 @@ const projects = [
   {
     title: "Organise With Kopal",
     category: "Business Web Design",
-    image: "/organisewithkopalproject.webp"
+    image: "/project-organise-with-kopal.webp"
   },
   {
-    title: "Natura Tea",
-    category: "Branding & Website",
-    image: "/footerbackround.webp"
+    title: "SM Classes",
+    category: "Education Website",
+    image: "/project-sm-classes.webp"
   },
   {
-    title: "Loft House",
-    category: "Website Design",
-    image: "/form-backround.webp"
+    title: "Little Ilmies",
+    category: "Learning Platform",
+    image: "/project-little-ilmies.webp"
   },
   {
-    title: "Core Fitness",
-    category: "Branding & Website",
-    image: "/liproect.webp"
+    title: "Zarrar Palekar",
+    category: "Portfolio Website",
+    image: "/project-zarrar-palekar.webp"
   }
 ];
 
@@ -130,7 +130,7 @@ const testimonials = [
       "Hi, I'm Kopal and I run my business called Organise with Kopal. I needed a website for my business and I already knew that Zuvairiya would be the right call. She delivered the website within 2 days - at an affordable price. All edits were done within minutes.",
     name: "Kopal Dhir",
     role: "Founder at Organise With Kopal",
-    image: "/organisewithkopalproject.webp"
+    image: "/project-organise-with-kopal.webp"
   }
 ];
 
@@ -194,8 +194,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative hidden min-h-[500px] lg:block">
-            <div className="absolute right-7 top-16 h-[350px] w-[520px] rotate-[-4deg] rounded-[28px] border border-cyan-300/10 bg-[#070720]/82 p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_35px_100px_rgba(22,216,255,0.18)] backdrop-blur-xl">
+          <div className="relative hidden min-h-[500px] overflow-hidden lg:block">
+            <div className="absolute right-7 top-16 h-[350px] w-[min(520px,calc(100%-1.75rem))] rotate-[-4deg] rounded-[28px] border border-cyan-300/10 bg-[#070720]/82 p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_35px_100px_rgba(22,216,255,0.18)] backdrop-blur-xl">
               <div className="mb-12 flex items-center justify-between text-xs text-white/65">
                 <Image
                   src="/wbyblogo.webp"

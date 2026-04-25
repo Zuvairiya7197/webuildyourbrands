@@ -12,34 +12,24 @@ export const metadata: Metadata = {
 
 const projects = [
   {
-    title: "Northline Studio",
-    category: "Brand Website",
-    image: "/organisewithkopalproject.webp"
-  },
-  {
     title: "Organise With Kopal",
     category: "Productivity Website",
-    image: "/organisewithkopalproject.webp"
+    image: "/project-organise-with-kopal.webp"
   },
   {
-    title: "LI Project",
-    category: "Brand Experience",
-    image: "/liproect.webp"
+    title: "SM Classes",
+    category: "Education Website",
+    image: "/project-sm-classes.webp"
   },
   {
-    title: "Evergreen Advisory",
-    category: "Consulting Website",
-    image: "/footerbackround.webp"
+    title: "Little Ilmies",
+    category: "Learning Platform",
+    image: "/project-little-ilmies.webp"
   },
   {
-    title: "Atlas Fitness",
-    category: "Local Service Website",
-    image: "/form-backround.webp"
-  },
-  {
-    title: "Brightpath Finance",
-    category: "Lead Generation",
-    image: "/liproect.webp"
+    title: "Zarrar Palekar",
+    category: "Portfolio Website",
+    image: "/project-zarrar-palekar.webp"
   }
 ];
 

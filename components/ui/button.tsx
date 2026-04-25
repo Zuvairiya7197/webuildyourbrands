@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[var(--button-gradient)] bg-[length:100%_100%] text-primary-foreground shadow-[0_12px_34px_rgba(53,92,255,0.32),0_0_24px_rgba(239,47,255,0.22)] hover:brightness-110 hover:saturate-150 hover:shadow-[0_18px_48px_rgba(22,216,255,0.28),0_0_34px_rgba(239,47,255,0.42)] active:brightness-95",
+          "border border-white/15 bg-[image:var(--button-gradient)] text-primary-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-4px_0_rgba(0,0,31,0.34),0_10px_0_rgba(0,0,31,0.34),0_14px_24px_rgba(0,0,31,0.26)] hover:-translate-y-1 hover:brightness-110 hover:saturate-125 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.42),inset_0_-4px_0_rgba(0,0,31,0.3),0_14px_0_rgba(0,0,31,0.32),0_24px_42px_rgba(23,70,216,0.34),0_0_34px_rgba(124,60,255,0.32)] active:translate-y-1 active:shadow-[inset_0_1px_0_rgba(255,255,255,0.25),inset_0_-2px_0_rgba(0,0,31,0.38),0_6px_0_rgba(0,0,31,0.36),0_10px_18px_rgba(0,0,31,0.24)]",
         outline:
           "border border-[#7c3cff]/45 bg-[#00001F]/35 text-foreground shadow-[inset_0_0_24px_rgba(22,216,255,0.05)] backdrop-blur-md hover:border-[#16d8ff]/60 hover:bg-[#120044]/55 hover:shadow-[0_0_28px_rgba(22,216,255,0.18)]",
         ghost: "text-foreground hover:bg-[#16d8ff]/10 hover:text-white"
@@ -17,7 +17,8 @@ const buttonVariants = cva(
       size: {
         default: "h-11 px-5",
         sm: "h-9 px-4",
-        lg: "h-12 px-6"
+        lg: "h-12 px-6",
+        icon: "h-10 w-10 p-0"
       }
     },
     defaultVariants: {
