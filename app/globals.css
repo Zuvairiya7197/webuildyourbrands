@@ -59,3 +59,20 @@ textarea {
   background: var(--neon-cyan);
   color: #000000;
 }
+
+@keyframes ctaBorderFlow {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 220% 50%;
+  }
+}
+
+@keyframes trailFade {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}

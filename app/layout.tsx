@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import FooterCTA from "@/components/FooterCTA";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { cn } from "@/lib/utils";
@@ -46,7 +45,6 @@ export default function RootLayout({
       <body className={cn("min-h-screen font-sans antialiased")}>
         <Navbar />
         <main>{children}</main>
-        <FooterCTA />
         <Footer />
         <FloatingWhatsApp />
       </body>
