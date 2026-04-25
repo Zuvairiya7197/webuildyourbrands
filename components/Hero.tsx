@@ -1,0 +1,87 @@
+import Link from "next/link";
+import { ArrowRight, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { neonButtonClass } from "@/lib/utils";
+
+type HeroProps = {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  videoSrc?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  align?: "left" | "center";
+};
+
+export default function Hero({
+  eyebrow = "Strategy. Design. Development.",
+  title,
+  description,
+  videoSrc,
+  primaryLabel = "Book a Call",
+  primaryHref = "/contact",
+  secondaryLabel = "View Work",
+  secondaryHref = "/projects"
+}: HeroProps) {
+  return (
+    <section className="relative min-h-screen overflow-hidden px-5 pb-16 pt-28 sm:px-8 sm:pt-32 lg:px-10">
+      {videoSrc && (
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            src={videoSrc}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Brand website preview video"
+          />
+      )}
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(129,0,255,0.18),transparent_34%),linear-gradient(135deg,rgba(0,0,31,0.58)_0%,rgba(0,0,31,0.42)_45%,rgba(47,0,86,0.34)_100%)]"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
+      <div
+        className="relative mx-auto flex min-h-[calc(100vh-7rem)] max-w-6xl items-center justify-center text-center"
+      >
+        <div className="max-w-5xl">
+          <p className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-white/45 bg-[#00001F]/50 px-4 py-2 text-sm font-medium text-white shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-md sm:text-base">
+            <Rocket className="h-4 w-4 text-white sm:h-5 sm:w-5" aria-hidden="true" />
+            {eyebrow}
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-normal text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.7)] sm:text-5xl lg:text-7xl">
+            {title}
+          </h1>
+          <p
+            className="mx-auto mt-7 max-w-4xl text-base leading-8 text-white drop-shadow-[0_6px_18px_rgba(0,0,0,0.75)] sm:text-lg lg:text-xl"
+          >
+            {description}
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button
+              asChild
+              size="lg"
+              className={`h-12 rounded-full px-6 text-base font-medium ${neonButtonClass}`}
+            >
+              <Link href={primaryHref}>
+                {primaryLabel}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-full border-white/55 bg-white/5 px-6 text-base font-medium text-white hover:bg-white/15"
+            >
+              <Link href={secondaryHref}>{secondaryLabel}</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
