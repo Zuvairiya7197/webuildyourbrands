@@ -75,7 +75,7 @@ export default function Hero({
               asChild
               size="lg"
               variant="outline"
-              className="h-12 rounded-full border-white/55 bg-white/5 px-6 text-base font-medium text-white hover:bg-white/15"
+              className="h-12 rounded-full px-6 text-base font-medium"
             >
               <Link href={secondaryHref}>{secondaryLabel}</Link>
             </Button>

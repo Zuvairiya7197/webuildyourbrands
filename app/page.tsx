@@ -184,11 +184,11 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-14 rounded-full border-cyan-300/18 px-7 text-base font-bold text-white"
+                className="h-14 rounded-full px-7 text-base font-bold"
               >
                 <Link href="/projects">
                   View Work
-                  <ArrowRight className="h-5 w-5 text-white" aria-hidden="true" />
+                  <ArrowRight className="h-5 w-5" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -342,10 +342,10 @@ export default function Home() {
           </div>
           <div>
             <div className="mb-5 flex justify-end">
-              <Button asChild variant="outline" className="h-9 rounded-lg border-cyan-300/16 text-xs">
+              <Button asChild variant="outline" className="h-9 rounded-lg text-xs">
                 <Link href="/projects">
                   View All Projects
-                  <ArrowRight className="h-4 w-4 text-white" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
             </div>
