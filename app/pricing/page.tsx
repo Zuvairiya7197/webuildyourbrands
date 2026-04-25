@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { neonButtonClass } from "@/lib/utils";
+import { glassCardClass, neonButtonClass } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -58,70 +58,81 @@ const tiers = [
 
 export default function PricingPage() {
   return (
-    <section className="min-h-screen bg-[var(--site-gradient)] px-5 pb-20 pt-32 text-white sm:px-8 lg:px-10">
-      <div className="mx-auto max-w-7xl">
-        <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/55">
+    <section className="relative min-h-screen overflow-hidden bg-[var(--site-gradient)] px-5 pb-20 pt-32 text-white sm:px-8 lg:px-10">
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(124,60,255,0.22),transparent_32%),radial-gradient(circle_at_88%_12%,rgba(22,216,255,0.12),transparent_28%),radial-gradient(circle_at_50%_90%,rgba(34,0,103,0.38),transparent_38%)]"
+        aria-hidden="true"
+      />
+      <div className="relative mx-auto max-w-6xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-white/50">
             Pricing
           </p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Our Packages
+            Website packages built for clear growth.
           </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/68 sm:text-lg">
+            Choose the right launch path for your brand, from lean websites to
+            fully custom conversion systems.
+          </p>
         </div>
 
-        <div className="mt-20 grid items-stretch gap-8 lg:grid-cols-3">
+        <div className="mt-16 grid items-stretch gap-6 lg:grid-cols-3">
           {tiers.map((tier) => (
             <article
               key={tier.name}
-              className={`relative flex min-h-[680px] flex-col overflow-visible rounded-[28px] border px-8 py-14 text-center ${
+              className={`relative flex min-h-[620px] flex-col overflow-visible p-7 text-left transition duration-300 hover:-translate-y-1 ${
+                glassCardClass
+              } ${
                 tier.featured
-                  ? "border-[#7b00c7]/70 bg-[#08041f] shadow-[0_0_80px_rgba(160,0,255,0.22)] lg:-mt-12"
-                  : "border-white/10 bg-[#0b0620]"
+                  ? "border-[#7c3cff]/70 shadow-[0_24px_90px_rgba(23,70,216,0.18),0_0_44px_rgba(124,60,255,0.22)] lg:-mt-8"
+                  : "border-white/10"
               }`}
             >
               {tier.featured && (
-                <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-[#c600ff] px-8 py-3 text-lg font-medium shadow-[0_18px_45px_rgba(198,0,255,0.45)]">
+                <div className="absolute left-7 top-0 z-10 -translate-y-1/2 whitespace-nowrap rounded-full border border-white/15 bg-[image:var(--button-gradient)] px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(23,70,216,0.28)]">
                   Most Popular
                 </div>
               )}
               <div
-                className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_12%_62%,rgba(96,0,150,0.38),transparent_36%)]"
+                className="absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_18%_16%,rgba(124,60,255,0.22),transparent_34%),radial-gradient(circle_at_86%_72%,rgba(22,216,255,0.08),transparent_30%)]"
                 aria-hidden="true"
               />
               <div className="relative flex flex-1 flex-col">
-                <h2 className="text-2xl font-bold tracking-tight text-[#ffdc55]">
+                <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-white/58">
                   {tier.name}
                 </h2>
-                <p className="mx-auto mt-6 max-w-xs text-lg italic leading-8 text-white/58">
+                <p className="mt-5 min-h-14 text-lg font-semibold leading-7 text-white">
                   {tier.subtitle}
                 </p>
-                <p className="mt-10 text-4xl font-bold tracking-tight">
+                <p className="mt-9 text-5xl font-bold tracking-tight">
                   {tier.price}
                 </p>
-                <p className="mx-auto mt-4 max-w-xs text-base leading-7 text-white/55">
+                <p className="mt-4 min-h-14 text-sm leading-7 text-white/58">
                   {tier.note}
                 </p>
-                <ul className="mt-12 grid gap-7 text-left">
+                <ul className="mt-9 grid gap-5">
                   {tier.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-4 text-xl leading-8 text-white/88"
+                      className="flex items-start gap-3 text-sm leading-7 text-white/78"
                     >
                       <ChevronRight
-                        className="mt-1 h-5 w-5 shrink-0 text-white"
+                        className="mt-1 h-4 w-4 shrink-0 text-[#8aa2ff]"
                         aria-hidden="true"
                       />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto pt-14">
+                <div className="mt-auto pt-10">
                   <Button
                     asChild
+                    variant={tier.featured ? "default" : "outline"}
                     className={
                       tier.featured
-                        ? `h-14 rounded-full px-8 text-xl font-bold ${neonButtonClass}`
-                        : "h-14 rounded-full border border-white/22 bg-transparent px-8 text-xl font-bold text-white hover:bg-white/10"
+                        ? `h-12 w-full rounded-full px-6 text-base font-bold ${neonButtonClass}`
+                        : "h-12 w-full rounded-full px-6 text-base font-bold"
                     }
                   >
                     <Link href="/contact">{tier.cta}</Link>

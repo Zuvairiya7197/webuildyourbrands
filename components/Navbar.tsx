@@ -8,6 +8,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" }
 ];
@@ -29,12 +30,12 @@ export default function Navbar() {
             priority
           />
         </Link>
-        <div className="hidden items-center bg-white/[0.03] backdrop-blur-md md:flex">
+        <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-[#00001F]/45 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_50px_rgba(0,0,31,0.28),0_0_32px_rgba(124,60,255,0.12)] backdrop-blur-xl md:flex">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="px-4 py-5 text-base font-semibold text-white transition hover:bg-white/10 lg:px-5"
+              className="rounded-full px-4 py-3 text-base font-semibold text-white/82 transition duration-200 hover:bg-[image:var(--button-gradient)] hover:text-white hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_10px_24px_rgba(23,70,216,0.2)] lg:px-5"
             >
               {link.label}
             </Link>
@@ -59,12 +60,12 @@ export default function Navbar() {
           >
             <Menu className="h-5 w-5" aria-hidden="true" />
           </summary>
-          <div className="absolute right-0 top-14 w-56 rounded-lg border border-cyan-300/12 bg-black/70 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_18px_70px_rgba(22,216,255,0.08)] backdrop-blur-xl">
+          <div className="absolute right-0 top-14 w-56 rounded-2xl border border-white/10 bg-[#00001F]/82 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_70px_rgba(0,0,31,0.32),0_0_28px_rgba(124,60,255,0.16)] backdrop-blur-xl">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block rounded-md px-3 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
+                className="block rounded-xl px-3 py-2 text-sm font-medium text-white/80 transition hover:bg-[image:var(--button-gradient)] hover:text-white"
               >
                 {link.label}
               </Link>
