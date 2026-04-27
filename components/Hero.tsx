@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, Rocket } from "lucide-react";
+import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
+import { CALENDLY_URL } from "@/lib/constants";
 import { neonButtonClass } from "@/lib/utils";
 
 type HeroProps = {
@@ -21,10 +23,12 @@ export default function Hero({
   description,
   videoSrc,
   primaryLabel = "Book a Call",
-  primaryHref = "/contact",
+  primaryHref = CALENDLY_URL,
   secondaryLabel = "View Work",
   secondaryHref = "/projects"
 }: HeroProps) {
+  const primaryIsExternal = primaryHref.startsWith("http");
+
   return (
     <section className="relative min-h-screen overflow-hidden px-5 pb-16 pt-28 sm:px-8 sm:pt-32 lg:px-10">
       {videoSrc && (
@@ -66,10 +70,21 @@ export default function Hero({
               size="lg"
               className={`h-12 rounded-full px-6 text-base font-medium ${neonButtonClass}`}
             >
-              <Link href={primaryHref}>
-                {primaryLabel}
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+              {primaryHref === CALENDLY_URL ? (
+                <CalendlyLink>
+                  {primaryLabel}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </CalendlyLink>
+              ) : (
+                <Link
+                  href={primaryHref}
+                  target={primaryIsExternal ? "_blank" : undefined}
+                  rel={primaryIsExternal ? "noreferrer" : undefined}
+                >
+                  {primaryLabel}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              )}
             </Button>
             <Button
               asChild

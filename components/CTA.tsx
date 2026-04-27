@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 
 type CTAProps = {
@@ -33,10 +33,10 @@ export default function CTA({
           </p>
         </div>
         <Button asChild size="lg">
-          <Link href="/contact">
+          <CalendlyLink>
             {buttonLabel}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          </CalendlyLink>
         </Button>
         <div className="relative hidden h-24 w-24 shrink-0 overflow-hidden rounded-lg border border-border bg-muted lg:block">
           <Image

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Card from "@/components/Card";
-import CTA from "@/components/CTA";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 
@@ -53,20 +52,20 @@ export default function ProjectsPage() {
         title="Selected work across strategy, design, and development."
         description="A grid of polished website experiences built for clarity, trust, and conversion."
         videoSrc="/Projectpagehero.mp4"
+        secondaryHref="#projects"
       />
       <Section
-        className="pt-24 sm:pt-28 lg:pt-32"
+        className="scroll-mt-24 pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Projects"
         title="Featured launches and visual systems."
         description="A curated set of website builds with clean structure, refined visuals, and conversion-focused presentation."
       >
-        <div className="grid gap-6 md:grid-cols-2">
+        <div id="projects" className="grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
             <Card key={project.title} {...project} index={index} />
           ))}
         </div>
       </Section>
-      <CTA />
     </>
   );
 }

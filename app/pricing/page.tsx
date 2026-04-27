@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { neonButtonClass } from "@/lib/utils";
 
@@ -136,7 +136,9 @@ export default function PricingPage() {
                         : "h-12 w-full rounded-full px-6 text-base font-bold"
                     }
                   >
-                    <Link href="/contact">{tier.cta}</Link>
+                    <CalendlyLink>
+                      {tier.cta}
+                    </CalendlyLink>
                   </Button>
                 </div>
               </div>

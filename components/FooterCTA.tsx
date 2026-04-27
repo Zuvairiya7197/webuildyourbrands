@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 
 type TrailDot = {
@@ -9,7 +10,55 @@ type TrailDot = {
   y: number;
 };
 
+const footerCtaCopy: Record<string, { eyebrow: string; title: string; description: string }> = {
+  "/": {
+    eyebrow: "Start your project",
+    title: "Ready for a clearer website?",
+    description:
+      "We build clarity-driven websites that help businesses grow, stand out, and convert."
+  },
+  "/projects": {
+    eyebrow: "Seen enough?",
+    title: "Like what you see?",
+    description:
+      "Let us turn your idea into a polished website with the same clarity, structure, and care."
+  },
+  "/about": {
+    eyebrow: "Build with clarity",
+    title: "Want your brand to be understood?",
+    description:
+      "We help businesses turn scattered ideas into websites that feel clear, confident, and easy to trust."
+  },
+  "/services": {
+    eyebrow: "Choose your service",
+    title: "Need the right website support?",
+    description:
+      "From strategy to launch and optimization, we can shape the right service mix for your brand."
+  },
+  "/pricing": {
+    eyebrow: "Pick your path",
+    title: "Ready to choose your website package?",
+    description:
+      "Book a call and we will help you choose the package that fits your current stage."
+  },
+  "/contact": {
+    eyebrow: "Let's talk",
+    title: "Ready to discuss your website?",
+    description:
+      "Share your goals and we will help you find the clearest next step for your brand."
+  }
+};
+
+const fallbackCopy = {
+  eyebrow: "Start your project",
+  title: "Ready to elevate your brand?",
+  description:
+    "We build clarity-driven websites that help businesses grow, stand out, and convert."
+};
+
 export default function FooterCTA() {
+  const pathname = usePathname();
+  const copy = footerCtaCopy[pathname] ?? fallbackCopy;
   const sliderRef = useRef<HTMLDivElement>(null);
   const lastTrailTime = useRef(0);
   const trailId = useRef(0);
@@ -79,14 +128,13 @@ export default function FooterCTA() {
           />
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/48">
-              Start your project
+              {copy.eyebrow}
             </p>
             <h2 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl">
-              Ready to elevate your brand?
+              {copy.title}
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70">
-              We build clarity-driven websites that help businesses grow, stand
-              out, and convert.
+              {copy.description}
             </p>
           </div>
         </div>

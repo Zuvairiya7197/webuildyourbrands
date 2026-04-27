@@ -28,6 +28,24 @@ export default function Card({
     `Hi, I saw your ${title} project example and I want a similar kind of website.`
   );
   const whatsappHref = `https://wa.me/919987448073?text=${whatsappMessage}`;
+  const imageContent = image && (
+    <>
+      <Image
+        src={image}
+        alt={`${title} project preview`}
+        fill
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        className="object-cover transition duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02)_0%,rgba(0,0,31,0.15)_46%,rgba(0,0,31,0.82)_100%)]" />
+      <span className="absolute left-4 top-4 rounded-full border border-white/14 bg-[#00001F]/58 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/74 backdrop-blur-md">
+        0{index + 1}
+      </span>
+      <div className="absolute bottom-4 right-4 flex h-11 w-11 translate-x-2 items-center justify-center rounded-full border border-white/16 bg-white/10 text-white opacity-0 shadow-[0_14px_36px_rgba(0,0,31,0.28)] backdrop-blur-md transition duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+        <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+      </div>
+    </>
+  );
 
   return (
     <UICard
@@ -37,39 +55,31 @@ export default function Card({
       )}
     >
       <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-      {image && (
-        <div className="relative aspect-[16/11] overflow-hidden rounded-xl bg-[#00001F]/55">
-          <Image
-            src={image}
-            alt={`${title} project preview`}
-            fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover transition duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02)_0%,rgba(0,0,31,0.15)_46%,rgba(0,0,31,0.82)_100%)]" />
-          <span className="absolute left-4 top-4 rounded-full border border-white/14 bg-[#00001F]/58 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/74 backdrop-blur-md">
-            0{index + 1}
-          </span>
-          <div className="absolute bottom-4 right-4 flex h-11 w-11 translate-x-2 items-center justify-center rounded-full border border-white/16 bg-white/10 text-white opacity-0 shadow-[0_14px_36px_rgba(0,0,31,0.28)] backdrop-blur-md transition duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+      {image &&
+        (projectUrl ? (
+          <Link
+            href={projectUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`View ${title} project`}
+            className="relative block aspect-[16/11] overflow-hidden rounded-xl bg-[#00001F]/55"
+          >
+            {imageContent}
+          </Link>
+        ) : (
+          <div className="relative aspect-[16/11] overflow-hidden rounded-xl bg-[#00001F]/55">
+            {imageContent}
           </div>
-        </div>
-      )}
+        ))}
       <div className="relative px-5 py-6">
         {category && (
           <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white/38 transition duration-300 group-hover:text-cyan-100/72">
             {category}
           </p>
         )}
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="text-2xl font-bold leading-tight tracking-tight text-white">
-            {title}
-          </h3>
-          <ArrowUpRight
-            className="mt-1 h-5 w-5 shrink-0 text-white/42 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white"
-            aria-hidden="true"
-          />
-        </div>
+        <h3 className="text-2xl font-bold leading-tight tracking-tight text-white">
+          {title}
+        </h3>
         {description && (
           <p className="mt-4 text-sm leading-7 text-white/64">
             {description}

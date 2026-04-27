@@ -34,11 +34,11 @@ export default function ContactPage() {
               materials. We will reply with next steps.
             </p>
             <a
-              href="mailto:hello@webuildyourbrands.com"
+              href="mailto:contactus@webuildyourbrands.com"
               className="mt-8 inline-flex items-center gap-3 text-sm font-medium text-white"
             >
               <Mail className="h-4 w-4" aria-hidden="true" />
-              hello@webuildyourbrands.com
+              contactus@webuildyourbrands.com
             </a>
           </aside>
           <form className="grid gap-5 rounded-[32px] border border-white/15 bg-[#00001F]/78 p-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_24px_90px_rgba(0,0,31,0.28)] backdrop-blur-xl">

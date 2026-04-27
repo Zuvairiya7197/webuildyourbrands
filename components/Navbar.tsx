@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { CalendarDays, Menu } from "lucide-react";
+import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { cn, neonButtonClass } from "@/lib/utils";
 
@@ -81,10 +82,10 @@ export default function Navbar() {
             size="lg"
             className={`h-11 rounded-full px-6 text-sm font-semibold ${neonButtonClass}`}
           >
-            <Link href="/contact">
+            <CalendlyLink>
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
               Book a Call
-            </Link>
+            </CalendlyLink>
           </Button>
         </div>
         <details className="group relative md:hidden">
@@ -117,10 +118,10 @@ export default function Navbar() {
               className={`mt-2 w-full rounded-full ${neonButtonClass}`}
               size="sm"
             >
-              <Link href="/contact">
+              <CalendlyLink>
                 <CalendarDays className="h-4 w-4" aria-hidden="true" />
                 Book a Call
-              </Link>
+              </CalendlyLink>
             </Button>
           </div>
         </details>

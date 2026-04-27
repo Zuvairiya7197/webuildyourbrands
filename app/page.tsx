@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { TestimonialsSlider } from "@/components/TestimonialsSlider";
 import StatsBar from "@/components/StatsBar";
+import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { neonButtonClass } from "@/lib/utils";
 
@@ -26,23 +27,29 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    title: "Brand Strategy",
+    title: "Website Strategy",
     description:
-      "We define your brand's direction, positioning, and message with clarity.",
+      "We shape your message, pages, and user journey before design begins.",
     Icon: Target
   },
   {
-    title: "Visual Design",
+    title: "Custom Web Design",
     description:
-      "We design clean, consistent visuals that reflect your brand's identity.",
+      "We design polished, mobile-first websites that make your business look credible.",
     Icon: Rocket
   },
   {
-    title: "Digital Presence",
+    title: "Development & Launch",
     description:
-      "We are a wordpress site development company here to build online brands.",
+      "We build fast, responsive websites that are ready to publish, share, and convert.",
     Icon: Monitor
   }
+];
+
+const audiences = [
+  "Service businesses that need a stronger first impression",
+  "Founders launching a new offer, brand, or personal website",
+  "Growing teams that want cleaner pages and better conversion"
 ];
 
 const stats = [
@@ -53,21 +60,21 @@ const stats = [
 
 const process = [
   {
-    title: "Discover",
+    title: "Map the Offer",
     description:
-      "We understand your business, goals, and audience before making any decisions.",
+      "We clarify what you sell, who it is for, and what visitors need to believe before they contact you.",
     Icon: Search
   },
   {
-    title: "Design",
+    title: "Shape the Pages",
     description:
-      "We create thoughtful strategies and visuals that align with your brand's direction.",
+      "We turn that message into focused sections, polished visuals, and a mobile-first page flow.",
     Icon: Pencil
   },
   {
-    title: "Deliver",
+    title: "Launch & Improve",
     description:
-      "We refine, finalize, and deliver work that's ready to perform in the real world.",
+      "We prepare the site for launch with responsive checks, speed focus, and clear next actions.",
     Icon: Send
   }
 ];
@@ -76,42 +83,46 @@ const projects = [
   {
     title: "Organise With Kopal",
     category: "Business Web Design",
-    image: "/project-organise-with-kopal.webp"
+    image: "/project-organise-with-kopal.webp",
+    projectUrl: "https://www.organisewithkopal.com/"
   },
   {
     title: "SM Classes",
     category: "Education Website",
-    image: "/project-sm-classes.webp"
+    image: "/project-sm-classes.webp",
+    projectUrl: "https://smclasses.in/"
   },
   {
     title: "Little Ilmies",
     category: "Learning Platform",
-    image: "/project-little-ilmies.webp"
+    image: "/project-little-ilmies.webp",
+    projectUrl: "https://littleilmies.com/"
   },
   {
     title: "Zarrar Palekar",
     category: "Portfolio Website",
-    image: "/project-zarrar-palekar.webp"
+    image: "/project-zarrar-palekar.webp",
+    projectUrl: "https://zarrarpalekar.vercel.app/"
   }
 ];
 
 const reasons = [
   {
-    title: "Clarity First",
+    title: "Clear Scope",
     description:
-      "We are a wordpress site development company that focuses on clear thinking and direction.",
+      "You know what is being built, why it matters, and how each page supports action.",
     Icon: Lightbulb
   },
   {
-    title: "Strategic Thinking",
+    title: "Fast Decisions",
     description:
-      "Our work balances strategy and aesthetics to create brands that feel intentional and lasting.",
+      "We keep the process focused so your website moves from idea to launch without dragging.",
     Icon: ChevronRight
   },
   {
-    title: "Built for Growth",
+    title: "Launch Ready",
     description:
-      "Our work balances strategy and aesthetics to create brands that feel intentional and lasting.",
+      "The final website is responsive, sharp, and built to help users trust you faster.",
     Icon: BarChart3
   }
 ];
@@ -136,7 +147,7 @@ const testimonials = [
   {
     title: "A Clear Website That Parents Can Trust.",
     quote:
-      "We wanted the SM Classes website to feel simple, professional, and easy for students and parents to understand. The final website made our courses look much more credible, and the whole process was smooth from start to finish.",
+      "WBYB (we build your brands) develop our classes website (smclasses.in) which exceeds our expectations.. Website covers all informative content which were basically required for growth of any coaching classes..the best part is whenever modifications required they do immediately and with lots of ideas.. We recommend WBYB for anyone who like to build best website for their business..",
     name: "Saquib Dalvi",
     role: "Education Brand",
     image: "/SM classes Founder.png"
@@ -180,23 +191,22 @@ export default function Home() {
               <span>We Build Your Brands</span>
             </p>
             <h1 className="mt-7 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-              Design. Strategy. Digital.
-              <span className="block">Built for Growth.</span>
+              Websites that make your brand clear, credible, and ready to grow.
             </h1>
             <p className="mt-6 max-w-lg text-base leading-8 text-white/80">
-              We are a wordpress site development company which helps
-              businesses build strong brands through clear strategy and modern
-              design.
+              WBYB designs and builds mobile-first websites for businesses that
+              need a stronger online presence, cleaner messaging, and a clearer
+              path from visitor to inquiry.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button
                 asChild
                 className={`h-14 rounded-full px-7 text-base font-bold ${neonButtonClass}`}
               >
-                <Link href="/contact">
+                <CalendlyLink>
                   Book A Call
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />
-                </Link>
+                </CalendlyLink>
               </Button>
               <Button
                 asChild
@@ -230,9 +240,14 @@ export default function Home() {
                 Strategy-led websites that help businesses communicate clearly
                 and convert better.
               </p>
-              <Button className={`mt-6 h-10 rounded-full px-5 text-xs ${neonButtonClass}`}>
-                Book A Call
-                <ArrowRight className="h-4 w-4" />
+              <Button
+                asChild
+                className={`mt-6 h-10 rounded-full px-5 text-xs ${neonButtonClass}`}
+              >
+                <CalendlyLink>
+                  Book A Call
+                  <ArrowRight className="h-4 w-4" />
+                </CalendlyLink>
               </Button>
             </div>
             <div className="absolute bottom-10 right-0 h-[300px] w-[150px] rounded-[32px] border border-cyan-300/10 bg-[#050517]/84 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_28px_80px_rgba(124,60,255,0.28)] backdrop-blur-xl">
@@ -270,18 +285,18 @@ export default function Home() {
           <div className="lg:sticky lg:top-28">
             <Eyebrow>What We Do</Eyebrow>
             <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
-              Strategy. Design. Digital. All under{" "}
-              <span>one roof.</span>
+              What you get when we build your website.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Sharp foundations for brands that need to look credible, feel
-              intentional, and move people to act.
+              Strategy, design, and development shaped into a clear website
+              experience your customers can understand quickly.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {services.map(({ title, description, Icon }, index) => (
-              <article
+              <Link
                 key={title}
+                href="/services"
                 className="group relative min-h-[260px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(22,216,255,0.04)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.36))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_28px_86px_rgba(22,216,255,0.14),0_18px_70px_rgba(124,60,255,0.18)]"
               >
                 <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.65),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -301,7 +316,7 @@ export default function Home() {
                   Explore
                   <ArrowRight className="h-3.5 w-3.5 transition duration-300 group-hover:translate-x-1" aria-hidden="true" />
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -311,18 +326,47 @@ export default function Home() {
         <StatsBar stats={stats} />
       </section>
 
+      <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
+            <Eyebrow>Who It&apos;s For</Eyebrow>
+            <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
+              Built for teams that need clarity before scale.
+            </h2>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+              If your offer is strong but your website feels unclear, outdated,
+              or hard to trust, this is where we help.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {audiences.map((item, index) => (
+              <article
+                key={item}
+                className="group relative min-h-[210px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.42))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28"
+              >
+                <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
+                  0{index + 1}
+                </span>
+                <p className="mt-12 text-lg font-semibold leading-8 text-white/82">
+                  {item}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
-            <Eyebrow>How We Work</Eyebrow>
+            <Eyebrow>Your Launch Path</Eyebrow>
             <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
-              A clear <span>process.</span>
+              From unclear website to confident launch.
               <br />
-              Real results.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              A focused workflow that keeps every decision tied to clarity,
-              trust, and conversion.
+              A simple path for turning your offer into a website customers can
+              understand and act on.
             </p>
           </div>
           <div className="relative grid gap-5 md:grid-cols-3">
@@ -386,8 +430,11 @@ export default function Home() {
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               {projects.map((project, index) => (
-                <article
+                <Link
                   key={project.title}
+                  href={project.projectUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.44))] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.24)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.13),0_18px_72px_rgba(124,60,255,0.16)]"
                 >
                   <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -416,7 +463,7 @@ export default function Home() {
                     </div>
                     <div className="hidden h-px min-w-10 flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.2),transparent)] sm:block" />
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
@@ -428,12 +475,11 @@ export default function Home() {
           <div className="lg:sticky lg:top-28">
             <Eyebrow>Why Choose Us</Eyebrow>
             <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
-              Why businesses choose{" "}
-              <span>WBYB.</span>
+              Why choose WBYB quickly?
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              We keep the work practical, polished, and focused on what helps
-              your brand earn trust faster.
+              Simple answer: we keep the website focused on trust, action, and
+              launch quality.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
@@ -457,11 +503,6 @@ export default function Home() {
                   <p className="mt-4 text-sm leading-7 text-white/64">
                     {description}
                   </p>
-                  <div className="mt-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/36 transition duration-300 group-hover:text-white/78">
-                    Built in
-                    <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.24),transparent)]" />
-                    <ArrowRight className="h-3.5 w-3.5 transition duration-300 group-hover:translate-x-1" aria-hidden="true" />
-                  </div>
                 </div>
               </article>
             ))}

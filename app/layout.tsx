@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { CalendlyModalProvider } from "@/components/CalendlyModal";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({
@@ -47,6 +48,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingWhatsApp />
+        <CalendlyModalProvider />
       </body>
     </html>
   );
