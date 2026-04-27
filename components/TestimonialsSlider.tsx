@@ -89,7 +89,7 @@ export function TestimonialsSlider({
     >
       <article
         key={active.name}
-        className="relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.14),rgba(22,216,255,0.055)_36%,rgba(124,60,255,0.12)_72%,rgba(0,0,31,0.34))] px-5 pb-7 pt-14 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_24px_80px_rgba(0,0,31,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 sm:px-8"
+        className="relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.12),rgba(22,216,255,0.05)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.38))] px-5 py-8 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_24px_80px_rgba(0,0,31,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 sm:px-10 sm:py-10"
         onTouchStart={(event) => {
           touchStartX.current = event.touches[0].clientX;
           setIsPaused(true);
@@ -100,13 +100,13 @@ export function TestimonialsSlider({
         }}
       >
         <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.7),transparent)]" />
-        <div className="absolute left-1/2 top-0 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-white text-[#5b00b5] shadow-[0_12px_30px_rgba(0,0,31,0.28),0_0_34px_rgba(22,216,255,0.18)]">
-          <Quote className="h-7 w-7 fill-current" aria-hidden="true" />
+        <div className="mx-auto mb-7 flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white text-[#5b00b5] shadow-[0_12px_30px_rgba(0,0,31,0.28),0_0_34px_rgba(22,216,255,0.18)]">
+          <Quote className="h-6 w-6 fill-current" aria-hidden="true" />
         </div>
-        <h3 className="text-xl font-bold leading-tight text-white sm:text-2xl">
+        <h3 className="mx-auto max-w-2xl text-xl font-bold leading-tight text-white sm:text-2xl">
           {active.title}
         </h3>
-        <div className="mt-4 flex justify-center gap-1 text-[#ffe500]">
+        <div className="mt-5 flex justify-center gap-1 text-[#ffe500]">
           {[1, 2, 3, 4, 5].map((star) => (
             <Star
               key={star}
@@ -115,7 +115,7 @@ export function TestimonialsSlider({
             />
           ))}
         </div>
-        <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/86">
+        <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-white/78 sm:text-base">
           {active.quote}
         </p>
         <div className="mx-auto mt-7 h-1 max-w-56 overflow-hidden rounded-full bg-white/12">
@@ -129,16 +129,18 @@ export function TestimonialsSlider({
 
       <div className="mt-7 flex flex-col items-center justify-between gap-5 sm:flex-row">
         <div className="inline-flex items-center gap-4 text-left">
-          <Image
-            src={active.image}
-            alt={`${active.name} testimonial`}
-            width={56}
-            height={56}
-            className="h-12 w-12 rounded-full bg-black object-cover"
-          />
+          <div className="relative h-14 w-14 overflow-hidden rounded-full border border-white/10 bg-[#00001F]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+            <Image
+              src={active.image}
+              alt={`${active.name} testimonial`}
+              fill
+              sizes="56px"
+              className="object-cover"
+            />
+          </div>
           <div>
             <h4 className="text-base font-bold text-white">{active.name}</h4>
-            <p className="mt-1 text-sm text-white/62">{active.role}</p>
+            <p className="mt-1 text-sm leading-6 text-white/62">{active.role}</p>
           </div>
         </div>
 
@@ -193,13 +195,15 @@ export function TestimonialsSlider({
             }`}
             aria-pressed={index === activeIndex}
           >
-            <Image
-              src={item.image}
-              alt=""
-              width={44}
-              height={44}
-              className="h-11 w-11 rounded-full bg-black object-cover"
-            />
+            <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/10 bg-[#00001F]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <Image
+                src={item.image}
+                alt=""
+                fill
+                sizes="48px"
+                className="object-cover transition duration-300 group-hover:scale-105"
+              />
+            </span>
             <span className="min-w-0">
               <span className="block truncate text-sm font-bold text-white">
                 {item.name}

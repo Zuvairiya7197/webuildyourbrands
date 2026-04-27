@@ -123,7 +123,7 @@ const testimonials = [
       "I own an appointment setting agency and get a lot of my leads from Facebook and LinkedIn, so I had an urgent requirement for professional covers. Zuvairiya delivered exceptionally beautiful and professional designs in no time, making sure everything matched my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing. I can't recommend her enough - she's my go-to for all things graphic design.",
     name: "Shreya Batra",
     role: "Co-Founder @ Organic Appointments Agency",
-    image: "/wbyblogo.webp"
+    image: "/Shreya Batra.jpeg"
   },
   {
     title: "High-Quality Design. Incredible Speed.",
@@ -131,7 +131,23 @@ const testimonials = [
       "Hi, I'm Kopal and I run my business called Organise with Kopal. I needed a website for my business and I already knew that Zuvairiya would be the right call. She delivered the website within 2 days - at an affordable price. All edits were done within minutes.",
     name: "Kopal Dhir",
     role: "Founder at Organise With Kopal",
-    image: "/project-organise-with-kopal.webp"
+    image: "/Kopal Founder.avif"
+  },
+  {
+    title: "A Clear Website That Parents Can Trust.",
+    quote:
+      "We wanted the SM Classes website to feel simple, professional, and easy for students and parents to understand. The final website made our courses look much more credible, and the whole process was smooth from start to finish.",
+    name: "Saquib Dalvi",
+    role: "Education Brand",
+    image: "/SM classes Founder.png"
+  },
+  {
+    title: "A Portfolio That Finally Felt Premium.",
+    quote:
+      "The portfolio website gave my work a sharper, more polished presence online. It became much easier to share my projects, explain what I do, and make a strong first impression with clients.",
+    name: "Zarrar Palekar",
+    role: "Portfolio Website Client",
+    image: "/Zarrar-Photo.webp"
   }
 ];
 
@@ -462,8 +478,8 @@ export default function Home() {
               Real words from real clients.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/58">
-              Browse the stories, swipe on mobile, or use the controls to see
-              what clients experienced while working with us.
+              Thoughtful feedback from clients who trusted us with their brand,
+              website, and launch experience.
             </p>
           </div>
           <TestimonialsSlider testimonials={testimonials} />
