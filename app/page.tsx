@@ -47,9 +47,21 @@ const services = [
 ];
 
 const audiences = [
-  "Service businesses that need a stronger first impression",
-  "Founders launching a new offer, brand, or personal website",
-  "Growing teams that want cleaner pages and better conversion"
+  {
+    title: "Service Businesses",
+    cue: "Make a strong first impression",
+    Icon: Search
+  },
+  {
+    title: "New Brands",
+    cue: "Launch with a clear message",
+    Icon: Send
+  },
+  {
+    title: "Growing Businesses",
+    cue: "Get more website inquiries",
+    Icon: BarChart3
+  }
 ];
 
 const stats = [
@@ -108,21 +120,21 @@ const projects = [
 
 const reasons = [
   {
-    title: "Clear Scope",
-    description:
-      "You know what is being built, why it matters, and how each page supports action.",
+    title: "Clear Plan",
+    signal: "Know what we will build",
+    visual: "Plan",
     Icon: Lightbulb
   },
   {
-    title: "Fast Decisions",
-    description:
-      "We keep the process focused so your website moves from idea to launch without dragging.",
+    title: "Quick Process",
+    signal: "Move without confusion",
+    visual: "Build",
     Icon: ChevronRight
   },
   {
-    title: "Launch Ready",
-    description:
-      "The final website is responsive, sharp, and built to help users trust you faster.",
+    title: "Ready Website",
+    signal: "Launch with confidence",
+    visual: "Live",
     Icon: BarChart3
   }
 ];
@@ -134,7 +146,7 @@ const testimonials = [
       "I own an appointment setting agency and get a lot of my leads from Facebook and LinkedIn, so I had an urgent requirement for professional covers. Zuvairiya delivered exceptionally beautiful and professional designs in no time, making sure everything matched my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing. I can't recommend her enough - she's my go-to for all things graphic design.",
     name: "Shreya Batra",
     role: "Co-Founder @ Organic Appointments Agency",
-    image: "/Shreya Batra.jpeg"
+    image: "/Shreya Batra.webp"
   },
   {
     title: "High-Quality Design. Incredible Speed.",
@@ -142,7 +154,7 @@ const testimonials = [
       "Hi, I'm Kopal and I run my business called Organise with Kopal. I needed a website for my business and I already knew that Zuvairiya would be the right call. She delivered the website within 2 days - at an affordable price. All edits were done within minutes.",
     name: "Kopal Dhir",
     role: "Founder at Organise With Kopal",
-    image: "/Kopal Founder.avif"
+    image: "/Kopal Founder.webp"
   },
   {
     title: "A Clear Website That Parents Can Trust.",
@@ -150,7 +162,7 @@ const testimonials = [
       "WBYB (we build your brands) develop our classes website (smclasses.in) which exceeds our expectations.. Website covers all informative content which were basically required for growth of any coaching classes..the best part is whenever modifications required they do immediately and with lots of ideas.. We recommend WBYB for anyone who like to build best website for their business..",
     name: "Saquib Dalvi",
     role: "Education Brand",
-    image: "/SM classes Founder.png"
+    image: "/SM classes Founder.webp"
   },
   {
     title: "A Portfolio That Finally Felt Premium.",
@@ -331,24 +343,36 @@ export default function Home() {
           <div className="lg:sticky lg:top-28">
             <Eyebrow>Who It&apos;s For</Eyebrow>
             <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
-              Built for teams that need clarity before scale.
+              For businesses that need a clearer website.
             </h2>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              If your offer is strong but your website feels unclear, outdated,
-              or hard to trust, this is where we help.
-            </p>
+            <div className="mt-7 grid max-w-sm grid-cols-3 gap-2">
+              {["Look clear", "Build trust", "Get leads"].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/[0.035] px-3 py-4 text-center text-[10px] font-bold uppercase tracking-[0.14em] text-white/50"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            {audiences.map((item, index) => (
+            {audiences.map(({ title, cue, Icon }, index) => (
               <article
-                key={item}
-                className="group relative min-h-[210px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.42))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28"
+                key={title}
+                className="group relative min-h-[220px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.42))] p-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[0_28px_80px_rgba(124,60,255,0.16)]"
               >
-                <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
+                <span className="absolute right-5 top-5 text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
                   0{index + 1}
                 </span>
-                <p className="mt-12 text-lg font-semibold leading-8 text-white/82">
-                  {item}
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[24px] border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.18)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.18)]">
+                  <Icon className="h-8 w-8" aria-hidden="true" />
+                </div>
+                <h3 className="mt-8 text-xl font-bold text-white">
+                  {title}
+                </h3>
+                <p className="mt-3 text-sm font-semibold text-white/58">
+                  {cue}
                 </p>
               </article>
             ))}
@@ -475,33 +499,41 @@ export default function Home() {
           <div className="lg:sticky lg:top-28">
             <Eyebrow>Why Choose Us</Eyebrow>
             <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
-              Why choose WBYB quickly?
+              From idea to website, without the confusion.
             </h2>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Simple answer: we keep the website focused on trust, action, and
-              launch quality.
-            </p>
+            <div className="mt-7 grid max-w-sm grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white/46">
+              {["Plan", "Build", "Launch"].map((item) => (
+                <div
+                  key={item}
+                  className="border-r border-white/10 px-3 py-4 last:border-r-0"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {reasons.map(({ title, description, Icon }, index) => (
+          <div className="relative grid gap-5 md:grid-cols-3">
+            <div className="pointer-events-none absolute left-[16%] right-[16%] top-20 hidden h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.5),rgba(124,60,255,0.58),transparent)] md:block" />
+            {reasons.map(({ title, signal, visual, Icon }, index) => (
               <article
                 key={title}
-                className="group relative min-h-[280px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.44))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)]"
+                className="group relative min-h-[250px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.44))] p-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)]"
               >
                 <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.7),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
                 <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-cyan-300/10 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
-                <div className="relative z-10 flex items-start justify-between gap-5">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.2)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.2)]">
-                    <Icon className="h-7 w-7" aria-hidden="true" />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
-                    0{index + 1}
-                  </span>
+                <span className="absolute right-5 top-5 text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
+                  0{index + 1}
+                </span>
+                <div className="relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-[24px] border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.2)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.2)]">
+                  <Icon className="h-8 w-8" aria-hidden="true" />
                 </div>
-                <div className="relative z-10 mt-12">
+                <div className="relative z-10 mt-8">
+                  <p className="mx-auto mb-4 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100/70">
+                    {visual}
+                  </p>
                   <h3 className="text-xl font-bold text-white">{title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/64">
-                    {description}
+                  <p className="mt-3 text-sm font-semibold text-white/58">
+                    {signal}
                   </p>
                 </div>
               </article>

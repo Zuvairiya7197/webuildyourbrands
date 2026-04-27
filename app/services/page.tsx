@@ -31,7 +31,7 @@ const services = [
     description:
       "Fast, modern, conversion-focused websites built around your offer, audience, and next step.",
     outcome: "Best for complete website launches",
-    image: "/Website Design & Development ICON.png",
+    image: "/Website Design & Development ICON.webp",
     Icon: Layers3,
     features: [
       "Custom website design",
@@ -47,7 +47,7 @@ const services = [
     description:
       "Focused pages built for campaigns, launches, and offers that need one clear action.",
     outcome: "Best for lead generation",
-    image: "/Landing Page Design.png",
+    image: "/Landing Page Design.webp",
     Icon: Target,
     features: [
       "Sales pages",
@@ -62,7 +62,7 @@ const services = [
     description:
       "Already have a website but it feels outdated or messy? We reshape it into something sharper.",
     outcome: "Best for improving trust quickly",
-    image: "/Website Redesign.png",
+    image: "/Website Redesign.webp",
     Icon: RefreshCcw,
     features: [
       "UI/UX improvement",
@@ -77,7 +77,7 @@ const services = [
     description:
       "Clean online stores designed to make browsing, buying, and checkout feel simple.",
     outcome: "Best for selling products online",
-    image: "/E-commerce Website Development.png",
+    image: "/E-commerce Website Development.webp",
     Icon: ShoppingBag,
     features: [
       "WooCommerce setup",
@@ -92,7 +92,7 @@ const services = [
     description:
       "A stronger visual foundation so your website feels consistent, recognizable, and intentional.",
     outcome: "Best before a new website build",
-    image: "/Brand Identity & Visual Design.png",
+    image: "/Brand Identity & Visual Design.webp",
     Icon: Brush,
     features: [
       "Logo design",
@@ -106,7 +106,7 @@ const services = [
     category: "Support",
     description: "Ongoing care for updates, fixes, security, and performance after launch.",
     outcome: "Best for keeping the site healthy",
-    image: "/Website Maintenance & Support.png",
+    image: "/Website Maintenance & Support.webp",
     Icon: ShieldCheck,
     features: [
       "Regular updates",
@@ -121,7 +121,7 @@ const services = [
     description:
       "Make sure your website does not just look good, but loads fast and can be found.",
     outcome: "Best for better search readiness",
-    image: "/SEO & Performance Optimization.png",
+    image: "/SEO & Performance Optimization.webp",
     Icon: Gauge,
     features: [
       "On-page SEO setup",
@@ -136,7 +136,7 @@ const services = [
     description:
       "Improve the structure, CTAs, and page flow so more visitors know what to do next.",
     outcome: "Best for improving inquiries",
-    image: "/Conversion Optimization.png",
+    image: "/Conversion Optimization.webp",
     Icon: BadgeCheck,
     features: [
       "CTA placement strategy",
@@ -151,7 +151,7 @@ const services = [
     description:
       "Not sure what you need yet? We help you make the website plan clear before spending.",
     outcome: "Best before design starts",
-    image: "/Website Strategy & Consultation.png",
+    image: "/Website Strategy & Consultation.webp",
     Icon: SearchCheck,
     features: [
       "Website planning",

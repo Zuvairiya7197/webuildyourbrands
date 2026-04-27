@@ -51,6 +51,11 @@ const socialLinks = [
     Icon: Instagram
   },
   {
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61589040772725",
+    Icon: null
+  },
+  {
     label: "WhatsApp",
     href: "https://wa.me/919987448073?text=Hi%2C%20I%20want%20to%20discuss%20a%20website%20project.",
     Icon: null
@@ -235,13 +240,13 @@ export default function ContactPage() {
             </div>
             </form>
 
-            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(124,60,255,0.14)_58%,rgba(34,0,103,0.36))] p-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_24px_80px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-8">
+            <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(124,60,255,0.14)_58%,rgba(34,0,103,0.36))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_20px_64px_rgba(0,0,31,0.22)] backdrop-blur-xl sm:p-6">
               <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)]" />
               <p className="text-[12px] font-bold uppercase tracking-[0.34em] text-white/88">
                 Connect with us
               </p>
 
-              <div className="mt-7 grid gap-4 sm:grid-cols-3">
+              <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
                 {socialLinks.map(({ label, href, Icon }) => (
                   <Link
                     key={label}
@@ -249,15 +254,24 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    className="group flex min-h-[118px] flex-col items-center justify-center gap-4 rounded-[20px] border border-white/10 bg-[#00001F]/22 px-4 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.07] hover:shadow-[0_0_26px_rgba(22,216,255,0.12)]"
+                    className="group flex min-h-[74px] items-center justify-center gap-3 rounded-[18px] border border-white/10 bg-[#00001F]/22 px-3 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.07] hover:shadow-[0_0_26px_rgba(22,216,255,0.12)]"
                   >
-                    <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/88 transition duration-300 group-hover:bg-[image:var(--button-gradient)] group-hover:text-white">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/88 transition duration-300 group-hover:bg-[image:var(--button-gradient)] group-hover:text-white">
                       {Icon ? (
-                        <Icon className="h-5 w-5" aria-hidden="true" />
+                        <Icon className="h-4 w-4" aria-hidden="true" />
+                      ) : label === "Facebook" ? (
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="h-5 w-5"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M15.12 8.08h2.21V4.3A28.4 28.4 0 0 0 14.11 4c-3.19 0-5.37 1.95-5.37 5.54v3.08H5.14v4.23h3.6V24h4.43v-7.15h3.55l.56-4.23h-4.11V9.95c0-1.22.34-1.87 1.95-1.87Z" />
+                        </svg>
                       ) : (
                         <svg
                           viewBox="0 0 32 32"
-                          className="h-6 w-6"
+                          className="h-5 w-5"
                           fill="currentColor"
                           aria-hidden="true"
                         >
@@ -265,7 +279,7 @@ export default function ContactPage() {
                         </svg>
                       )}
                     </span>
-                    <span className="text-sm font-bold uppercase tracking-[0.22em] text-white/90 transition duration-300 group-hover:text-white">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/90 transition duration-300 group-hover:text-white">
                       {label}
                     </span>
                   </Link>
