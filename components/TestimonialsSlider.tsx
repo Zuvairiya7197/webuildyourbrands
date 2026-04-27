@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,24 +19,88 @@ export function TestimonialsSlider({
   testimonials: Testimonial[];
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
   const active = testimonials[activeIndex];
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     setActiveIndex((current) =>
       current === 0 ? testimonials.length - 1 : current - 1
     );
-  };
+  }, [testimonials.length]);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setActiveIndex((current) =>
       current === testimonials.length - 1 ? 0 : current + 1
     );
+  }, [testimonials.length]);
+
+  useEffect(() => {
+    if (isPaused || testimonials.length < 2) {
+      return;
+    }
+
+    const intervalId = window.setInterval(goToNext, 6500);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [goToNext, isPaused, testimonials.length]);
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "ArrowLeft") {
+      goToPrevious();
+    }
+
+    if (event.key === "ArrowRight") {
+      goToNext();
+    }
+  };
+
+  const handleTouchEnd = (x: number) => {
+    if (touchStartX.current === null) {
+      return;
+    }
+
+    const distance = touchStartX.current - x;
+    touchStartX.current = null;
+
+    if (Math.abs(distance) < 48) {
+      return;
+    }
+
+    if (distance > 0) {
+      goToNext();
+    } else {
+      goToPrevious();
+    }
   };
 
   return (
-    <div className="relative mx-auto max-w-3xl">
-      <article className="relative rounded-2xl border border-white/10 bg-white/14 px-5 pb-6 pt-12 text-center shadow-[0_20px_70px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:px-8">
-        <div className="absolute left-1/2 top-0 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/35 bg-white text-[#5b00b5] shadow-[0_12px_30px_rgba(0,0,31,0.28)]">
+    <div
+      className="relative mx-auto max-w-4xl"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      aria-label="Interactive testimonials"
+    >
+      <article
+        key={active.name}
+        className="relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.14),rgba(22,216,255,0.055)_36%,rgba(124,60,255,0.12)_72%,rgba(0,0,31,0.34))] px-5 pb-7 pt-14 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_24px_80px_rgba(0,0,31,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 sm:px-8"
+        onTouchStart={(event) => {
+          touchStartX.current = event.touches[0].clientX;
+          setIsPaused(true);
+        }}
+        onTouchEnd={(event) => {
+          handleTouchEnd(event.changedTouches[0].clientX);
+          setIsPaused(false);
+        }}
+      >
+        <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.7),transparent)]" />
+        <div className="absolute left-1/2 top-0 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-white text-[#5b00b5] shadow-[0_12px_30px_rgba(0,0,31,0.28),0_0_34px_rgba(22,216,255,0.18)]">
           <Quote className="h-7 w-7 fill-current" aria-hidden="true" />
         </div>
         <h3 className="text-xl font-bold leading-tight text-white sm:text-2xl">
@@ -54,7 +118,13 @@ export function TestimonialsSlider({
         <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/86">
           {active.quote}
         </p>
-        <div className="absolute bottom-0 left-1/2 h-6 w-6 -translate-x-1/2 translate-y-1/2 rotate-45 bg-white/14 backdrop-blur-xl" />
+        <div className="mx-auto mt-7 h-1 max-w-56 overflow-hidden rounded-full bg-white/12">
+          <div
+            key={activeIndex}
+            className="h-full rounded-full bg-[image:var(--button-gradient)]"
+            style={{ width: isPaused ? "45%" : "100%", transition: "width 6.5s linear" }}
+          />
+        </div>
       </article>
 
       <div className="mt-7 flex flex-col items-center justify-between gap-5 sm:flex-row">
@@ -109,6 +179,37 @@ export function TestimonialsSlider({
             <ChevronRight className="h-5 w-5" aria-hidden="true" />
           </Button>
         </div>
+      </div>
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        {testimonials.map((item, index) => (
+          <button
+            key={item.name}
+            type="button"
+            onClick={() => setActiveIndex(index)}
+            className={`group flex items-center gap-3 rounded-2xl border p-3 text-left transition duration-300 ${
+              index === activeIndex
+                ? "border-cyan-300/26 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_40px_rgba(22,216,255,0.08)]"
+                : "border-white/10 bg-white/[0.035] hover:border-white/18 hover:bg-white/[0.07]"
+            }`}
+            aria-pressed={index === activeIndex}
+          >
+            <Image
+              src={item.image}
+              alt=""
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-full bg-black object-cover"
+            />
+            <span className="min-w-0">
+              <span className="block truncate text-sm font-bold text-white">
+                {item.name}
+              </span>
+              <span className="mt-1 block truncate text-xs text-white/52">
+                {item.title}
+              </span>
+            </span>
+          </button>
+        ))}
       </div>
     </div>
   );

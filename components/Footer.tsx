@@ -4,8 +4,16 @@ import { Instagram, Linkedin } from "lucide-react";
 import FooterCTA from "@/components/FooterCTA";
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://linkedin.com", Icon: Linkedin },
-  { label: "Instagram", href: "https://instagram.com", Icon: Instagram }
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/webuildyourbrands",
+    Icon: Linkedin
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/_we_build_your_brands_/",
+    Icon: Instagram
+  }
 ];
 
 export default function Footer() {
@@ -40,6 +48,8 @@ export default function Footer() {
                 <Link
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-cyan-300/10 bg-white/[0.04] text-white/78 transition hover:-translate-y-0.5 hover:border-cyan-300/24 hover:bg-white/[0.08] hover:text-white active:scale-95"
                 >

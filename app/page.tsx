@@ -14,6 +14,7 @@ import {
   Target
 } from "lucide-react";
 import { TestimonialsSlider } from "@/components/TestimonialsSlider";
+import StatsBar from "@/components/StatsBar";
 import { Button } from "@/components/ui/button";
 import { neonButtonClass } from "@/lib/utils";
 
@@ -45,9 +46,9 @@ const services = [
 ];
 
 const stats = [
-  { value: "100%", label: "Mobile-first builds" },
-  { value: "100%", label: "Performance focus" },
-  { value: "0%", label: "Template reuse" }
+  { value: 100, suffix: "%", label: "Mobile-first builds" },
+  { value: 100, suffix: "%", label: "Performance focus" },
+  { value: 0, suffix: "%", label: "Template reuse" }
 ];
 
 const process = [
@@ -248,83 +249,93 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_2fr]">
-          <div>
+      <section className="px-5 pb-10 pt-24 sm:px-8 sm:pb-12 sm:pt-28 lg:px-10 lg:pb-14 lg:pt-32">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
             <Eyebrow>What We Do</Eyebrow>
             <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
               Strategy. Design. Digital. All under{" "}
               <span>one roof.</span>
             </h2>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+              Sharp foundations for brands that need to look credible, feel
+              intentional, and move people to act.
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {services.map(({ title, description, Icon }, index) => (
               <article
                 key={title}
-                className={`border-l border-cyan-300/10 pl-6 ${
-                  index === 0 ? "md:border-l" : ""
-                }`}
+                className="group relative min-h-[260px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(22,216,255,0.04)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.36))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_28px_86px_rgba(22,216,255,0.14),0_18px_70px_rgba(124,60,255,0.18)]"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[radial-gradient(circle,#2032ff_0%,#151345_72%)] shadow-[0_0_24px_rgba(53,92,255,0.35)]">
-                  <Icon className="h-7 w-7 text-white" aria-hidden="true" />
+                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.65),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                <div className="flex items-start justify-between gap-5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/55 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_28px_rgba(53,92,255,0.22)] transition duration-300 group-hover:border-cyan-300/24 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_32px_rgba(22,216,255,0.22)]">
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
+                    0{index + 1}
+                  </span>
                 </div>
-                <h3 className="text-base font-bold text-white">{title}</h3>
-                <p className="mt-3 text-xs leading-6 text-white/68">
+                <h3 className="mt-10 text-xl font-bold text-white">{title}</h3>
+                <p className="mt-4 text-sm leading-7 text-white/64">
                   {description}
                 </p>
+                <div className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-white/36 transition duration-300 group-hover:text-white/78">
+                  Explore
+                  <ArrowRight className="h-3.5 w-3.5 transition duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-6xl gap-6 rounded-xl border border-cyan-300/10 bg-[#05051a]/80 px-7 py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_20px_70px_rgba(22,216,255,0.06)] backdrop-blur-xl md:grid-cols-3">
-          {stats.map(({ value, label }, index) => (
-            <div
-              key={label}
-              className={`text-center ${
-                index > 0 ? "md:border-l md:border-cyan-300/10" : ""
-              }`}
-            >
-              <p
-                className={`text-4xl font-bold ${
-                    "text-white"
-                }`}
-              >
-                {value}
-              </p>
-              <p className="mt-2 text-sm font-semibold text-white/78">
-                {label}
-              </p>
-            </div>
-          ))}
-        </div>
+      <section className="px-5 pb-20 pt-0 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28">
+        <StatsBar stats={stats} />
       </section>
 
       <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_2fr]">
-          <div>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
             <Eyebrow>How We Work</Eyebrow>
             <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
               A clear <span>process.</span>
               <br />
               Real results.
             </h2>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+              A focused workflow that keeps every decision tied to clarity,
+              trust, and conversion.
+            </p>
           </div>
-          <div className="relative grid gap-10 md:grid-cols-3">
-            <div className="absolute left-[16.66%] right-[16.66%] top-[21.5px] hidden border-t border-dashed border-cyan-300/16 md:block" />
+          <div className="relative grid gap-5 md:grid-cols-3">
+            <div className="absolute left-[16.66%] right-[16.66%] top-8 hidden h-px bg-[linear-gradient(90deg,rgba(22,216,255,0),rgba(22,216,255,0.32),rgba(124,60,255,0.36),rgba(22,216,255,0))] md:block" />
             {process.map(({ title, description, Icon }, index) => (
-              <article key={title} className="relative text-center md:text-left">
-                <div className="relative z-10 mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[radial-gradient(circle,#355cff,#3a0d86)] text-sm font-bold text-white shadow-[0_0_24px_rgba(53,92,255,0.45)] md:mx-0">
-                  0{index + 1}
+              <article
+                key={title}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(53,92,255,0.08)_62%,rgba(0,0,31,0.42))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:bg-[linear-gradient(145deg,rgba(255,255,255,0.1),rgba(22,216,255,0.055)_34%,rgba(124,60,255,0.13)_70%,rgba(0,0,31,0.46))] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_88px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)]"
+              >
+                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.7),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                <div className="relative z-10 flex items-center justify-between gap-4">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.2)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.2)]">
+                    <Icon className="h-7 w-7" aria-hidden="true" />
+                  </div>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-white/44 transition duration-300 group-hover:border-cyan-300/24 group-hover:text-white/76">
+                    Step 0{index + 1}
+                  </span>
                 </div>
-                <div className="mx-auto mt-10 max-w-[15rem] md:mx-0">
-                  <Icon className="mx-auto h-9 w-9 text-white md:mx-0" aria-hidden="true" />
-                  <h3 className="mt-6 text-lg font-bold text-white">{title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/68">
+                <div className="relative z-10 mt-12">
+                  <h3 className="text-xl font-bold text-white">{title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-white/64">
                     {description}
                   </p>
+                  <div className="mt-8 h-1 overflow-hidden rounded-full bg-white/10">
+                    <div
+                      className="h-full rounded-full bg-[image:var(--button-gradient)] transition-[width] duration-500 group-hover:w-full"
+                      style={{ width: `${(index + 1) * 28}%` }}
+                    />
+                  </div>
                 </div>
               </article>
             ))}
@@ -333,45 +344,61 @@ export default function Home() {
       </section>
 
       <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_2fr]">
-          <div>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
             <Eyebrow>Selected Work</Eyebrow>
             <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white">
               A glimpse of brands we&apos;ve helped shape and grow.
             </h2>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+              Website experiences shaped for clarity, credibility, and a
+              stronger first impression.
+            </p>
           </div>
           <div>
-            <div className="mb-5 flex justify-end">
-              <Button asChild variant="outline" className="h-9 rounded-lg text-xs">
+            <div className="mb-6 flex justify-start sm:justify-end">
+              <Button
+                asChild
+                variant="outline"
+                className="h-11 rounded-full border-white/14 bg-white/[0.035] px-5 text-xs font-bold uppercase tracking-[0.16em] hover:bg-white hover:text-[#00001F]"
+              >
                 <Link href="/projects">
                   View All Projects
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {projects.map((project) => (
+            <div className="grid gap-5 sm:grid-cols-2">
+              {projects.map((project, index) => (
                 <article
                   key={project.title}
-                  className="overflow-hidden rounded-xl border border-cyan-300/10 bg-[#05051a]/82 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#16d8ff]/28"
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.44))] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.24)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.13),0_18px_72px_rgba(124,60,255,0.16)]"
                 >
-                  <div className="relative aspect-[4/3]">
+                  <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                  <div className="relative aspect-[16/11] overflow-hidden rounded-xl">
                     <Image
                       src={project.image}
                       alt={`${project.title} project`}
                       fill
-                      sizes="(min-width: 1024px) 20vw, (min-width: 640px) 40vw, 100vw"
-                      className="object-cover"
+                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02)_0%,rgba(0,0,31,0.18)_48%,rgba(0,0,31,0.82)_100%)]" />
+                    <span className="absolute left-4 top-4 rounded-full border border-white/14 bg-[#00001F]/58 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/74 backdrop-blur-md">
+                      0{index + 1}
+                    </span>
+                    <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/16 bg-white/10 text-white opacity-0 shadow-[0_14px_36px_rgba(0,0,31,0.28)] backdrop-blur-md transition duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:translate-x-2">
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </div>
                   </div>
-                  <div className="flex items-end justify-between p-4">
+                  <div className="flex items-end justify-between gap-5 px-4 py-5">
                     <div>
-                      <h3 className="text-sm font-bold text-white">{project.title}</h3>
-                      <p className="mt-1 text-xs text-white/62">
+                      <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/36 transition duration-300 group-hover:text-cyan-100/70">
                         {project.category}
                       </p>
+                      <h3 className="text-lg font-bold text-white">{project.title}</h3>
                     </div>
-                    <ArrowRight className="h-5 w-5 text-white" />
+                    <div className="hidden h-px min-w-10 flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.2),transparent)] sm:block" />
                   </div>
                 </article>
               ))}
@@ -381,28 +408,44 @@ export default function Home() {
       </section>
 
       <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_2fr]">
-          <div>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
             <Eyebrow>Why Choose Us</Eyebrow>
             <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
               Why businesses choose{" "}
               <span>WBYB.</span>
             </h2>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+              We keep the work practical, polished, and focused on what helps
+              your brand earn trust faster.
+            </p>
           </div>
-          <div className="grid gap-7 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3">
             {reasons.map(({ title, description, Icon }, index) => (
               <article
                 key={title}
-                className={`flex gap-5 ${
-                  index > 0 ? "md:border-l md:border-cyan-300/10 md:pl-7" : ""
-                }`}
+                className="group relative min-h-[280px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.44))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)]"
               >
-                <Icon className="h-10 w-10 shrink-0 text-white drop-shadow-[0_0_18px_rgba(22,216,255,0.65)]" />
-                <div>
-                  <h3 className="text-base font-bold text-white">{title}</h3>
-                  <p className="mt-3 text-xs leading-6 text-white/68">
+                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.7),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-cyan-300/10 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
+                <div className="relative z-10 flex items-start justify-between gap-5">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.2)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.2)]">
+                    <Icon className="h-7 w-7" aria-hidden="true" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
+                    0{index + 1}
+                  </span>
+                </div>
+                <div className="relative z-10 mt-12">
+                  <h3 className="text-xl font-bold text-white">{title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-white/64">
                     {description}
                   </p>
+                  <div className="mt-8 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/36 transition duration-300 group-hover:text-white/78">
+                    Built in
+                    <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.24),transparent)]" />
+                    <ArrowRight className="h-3.5 w-3.5 transition duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                  </div>
                 </div>
               </article>
             ))}
@@ -411,12 +454,17 @@ export default function Home() {
       </section>
 
       <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-6xl rounded-3xl bg-[linear-gradient(110deg,rgba(14,165,233,0.22),rgba(124,60,255,0.2)_45%,rgba(239,47,255,0.22))] px-5 py-9 text-white sm:px-8 lg:px-10">
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.045)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.44))] px-5 py-12 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:px-8 lg:px-10">
+          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)]" />
           <div className="mx-auto mb-9 max-w-2xl text-center">
             <Eyebrow>Testimonials</Eyebrow>
             <h2 className="text-3xl font-bold leading-tight">
               Real words from real clients.
             </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/58">
+              Browse the stories, swipe on mobile, or use the controls to see
+              what clients experienced while working with us.
+            </p>
           </div>
           <TestimonialsSlider testimonials={testimonials} />
         </div>

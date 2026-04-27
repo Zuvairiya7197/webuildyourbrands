@@ -14,22 +14,34 @@ const projects = [
   {
     title: "Organise With Kopal",
     category: "Productivity Website",
-    image: "/project-organise-with-kopal.webp"
+    description:
+      "A polished service website designed to communicate calm, clarity, and trust for an organizing-led personal brand.",
+    image: "/project-organise-with-kopal.webp",
+    projectUrl: "https://www.organisewithkopal.com/"
   },
   {
     title: "SM Classes",
     category: "Education Website",
-    image: "/project-sm-classes.webp"
+    description:
+      "A structured education presence built to make programs, outcomes, and next steps easier for students to understand.",
+    image: "/project-sm-classes.webp",
+    projectUrl: "https://smclasses.in/"
   },
   {
     title: "Little Ilmies",
     category: "Learning Platform",
-    image: "/project-little-ilmies.webp"
+    description:
+      "A friendly learning experience with a clear visual system and approachable pathways for parents and young learners.",
+    image: "/project-little-ilmies.webp",
+    projectUrl: "https://littleilmies.com/"
   },
   {
     title: "Zarrar Palekar",
     category: "Portfolio Website",
-    image: "/project-zarrar-palekar.webp"
+    description:
+      "A portfolio system shaped around credibility, sharp presentation, and direct paths from work samples to inquiry.",
+    image: "/project-zarrar-palekar.webp",
+    projectUrl: "https://zarrarpalekar.vercel.app/"
   }
 ];
 
@@ -46,10 +58,11 @@ export default function ProjectsPage() {
         className="pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Projects"
         title="Featured launches and visual systems."
+        description="A curated set of website builds with clean structure, refined visuals, and conversion-focused presentation."
       >
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <Card key={project.title} {...project} />
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <Card key={project.title} {...project} index={index} />
           ))}
         </div>
       </Section>
