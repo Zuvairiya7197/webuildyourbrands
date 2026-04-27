@@ -51,7 +51,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="group/footer relative overflow-hidden border-t border-cyan-300/10 px-5 text-white sm:px-8 lg:px-10"
+      className="group/footer relative overflow-hidden border-t border-cyan-300/10 px-4 text-white sm:px-8 lg:px-10"
       onMouseMove={handleMouseMove}
     >
       <Image
@@ -82,7 +82,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="group/link relative flex h-10 items-center rounded-full border border-white/10 bg-white/[0.035] px-4 text-xs font-bold uppercase tracking-[0.14em] text-white/56 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-300/28 hover:bg-white/[0.07] hover:text-white"
+                    className="group/link relative flex min-h-11 items-center rounded-full border border-white/10 bg-white/[0.035] px-4 text-xs font-bold uppercase tracking-[0.14em] text-white/56 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-300/28 hover:bg-white/[0.07] hover:text-white"
                   >
                     {item.label}
                     <span className="absolute inset-x-4 bottom-2 h-px origin-left scale-x-0 bg-cyan-100/70 transition duration-300 group-hover/link:scale-x-100" />
@@ -106,7 +106,7 @@ export default function Footer() {
         <div className="flex flex-col gap-5 border-t border-cyan-300/10 py-6 text-xs text-white/48 md:flex-row md:items-center md:justify-between">
           <p>(c) 2026 We Build Your Brands. All rights reserved.</p>
 
-          <div className="flex flex-wrap items-center gap-5">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-5">
             <Link href="/privacy" className="transition hover:text-white hover:underline hover:underline-offset-4">
               Privacy
             </Link>
@@ -119,9 +119,9 @@ export default function Footer() {
                   key={label}
                   href={href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label={label}
-                  className="group/social flex h-10 w-10 items-center justify-center rounded-full border border-cyan-300/10 bg-white/[0.04] text-white/78 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-[image:var(--button-gradient)] hover:text-white hover:shadow-[0_0_26px_rgba(22,216,255,0.18)] active:scale-95"
+                  className="group/social flex h-11 w-11 items-center justify-center rounded-full border border-cyan-300/10 bg-white/[0.04] text-white/78 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-[image:var(--button-gradient)] hover:text-white hover:shadow-[0_0_26px_rgba(22,216,255,0.18)] active:scale-95"
                 >
                   {Icon ? (
                     <Icon className="h-4 w-4 transition duration-300 group-hover/social:scale-110" aria-hidden="true" />

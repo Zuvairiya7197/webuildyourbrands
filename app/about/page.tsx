@@ -70,12 +70,12 @@ export default function AboutPage() {
         description="We saw too many websites that looked busy but said very little. WBYB was created to help businesses turn scattered ideas into a website that feels clear, confident, and easy to trust."
       >
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-          <article className={`${glassCardClass} group relative overflow-hidden p-8 text-white transition duration-300 hover:-translate-y-2 hover:border-cyan-300/45 hover:shadow-[0_30px_90px_rgba(22,216,255,0.13),0_24px_90px_rgba(124,60,255,0.2)]`}>
+          <article className={`${glassCardClass} group relative overflow-hidden p-5 text-white transition duration-300 hover:-translate-y-2 hover:border-cyan-300/45 hover:shadow-[0_30px_90px_rgba(22,216,255,0.13),0_24px_90px_rgba(124,60,255,0.2)] sm:p-8`}>
             <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.8),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
             <p className="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/58">
               Our belief
             </p>
-            <h2 className="mt-8 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-8 max-w-2xl text-2xl font-semibold tracking-tight text-white sm:text-4xl">
               A website should make your business easier to understand.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
@@ -93,12 +93,12 @@ export default function AboutPage() {
             </div>
           </article>
 
-          <article className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.52))] p-8 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28">
+          <article className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.52))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 sm:rounded-[32px] sm:p-8">
             <Target className="h-10 w-10 text-cyan-100" aria-hidden="true" />
             <h3 className="mt-8 text-2xl font-semibold tracking-tight">
               Long-Term Goal
             </h3>
-            <p className="mt-4 text-lg leading-8 text-white/72">
+            <p className="mt-4 text-base leading-8 text-white/72 sm:text-lg">
               To help businesses build digital homes they can grow into, not websites they outgrow the moment they launch.
             </p>
             <div className={`mt-8 inline-flex rounded-full px-5 py-3 text-sm font-bold ${neonButtonClass}`}>
@@ -142,7 +142,7 @@ export default function AboutPage() {
         description="We do not start by asking how flashy the website can look. We start by asking what the visitor needs to understand, feel, and do next."
       >
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-stretch">
-          <div className="rounded-[28px] border border-white/10 bg-[#00001F]/44 p-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl">
+          <div className="rounded-[28px] border border-white/10 bg-[#00001F]/44 p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-7">
             <Layers3 className="h-9 w-9 text-cyan-100" aria-hidden="true" />
             <h3 className="mt-8 text-2xl font-semibold tracking-tight">
               What We Care About
@@ -160,7 +160,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className={`${glassCardClass} p-7 text-white`}>
+          <div className={`${glassCardClass} p-5 text-white sm:p-7`}>
             <h3 className="text-2xl font-semibold tracking-tight">
               How We Work
             </h3>

@@ -74,7 +74,7 @@ export function CalendlyModalProvider() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-[radial-gradient(circle_at_20%_10%,rgba(124,60,255,0.2),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(22,216,255,0.14),transparent_30%),rgba(0,0,0,0.84)] px-4 py-5 backdrop-blur-md sm:px-6 sm:py-8"
+      className="fixed inset-0 z-[100] bg-[radial-gradient(circle_at_20%_10%,rgba(124,60,255,0.2),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(22,216,255,0.14),transparent_30%),rgba(0,0,0,0.84)] px-3 py-4 backdrop-blur-md sm:px-6 sm:py-8"
       role="dialog"
       aria-modal="true"
       aria-labelledby="calendly-title"
@@ -85,7 +85,7 @@ export function CalendlyModalProvider() {
         aria-label="Close scheduling modal"
         onClick={() => setIsOpen(false)}
       />
-      <div className="relative mx-auto flex h-[calc(100vh-2.5rem)] max-w-6xl flex-col overflow-hidden rounded-[28px] border border-[#7c3cff]/35 bg-[#05030c] shadow-[0_36px_120px_rgba(0,0,0,0.62),0_0_90px_rgba(124,60,255,0.28),0_0_46px_rgba(22,216,255,0.1)] sm:h-[calc(100vh-4rem)]">
+      <div className="relative mx-auto flex h-[calc(100dvh-2rem)] max-w-6xl flex-col overflow-hidden rounded-[22px] border border-[#7c3cff]/35 bg-[#05030c] shadow-[0_36px_120px_rgba(0,0,0,0.62),0_0_90px_rgba(124,60,255,0.28),0_0_46px_rgba(22,216,255,0.1)] sm:h-[calc(100dvh-4rem)] sm:rounded-[28px]">
         <div className="pointer-events-none absolute inset-x-10 top-0 z-10 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.85),rgba(124,60,255,0.85),transparent)]" />
         <div className="flex items-center justify-between gap-6 border-b border-[#7c3cff]/20 bg-[radial-gradient(circle_at_15%_0%,rgba(22,216,255,0.16),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.055),rgba(124,60,255,0.18)_48%,rgba(0,0,31,0.62))] px-5 py-5 sm:px-8">
           <div>

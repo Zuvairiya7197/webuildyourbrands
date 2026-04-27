@@ -60,7 +60,7 @@ export default function Card({
           <Link
             href={projectUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label={`View ${title} project`}
             className="relative block aspect-[16/11] overflow-hidden rounded-xl bg-[#00001F]/55"
           >
@@ -93,7 +93,7 @@ export default function Card({
                 variant="outline"
                 className="h-11 rounded-full px-5 text-sm font-bold"
               >
-                <Link href={projectUrl} target="_blank" rel="noreferrer">
+                <Link href={projectUrl} target="_blank" rel="noopener noreferrer">
                   View Project
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
@@ -103,7 +103,7 @@ export default function Card({
               asChild
               className={`h-11 rounded-full px-5 text-sm font-bold ${neonButtonClass}`}
             >
-              <Link href={whatsappHref} target="_blank" rel="noreferrer">
+              <Link href={whatsappHref} target="_blank" rel="noopener noreferrer">
                 Start Similar Project
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>

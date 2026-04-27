@@ -38,14 +38,25 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--site-gradient);
   background-attachment: fixed;
   color: hsl(var(--foreground));
-  overflow-x: clip;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+main {
+  min-width: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
 }
 
 a,
@@ -250,4 +261,44 @@ textarea {
   color: rgba(255, 255, 255, 0.58);
   font-size: 14px;
   line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  a,
+  button,
+  span {
+    overflow-wrap: anywhere;
+  }
+
+  .flex > *,
+  .grid > * {
+    min-width: 0;
+  }
+
+  .pricing-card {
+    min-height: auto;
+    border-radius: 24px;
+    padding: 22px;
+  }
+
+  .pricing-card:hover {
+    transform: none;
+  }
+
+  .pricing-card-subtitle {
+    min-height: auto;
+    font-size: 16px;
+  }
+
+  .pricing-price {
+    font-size: 38px;
+  }
 }

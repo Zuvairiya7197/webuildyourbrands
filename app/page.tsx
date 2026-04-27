@@ -141,23 +141,7 @@ const reasons = [
 
 const testimonials = [
   {
-    title: "Professional Designs That Elevated My Brand",
-    quote:
-      "I own an appointment setting agency and get a lot of my leads from Facebook and LinkedIn, so I had an urgent requirement for professional covers. Zuvairiya delivered exceptionally beautiful and professional designs in no time, making sure everything matched my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing. I can't recommend her enough - she's my go-to for all things graphic design.",
-    name: "Shreya Batra",
-    role: "Co-Founder @ Organic Appointments Agency",
-    image: "/Shreya Batra.webp"
-  },
-  {
-    title: "High-Quality Design. Incredible Speed.",
-    quote:
-      "Hi, I'm Kopal and I run my business called Organise with Kopal. I needed a website for my business and I already knew that Zuvairiya would be the right call. She delivered the website within 2 days - at an affordable price. All edits were done within minutes.",
-    name: "Kopal Dhir",
-    role: "Founder at Organise With Kopal",
-    image: "/Kopal Founder.webp"
-  },
-  {
-    title: "A Clear Website That Parents Can Trust.",
+    title: "Our coaching website finally had everything parents needed.",
     quote:
       "WBYB (we build your brands) develop our classes website (smclasses.in) which exceeds our expectations.. Website covers all informative content which were basically required for growth of any coaching classes..the best part is whenever modifications required they do immediately and with lots of ideas.. We recommend WBYB for anyone who like to build best website for their business..",
     name: "Saquib Dalvi",
@@ -165,12 +149,28 @@ const testimonials = [
     image: "/SM classes Founder.webp"
   },
   {
-    title: "A Portfolio That Finally Felt Premium.",
+    title: "My work now feels easier to share and explain.",
     quote:
       "The portfolio website gave my work a sharper, more polished presence online. It became much easier to share my projects, explain what I do, and make a strong first impression with clients.",
     name: "Zarrar Palekar",
     role: "Portfolio Website Client",
     image: "/Zarrar-Photo.webp"
+  },
+  {
+    title: "My website was live in two days, without the stress.",
+    quote:
+      "Hi, I'm Kopal and I run my business called Organise with Kopal. I needed a website for my business and I already knew that Zuvairiya would be the right call. She delivered the website within 2 days - at an affordable price. All edits were done within minutes.",
+    name: "Kopal Dhir",
+    role: "Founder at Organise With Kopal",
+    image: "/Kopal Founder.webp"
+  },
+  {
+    title: "She understood my brand and made it look polished fast.",
+    quote:
+      "I own an appointment setting agency and get a lot of my leads from Facebook and LinkedIn, so I had an urgent requirement for professional covers. Zuvairiya delivered exceptionally beautiful and professional designs in no time, making sure everything matched my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing. I can't recommend her enough - she's my go-to for all things graphic design.",
+    name: "Shreya Batra",
+    role: "Co-Founder @ Organic Appointments Agency",
+    image: "/Shreya Batra.webp"
   }
 ];
 
@@ -185,7 +185,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-5 pb-24 pt-28 sm:px-8 sm:pb-28 lg:px-10 lg:pb-32">
+      <section className="relative overflow-hidden px-4 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:px-10 lg:pb-32">
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-55"
           src="/Homehero.mp4"
@@ -197,15 +197,15 @@ export default function Home() {
           aria-label="Website development background video"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.9),rgba(0,0,31,0.56)_52%,rgba(0,0,31,0.86))]" />
-        <div className="relative mx-auto grid min-h-[680px] max-w-6xl items-center gap-12 lg:grid-cols-[0.78fr_1fr]">
+        <div className="relative mx-auto grid min-h-[560px] max-w-6xl items-center gap-10 sm:min-h-[680px] lg:grid-cols-[0.78fr_1fr] lg:gap-12">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/10 bg-[#14003a]/60 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_24px_rgba(124,60,255,0.3)] backdrop-blur-md">
+            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-300/10 bg-[#14003a]/60 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_24px_rgba(124,60,255,0.3)] backdrop-blur-md">
               <span>We Build Your Brands</span>
             </p>
-            <h1 className="mt-7 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-7 text-3xl font-bold leading-tight text-white min-[360px]:text-4xl sm:text-5xl lg:text-6xl">
               Websites that make your brand clear, credible, and ready to grow.
             </h1>
-            <p className="mt-6 max-w-lg text-base leading-8 text-white/80">
+            <p className="mt-5 max-w-lg text-sm leading-7 text-white/80 sm:mt-6 sm:text-base sm:leading-8">
               WBYB designs and builds mobile-first websites for businesses that
               need a stronger online presence, cleaner messaging, and a clearer
               path from visitor to inquiry.
@@ -213,7 +213,7 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button
                 asChild
-                className={`h-14 rounded-full px-7 text-base font-bold ${neonButtonClass}`}
+                className={`h-12 w-full rounded-full px-7 text-base font-bold sm:h-14 sm:w-auto ${neonButtonClass}`}
               >
                 <CalendlyLink>
                   Book A Call
@@ -223,7 +223,7 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-14 rounded-full px-7 text-base font-bold"
+                className="h-12 w-full rounded-full px-7 text-base font-bold sm:h-14 sm:w-auto"
               >
                 <Link href="/projects">
                   View Work
@@ -292,11 +292,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 pb-10 pt-24 sm:px-8 sm:pb-12 sm:pt-28 lg:px-10 lg:pb-14 lg:pt-32">
+      <section className="px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-10 lg:pb-14 lg:pt-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
             <Eyebrow>What We Do</Eyebrow>
-            <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
+            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
               What you get when we build your website.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
@@ -304,12 +304,12 @@ export default function Home() {
               experience your customers can understand quickly.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3 md:gap-6">
             {services.map(({ title, description, Icon }, index) => (
               <Link
                 key={title}
                 href="/services"
-                className="group relative min-h-[260px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(22,216,255,0.04)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.36))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_28px_86px_rgba(22,216,255,0.14),0_18px_70px_rgba(124,60,255,0.18)]"
+                className="group relative min-h-[230px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(22,216,255,0.04)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.36))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_28px_86px_rgba(22,216,255,0.14),0_18px_70px_rgba(124,60,255,0.18)] sm:min-h-[260px] sm:p-6"
               >
                 <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.65),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
                 <div className="flex items-start justify-between gap-5">
@@ -334,15 +334,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 pb-20 pt-0 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28">
+      <section className="px-4 pb-16 pt-0 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28">
         <StatsBar stats={stats} />
       </section>
 
-      <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+      <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
             <Eyebrow>Who It&apos;s For</Eyebrow>
-            <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
+            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
               For businesses that need a clearer website.
             </h2>
             <div className="mt-7 grid max-w-sm grid-cols-3 gap-2">
@@ -380,11 +380,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
             <Eyebrow>Your Launch Path</Eyebrow>
-            <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
+            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
               From unclear website to confident launch.
               <br />
             </h2>
@@ -427,7 +427,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
             <Eyebrow>Selected Work</Eyebrow>
@@ -444,7 +444,7 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-11 rounded-full border-white/14 bg-white/[0.035] px-5 text-xs font-bold uppercase tracking-[0.16em] hover:bg-white hover:text-[#00001F]"
+                className="h-11 w-full rounded-full border-white/14 bg-white/[0.035] px-5 text-xs font-bold uppercase tracking-[0.16em] hover:bg-white hover:text-[#00001F] sm:w-auto"
               >
                 <Link href="/projects">
                   View All Projects
@@ -458,7 +458,7 @@ export default function Home() {
                   key={project.title}
                   href={project.projectUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.44))] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.24)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.13),0_18px_72px_rgba(124,60,255,0.16)]"
                 >
                   <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -494,11 +494,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
             <Eyebrow>Why Choose Us</Eyebrow>
-            <h2 className="max-w-xs text-3xl font-semibold leading-tight text-white">
+            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
               From idea to website, without the confusion.
             </h2>
             <div className="mt-7 grid max-w-sm grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white/46">
@@ -542,13 +542,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.045)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.44))] px-5 py-12 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:px-8 lg:px-10">
+      <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.045)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.44))] px-4 py-10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:px-8 sm:py-12 lg:px-10">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)]" />
           <div className="mx-auto mb-9 max-w-2xl text-center">
             <Eyebrow>Testimonials</Eyebrow>
-            <h2 className="text-3xl font-bold leading-tight">
-              Real words from real clients.
+            <h2 className="text-2xl font-bold leading-tight sm:text-3xl">
+              The trust our clients felt after working with us.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/58">
               Thoughtful feedback from clients who trusted us with their brand,

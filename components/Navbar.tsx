@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { CalendarDays, Menu } from "lucide-react";
+import { CalendarDays, Menu, X } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { cn, neonButtonClass } from "@/lib/utils";
@@ -21,6 +21,7 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const updateScrollState = () => {
@@ -35,18 +36,31 @@ export default function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 px-5 text-white transition duration-300 sm:px-8 lg:px-10",
-        isScrolled && "bg-[#00001F]/76 shadow-[0_18px_60px_rgba(0,0,31,0.28)] backdrop-blur-xl"
+        "fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.12),transparent_34%),radial-gradient(circle_at_86%_0%,rgba(124,60,255,0.22),transparent_42%),linear-gradient(180deg,rgba(0,0,31,0.9),rgba(5,3,31,0.76))] px-5 text-white shadow-[0_14px_46px_rgba(0,0,31,0.3)] backdrop-blur-xl transition duration-300 sm:px-8 md:border-b-0 md:bg-transparent md:shadow-none md:backdrop-blur-none lg:px-10",
+        isScrolled &&
+          "bg-[#00001F]/82 shadow-[0_18px_60px_rgba(0,0,31,0.3)] backdrop-blur-xl md:bg-[#00001F]/76 md:shadow-[0_18px_60px_rgba(0,0,31,0.28)]"
       )}
     >
       <nav
         className="mx-auto flex h-20 max-w-[116rem] items-center justify-between"
         aria-label="Main navigation"
       >
-        <Link href="/" className="relative h-14 w-40 shrink-0 sm:h-16 sm:w-48">
+        <Link href="/" className="relative h-12 w-36 shrink-0 sm:h-16 sm:w-48">
           <Image
             src="/wbyblogo.webp"
             alt="WEBuildYourBrands"
@@ -88,14 +102,28 @@ export default function Navbar() {
             </CalendlyLink>
           </Button>
         </div>
-        <details className="group relative md:hidden">
-          <summary
-            className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white [&::-webkit-details-marker]:hidden"
-            aria-label="Open navigation"
+        <div className="md:hidden">
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((current) => !current)}
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl border border-white/14 bg-white/[0.07] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_10px_28px_rgba(0,0,31,0.22)] backdrop-blur-md transition hover:bg-white/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={isMenuOpen}
           >
-            <Menu className="h-5 w-5" aria-hidden="true" />
-          </summary>
-          <div className="absolute right-0 top-14 w-56 rounded-2xl border border-white/10 bg-[#00001F]/82 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_70px_rgba(0,0,31,0.32),0_0_28px_rgba(124,60,255,0.16)] backdrop-blur-xl">
+            {isMenuOpen ? (
+              <X className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Menu className="h-5 w-5" aria-hidden="true" />
+            )}
+          </button>
+          <div
+            className={cn(
+              "fixed inset-x-4 top-24 max-h-[calc(100dvh-7rem)] overflow-y-auto rounded-3xl border border-white/12 bg-[radial-gradient(circle_at_12%_0%,rgba(22,216,255,0.13),transparent_34%),radial-gradient(circle_at_90%_12%,rgba(124,60,255,0.24),transparent_42%),linear-gradient(145deg,rgba(0,0,31,0.96),rgba(12,0,38,0.94))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_24px_80px_rgba(0,0,31,0.48),0_0_34px_rgba(124,60,255,0.2)] backdrop-blur-xl transition duration-200",
+              isMenuOpen
+                ? "pointer-events-auto translate-y-0 opacity-100"
+                : "pointer-events-none -translate-y-3 opacity-0"
+            )}
+          >
             {links.map((link) => {
               const isActive = pathname === link.href;
 
@@ -105,7 +133,7 @@ export default function Navbar() {
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
-                    "block rounded-xl px-3 py-2 text-sm font-medium text-white/80 transition hover:bg-[image:var(--button-gradient)] hover:text-white",
+                    "block min-h-11 rounded-2xl px-4 py-3 text-base font-semibold text-white/80 transition hover:bg-[image:var(--button-gradient)] hover:text-white",
                     isActive && "bg-[image:var(--button-gradient)] text-white"
                   )}
                 >
@@ -115,8 +143,7 @@ export default function Navbar() {
             })}
             <Button
               asChild
-              className={`mt-2 w-full rounded-full ${neonButtonClass}`}
-              size="sm"
+              className={`mt-3 h-12 w-full rounded-full ${neonButtonClass}`}
             >
               <CalendlyLink>
                 <CalendarDays className="h-4 w-4" aria-hidden="true" />
@@ -124,7 +151,7 @@ export default function Navbar() {
               </CalendlyLink>
             </Button>
           </div>
-        </details>
+        </div>
       </nav>
     </header>
   );

@@ -75,16 +75,16 @@ export default function ContactPage() {
         secondaryLabel="Book A Call"
         secondaryHref="https://calendly.com/meetwbybfounder/30min?month=2026-05"
       />
-      <section id="contact-form" className="contact-form-section relative scroll-mt-24 overflow-hidden px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section id="contact-form" className="contact-form-section relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="absolute inset-0 bg-[#00001F]/84" aria-hidden="true" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,60,255,0.2),transparent_32%),radial-gradient(circle_at_84%_70%,rgba(22,216,255,0.12),transparent_30%)]" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <aside className={`${glassCardClass} overflow-hidden p-7 text-white sm:p-8`}>
+          <aside className={`${glassCardClass} overflow-hidden p-5 text-white sm:p-8`}>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/58">
               <Sparkles className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
               Start here
             </p>
-            <h2 className="mt-7 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-7 text-2xl font-semibold tracking-tight sm:text-4xl">
               Tell us what you want the website to do.
             </h2>
             <p className="mt-5 leading-8 text-white/70">
@@ -152,14 +152,14 @@ export default function ContactPage() {
               action="mailto:contactus@webuildyourbrands.com"
               method="post"
               encType="text/plain"
-              className="relative grid gap-6 overflow-hidden rounded-[32px] border border-white/15 bg-[#00001F]/78 p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_24px_90px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:p-8"
+              className="relative grid gap-6 overflow-hidden rounded-[26px] border border-white/15 bg-[#00001F]/78 p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_24px_90px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:rounded-[32px] sm:p-8"
             >
             <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)]" />
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/58">
                 Project details
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
                 Send a clear brief.
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-white/58">
@@ -232,7 +232,7 @@ export default function ContactPage() {
               <Button
                 type="submit"
                 size="lg"
-                className={`h-12 rounded-full px-7 text-base font-bold ${neonButtonClass}`}
+                className={`h-12 w-full rounded-full px-7 text-base font-bold sm:w-auto ${neonButtonClass}`}
               >
                 Send Message
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -246,13 +246,13 @@ export default function ContactPage() {
                 Connect with us
               </p>
 
-              <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
+              <div className="mt-5 grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 md:grid-cols-4">
                 {socialLinks.map(({ label, href, Icon }) => (
                   <Link
                     key={label}
                     href={href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={label}
                     className="group flex min-h-[74px] items-center justify-center gap-3 rounded-[18px] border border-white/10 bg-[#00001F]/22 px-3 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.07] hover:shadow-[0_0_26px_rgba(22,216,255,0.12)]"
                   >

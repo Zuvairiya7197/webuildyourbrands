@@ -101,7 +101,7 @@ export default function StatsBar({ stats }: StatsBarProps) {
           )}
         >
           <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.75),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-          <p className="text-5xl font-black tracking-tight text-white tabular-nums sm:text-6xl">
+          <p className="text-4xl font-black tracking-tight text-white tabular-nums sm:text-6xl">
             <CountUpValue value={value} suffix={suffix} isActive={isVisible} />
           </p>
           <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-white/62 transition duration-300 group-hover:text-white/82">

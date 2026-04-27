@@ -116,21 +116,21 @@ export default function FooterCTA() {
   }
 
   return (
-    <div className="border-b border-cyan-300/10 py-14 text-white">
+    <div className="border-b border-cyan-300/10 py-10 text-white sm:py-14">
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
-        <div className="flex max-w-4xl flex-col gap-6 sm:flex-row sm:items-center">
+        <div className="flex max-w-4xl flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:text-left">
           <Image
             src="/rocket.webp"
             alt="Rocket"
             width={160}
             height={160}
-            className="h-32 w-32 shrink-0 object-contain sm:h-40 sm:w-40"
+            className="h-24 w-24 shrink-0 object-contain sm:h-40 sm:w-40"
           />
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/48">
               {copy.eyebrow}
             </p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl">
+            <h2 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-4xl">
               {copy.title}
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70">
@@ -139,12 +139,15 @@ export default function FooterCTA() {
           </div>
         </div>
         <div
-          className={`relative isolate h-[60px] w-[300px] max-w-full rounded-full before:absolute before:-inset-1 before:-z-10 before:rounded-full before:bg-[image:var(--button-gradient)] before:blur-[18px] before:transition-opacity before:duration-300 lg:justify-self-end ${
+          className={`relative isolate mx-auto h-[56px] w-full max-w-[300px] rounded-full before:absolute before:-inset-1 before:-z-10 before:rounded-full before:bg-[image:var(--button-gradient)] before:blur-[18px] before:transition-opacity before:duration-300 sm:h-[60px] lg:mx-0 lg:justify-self-end ${
             progress > 0 || isComplete ? "before:opacity-65" : "before:opacity-15"
           }`}
         >
           <div
             ref={sliderRef}
+            onTouchEnd={() => {
+              window.location.href = "/contact";
+            }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             className={`relative h-full w-full cursor-pointer overflow-hidden rounded-full border-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),inset_0_0_26px_rgba(255,255,255,0.04),0_16px_34px_rgba(0,0,0,0.42)] backdrop-blur-xl transition-colors duration-300 ${
@@ -169,18 +172,18 @@ export default function FooterCTA() {
                 alt=""
                 fill
                 sizes="340px"
-                className="object-contain px-20 py-3 opacity-35 mix-blend-screen"
+                className="object-contain px-16 py-3 opacity-35 mix-blend-screen sm:px-20"
               />
             </div>
             <span
-              className={`absolute inset-0 flex items-center justify-center pl-12 text-2xl font-bold tracking-[-0.01em] transition duration-300 ${
+              className={`absolute inset-0 flex items-center justify-center pl-11 text-lg font-bold tracking-[-0.01em] transition duration-300 sm:pl-12 sm:text-2xl ${
                 isComplete ? "translate-x-4 opacity-0" : "opacity-100"
               }`}
             >
               Let&apos;s get started
             </span>
             <span
-              className="absolute left-[5px] top-1/2 z-10 flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white shadow-[0_8px_20px_rgba(0,0,0,0.3)] transition-transform duration-200 ease-out"
+              className="absolute left-[5px] top-1/2 z-10 flex h-[46px] w-[46px] items-center justify-center rounded-full bg-white shadow-[0_8px_20px_rgba(0,0,0,0.3)] transition-transform duration-200 ease-out sm:h-[50px] sm:w-[50px]"
               style={{ transform: `translate3d(${handleX}px, -50%, 0)` }}
               aria-hidden="true"
             >

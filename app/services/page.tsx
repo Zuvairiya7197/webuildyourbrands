@@ -208,16 +208,16 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <article
               key={service.title}
-              className="group relative grid overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)] lg:grid-cols-[0.38fr_0.62fr]"
+              className="group relative grid overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)] sm:rounded-[32px] lg:grid-cols-[0.38fr_0.62fr]"
             >
               <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-              <div className="relative min-h-[220px] overflow-hidden bg-[#00001F]/70 lg:min-h-full">
+              <div className="relative min-h-[180px] overflow-hidden bg-[#00001F]/70 sm:min-h-[220px] lg:min-h-full">
                 <Image
                   src={service.image}
                   alt={`${service.title} service visual`}
                   fill
                   sizes="(min-width: 1024px) 34vw, 100vw"
-                  className="object-contain object-center p-5 transition duration-700 group-hover:scale-105"
+                  className="object-contain object-center p-4 transition duration-700 group-hover:scale-105 sm:p-5"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02)_0%,rgba(0,0,31,0.18)_48%,rgba(0,0,31,0.68)_100%)]" />
                 <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-[#00001F]/62 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.22)] backdrop-blur-md transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)]">
@@ -227,14 +227,14 @@ export default function ServicesPage() {
                   0{index + 1}
                 </span>
               </div>
-              <div className="flex flex-col p-7 sm:p-8">
+              <div className="flex flex-col p-5 sm:p-8">
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-100/58">
                   {service.category}
                 </p>
-                <h2 className="mt-3 max-w-2xl bg-[linear-gradient(135deg,#fff4a8_0%,#f5ca4a_42%,#d99019_76%,#fff0a0_100%)] bg-clip-text text-2xl font-bold tracking-tight text-transparent sm:text-3xl">
+                <h2 className="mt-3 max-w-2xl bg-[linear-gradient(135deg,#fff4a8_0%,#f5ca4a_42%,#d99019_76%,#fff0a0_100%)] bg-clip-text text-xl font-bold tracking-tight text-transparent min-[360px]:text-2xl sm:text-3xl">
                   {service.title}
                 </h2>
-                <p className="mt-4 max-w-3xl leading-8 text-white/70">
+                <p className="mt-4 max-w-3xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
                   {service.description}
                 </p>
                 <div className="mt-5 max-w-xl rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm font-semibold text-white/72 transition duration-300 group-hover:border-cyan-300/24 group-hover:text-white">
@@ -265,13 +265,13 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <section className="px-5 pb-24 sm:px-8 sm:pb-28 lg:px-10 lg:pb-32">
+      <section className="px-4 pb-16 sm:px-8 sm:pb-28 lg:px-10 lg:pb-32">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
-          <div className={`${glassCardClass} p-8 text-white`}>
+          <div className={`${glassCardClass} p-5 text-white sm:p-8`}>
             <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-white/50">
               Service System
             </p>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight sm:text-4xl">
               Services that connect instead of sitting in separate boxes.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/68">
@@ -285,7 +285,7 @@ export default function ServicesPage() {
             {serviceSystems.map(({ title, description, Icon }, index) => (
               <article
                 key={title}
-                className="group flex gap-5 rounded-[24px] border border-white/10 bg-[#00001F]/44 p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055]"
+                className="group flex gap-4 rounded-[24px] border border-white/10 bg-[#00001F]/44 p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] sm:gap-5 sm:p-5"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] transition duration-300 group-hover:bg-[image:var(--button-gradient)]">
                   <Icon className="h-5 w-5" aria-hidden="true" />
