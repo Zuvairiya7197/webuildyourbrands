@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type SectionProps = {
@@ -21,12 +18,8 @@ export default function Section({
   children
 }: SectionProps) {
   return (
-    <motion.section
+    <section
       id={id}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
       className={cn("px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32", className)}
     >
       <div className="mx-auto max-w-6xl">
@@ -51,6 +44,6 @@ export default function Section({
         )}
         {children}
       </div>
-    </motion.section>
+    </section>
   );
 }

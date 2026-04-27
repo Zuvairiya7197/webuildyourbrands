@@ -139,7 +139,7 @@ export default function FooterCTA() {
           </div>
         </div>
         <div
-          className={`relative isolate mx-auto h-[56px] w-full max-w-[300px] rounded-full before:absolute before:-inset-1 before:-z-10 before:rounded-full before:bg-[image:var(--button-gradient)] before:blur-[18px] before:transition-opacity before:duration-300 sm:h-[60px] lg:mx-0 lg:justify-self-end ${
+          className={`relative isolate mx-auto h-[56px] w-full max-w-[300px] rounded-full before:absolute before:-inset-1 before:-z-10 before:rounded-full before:bg-[image:var(--button-gradient)] before:blur-[18px] before:transition-opacity before:duration-300 sm:h-[60px] lg:mx-0 lg:w-[420px] lg:max-w-[420px] lg:justify-self-end ${
             progress > 0 || isComplete ? "before:opacity-65" : "before:opacity-15"
           }`}
         >
