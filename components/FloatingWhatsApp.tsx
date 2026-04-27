@@ -5,7 +5,7 @@ export default function FloatingWhatsApp() {
     <Link
       href="https://wa.me/"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-[image:var(--button-gradient)] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_-3px_0_rgba(0,0,31,0.32),0_12px_24px_rgba(0,0,31,0.34)] transition duration-200 hover:-translate-y-1 hover:scale-105 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.34),inset_0_-3px_0_rgba(0,0,31,0.28),0_18px_42px_rgba(23,70,216,0.34),0_0_30px_rgba(124,60,255,0.34)] active:translate-y-0 active:scale-95 sm:right-8"
+      className="fixed bottom-6 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-[#25D366] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_-3px_0_rgba(0,0,31,0.24),0_12px_24px_rgba(0,0,31,0.34)] transition duration-200 hover:-translate-y-1 hover:scale-105 hover:bg-[#1ebe5d] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.34),inset_0_-3px_0_rgba(0,0,31,0.2),0_18px_42px_rgba(37,211,102,0.34),0_0_30px_rgba(37,211,102,0.34)] active:translate-y-0 active:scale-95 sm:right-8"
     >
       <svg
         viewBox="0 0 32 32"

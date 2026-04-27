@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { glassCardClass, neonButtonClass } from "@/lib/utils";
+import { neonButtonClass } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -58,7 +58,7 @@ const tiers = [
 
 export default function PricingPage() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[var(--site-gradient)] px-5 pb-20 pt-32 text-white sm:px-8 lg:px-10">
+    <section className="relative min-h-screen overflow-hidden bg-[var(--site-gradient)] px-5 pb-20 pt-40 text-white sm:px-8 sm:pt-44 lg:px-10">
       <div
         className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(124,60,255,0.22),transparent_32%),radial-gradient(circle_at_88%_12%,rgba(22,216,255,0.12),transparent_28%),radial-gradient(circle_at_50%_90%,rgba(34,0,103,0.38),transparent_38%)]"
         aria-hidden="true"
@@ -77,41 +77,41 @@ export default function PricingPage() {
           </p>
         </div>
 
-        <div className="mt-16 grid items-stretch gap-6 lg:grid-cols-3">
-          {tiers.map((tier) => (
+        <div className="mt-24 grid items-stretch gap-6 lg:grid-cols-3">
+          {tiers.map((tier, index) => (
             <article
               key={tier.name}
-              className={`relative flex min-h-[620px] flex-col overflow-visible p-7 text-left transition duration-300 hover:-translate-y-1 ${
-                glassCardClass
-              } ${
-                tier.featured
-                  ? "border-[#7c3cff]/70 shadow-[0_24px_90px_rgba(23,70,216,0.18),0_0_44px_rgba(124,60,255,0.22)] lg:-mt-8"
-                  : "border-white/10"
-              }`}
+              className={`pricing-card ${tier.featured ? "pricing-card-featured" : ""}`}
             >
               {tier.featured && (
-                <div className="absolute left-7 top-0 z-10 -translate-y-1/2 whitespace-nowrap rounded-full border border-white/15 bg-[image:var(--button-gradient)] px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_rgba(23,70,216,0.28)]">
+                <div className="pricing-badge">
                   Most Popular
                 </div>
               )}
-              <div
-                className="absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_18%_16%,rgba(124,60,255,0.22),transparent_34%),radial-gradient(circle_at_86%_72%,rgba(22,216,255,0.08),transparent_30%)]"
-                aria-hidden="true"
-              />
+
+              <div className="pricing-card-shine" aria-hidden="true" />
+
               <div className="relative flex flex-1 flex-col">
-                <h2 className="text-sm font-bold uppercase tracking-[0.22em] text-white/58">
-                  {tier.name}
-                </h2>
-                <p className="mt-5 min-h-14 text-lg font-semibold leading-7 text-white">
+                <div className="flex items-start justify-between gap-5">
+                  <div>
+                    <p className="pricing-card-kicker">Plan 0{index + 1}</p>
+                    <h2 className="pricing-card-title">{tier.name}</h2>
+                  </div>
+                  <span className="pricing-card-mark" aria-hidden="true">
+                    0{index + 1}
+                  </span>
+                </div>
+
+                <p className="pricing-card-subtitle">
                   {tier.subtitle}
                 </p>
-                <p className="mt-9 text-5xl font-bold tracking-tight">
-                  {tier.price}
-                </p>
-                <p className="mt-4 min-h-14 text-sm leading-7 text-white/58">
-                  {tier.note}
-                </p>
-                <ul className="mt-9 grid gap-5">
+
+                <div className="pricing-price-panel">
+                  <p className="pricing-price">{tier.price}</p>
+                  <p className="pricing-note">{tier.note}</p>
+                </div>
+
+                <ul className="mt-8 grid gap-4">
                   {tier.features.map((feature) => (
                     <li
                       key={feature}
@@ -125,6 +125,7 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
+
                 <div className="mt-auto pt-10">
                   <Button
                     asChild

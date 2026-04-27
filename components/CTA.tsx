@@ -17,7 +17,7 @@ export default function CTA({
   buttonLabel = "Book a Call"
 }: CTAProps) {
   return (
-    <section className="px-5 py-20 sm:px-8 lg:px-10">
+    <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 border-y border-border py-14 sm:flex-row sm:items-center">
         <div className="max-w-2xl">
           {eyebrow && (

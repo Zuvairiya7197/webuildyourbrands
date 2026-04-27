@@ -24,7 +24,7 @@ export default function Section({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.55, ease: "easeOut" }}
-      className={cn("px-5 py-20 sm:px-8 lg:px-10", className)}
+      className={cn("px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32", className)}
     >
       <div className="mx-auto max-w-6xl">
         {(eyebrow || title || description) && (

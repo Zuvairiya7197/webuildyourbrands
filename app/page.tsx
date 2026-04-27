@@ -145,7 +145,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-5 pb-16 pt-28 sm:px-8 lg:px-10">
+      <section className="relative overflow-hidden px-5 pb-24 pt-28 sm:px-8 sm:pb-28 lg:px-10 lg:pb-32">
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-55"
           src="/Homehero.mp4"
@@ -248,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-8 lg:px-10">
+      <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_2fr]">
           <div>
             <Eyebrow>What We Do</Eyebrow>
@@ -278,7 +278,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-6 sm:px-8 lg:px-10">
+      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
         <div className="mx-auto grid max-w-6xl gap-6 rounded-xl border border-cyan-300/10 bg-[#05051a]/80 px-7 py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_20px_70px_rgba(22,216,255,0.06)] backdrop-blur-xl md:grid-cols-3">
           {stats.map(({ value, label }, index) => (
             <div
@@ -302,7 +302,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-8 lg:px-10">
+      <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_2fr]">
           <div>
             <Eyebrow>How We Work</Eyebrow>
@@ -313,7 +313,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="relative grid gap-10 md:grid-cols-3">
-            <div className="absolute left-[16.66%] right-[16.66%] top-[22px] hidden border-t border-dashed border-cyan-300/16 md:block" />
+            <div className="absolute left-[16.66%] right-[16.66%] top-[21.5px] hidden border-t border-dashed border-cyan-300/16 md:block" />
             {process.map(({ title, description, Icon }, index) => (
               <article key={title} className="relative text-center md:text-left">
                 <div className="relative z-10 mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[radial-gradient(circle,#355cff,#3a0d86)] text-sm font-bold text-white shadow-[0_0_24px_rgba(53,92,255,0.45)] md:mx-0">
@@ -332,7 +332,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-12 sm:px-8 lg:px-10">
+      <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_2fr]">
           <div>
             <Eyebrow>Selected Work</Eyebrow>
@@ -380,7 +380,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-8 lg:px-10">
+      <section className="px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.92fr_2fr]">
           <div>
             <Eyebrow>Why Choose Us</Eyebrow>
@@ -410,7 +410,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-8 sm:px-8 lg:px-10">
+      <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
         <div className="mx-auto max-w-6xl rounded-3xl bg-[linear-gradient(110deg,rgba(14,165,233,0.22),rgba(124,60,255,0.2)_45%,rgba(239,47,255,0.22))] px-5 py-9 text-white sm:px-8 lg:px-10">
           <div className="mx-auto mb-9 max-w-2xl text-center">
             <Eyebrow>Testimonials</Eyebrow>

@@ -43,7 +43,7 @@ export default function ProjectsPage() {
         videoSrc="/Projectpagehero.mp4"
       />
       <Section
-        className="pt-8"
+        className="pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Projects"
         title="Featured launches and visual systems."
       >

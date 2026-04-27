@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Mail } from "lucide-react";
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
@@ -22,15 +21,7 @@ export default function ContactPage() {
         description="Tell us what you are building, where the website fits in your growth plan, and what a successful launch should achieve."
         videoSrc="/Contact page hero.mp4"
       />
-      <section className="relative overflow-hidden px-5 py-20 pt-16 sm:px-8 lg:px-10">
-        <Image
-          src="/form-backround.webp"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover opacity-20"
-          aria-hidden="true"
-        />
+      <section className="contact-form-section relative overflow-hidden px-5 py-24 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="absolute inset-0 bg-[#00001F]/84" aria-hidden="true" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,60,255,0.2),transparent_32%),radial-gradient(circle_at_84%_70%,rgba(22,216,255,0.12),transparent_30%)]" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.7fr_1fr]">
