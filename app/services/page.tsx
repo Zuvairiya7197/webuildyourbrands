@@ -191,9 +191,14 @@ export default function ServicesPage() {
         title="Strategic services for websites that need to win trust fast."
         description="Choose a focused service or combine them into a complete website launch."
         videoSrc="/Serviceshero.mp4"
+        primaryLabel="View Services"
+        primaryHref="#services"
+        secondaryLabel="See Pricing"
+        secondaryHref="/pricing"
         align="center"
       />
       <Section
+        id="services"
         className="pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Services We Offer"
         title="Everything your website needs to look sharp, load fast, and convert."

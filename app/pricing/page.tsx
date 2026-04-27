@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { neonButtonClass } from "@/lib/utils";
@@ -75,9 +75,32 @@ export default function PricingPage() {
             Choose the right launch path for your brand, from lean websites to
             fully custom conversion systems.
           </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button
+              asChild
+              size="lg"
+              className={`h-12 rounded-full px-6 text-base font-bold ${neonButtonClass}`}
+            >
+              <a href="#packages">
+                Compare Packages
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-full px-6 text-base font-bold"
+            >
+              <CalendlyLink>
+                Book A Call
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </CalendlyLink>
+            </Button>
+          </div>
         </div>
 
-        <div className="mt-24 grid items-stretch gap-6 lg:grid-cols-3">
+        <div id="packages" className="mt-24 grid scroll-mt-24 items-stretch gap-6 lg:grid-cols-3">
           {tiers.map((tier, index) => (
             <article
               key={tier.name}

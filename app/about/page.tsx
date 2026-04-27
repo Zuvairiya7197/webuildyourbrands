@@ -57,8 +57,13 @@ export default function AboutPage() {
         title="A small studio for businesses that want to be understood."
         description="WBYB exists for businesses that have something valuable to offer, but need a clearer way to present it online."
         videoSrc="/Abouthero.mp4"
+        primaryLabel="Read Our Story"
+        primaryHref="#our-story"
+        secondaryLabel="View Services"
+        secondaryHref="/services"
       />
       <Section
+        id="our-story"
         className="pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Our Story"
         title="We started with one belief: clarity matters."

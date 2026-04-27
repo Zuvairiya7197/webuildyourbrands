@@ -52,15 +52,19 @@ export default function ProjectsPage() {
         title="Selected work across strategy, design, and development."
         description="A grid of polished website experiences built for clarity, trust, and conversion."
         videoSrc="/Projectpagehero.mp4"
-        secondaryHref="#projects"
+        primaryLabel="View Projects"
+        primaryHref="#projects"
+        secondaryLabel="Book A Call"
+        secondaryHref="https://calendly.com/meetwbybfounder/30min?month=2026-05"
       />
       <Section
+        id="projects"
         className="scroll-mt-24 pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Projects"
         title="Featured launches and visual systems."
         description="A curated set of website builds with clean structure, refined visuals, and conversion-focused presentation."
       >
-        <div id="projects" className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
             <Card key={project.title} {...project} index={index} />
           ))}

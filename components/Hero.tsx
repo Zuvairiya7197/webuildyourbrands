@@ -27,7 +27,29 @@ export default function Hero({
   secondaryLabel = "View Work",
   secondaryHref = "/projects"
 }: HeroProps) {
-  const primaryIsExternal = primaryHref.startsWith("http");
+  const renderHeroLink = (href: string, label: string) => {
+    const isExternal = href.startsWith("http");
+
+    if (href === CALENDLY_URL) {
+      return (
+        <CalendlyLink>
+          {label}
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </CalendlyLink>
+      );
+    }
+
+    return (
+      <Link
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noreferrer" : undefined}
+      >
+        {label}
+        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </Link>
+    );
+  };
 
   return (
     <section className="relative min-h-screen overflow-hidden px-5 pb-16 pt-28 sm:px-8 sm:pt-32 lg:px-10">
@@ -70,21 +92,7 @@ export default function Hero({
               size="lg"
               className={`h-12 rounded-full px-6 text-base font-medium ${neonButtonClass}`}
             >
-              {primaryHref === CALENDLY_URL ? (
-                <CalendlyLink>
-                  {primaryLabel}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </CalendlyLink>
-              ) : (
-                <Link
-                  href={primaryHref}
-                  target={primaryIsExternal ? "_blank" : undefined}
-                  rel={primaryIsExternal ? "noreferrer" : undefined}
-                >
-                  {primaryLabel}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              )}
+              {renderHeroLink(primaryHref, primaryLabel)}
             </Button>
             <Button
               asChild
@@ -92,7 +100,7 @@ export default function Hero({
               variant="outline"
               className="h-12 rounded-full px-6 text-base font-medium"
             >
-              <Link href={secondaryHref}>{secondaryLabel}</Link>
+              {renderHeroLink(secondaryHref, secondaryLabel)}
             </Button>
           </div>
         </div>
