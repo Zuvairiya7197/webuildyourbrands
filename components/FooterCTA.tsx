@@ -117,7 +117,7 @@ export default function FooterCTA() {
 
   return (
     <div className="border-b border-cyan-300/10 py-10 text-white sm:py-14">
-      <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(250px,300px)] md:items-center lg:grid-cols-[minmax(0,1fr)_auto]">
+      <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_240px] md:items-center lg:grid-cols-[minmax(0,1fr)_auto]">
         <div className="flex max-w-4xl flex-col items-center gap-5 text-center sm:flex-row sm:items-center sm:text-left">
           <Image
             src="/rocket.webp"
@@ -139,7 +139,7 @@ export default function FooterCTA() {
           </div>
         </div>
         <div
-          className={`relative isolate mx-auto h-[56px] w-full max-w-[300px] rounded-full before:absolute before:-inset-1 before:-z-10 before:rounded-full before:bg-[image:var(--button-gradient)] before:blur-[18px] before:transition-opacity before:duration-300 sm:h-[60px] md:mx-0 md:w-[280px] md:max-w-[280px] md:justify-self-end lg:w-[420px] lg:max-w-[420px] ${
+          className={`relative isolate mx-auto h-[54px] w-full max-w-[260px] rounded-full before:absolute before:-inset-1 before:-z-10 before:rounded-full before:bg-[image:var(--button-gradient)] before:blur-[18px] before:transition-opacity before:duration-300 sm:h-[56px] md:mx-0 md:w-[240px] md:max-w-[240px] md:justify-self-end lg:h-[60px] lg:w-[420px] lg:max-w-[420px] ${
             progress > 0 || isComplete ? "before:opacity-65" : "before:opacity-15"
           }`}
         >
@@ -172,11 +172,11 @@ export default function FooterCTA() {
                 alt=""
                 fill
                 sizes="340px"
-                className="object-contain px-16 py-3 opacity-35 mix-blend-screen sm:px-20 md:px-14 lg:px-20"
+                className="object-contain px-14 py-3 opacity-35 mix-blend-screen md:px-12 lg:px-20"
               />
             </div>
             <span
-              className={`absolute inset-0 flex items-center justify-center pl-11 text-lg font-bold tracking-[-0.01em] transition duration-300 sm:pl-12 sm:text-xl lg:text-2xl ${
+              className={`absolute inset-0 flex items-center justify-center pl-11 text-base font-bold tracking-[-0.01em] transition duration-300 sm:pl-12 sm:text-lg md:text-base lg:text-2xl ${
                 isComplete ? "translate-x-4 opacity-0" : "opacity-100"
               }`}
             >

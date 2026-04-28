@@ -174,7 +174,6 @@ export default function AboutPage() {
           </div>
 
           <div className={`${glassCardClass} relative overflow-hidden p-5 text-white sm:p-7`}>
-            <div className="pointer-events-none absolute left-8 right-8 top-1/2 hidden h-px bg-[linear-gradient(90deg,rgba(22,216,255,0),rgba(22,216,255,0.38),rgba(124,60,255,0.34),rgba(22,216,255,0))] md:block" />
             <h3 className="text-2xl font-semibold tracking-tight">
               How We Work
             </h3>
