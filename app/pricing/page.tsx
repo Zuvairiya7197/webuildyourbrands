@@ -141,14 +141,14 @@ export default function PricingPage() {
                   <span>{tier.outcome}</span>
                 </div>
 
-                <ul className="mt-7 grid gap-3">
+                <ul className="mt-5 grid gap-2.5">
                   {tier.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-sm leading-6 text-white/76"
+                      className="flex items-start gap-3 text-sm leading-5 text-white/76"
                     >
                       <CheckCircle2
-                        className="mt-1 h-4 w-4 shrink-0 text-[#8aa2ff]"
+                        className="mt-0.5 h-4 w-4 shrink-0 text-[#8aa2ff]"
                         aria-hidden="true"
                       />
                       <span>{feature}</span>
@@ -156,7 +156,7 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <div className="mt-auto pt-10">
+                <div className="mt-auto pt-7">
                   <Button
                     asChild
                     variant={tier.featured ? "default" : "outline"}

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CalendarDays, Linkedin, Menu, X } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,7 @@ const LINKEDIN_URL = "https://www.linkedin.com/company/webuildyourbrands";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isContactPage = pathname === "/contact";
@@ -44,6 +45,14 @@ export default function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
+    links.forEach((link) => {
+      if (link.href !== pathname) {
+        router.prefetch(link.href);
+      }
+    });
+  }, [pathname, router]);
+
+  useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
 
     return () => {
@@ -63,7 +72,7 @@ export default function Navbar() {
         className="mx-auto flex h-20 max-w-[116rem] items-center justify-between"
         aria-label="Main navigation"
       >
-        <Link href="/" className="relative h-12 w-36 shrink-0 sm:h-16 sm:w-48">
+        <Link href="/" prefetch className="relative h-12 w-36 shrink-0 sm:h-16 sm:w-48">
           <Image
             src="/wbyblogo.webp"
             alt="WEBuildYourBrands"
@@ -81,6 +90,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "rounded-full px-4 py-3 text-base font-semibold text-white/82 transition duration-200 hover:bg-[image:var(--button-gradient)] hover:text-white hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_10px_24px_rgba(23,70,216,0.2)] lg:px-5",
@@ -141,6 +151,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
                     "block min-h-11 rounded-2xl px-4 py-3 text-base font-semibold text-white/80 transition hover:bg-[image:var(--button-gradient)] hover:text-white",
