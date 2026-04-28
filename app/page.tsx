@@ -161,16 +161,14 @@ const testimonials = [
     quote:
       "Hi, I'm Kopal and I run my business called Organise with Kopal. I needed a website for my business and I already knew that Zuvairiya would be the right call. She delivered the website within 2 days - at an affordable price. All edits were done within minutes.",
     name: "Kopal Dhir",
-    role: "Founder at Organise With Kopal",
-    image: "/Kopal Founder.webp"
+    role: "Founder at Organise With Kopal"
   },
   {
     title: "She understood my brand and made it look polished fast.",
     quote:
       "I own an appointment setting agency and get a lot of my leads from Facebook and LinkedIn, so I had an urgent requirement for professional covers. Zuvairiya delivered exceptionally beautiful and professional designs in no time, making sure everything matched my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing. I can't recommend her enough - she's my go-to for all things graphic design.",
     name: "Shreya Batra",
-    role: "Co-Founder @ Organic Appointments Agency",
-    image: "/Shreya Batra.webp"
+    role: "Co-Founder @ Organic Appointments Agency"
   }
 ];
 

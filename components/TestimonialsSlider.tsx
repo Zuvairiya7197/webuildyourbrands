@@ -29,23 +29,10 @@ export function TestimonialsSlider({
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [failedImages, setFailedImages] = useState<Set<string>>(() => new Set());
   const touchStartX = useRef<number | null>(null);
   const active = testimonials[activeIndex];
-  const hasImage = Boolean(active.image && !failedImages.has(active.image));
+  const hasImage = Boolean(active.image);
   const initials = getInitials(active.name);
-
-  const handleImageError = (image?: string) => {
-    if (!image) {
-      return;
-    }
-
-    setFailedImages((current) => {
-      const next = new Set(current);
-      next.add(image);
-      return next;
-    });
-  };
 
   const goToPrevious = useCallback(() => {
     setActiveIndex((current) =>
@@ -136,22 +123,38 @@ export function TestimonialsSlider({
                 fill
                 sizes="(min-width: 1024px) 34vw, 100vw"
                 className="object-cover object-center transition duration-500 group-hover:scale-105"
-                onError={() => handleImageError(active.image)}
               />
             ) : (
-              <div className="absolute inset-0 overflow-hidden bg-[radial-gradient(circle_at_50%_34%,rgba(22,216,255,0.2),transparent_28%),radial-gradient(circle_at_35%_68%,rgba(124,60,255,0.32),transparent_34%),linear-gradient(145deg,#05031f,#170044_58%,#00001f)]">
-                <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-100/18 shadow-[0_0_90px_rgba(22,216,255,0.16)]" />
-                <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/12" />
-                <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[32px] border border-white/16 bg-white/[0.075] text-4xl font-black tracking-tight text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_24px_70px_rgba(0,0,31,0.36)] backdrop-blur-xl">
-                  {initials}
+              <div className="absolute inset-0 overflow-hidden bg-[radial-gradient(circle_at_18%_18%,rgba(255,244,168,0.16),transparent_26%),radial-gradient(circle_at_82%_22%,rgba(22,216,255,0.16),transparent_30%),radial-gradient(circle_at_62%_78%,rgba(124,60,255,0.32),transparent_36%),linear-gradient(145deg,#030318,#130034_58%,#00001f)]">
+                <div className="absolute inset-x-7 top-8 h-20 rounded-[28px] border border-white/10 bg-white/[0.045] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-xl" />
+                <div className="absolute left-1/2 top-28 flex h-32 w-32 -translate-x-1/2 items-center justify-center rounded-full border border-cyan-100/18 bg-[radial-gradient(circle_at_35%_25%,rgba(255,255,255,0.18),rgba(124,60,255,0.36)_48%,rgba(0,0,31,0.82))] shadow-[0_30px_90px_rgba(0,0,31,0.42),0_0_70px_rgba(22,216,255,0.22)]">
+                  <span className="absolute inset-[-18px] rounded-full border border-white/8" />
+                  <span className="absolute inset-[-34px] rounded-full border border-cyan-100/10" />
+                  <span className="text-4xl font-black tracking-tight text-white">
+                    {initials || "WB"}
+                  </span>
                 </div>
-                <div className="absolute inset-x-10 bottom-24 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.65),transparent)]" />
-                <div className="absolute bottom-12 left-10 right-10 grid grid-cols-3 gap-2">
-                  {[0, 1, 2].map((item) => (
+                <div className="absolute left-8 right-8 top-[18rem] rounded-[28px] border border-white/12 bg-[#00001F]/58 p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_24px_70px_rgba(0,0,31,0.32)] backdrop-blur-xl">
+                  <div className="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#5b00b5] shadow-[0_14px_36px_rgba(0,0,31,0.25)]">
+                    <Quote className="h-5 w-5 fill-current" aria-hidden="true" />
+                  </div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-100/72">
+                    Verified Words
+                  </p>
+                  <div className="mt-4 flex justify-center gap-1 text-[#ffe500]">
+                    {[0, 1, 2, 3, 4].map((item) => (
+                      <Star key={item} className="h-4 w-4 fill-current" aria-hidden="true" />
+                    ))}
+                  </div>
+                </div>
+                <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-2">
+                  {["No stock photo", "Real client"].map((item) => (
                     <span
                       key={item}
-                      className="h-1 rounded-full bg-[image:var(--button-gradient)] opacity-70"
-                    />
+                      className="rounded-full border border-white/10 bg-white/[0.055] px-3 py-2 text-center text-[9px] font-bold uppercase tracking-[0.12em] text-white/58 backdrop-blur-md"
+                    >
+                      {item}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -223,7 +226,6 @@ export function TestimonialsSlider({
                         fill
                         sizes="56px"
                         className="object-cover object-center"
-                        onError={() => handleImageError(active.image)}
                       />
                     ) : (
                       <span className="flex h-full w-full items-center justify-center bg-[image:var(--button-gradient)] text-sm font-black tracking-tight text-white">
