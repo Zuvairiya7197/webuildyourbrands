@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { Fingerprint, Smartphone, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -60,26 +60,29 @@ function CountUpValue({
   );
 }
 
-export default function StatsBar({ stats }: StatsBarProps) {
+function StatsBar({ stats }: StatsBarProps) {
   const barRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const statVisuals = [
-    {
-      Icon: Smartphone,
-      status: "Responsive",
-      tone: "from-cyan-300/22 to-blue-500/10"
-    },
-    {
-      Icon: Zap,
-      status: "Fast",
-      tone: "from-violet-300/24 to-cyan-300/10"
-    },
-    {
-      Icon: Fingerprint,
-      status: "Custom",
-      tone: "from-fuchsia-300/18 to-violet-500/10"
-    }
-  ];
+  const statVisuals = useMemo(
+    () => [
+      {
+        Icon: Smartphone,
+        status: "Responsive",
+        tone: "from-cyan-300/22 to-blue-500/10"
+      },
+      {
+        Icon: Zap,
+        status: "Fast",
+        tone: "from-violet-300/24 to-cyan-300/10"
+      },
+      {
+        Icon: Fingerprint,
+        status: "Custom",
+        tone: "from-fuchsia-300/18 to-violet-500/10"
+      }
+    ],
+    []
+  );
 
   useEffect(() => {
     const node = barRef.current;
@@ -178,3 +181,5 @@ export default function StatsBar({ stats }: StatsBarProps) {
     </div>
   );
 }
+
+export default memo(StatsBar);

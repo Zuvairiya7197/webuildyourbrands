@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { CalendarDays, Linkedin, Menu, X } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
@@ -20,12 +20,16 @@ const links = [
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/webuildyourbrands";
 
-export default function Navbar() {
+function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isContactPage = pathname === "/contact";
+  const toggleMenu = useCallback(
+    () => setIsMenuOpen((current) => !current),
+    []
+  );
 
   useEffect(() => {
     const updateScrollState = () => {
@@ -79,7 +83,6 @@ export default function Navbar() {
             fill
             sizes="(min-width: 640px) 192px, 160px"
             className="object-contain"
-            priority
           />
         </Link>
         <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-[#00001F]/45 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_50px_rgba(0,0,31,0.28),0_0_32px_rgba(124,60,255,0.12)] backdrop-blur-xl md:flex">
@@ -125,7 +128,7 @@ export default function Navbar() {
         <div className="md:hidden">
           <button
             type="button"
-            onClick={() => setIsMenuOpen((current) => !current)}
+            onClick={toggleMenu}
             className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl border border-white/14 bg-white/[0.07] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_10px_28px_rgba(0,0,31,0.22)] backdrop-blur-md transition hover:bg-white/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={isMenuOpen}
@@ -184,3 +187,5 @@ export default function Navbar() {
     </header>
   );
 }
+
+export default memo(Navbar);

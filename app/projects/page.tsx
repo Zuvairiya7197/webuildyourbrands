@@ -103,7 +103,6 @@ export default function ProjectsPage() {
                     src={projects[0].image}
                     alt={`${projects[0].title} project preview`}
                     fill
-                    priority
                     sizes="(min-width: 1024px) 62vw, 100vw"
                     className="object-cover object-top transition duration-700 group-hover:scale-105"
                   />

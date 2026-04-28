@@ -1,8 +1,9 @@
 "use client";
 
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { CALENDLY_EMBED_URL, CALENDLY_URL } from "@/lib/constants";
+import { useModalAccessibility } from "@/hooks/useModalAccessibility";
 
 const CALENDLY_EVENT = "wbyb:open-calendly";
 
@@ -36,6 +37,8 @@ CalendlyLink.displayName = "CalendlyLink";
 
 export function CalendlyModalProvider() {
   const [isOpen, setIsOpen] = useState(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeModal = useCallback(() => setIsOpen(false), []);
 
   useEffect(() => {
     const openCalendly = () => setIsOpen(true);
@@ -47,26 +50,11 @@ export function CalendlyModalProvider() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!isOpen) {
-      return;
-    }
-
-    const originalOverflow = document.body.style.overflow;
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-      }
-    };
-
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", closeOnEscape);
-
-    return () => {
-      document.body.style.overflow = originalOverflow;
-      window.removeEventListener("keydown", closeOnEscape);
-    };
-  }, [isOpen]);
+  useModalAccessibility({
+    isOpen,
+    onClose: closeModal,
+    containerRef: dialogRef
+  });
 
   if (!isOpen) {
     return null;
@@ -74,16 +62,18 @@ export function CalendlyModalProvider() {
 
   return (
     <div
+      ref={dialogRef}
       className="fixed inset-0 z-[100] bg-[radial-gradient(circle_at_20%_10%,rgba(124,60,255,0.2),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(22,216,255,0.14),transparent_30%),rgba(0,0,0,0.84)] px-3 py-4 backdrop-blur-md sm:px-6 sm:py-8"
       role="dialog"
       aria-modal="true"
       aria-labelledby="calendly-title"
+      tabIndex={-1}
     >
       <button
         type="button"
         className="absolute inset-0 cursor-default"
         aria-label="Close scheduling modal"
-        onClick={() => setIsOpen(false)}
+        onClick={closeModal}
       />
       <div className="relative mx-auto flex h-[calc(100dvh-2rem)] max-w-6xl flex-col overflow-hidden rounded-[22px] border border-[#7c3cff]/35 bg-[#05030c] shadow-[0_36px_120px_rgba(0,0,0,0.62),0_0_90px_rgba(124,60,255,0.28),0_0_46px_rgba(22,216,255,0.1)] sm:h-[calc(100dvh-4rem)] sm:rounded-[28px]">
         <div className="pointer-events-none absolute inset-x-10 top-0 z-10 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.85),rgba(124,60,255,0.85),transparent)]" />
@@ -103,7 +93,7 @@ export function CalendlyModalProvider() {
             type="button"
             className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.035] text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_24px_rgba(124,60,255,0.18)] transition hover:border-cyan-300/35 hover:bg-white/[0.08] hover:text-white"
             aria-label="Close scheduling modal"
-            onClick={() => setIsOpen(false)}
+            onClick={closeModal}
           >
             <X className="h-5 w-5" aria-hidden="true" />
           </button>

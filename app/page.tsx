@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -15,11 +16,14 @@ import {
   Rocket,
   TrendingUp
 } from "lucide-react";
-import { TestimonialsSlider } from "@/components/TestimonialsSlider";
-import StatsBar from "@/components/StatsBar";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { neonButtonClass } from "@/lib/utils";
+
+const StatsBar = dynamic(() => import("@/components/StatsBar"));
+const TestimonialsSlider = dynamic(() =>
+  import("@/components/TestimonialsSlider").then((module) => module.TestimonialsSlider)
+);
 
 export const metadata: Metadata = {
   title: "Home",
@@ -291,7 +295,6 @@ export default function Home() {
                           alt={`${project.title} website project preview`}
                           width={900}
                           height={720}
-                          priority={index === 0}
                           className="hero-proof-slide absolute inset-0 h-full w-full object-cover object-top opacity-0"
                           style={{ animationDelay: `${index * 4}s` }}
                         />
