@@ -6,6 +6,7 @@ import {
   BadgePlus,
   BriefcaseBusiness,
   CalendarDays,
+  CheckCircle2,
   ClipboardList,
   FileSearch,
   Lightbulb,
@@ -186,7 +187,7 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden px-4 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:px-24 lg:pb-32 xl:px-32">
         <video
-          className="absolute inset-0 h-full w-full object-cover opacity-55"
+          className="absolute inset-0 h-full w-full object-cover opacity-28"
           src="/Homehero.mp4"
           autoPlay
           muted
@@ -195,20 +196,32 @@ export default function Home() {
           preload="metadata"
           aria-label="Website development background video"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.9),rgba(0,0,31,0.56)_52%,rgba(0,0,31,0.86))]" />
-        <div className="relative mx-auto grid min-h-[560px] max-w-6xl items-center gap-10 sm:min-h-[680px] lg:grid-cols-[0.78fr_1fr] lg:gap-12">
-          <div>
-            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-300/10 bg-[#14003a]/60 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_24px_rgba(124,60,255,0.3)] backdrop-blur-md">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.97),rgba(0,0,31,0.84)_50%,rgba(0,0,31,0.94)),linear-gradient(180deg,rgba(53,92,255,0.1),rgba(124,60,255,0.08)_38%,transparent_78%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#00001f] to-transparent" />
+        <div className="relative mx-auto grid min-h-[560px] max-w-6xl items-center gap-12 sm:min-h-[680px] lg:grid-cols-[0.9fr_1.05fr] lg:gap-16">
+          <div className="max-w-2xl">
+            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/78 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md">
               <span>We Build Your Brands</span>
             </p>
-            <h1 className="mt-7 text-3xl font-bold leading-tight text-white min-[360px]:text-4xl sm:text-5xl lg:text-6xl">
-              Websites that make your brand clear, credible, and ready to grow.
+            <h1 className="mt-7 text-3xl font-bold leading-[1.05] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[4.25rem]">
+              A premium website your customers understand in seconds.
             </h1>
-            <p className="mt-5 max-w-lg text-sm leading-7 text-white/80 sm:mt-6 sm:text-base sm:leading-8">
-              WBYB designs and builds mobile-first websites for businesses that
-              need a stronger online presence, cleaner messaging, and a clearer
-              path from visitor to inquiry.
+            <p className="mt-5 max-w-xl text-sm leading-7 text-white/74 sm:mt-6 sm:text-base sm:leading-8">
+              We turn your offer into a clear, credible, mobile-first website
+              with polished visuals and a direct path from first visit to
+              inquiry.
             </p>
+            <div className="mt-6 grid max-w-xl gap-3 text-sm font-semibold text-white/68 sm:grid-cols-3">
+              {["Strategy-led", "Mobile-first", "Inquiry-ready"].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-2 rounded-full border border-white/10 bg-[#00001F]/36 px-3 py-2"
+                >
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100" aria-hidden="true" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button
                 asChild
@@ -232,59 +245,71 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative hidden min-h-[500px] overflow-hidden lg:block">
-            <div className="absolute right-7 top-16 h-[350px] w-[min(520px,calc(100%-1.75rem))] rotate-[-4deg] rounded-[28px] border border-cyan-300/10 bg-[#070720]/82 p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_35px_100px_rgba(22,216,255,0.18)] backdrop-blur-xl">
-              <div className="mb-12 flex items-center justify-between text-xs text-white/65">
-                <Image
-                  src="/wbyblogo.webp"
-                  alt="WEBuildYourBrands"
-                  width={62}
-                  height={28}
-                  className="h-auto w-16 object-contain"
-                />
-                <span>Home&nbsp;&nbsp; About&nbsp;&nbsp; Services&nbsp;&nbsp; Contact</span>
-              </div>
-              <h2 className="max-w-xs text-5xl font-bold leading-tight text-white">
-                Clarity Builds Brands.
-              </h2>
-              <p className="mt-6 max-w-xs text-xs leading-5 text-white/45">
-                Strategy-led websites that help businesses communicate clearly
-                and convert better.
-              </p>
-              <Button
-                asChild
-                className={`mt-6 h-10 rounded-full px-5 text-xs ${neonButtonClass}`}
-              >
-                <CalendlyLink>
-                  Book A Call
-                  <ArrowRight className="h-4 w-4" />
-                </CalendlyLink>
-              </Button>
-            </div>
-            <div className="absolute bottom-10 right-0 h-[300px] w-[150px] rounded-[32px] border border-cyan-300/10 bg-[#050517]/84 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_28px_80px_rgba(124,60,255,0.28)] backdrop-blur-xl">
-              <div className="mb-8 flex items-center justify-between">
-                <Image
-                  src="/wbyblogo.webp"
-                  alt="WEBuildYourBrands"
-                  width={36}
-                  height={18}
-                  className="h-auto w-9 object-contain"
-                />
-                <PanelsTopLeft className="h-4 w-4 text-white/70" />
-              </div>
-              <h3 className="text-xl font-bold leading-tight text-white">
-                We build brands that connect.
-              </h3>
-              <Button className={`mt-5 h-8 rounded-full px-4 text-[10px] ${neonButtonClass}`}>
-                Discover
-              </Button>
-              <div className="mt-5 grid grid-cols-2 gap-2">
-                {[1, 2, 3, 4].map((item) => (
-                  <div
-                    key={item}
-                    className="aspect-square rounded-md bg-[linear-gradient(135deg,#111827,#263063)]"
-                  />
-                ))}
+          <div className="relative hidden min-h-[540px] lg:block">
+            <div className="absolute inset-y-8 right-0 w-[min(580px,100%)]">
+              <div className="absolute -right-8 top-10 h-64 w-64 rounded-full border border-cyan-200/10 bg-cyan-200/[0.035] blur-2xl" />
+              <div className="absolute -bottom-4 left-10 h-72 w-72 rounded-full border border-violet-300/10 bg-violet-400/[0.055] blur-2xl" />
+              <div className="relative h-full rounded-[34px] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025)_36%,rgba(124,60,255,0.08)_100%)] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_34px_120px_rgba(0,0,31,0.5)] backdrop-blur-2xl">
+                <div className="grid h-full grid-cols-[76px_1fr] gap-6">
+                  <div className="relative flex flex-col items-center justify-between rounded-[26px] border border-white/10 bg-[#00001F]/46 px-3 py-6">
+                    <span className="absolute inset-y-10 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-100/36 to-transparent" />
+                    {["Plan", "Design", "Launch"].map((item, index) => (
+                      <div key={item} className="relative z-10 text-center">
+                        <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-[#080022] text-xs font-bold text-white shadow-[0_0_22px_rgba(22,216,255,0.13)]">
+                          0{index + 1}
+                        </span>
+                        <p className="mt-3 -rotate-90 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] text-white/42">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#00001F]/62">
+                    <Image
+                      src="/project-organise-with-kopal.webp"
+                      alt="Premium website project preview"
+                      width={900}
+                      height={720}
+                      priority
+                      className="h-full min-h-[456px] w-full object-cover object-top opacity-86"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.94),rgba(0,0,31,0.42)_48%,rgba(0,0,31,0.2)),linear-gradient(0deg,rgba(0,0,31,0.96),transparent_58%)]" />
+                    <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.075] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/72 backdrop-blur-md">
+                      <span className="h-2 w-2 rounded-full bg-cyan-200 shadow-[0_0_16px_rgba(22,216,255,0.9)]" />
+                      Bespoke Build
+                    </div>
+                    <div className="absolute bottom-6 left-6 max-w-[330px]">
+                      <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-100/60">
+                        Live Work Preview
+                      </p>
+                      <h2 className="mt-3 text-4xl font-bold leading-tight text-white">
+                        Clarity that feels expensive.
+                      </h2>
+                      <p className="mt-4 max-w-xs text-sm leading-6 text-white/62">
+                        Real strategy, real pages, and a site experience built
+                        around trust.
+                      </p>
+                    </div>
+                    <div className="absolute right-5 top-1/2 w-44 -translate-y-1/2 rounded-[24px] border border-white/12 bg-[#05051b]/82 p-3 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
+                      <Image
+                        src="/project-sm-classes.webp"
+                        alt="Secondary website project preview"
+                        width={320}
+                        height={220}
+                        className="aspect-[4/3] w-full rounded-2xl object-cover object-top"
+                      />
+                      <div className="px-2 py-3">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/36">
+                          Proof
+                        </p>
+                        <p className="mt-1 text-sm font-bold text-white">
+                          Sites people can act on.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
