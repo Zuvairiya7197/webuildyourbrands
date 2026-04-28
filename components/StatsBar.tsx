@@ -108,11 +108,24 @@ export default function StatsBar({ stats }: StatsBarProps) {
   return (
     <div
       ref={barRef}
-      className="relative mx-auto grid max-w-6xl gap-3 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_12%_10%,rgba(22,216,255,0.14),transparent_30%),radial-gradient(circle_at_88%_85%,rgba(124,60,255,0.22),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.08),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_68%,rgba(0,0,31,0.5))] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_28px_90px_rgba(0,0,31,0.28),0_14px_60px_rgba(53,92,255,0.12)] backdrop-blur-xl md:grid-cols-3"
+      className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_12%_10%,rgba(22,216,255,0.14),transparent_30%),radial-gradient(circle_at_88%_85%,rgba(124,60,255,0.22),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.08),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_68%,rgba(0,0,31,0.5))] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_28px_90px_rgba(0,0,31,0.28),0_14px_60px_rgba(53,92,255,0.12)] backdrop-blur-xl"
     >
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.028)_1px,transparent_1px)] bg-[size:34px_34px] opacity-35" />
       <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.78),rgba(124,60,255,0.78),transparent)]" />
-      {stats.map(({ value, suffix, label }, index) => {
+      <div className="relative z-10 px-4 pb-5 pt-6 text-center sm:px-8 sm:pt-8">
+        <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-100/58">
+          Built To Convert
+        </p>
+        <h2 className="mx-auto mt-3 max-w-3xl text-2xl font-bold leading-tight text-white sm:text-4xl">
+          Your website should look premium, load fast, and make trust instant.
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/58">
+          These are the non-negotiables behind every WBYB build, so visitors
+          feel confident before they ever speak to you.
+        </p>
+      </div>
+      <div className="relative z-10 grid gap-3 md:grid-cols-3">
+        {stats.map(({ value, suffix, label }, index) => {
         const { Icon, status, tone } = statVisuals[index] ?? statVisuals[0];
         const progress = isVisible ? value : 0;
         const arcColor =
@@ -122,7 +135,7 @@ export default function StatsBar({ stats }: StatsBarProps) {
         <div
           key={label}
           className={cn(
-            "group relative min-h-[210px] overflow-hidden rounded-xl border border-white/10 px-5 py-5 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_18px_48px_rgba(22,216,255,0.1)]",
+            "group relative min-h-[230px] overflow-hidden rounded-xl border border-white/10 px-5 py-5 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_18px_48px_rgba(22,216,255,0.1)]",
             `bg-gradient-to-br ${tone}`
           )}
         >
@@ -150,7 +163,7 @@ export default function StatsBar({ stats }: StatsBarProps) {
             </p>
           </div>
 
-          <p className="relative z-10 mt-4 text-center text-sm font-semibold uppercase tracking-[0.16em] text-white/68 transition duration-300 group-hover:text-white/86">
+          <p className="relative z-10 mx-auto mt-4 max-w-xs text-center text-sm font-bold leading-6 text-white/76 transition duration-300 group-hover:text-white/90">
             {label}
           </p>
           <div className="relative z-10 mx-auto mt-4 h-1 max-w-36 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
@@ -161,7 +174,8 @@ export default function StatsBar({ stats }: StatsBarProps) {
           </div>
         </div>
         );
-      })}
+        })}
+      </div>
     </div>
   );
 }

@@ -52,24 +52,27 @@ const audiences = [
   {
     title: "Service Businesses",
     cue: "Make a strong first impression",
+    fit: "For coaches, consultants, agencies, and local service brands that need trust fast.",
     Icon: BriefcaseBusiness
   },
   {
     title: "New Brands",
     cue: "Launch with a clear message",
+    fit: "For founders who need a polished website before campaigns, outreach, or launch.",
     Icon: BadgePlus
   },
   {
     title: "Growing Businesses",
     cue: "Get more website inquiries",
+    fit: "For teams ready to upgrade from unclear pages to a website built for action.",
     Icon: TrendingUp
   }
 ];
 
 const stats = [
-  { value: 100, suffix: "%", label: "Mobile-first builds" },
-  { value: 100, suffix: "%", label: "Performance focus" },
-  { value: 0, suffix: "%", label: "Template reuse" }
+  { value: 100, suffix: "%", label: "Built to look sharp on every screen" },
+  { value: 100, suffix: "%", label: "Designed to load fast and feel premium" },
+  { value: 0, suffix: "%", label: "Generic template shortcuts" }
 ];
 
 const process = [
@@ -354,16 +357,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-24 lg:pb-14 lg:pt-32 xl:px-32">
+      <section className="relative px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-24 lg:pb-14 lg:pt-32 xl:px-32">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>What We Do</Eyebrow>
-            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              What you get when we build your website.
+            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
+              Strategy, design, and launch built as one premium system.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Strategy, design, and development shaped into a clear website
-              experience your customers can understand quickly.
+              Every section is shaped to make your offer easier to understand,
+              your brand easier to trust, and your next step easier to take.
             </p>
           </div>
           <div className="hanging-service-grid grid gap-5 md:grid-cols-3 md:gap-6">
@@ -404,8 +408,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Who It&apos;s For</Eyebrow>
-            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              For businesses that need a clearer website.
+            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
+              For brands that need to look ready before the first conversation.
             </h2>
             <div className="mt-7 grid max-w-sm grid-cols-3 gap-2">
               {["Look clear", "Build trust", "Get leads"].map((item) => (
@@ -418,23 +422,27 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="who-it-is-for-revolve grid gap-4 md:grid-cols-3">
-            {audiences.map(({ title, cue, Icon }, index) => (
+          <div className="grid gap-4 md:grid-cols-3">
+            {audiences.map(({ title, cue, fit, Icon }, index) => (
               <article
                 key={title}
-                className="who-it-is-for-revolve-card group relative min-h-[220px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.42))] p-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[0_28px_80px_rgba(124,60,255,0.16)]"
+                className="group relative min-h-[310px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.072),rgba(22,216,255,0.032)_36%,rgba(124,60,255,0.09)_72%,rgba(0,0,31,0.46))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[0_28px_80px_rgba(124,60,255,0.16)]"
               >
+                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.65),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
                 <span className="absolute right-5 top-5 text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
                   0{index + 1}
                 </span>
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[24px] border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.18)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.18)]">
-                  <Icon className="h-8 w-8" aria-hidden="true" />
+                <div className="flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.18)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.18)]">
+                  <Icon className="h-7 w-7" aria-hidden="true" />
                 </div>
-                <h3 className="mt-8 text-xl font-bold text-white">
+                <h3 className="mt-10 text-xl font-bold text-white">
                   {title}
                 </h3>
-                <p className="mt-3 text-sm font-semibold text-white/58">
+                <p className="mt-3 text-sm font-semibold text-cyan-100/66">
                   {cue}
+                </p>
+                <p className="mt-5 text-sm leading-7 text-white/56">
+                  {fit}
                 </p>
               </article>
             ))}
@@ -446,13 +454,12 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Your Launch Path</Eyebrow>
-            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              From unclear website to confident launch.
-              <br />
+            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
+              A calm process from idea to live website.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              A simple path for turning your offer into a website customers can
-              understand and act on.
+              No guesswork, no scattered decisions. Just a focused path from
+              message to design to launch.
             </p>
           </div>
           <div className="relative grid gap-5 md:grid-cols-3">
@@ -493,8 +500,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Selected Work</Eyebrow>
-            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white">
-              A glimpse of brands we&apos;ve helped shape and grow.
+            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white">
+              Real websites designed to look clear, credible, and ready.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
               Website experiences shaped for clarity, credibility, and a
@@ -521,10 +528,10 @@ export default function Home() {
                   href={project.projectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.44))] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.24)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.13),0_18px_72px_rgba(124,60,255,0.16)]"
+                  className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.44))] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.24)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.13),0_18px_72px_rgba(124,60,255,0.16)] ${index === 0 ? "sm:col-span-2" : ""}`}
                 >
                   <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                  <div className="relative aspect-[16/11] overflow-hidden rounded-xl">
+                  <div className={`relative overflow-hidden rounded-xl ${index === 0 ? "aspect-[16/8]" : "aspect-[16/11]"}`}>
                     <Image
                       src={project.image}
                       alt={`${project.title} project`}
@@ -560,8 +567,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Why Choose Us</Eyebrow>
-            <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              From idea to website, without the confusion.
+            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
+              Premium work without making the process feel heavy.
             </h2>
             <div className="mt-7 grid max-w-sm grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white/46">
               {["Plan", "Build", "Launch"].map((item) => (
@@ -607,7 +614,7 @@ export default function Home() {
           <div className="mx-auto mb-9 max-w-2xl text-center">
             <Eyebrow>Testimonials</Eyebrow>
             <h2 className="text-2xl font-bold leading-tight sm:text-3xl">
-              The trust our clients felt after working with us.
+              Clients come for a website. They leave with clarity.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/58">
               Thoughtful feedback from clients who trusted us with their brand,
@@ -615,6 +622,45 @@ export default function Home() {
             </p>
           </div>
           <TestimonialsSlider testimonials={testimonials} />
+        </div>
+      </section>
+
+      <section className="px-4 pb-20 pt-6 sm:px-8 sm:pb-28 lg:px-24 xl:px-32">
+        <div className="relative mx-auto grid max-w-6xl gap-8 overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_82%_18%,rgba(22,216,255,0.16),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08),rgba(124,60,255,0.12)_52%,rgba(0,0,31,0.5))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_30px_100px_rgba(0,0,31,0.34)] backdrop-blur-xl sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:p-10">
+          <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.76),transparent)]" />
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.26em] text-cyan-100/58">
+              Ready To Upgrade
+            </p>
+            <h2 className="mt-4 max-w-2xl text-2xl font-bold leading-tight sm:text-4xl">
+              Let&apos;s turn your website into your strongest first impression.
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-white/62">
+              Book a call and we&apos;ll map the clearest path from where your
+              brand is now to a polished website that helps people take action.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            <Button
+              asChild
+              className={`h-12 w-full gap-0 rounded-full px-7 text-base font-bold sm:w-auto ${neonButtonClass}`}
+            >
+              <CalendlyLink className="group">
+                Book A Call
+                <CalendarDays className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
+              </CalendlyLink>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="h-12 w-full gap-0 rounded-full border-white/14 bg-white/[0.035] px-7 text-base font-bold hover:bg-white hover:text-[#00001F] sm:w-auto"
+            >
+              <Link href="/services" className="group">
+                View Services
+                <PanelsTopLeft className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>
