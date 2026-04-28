@@ -334,7 +334,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 pb-16 pt-0 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28">
+      <section className="px-4 pb-16 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:px-10 lg:pb-28 lg:pt-24">
         <StatsBar stats={stats} />
       </section>
 
