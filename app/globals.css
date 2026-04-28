@@ -190,6 +190,35 @@ textarea {
   }
 }
 
+@keyframes heroProjectPreviewLoop {
+  0%,
+  21% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  27%,
+  94% {
+    opacity: 0;
+    transform: scale(1.045);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-proof-slide,
+.hero-proof-mini-slide {
+  animation: heroProjectPreviewLoop 16s ease-in-out infinite both;
+  will-change: opacity, transform;
+}
+
+.hero-proof-mini-slide {
+  animation-duration: 16s;
+}
+
 .contact-form-section {
   background-image: url("/form-backround.webp");
   background-size: cover;
@@ -571,9 +600,16 @@ textarea {
 @media (prefers-reduced-motion: reduce) {
   .hanging-service-card,
   .who-it-is-for-revolve-card,
+  .hero-proof-slide,
+  .hero-proof-mini-slide,
   .clarity-pipeline::after,
   .clarity-pipeline-card::after {
     animation: none !important;
+  }
+
+  .hero-proof-slide:first-child,
+  .hero-proof-mini-slide:first-child {
+    opacity: 1;
   }
 }
 

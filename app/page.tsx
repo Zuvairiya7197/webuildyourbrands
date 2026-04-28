@@ -120,6 +120,25 @@ const projects = [
   }
 ];
 
+const heroProjectPreviews = [
+  {
+    title: "Organise With Kopal",
+    image: "/project-organise-with-kopal.webp"
+  },
+  {
+    title: "SM Classes",
+    image: "/project-sm-classes.webp"
+  },
+  {
+    title: "Little Ilmies",
+    image: "/project-little-ilmies.webp"
+  },
+  {
+    title: "Zarrar Palekar",
+    image: "/project-zarrar-palekar.webp"
+  }
+];
+
 const reasons = [
   {
     title: "Clear Plan",
@@ -250,15 +269,15 @@ export default function Home() {
               <div className="absolute -right-8 top-10 h-64 w-64 rounded-full border border-cyan-200/10 bg-cyan-200/[0.035] blur-2xl" />
               <div className="absolute -bottom-4 left-10 h-72 w-72 rounded-full border border-violet-300/10 bg-violet-400/[0.055] blur-2xl" />
               <div className="relative h-full rounded-[34px] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025)_36%,rgba(124,60,255,0.08)_100%)] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_34px_120px_rgba(0,0,31,0.5)] backdrop-blur-2xl">
-                <div className="grid h-full grid-cols-[76px_1fr] gap-6">
-                  <div className="relative flex flex-col items-center justify-between rounded-[26px] border border-white/10 bg-[#00001F]/46 px-3 py-6">
-                    <span className="absolute inset-y-10 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-100/36 to-transparent" />
+                <div className="grid h-full grid-cols-[104px_1fr] gap-6">
+                  <div className="relative flex flex-col items-center justify-between rounded-[26px] border border-white/10 bg-[#00001F]/46 px-4 py-8">
+                    <span className="absolute inset-y-12 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-100/36 to-transparent" />
                     {["Plan", "Design", "Launch"].map((item, index) => (
-                      <div key={item} className="relative z-10 text-center">
+                      <div key={item} className="relative z-10 flex min-h-[106px] flex-col items-center text-center">
                         <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-[#080022] text-xs font-bold text-white shadow-[0_0_22px_rgba(22,216,255,0.13)]">
                           0{index + 1}
                         </span>
-                        <p className="mt-3 -rotate-90 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] text-white/42">
+                        <p className="mt-8 -rotate-90 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] text-white/48">
                           {item}
                         </p>
                       </div>
@@ -266,14 +285,20 @@ export default function Home() {
                   </div>
 
                   <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#00001F]/62">
-                    <Image
-                      src="/project-organise-with-kopal.webp"
-                      alt="Premium website project preview"
-                      width={900}
-                      height={720}
-                      priority
-                      className="h-full min-h-[456px] w-full object-cover object-top opacity-86"
-                    />
+                    <div className="relative h-full min-h-[456px]">
+                      {heroProjectPreviews.map((project, index) => (
+                        <Image
+                          key={project.title}
+                          src={project.image}
+                          alt={`${project.title} website project preview`}
+                          width={900}
+                          height={720}
+                          priority={index === 0}
+                          className="hero-proof-slide absolute inset-0 h-full w-full object-cover object-top opacity-0"
+                          style={{ animationDelay: `${index * 4}s` }}
+                        />
+                      ))}
+                    </div>
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.94),rgba(0,0,31,0.42)_48%,rgba(0,0,31,0.2)),linear-gradient(0deg,rgba(0,0,31,0.96),transparent_58%)]" />
                     <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.075] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/72 backdrop-blur-md">
                       <span className="h-2 w-2 rounded-full bg-cyan-200 shadow-[0_0_16px_rgba(22,216,255,0.9)]" />
@@ -292,19 +317,32 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="absolute right-5 top-1/2 w-44 -translate-y-1/2 rounded-[24px] border border-white/12 bg-[#05051b]/82 p-3 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
-                      <Image
-                        src="/project-sm-classes.webp"
-                        alt="Secondary website project preview"
-                        width={320}
-                        height={220}
-                        className="aspect-[4/3] w-full rounded-2xl object-cover object-top"
-                      />
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#00001F]/72">
+                        {heroProjectPreviews.map((_, index) => {
+                          const upcomingProject =
+                            heroProjectPreviews[
+                              (index + 1) % heroProjectPreviews.length
+                            ];
+
+                          return (
+                            <Image
+                              key={upcomingProject.title}
+                              src={upcomingProject.image}
+                              alt={`${upcomingProject.title} upcoming website preview`}
+                              width={320}
+                              height={220}
+                              className="hero-proof-mini-slide absolute inset-0 h-full w-full object-cover object-top opacity-0"
+                              style={{ animationDelay: `${index * 4}s` }}
+                            />
+                          );
+                        })}
+                      </div>
                       <div className="px-2 py-3">
                         <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/36">
-                          Proof
+                          Up Next
                         </p>
                         <p className="mt-1 text-sm font-bold text-white">
-                          Sites people can act on.
+                          Preview coming into focus.
                         </p>
                       </div>
                     </div>
