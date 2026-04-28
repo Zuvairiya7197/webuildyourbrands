@@ -20,7 +20,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={cn("px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32", className)}
+      className={cn("px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32", className)}
     >
       <div className="mx-auto max-w-6xl">
         {(eyebrow || title || description) && (

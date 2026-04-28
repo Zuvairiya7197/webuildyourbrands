@@ -1,5 +1,14 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import {
+  BadgeDollarSign,
+  BookOpenText,
+  BriefcaseBusiness,
+  CalendarDays,
+  Eye,
+  Layers3,
+  Mail,
+  Sparkles
+} from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { CALENDLY_URL } from "@/lib/constants";
@@ -29,12 +38,32 @@ export default function Hero({
 }: HeroProps) {
   const renderHeroLink = (href: string, label: string) => {
     const isExternal = href.startsWith("http");
+    const normalizedLabel = label.toLowerCase();
+    const Icon = href === CALENDLY_URL || normalizedLabel.includes("book")
+      ? CalendarDays
+      : href.startsWith("mailto:") || normalizedLabel.includes("email")
+        ? Mail
+        : normalizedLabel.includes("service")
+          ? Layers3
+          : normalizedLabel.includes("pricing") || normalizedLabel.includes("package")
+            ? BadgeDollarSign
+            : normalizedLabel.includes("story") || normalizedLabel.includes("read")
+              ? BookOpenText
+              : normalizedLabel.includes("work") || normalizedLabel.includes("project")
+                ? BriefcaseBusiness
+                : Eye;
+    const icon = (
+      <Icon
+        className="h-4 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-4 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-4 group-focus-visible:opacity-100"
+        aria-hidden="true"
+      />
+    );
 
     if (href === CALENDLY_URL) {
       return (
-        <CalendlyLink>
+        <CalendlyLink className="group">
           {label}
-          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          {icon}
         </CalendlyLink>
       );
     }
@@ -44,15 +73,16 @@ export default function Hero({
         href={href}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noreferrer" : undefined}
+        className="group"
       >
         {label}
-        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        {icon}
       </Link>
     );
   };
 
   return (
-    <section className="relative min-h-[min(820px,100svh)] overflow-hidden px-4 pb-14 pt-24 sm:px-8 sm:pt-32 lg:min-h-screen lg:px-10">
+    <section className="relative min-h-[min(820px,100svh)] overflow-hidden px-4 pb-14 pt-24 sm:px-8 sm:pt-32 lg:min-h-screen lg:px-24 xl:px-32">
       {videoSrc && (
           <video
             className="absolute inset-0 h-full w-full object-cover"
@@ -90,7 +120,7 @@ export default function Hero({
             <Button
               asChild
               size="lg"
-              className={`h-12 w-full rounded-full px-6 text-base font-medium sm:w-auto ${neonButtonClass}`}
+              className={`h-12 w-full gap-0 rounded-full px-6 text-base font-medium sm:w-auto ${neonButtonClass}`}
             >
               {renderHeroLink(primaryHref, primaryLabel)}
             </Button>
@@ -98,7 +128,7 @@ export default function Hero({
               asChild
               size="lg"
               variant="outline"
-              className="h-12 w-full rounded-full px-6 text-base font-medium sm:w-auto"
+              className="h-12 w-full gap-0 rounded-full px-6 text-base font-medium sm:w-auto"
             >
               {renderHeroLink(secondaryHref, secondaryLabel)}
             </Button>

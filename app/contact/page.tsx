@@ -56,7 +56,7 @@ export default function ContactPage() {
         secondaryLabel="Email Us"
         secondaryHref="mailto:contactus@webuildyourbrands.com"
       />
-      <section id="contact-form" className="contact-form-section relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section id="contact-form" className="contact-form-section relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div className="absolute inset-0 bg-[#00001F]/84" aria-hidden="true" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,60,255,0.2),transparent_32%),radial-gradient(circle_at_84%_70%,rgba(22,216,255,0.12),transparent_30%)]" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">

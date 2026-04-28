@@ -72,7 +72,7 @@ export default function PricingPage() {
         secondaryHref={CALENDLY_URL}
       />
 
-      <section className="relative overflow-hidden bg-[var(--site-gradient)] px-5 py-24 text-white sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section className="relative overflow-hidden bg-[var(--site-gradient)] px-5 py-24 text-white sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div
           className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(124,60,255,0.18),transparent_32%),radial-gradient(circle_at_88%_12%,rgba(22,216,255,0.1),transparent_28%),radial-gradient(circle_at_50%_90%,rgba(34,0,103,0.32),transparent_38%)]"
           aria-hidden="true"

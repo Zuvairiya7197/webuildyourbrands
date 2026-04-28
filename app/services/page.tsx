@@ -266,7 +266,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <section className="px-4 pb-16 sm:px-8 sm:pb-28 lg:px-10 lg:pb-32">
+      <section className="px-4 pb-16 sm:px-8 sm:pb-28 lg:px-24 lg:pb-32 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
           <div className={`${glassCardClass} p-5 text-white sm:p-8`}>
             <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-white/50">

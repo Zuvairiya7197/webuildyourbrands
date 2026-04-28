@@ -5,6 +5,7 @@ import {
   ArrowRight,
   BadgePlus,
   BriefcaseBusiness,
+  CalendarDays,
   ClipboardList,
   FileSearch,
   Lightbulb,
@@ -183,7 +184,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-4 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:px-10 lg:pb-32">
+      <section className="relative overflow-hidden px-4 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:px-24 lg:pb-32 xl:px-32">
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-55"
           src="/Homehero.mp4"
@@ -211,21 +212,21 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button
                 asChild
-                className={`h-12 w-full rounded-full px-7 text-base font-bold sm:h-14 sm:w-auto ${neonButtonClass}`}
+                className={`h-12 w-full gap-0 rounded-full px-7 text-base font-bold sm:h-14 sm:w-auto ${neonButtonClass}`}
               >
-                <CalendlyLink>
+                <CalendlyLink className="group">
                   Book A Call
-                  <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                  <CalendarDays className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
                 </CalendlyLink>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="h-12 w-full rounded-full px-7 text-base font-bold sm:h-14 sm:w-auto"
+                className="h-12 w-full gap-0 rounded-full px-7 text-base font-bold sm:h-14 sm:w-auto"
               >
-                <Link href="/projects">
+                <Link href="/projects" className="group">
                   View Work
-                  <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                  <BriefcaseBusiness className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -290,7 +291,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-10 lg:pb-14 lg:pt-32">
+      <section className="px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-24 lg:pb-14 lg:pt-32 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>What We Do</Eyebrow>
@@ -332,11 +333,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 pb-16 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:px-10 lg:pb-28 lg:pt-24">
+      <section className="px-4 pb-16 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:px-24 lg:pb-28 lg:pt-24 xl:px-32">
         <StatsBar stats={stats} />
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+      <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-24 lg:py-28 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Who It&apos;s For</Eyebrow>
@@ -378,7 +379,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Your Launch Path</Eyebrow>
@@ -425,7 +426,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Selected Work</Eyebrow>
@@ -492,7 +493,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
+      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Why Choose Us</Eyebrow>
@@ -537,8 +538,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.045)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.44))] px-4 py-10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:px-8 sm:py-12 lg:px-10">
+      <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-24 lg:py-28 xl:px-32">
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.045)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.44))] px-4 py-10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:px-8 sm:py-12 lg:px-24 xl:px-32">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)]" />
           <div className="mx-auto mb-9 max-w-2xl text-center">
             <Eyebrow>Testimonials</Eyebrow>

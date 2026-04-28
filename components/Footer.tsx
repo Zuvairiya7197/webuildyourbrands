@@ -51,7 +51,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="group/footer relative overflow-hidden border-t border-cyan-300/10 px-4 text-white sm:px-8 lg:px-10"
+      className="group/footer relative overflow-hidden border-t border-cyan-300/10 px-4 text-white sm:px-8 lg:px-24 xl:px-32"
       onMouseMove={handleMouseMove}
     >
       <Image
