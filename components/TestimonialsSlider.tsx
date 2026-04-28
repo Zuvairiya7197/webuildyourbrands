@@ -13,15 +13,6 @@ type Testimonial = {
   image?: string;
 };
 
-function getInitials(name: string) {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase())
-    .join("");
-}
-
 export function TestimonialsSlider({
   testimonials
 }: {
@@ -32,7 +23,6 @@ export function TestimonialsSlider({
   const touchStartX = useRef<number | null>(null);
   const active = testimonials[activeIndex];
   const hasImage = Boolean(active.image);
-  const initials = getInitials(active.name);
 
   const goToPrevious = useCallback(() => {
     setActiveIndex((current) =>
@@ -100,7 +90,7 @@ export function TestimonialsSlider({
     >
       <article
         key={active.name}
-        className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.12),rgba(22,216,255,0.05)_30%,rgba(124,60,255,0.13)_68%,rgba(0,0,31,0.44))] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_30px_100px_rgba(0,0,31,0.34)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_34px_110px_rgba(22,216,255,0.1),0_24px_90px_rgba(124,60,255,0.18)] sm:rounded-[28px] sm:p-5"
+        className="group relative overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.1),rgba(22,216,255,0.04)_30%,rgba(124,60,255,0.11)_68%,rgba(0,0,31,0.48))] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_22px_74px_rgba(0,0,31,0.28)] backdrop-blur-xl transition duration-300 hover:border-cyan-300/20 sm:rounded-[24px]"
         onTouchStart={(event) => {
           touchStartX.current = event.touches[0].clientX;
           setIsPaused(true);
@@ -111,11 +101,11 @@ export function TestimonialsSlider({
         }}
       >
         <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)]" />
-        <div className="pointer-events-none absolute -right-20 -top-24 h-56 w-56 rounded-full bg-cyan-300/12 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
-        <div className="pointer-events-none absolute -bottom-28 left-1/4 h-64 w-64 rounded-full bg-[#7c3cff]/18 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 -top-24 h-48 w-48 rounded-full bg-cyan-300/10 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
+        <div className="pointer-events-none absolute -bottom-24 left-1/4 h-52 w-52 rounded-full bg-[#7c3cff]/14 blur-3xl" />
 
-        <div className="relative grid gap-5 lg:grid-cols-[0.82fr_1.18fr]">
-          <div className="relative hidden aspect-[4/5] min-h-[360px] overflow-hidden rounded-[20px] border border-white/10 bg-[#00001F]/50 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:rounded-[22px] lg:block">
+        <div className="relative grid gap-4 lg:grid-cols-[260px_1fr]">
+          <div className="relative hidden min-h-[300px] overflow-hidden rounded-[18px] border border-white/10 bg-[#00001F]/50 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] lg:block">
             {hasImage ? (
               <Image
                 src={active.image ?? ""}
@@ -124,64 +114,30 @@ export function TestimonialsSlider({
                 sizes="(min-width: 1024px) 34vw, 100vw"
                 className="object-cover object-center transition duration-500 group-hover:scale-105"
               />
-            ) : (
-              <div className="absolute inset-0 overflow-hidden bg-[radial-gradient(circle_at_18%_18%,rgba(255,244,168,0.16),transparent_26%),radial-gradient(circle_at_82%_22%,rgba(22,216,255,0.16),transparent_30%),radial-gradient(circle_at_62%_78%,rgba(124,60,255,0.32),transparent_36%),linear-gradient(145deg,#030318,#130034_58%,#00001f)]">
-                <div className="absolute inset-x-7 top-8 h-20 rounded-[28px] border border-white/10 bg-white/[0.045] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-xl" />
-                <div className="absolute left-1/2 top-28 flex h-32 w-32 -translate-x-1/2 items-center justify-center rounded-full border border-cyan-100/18 bg-[radial-gradient(circle_at_35%_25%,rgba(255,255,255,0.18),rgba(124,60,255,0.36)_48%,rgba(0,0,31,0.82))] shadow-[0_30px_90px_rgba(0,0,31,0.42),0_0_70px_rgba(22,216,255,0.22)]">
-                  <span className="absolute inset-[-18px] rounded-full border border-white/8" />
-                  <span className="absolute inset-[-34px] rounded-full border border-cyan-100/10" />
-                  <span className="text-4xl font-black tracking-tight text-white">
-                    {initials || "WB"}
-                  </span>
-                </div>
-                <div className="absolute left-8 right-8 top-[18rem] rounded-[28px] border border-white/12 bg-[#00001F]/58 p-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_24px_70px_rgba(0,0,31,0.32)] backdrop-blur-xl">
-                  <div className="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#5b00b5] shadow-[0_14px_36px_rgba(0,0,31,0.25)]">
-                    <Quote className="h-5 w-5 fill-current" aria-hidden="true" />
-                  </div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-100/72">
-                    Verified Words
-                  </p>
-                  <div className="mt-4 flex justify-center gap-1 text-[#ffe500]">
-                    {[0, 1, 2, 3, 4].map((item) => (
-                      <Star key={item} className="h-4 w-4 fill-current" aria-hidden="true" />
-                    ))}
-                  </div>
-                </div>
-                <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-2">
-                  {["No stock photo", "Real client"].map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/10 bg-white/[0.055] px-3 py-2 text-center text-[9px] font-bold uppercase tracking-[0.12em] text-white/58 backdrop-blur-md"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
+            ) : null}
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02),rgba(0,0,31,0.18)_42%,rgba(0,0,31,0.9))]" />
-            <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#00001F]/62 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/76 backdrop-blur-md">
+            <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#00001F]/62 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/76 backdrop-blur-md">
               <Sparkles className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
               Client Story
             </div>
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5">
-              <div className="rounded-2xl border border-white/12 bg-white/[0.08] p-4 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-5">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-100/72">
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="rounded-2xl border border-white/12 bg-white/[0.08] p-4 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-100/72">
                   Featured Client
                 </p>
-                <h4 className="mt-2 text-2xl font-bold text-white">
+                <h4 className="mt-1 text-xl font-bold text-white">
                   {active.name}
                 </h4>
-                <p className="mt-1 text-sm leading-6 text-white/66">{active.role}</p>
+                <p className="mt-1 text-xs leading-5 text-white/66">{active.role}</p>
               </div>
             </div>
           </div>
 
-          <div className="relative flex min-h-[320px] flex-col justify-between rounded-[20px] border border-white/10 bg-[linear-gradient(145deg,rgba(0,0,31,0.58),rgba(20,0,58,0.46),rgba(255,255,255,0.05))] p-5 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:min-h-[360px] sm:rounded-[22px] sm:p-8">
+          <div className="relative flex min-h-[300px] flex-col justify-between rounded-[18px] border border-white/10 bg-[linear-gradient(145deg,rgba(0,0,31,0.58),rgba(20,0,58,0.46),rgba(255,255,255,0.05))] p-5 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:p-6">
             <div>
-              <div className="mb-7 flex items-center justify-between gap-5">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/14 bg-white text-[#5b00b5] shadow-[0_14px_36px_rgba(0,0,31,0.3),0_0_34px_rgba(22,216,255,0.18)]">
-                  <Quote className="h-6 w-6 fill-current" aria-hidden="true" />
+              <div className="mb-5 flex items-center justify-between gap-5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/14 bg-white text-[#5b00b5] shadow-[0_14px_36px_rgba(0,0,31,0.3),0_0_34px_rgba(22,216,255,0.18)]">
+                  <Quote className="h-5 w-5 fill-current" aria-hidden="true" />
                 </div>
                 <div className="flex gap-1 text-[#ffe500]">
                   {[1, 2, 3, 4, 5].map((star) => (
@@ -197,18 +153,18 @@ export function TestimonialsSlider({
               <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-100/58">
                 0{activeIndex + 1} / 0{testimonials.length}
               </p>
-              <h3 className="max-w-2xl text-xl font-bold leading-tight text-white sm:text-3xl">
+              <h3 className="max-w-2xl text-xl font-bold leading-tight text-white sm:text-2xl">
                 {active.title}
               </h3>
-              <p className="mt-5 max-w-2xl text-sm leading-7 text-white/76 sm:mt-6 sm:text-base sm:leading-8">
+              <p className="mt-4 line-clamp-4 max-w-2xl text-sm leading-7 text-white/72">
                 {active.quote}
               </p>
             </div>
 
-            <div className="mt-8">
-              <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-6">
+              <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-wrap gap-2">
-                  {["Clearer brand", "Fast edits", "Trusted build"].map((item) => (
+                  {["Clearer brand", "Fast edits"].map((item) => (
                     <span
                       key={item}
                       className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.12em] text-white/52 sm:text-[10px] sm:tracking-[0.14em]"
@@ -227,11 +183,7 @@ export function TestimonialsSlider({
                         sizes="56px"
                         className="object-cover object-center"
                       />
-                    ) : (
-                      <span className="flex h-full w-full items-center justify-center bg-[image:var(--button-gradient)] text-sm font-black tracking-tight text-white">
-                        {initials}
-                      </span>
-                    )}
+                    ) : null}
                   </span>
                   <span className="min-w-0">
                     <span className="block text-sm font-bold text-white">
@@ -249,9 +201,9 @@ export function TestimonialsSlider({
                     size="icon"
                     onClick={goToPrevious}
                     aria-label="Previous testimonial"
-                    className="h-10 w-10 rounded-full border-white/12 bg-white/5 text-white hover:bg-white/10"
+                    className="h-9 w-9 rounded-full border-white/12 bg-white/5 text-white hover:bg-white/10"
                   >
-                    <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+                    <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                   </Button>
                   <Button
                     type="button"
@@ -259,9 +211,9 @@ export function TestimonialsSlider({
                     size="icon"
                     onClick={goToNext}
                     aria-label="Next testimonial"
-                    className="h-10 w-10 rounded-full border-white/12 bg-white/5 text-white hover:bg-white/10"
+                    className="h-9 w-9 rounded-full border-white/12 bg-white/5 text-white hover:bg-white/10"
                   >
-                    <ChevronRight className="h-5 w-5" aria-hidden="true" />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>

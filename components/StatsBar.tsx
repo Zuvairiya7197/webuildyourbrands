@@ -117,11 +117,10 @@ export default function StatsBar({ stats }: StatsBarProps) {
           Built To Convert
         </p>
         <h2 className="mx-auto mt-3 max-w-3xl text-2xl font-bold leading-tight text-white sm:text-4xl">
-          Your website should look premium, load fast, and make trust instant.
+          The first impression should already be doing the selling.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/58">
-          These are the non-negotiables behind every WBYB build, so visitors
-          feel confident before they ever speak to you.
+          Mobile polish, speed, and custom design. No template shortcut.
         </p>
       </div>
       <div className="relative z-10 grid gap-3 md:grid-cols-3">

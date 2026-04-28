@@ -30,20 +30,17 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Website Strategy",
-    description:
-      "We shape your message, pages, and user journey before design begins.",
+    description: "Clear offer. Clear pages. Clear next step.",
     Icon: ClipboardList
   },
   {
     title: "Custom Web Design",
-    description:
-      "We design polished, mobile-first websites that make your business look credible.",
+    description: "A polished first impression built for trust.",
     Icon: PenTool
   },
   {
     title: "Development & Launch",
-    description:
-      "We build fast, responsive websites that are ready to publish, share, and convert.",
+    description: "Fast, responsive, and ready to convert.",
     Icon: PanelsTopLeft
   }
 ];
@@ -52,46 +49,46 @@ const audiences = [
   {
     title: "Service Businesses",
     cue: "Make a strong first impression",
-    fit: "For coaches, consultants, agencies, and local service brands that need trust fast.",
+    fit: "For service brands that need trust fast.",
+    outcome: "More inquiries",
     Icon: BriefcaseBusiness
   },
   {
     title: "New Brands",
     cue: "Launch with a clear message",
-    fit: "For founders who need a polished website before campaigns, outreach, or launch.",
+    fit: "For founders ready to look established.",
+    outcome: "Stronger launch",
     Icon: BadgePlus
   },
   {
     title: "Growing Businesses",
     cue: "Get more website inquiries",
-    fit: "For teams ready to upgrade from unclear pages to a website built for action.",
+    fit: "For teams upgrading unclear pages.",
+    outcome: "Booked calls",
     Icon: TrendingUp
   }
 ];
 
 const stats = [
-  { value: 100, suffix: "%", label: "Built to look sharp on every screen" },
-  { value: 100, suffix: "%", label: "Designed to load fast and feel premium" },
-  { value: 0, suffix: "%", label: "Generic template shortcuts" }
+  { value: 100, suffix: "%", label: "Sharp on every screen" },
+  { value: 100, suffix: "%", label: "Fast and premium" },
+  { value: 0, suffix: "%", label: "Template shortcuts" }
 ];
 
 const process = [
   {
     title: "Map the Offer",
-    description:
-      "We clarify what you sell, who it is for, and what visitors need to believe before they contact you.",
+    description: "Clarify what you sell and why buyers should care.",
     Icon: FileSearch
   },
   {
     title: "Shape the Pages",
-    description:
-      "We turn that message into focused sections, polished visuals, and a mobile-first page flow.",
+    description: "Turn the message into focused, visual page sections.",
     Icon: PanelsTopLeft
   },
   {
     title: "Launch & Improve",
-    description:
-      "We prepare the site for launch with responsive checks, speed focus, and clear next actions.",
+    description: "Launch with speed, responsive checks, and clear CTAs.",
     Icon: Rocket
   }
 ];
@@ -229,9 +226,7 @@ export default function Home() {
               A premium website your customers understand in seconds.
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/74 sm:mt-6 sm:text-base sm:leading-8">
-              We turn your offer into a clear, credible, mobile-first website
-              with polished visuals and a direct path from first visit to
-              inquiry.
+              Clear message. Premium design. More confident inquiries.
             </p>
             <div className="mt-6 grid max-w-xl gap-3 text-sm font-semibold text-white/68 sm:grid-cols-3">
               {["Strategy-led", "Mobile-first", "Inquiry-ready"].map((item) => (
@@ -315,8 +310,7 @@ export default function Home() {
                         Clarity that feels expensive.
                       </h2>
                       <p className="mt-4 max-w-xs text-sm leading-6 text-white/62">
-                        Real strategy, real pages, and a site experience built
-                        around trust.
+                        Real pages built around trust.
                       </p>
                     </div>
                     <div className="absolute right-5 top-1/2 w-44 -translate-y-1/2 rounded-[24px] border border-white/12 bg-[#05051b]/82 p-3 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
@@ -345,7 +339,7 @@ export default function Home() {
                           Up Next
                         </p>
                         <p className="mt-1 text-sm font-bold text-white">
-                          Preview coming into focus.
+                          Next preview.
                         </p>
                       </div>
                     </div>
@@ -363,11 +357,10 @@ export default function Home() {
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>What We Do</Eyebrow>
             <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              Strategy, design, and launch built as one premium system.
+              Everything your website needs to earn trust faster.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Every section is shaped to make your offer easier to understand,
-              your brand easier to trust, and your next step easier to take.
+              Three pieces working together: message, design, and launch.
             </p>
           </div>
           <div className="hanging-service-grid grid gap-5 md:grid-cols-3 md:gap-6">
@@ -405,45 +398,65 @@ export default function Home() {
       </section>
 
       <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-24 lg:py-28 xl:px-32">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
-          <div className="lg:sticky lg:top-28 lg:self-start">
+        <div className="relative mx-auto grid max-w-6xl gap-5 overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_18%_18%,rgba(22,216,255,0.12),transparent_30%),radial-gradient(circle_at_88%_72%,rgba(124,60,255,0.18),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.42))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-6 lg:grid-cols-[0.9fr_1.4fr] lg:p-8">
+          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),rgba(124,60,255,0.64),transparent)]" />
+          <div className="relative rounded-[26px] border border-white/10 bg-[#00001F]/44 p-6 sm:p-8">
             <Eyebrow>Who It&apos;s For</Eyebrow>
-            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              For brands that need to look ready before the first conversation.
+            <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
+              For businesses ready to look credible before the first call.
             </h2>
-            <div className="mt-7 grid max-w-sm grid-cols-3 gap-2">
-              {["Look clear", "Build trust", "Get leads"].map((item) => (
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+              If buyers check your website first, it should remove doubt fast.
+            </p>
+            <div className="mt-8 grid gap-3">
+              {["Clear offer", "Premium first impression", "Inquiry-ready flow"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-white/10 bg-white/[0.035] px-3 py-4 text-center text-[10px] font-bold uppercase tracking-[0.14em] text-white/50"
+                  className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3"
                 >
-                  {item}
+                  <span className="text-sm font-bold text-white/76">{item}</span>
+                  <ArrowRight className="h-4 w-4 text-cyan-100/54" aria-hidden="true" />
                 </div>
               ))}
             </div>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {audiences.map(({ title, cue, fit, Icon }, index) => (
+
+          <div className="grid gap-3">
+            {audiences.map(({ title, cue, fit, outcome, Icon }, index) => (
               <article
                 key={title}
-                className="group relative min-h-[310px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.072),rgba(22,216,255,0.032)_36%,rgba(124,60,255,0.09)_72%,rgba(0,0,31,0.46))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[0_28px_80px_rgba(124,60,255,0.16)]"
+                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(22,216,255,0.025)_42%,rgba(124,60,255,0.09))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:shadow-[0_22px_70px_rgba(22,216,255,0.12)] sm:p-6"
               >
-                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.65),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                <span className="absolute right-5 top-5 text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
-                  0{index + 1}
-                </span>
-                <div className="flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.18)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.18)]">
-                  <Icon className="h-7 w-7" aria-hidden="true" />
+                <div className="pointer-events-none absolute inset-y-6 left-0 w-px bg-[linear-gradient(180deg,transparent,rgba(22,216,255,0.7),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                <div className="grid gap-5 sm:grid-cols-[72px_1fr_auto] sm:items-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.18)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.18)]">
+                    <Icon className="h-7 w-7" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white/30">
+                        0{index + 1}
+                      </span>
+                      <p className="rounded-full border border-cyan-100/12 bg-cyan-100/[0.055] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100/68">
+                        {cue}
+                      </p>
+                    </div>
+                    <h3 className="mt-3 text-xl font-bold text-white">
+                      {title}
+                    </h3>
+                    <p className="mt-3 max-w-xl text-sm leading-7 text-white/56">
+                      {fit}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-[#00001F]/42 px-4 py-3 sm:max-w-[180px]">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/34">
+                      Outcome
+                    </p>
+                    <p className="mt-2 text-sm font-bold leading-5 text-white/82">
+                      {outcome}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="mt-10 text-xl font-bold text-white">
-                  {title}
-                </h3>
-                <p className="mt-3 text-sm font-semibold text-cyan-100/66">
-                  {cue}
-                </p>
-                <p className="mt-5 text-sm leading-7 text-white/56">
-                  {fit}
-                </p>
               </article>
             ))}
           </div>
@@ -455,11 +468,10 @@ export default function Home() {
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Your Launch Path</Eyebrow>
             <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              A calm process from idea to live website.
+              A clear path from rough idea to booked-call-ready website.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              No guesswork, no scattered decisions. Just a focused path from
-              message to design to launch.
+              Know what to say, what to show, and how to launch.
             </p>
           </div>
           <div className="relative grid gap-5 md:grid-cols-3">
@@ -501,11 +513,10 @@ export default function Home() {
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Selected Work</Eyebrow>
             <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white">
-              Real websites designed to look clear, credible, and ready.
+              Proof that clear websites make brands easier to choose.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Website experiences shaped for clarity, credibility, and a
-              stronger first impression.
+              Real projects. Clearer brands. Stronger first impressions.
             </p>
           </div>
           <div>
@@ -568,8 +579,11 @@ export default function Home() {
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Why Choose Us</Eyebrow>
             <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              Premium work without making the process feel heavy.
+              Premium results without a confusing process.
             </h2>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+              Simple steps. Clear decisions. Launch-ready pages.
+            </p>
             <div className="mt-7 grid max-w-sm grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white/46">
               {["Plan", "Build", "Launch"].map((item) => (
                 <div
@@ -608,61 +622,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-24 lg:py-28 xl:px-32">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.045)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.44))] px-4 py-10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:px-8 sm:py-12 lg:px-24 xl:px-32">
+      <section className="px-4 py-12 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] px-4 py-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_84px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:px-6 sm:py-8 lg:px-8">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)]" />
-          <div className="mx-auto mb-9 max-w-2xl text-center">
-            <Eyebrow>Testimonials</Eyebrow>
-            <h2 className="text-2xl font-bold leading-tight sm:text-3xl">
-              Clients come for a website. They leave with clarity.
+          <div className="mx-auto mb-6 max-w-2xl text-center">
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.26em] text-white/46">
+              Testimonials
+            </p>
+            <h2 className="text-xl font-bold leading-tight sm:text-3xl">
+              Clients book us for a website. They leave clearer and more trusted.
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/58">
-              Thoughtful feedback from clients who trusted us with their brand,
-              website, and launch experience.
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-white/56">
+              Short proof from clients who needed a sharper online presence.
             </p>
           </div>
           <TestimonialsSlider testimonials={testimonials} />
         </div>
       </section>
 
-      <section className="px-4 pb-20 pt-6 sm:px-8 sm:pb-28 lg:px-24 xl:px-32">
-        <div className="relative mx-auto grid max-w-6xl gap-8 overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_82%_18%,rgba(22,216,255,0.16),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08),rgba(124,60,255,0.12)_52%,rgba(0,0,31,0.5))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_30px_100px_rgba(0,0,31,0.34)] backdrop-blur-xl sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:p-10">
-          <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.76),transparent)]" />
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.26em] text-cyan-100/58">
-              Ready To Upgrade
-            </p>
-            <h2 className="mt-4 max-w-2xl text-2xl font-bold leading-tight sm:text-4xl">
-              Let&apos;s turn your website into your strongest first impression.
-            </h2>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-white/62">
-              Book a call and we&apos;ll map the clearest path from where your
-              brand is now to a polished website that helps people take action.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-            <Button
-              asChild
-              className={`h-12 w-full gap-0 rounded-full px-7 text-base font-bold sm:w-auto ${neonButtonClass}`}
-            >
-              <CalendlyLink className="group">
-                Book A Call
-                <CalendarDays className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
-              </CalendlyLink>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-12 w-full gap-0 rounded-full border-white/14 bg-white/[0.035] px-7 text-base font-bold hover:bg-white hover:text-[#00001F] sm:w-auto"
-            >
-              <Link href="/services" className="group">
-                View Services
-                <PanelsTopLeft className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
