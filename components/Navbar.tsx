@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { CalendarDays, Menu, X } from "lucide-react";
+import { CalendarDays, Mail, Menu, X } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { cn, neonButtonClass } from "@/lib/utils";
@@ -22,6 +22,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isContactPage = pathname === "/contact";
 
   useEffect(() => {
     const updateScrollState = () => {
@@ -96,10 +97,17 @@ export default function Navbar() {
             size="lg"
             className={`h-11 rounded-full px-6 text-sm font-semibold ${neonButtonClass}`}
           >
-            <CalendlyLink>
-              <CalendarDays className="h-4 w-4" aria-hidden="true" />
-              Book a Call
-            </CalendlyLink>
+            {isContactPage ? (
+              <a href="mailto:contactus@webuildyourbrands.com">
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                Email Us
+              </a>
+            ) : (
+              <CalendlyLink>
+                <CalendarDays className="h-4 w-4" aria-hidden="true" />
+                Book a Call
+              </CalendlyLink>
+            )}
           </Button>
         </div>
         <div className="md:hidden">
@@ -145,10 +153,17 @@ export default function Navbar() {
               asChild
               className={`mt-3 h-12 w-full rounded-full ${neonButtonClass}`}
             >
-              <CalendlyLink>
-                <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                Book a Call
-              </CalendlyLink>
+              {isContactPage ? (
+                <a href="mailto:contactus@webuildyourbrands.com">
+                  <Mail className="h-4 w-4" aria-hidden="true" />
+                  Email Us
+                </a>
+              ) : (
+                <CalendlyLink>
+                  <CalendarDays className="h-4 w-4" aria-hidden="true" />
+                  Book a Call
+                </CalendlyLink>
+              )}
             </Button>
           </div>
         </div>
