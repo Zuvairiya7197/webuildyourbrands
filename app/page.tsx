@@ -512,27 +512,24 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="relative grid gap-5 md:grid-cols-3">
-            <div className="pointer-events-none absolute left-[16%] right-[16%] top-20 hidden h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.5),rgba(124,60,255,0.58),transparent)] md:block" />
+          <div className="clarity-pipeline">
             {reasons.map(({ title, signal, visual, Icon }, index) => (
               <article
                 key={title}
-                className="group relative min-h-[250px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.44))] p-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)]"
+                className="clarity-pipeline-card group"
               >
-                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.7),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-cyan-300/10 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
-                <span className="absolute right-5 top-5 text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
+                <span className="clarity-pipeline-index">
                   0{index + 1}
                 </span>
-                <div className="relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-[24px] border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.2)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.2)]">
+                <div className="clarity-pipeline-icon">
                   <Icon className="h-8 w-8" aria-hidden="true" />
                 </div>
-                <div className="relative z-10 mt-8">
-                  <p className="mx-auto mb-4 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100/70">
+                <div className="relative z-10">
+                  <p className="clarity-pipeline-badge">
                     {visual}
                   </p>
-                  <h3 className="text-xl font-bold text-white">{title}</h3>
-                  <p className="mt-3 text-sm font-semibold text-white/58">
+                  <h3 className="mt-4 text-2xl font-bold text-white">{title}</h3>
+                  <p className="mt-3 text-sm font-semibold leading-6 text-white/62">
                     {signal}
                   </p>
                 </div>
