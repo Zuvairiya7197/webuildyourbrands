@@ -54,7 +54,7 @@ export default function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.12),transparent_34%),radial-gradient(circle_at_86%_0%,rgba(124,60,255,0.22),transparent_42%),linear-gradient(180deg,rgba(0,0,31,0.9),rgba(5,3,31,0.76))] px-5 text-white shadow-[0_14px_46px_rgba(0,0,31,0.3)] backdrop-blur-xl transition duration-300 sm:px-8 md:border-b-0 md:bg-transparent md:shadow-none md:backdrop-blur-none lg:px-10",
         isScrolled &&
-          "bg-[#00001F]/82 shadow-[0_18px_60px_rgba(0,0,31,0.3)] backdrop-blur-xl md:bg-[#00001F]/76 md:shadow-[0_18px_60px_rgba(0,0,31,0.28)]"
+          "bg-[#00001F]/82 shadow-[0_18px_60px_rgba(0,0,31,0.3)] backdrop-blur-xl md:bg-transparent md:shadow-none md:backdrop-blur-none"
       )}
     >
       <nav

@@ -211,15 +211,15 @@ export default function ServicesPage() {
               className="group relative grid overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)] sm:rounded-[32px] lg:grid-cols-[0.38fr_0.62fr]"
             >
               <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-              <div className="relative min-h-[180px] overflow-hidden bg-[#00001F]/70 sm:min-h-[220px] lg:min-h-full">
+              <div className="relative min-h-[240px] overflow-hidden bg-[#00001F]/70 sm:min-h-[320px] lg:min-h-full">
                 <Image
                   src={service.image}
                   alt={`${service.title} service visual`}
                   fill
                   sizes="(min-width: 1024px) 34vw, 100vw"
-                  className="object-contain object-center p-4 transition duration-700 group-hover:scale-105 sm:p-5"
+                  className="object-cover object-[center_58%] transition duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02)_0%,rgba(0,0,31,0.18)_48%,rgba(0,0,31,0.68)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0)_0%,rgba(0,0,31,0.04)_48%,rgba(0,0,31,0.42)_100%)]" />
                 <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-[#00001F]/62 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.22)] backdrop-blur-md transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)]">
                   <service.Icon className="h-5 w-5" aria-hidden="true" />
                 </div>

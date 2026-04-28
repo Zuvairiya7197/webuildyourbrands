@@ -88,6 +88,69 @@ textarea {
   }
 }
 
+@keyframes audienceCardRevolveOne {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 90px) rotateY(0deg) scale(1);
+    z-index: 3;
+  }
+
+  33.333% {
+    opacity: 0.74;
+    transform: translate3d(28%, -50%, -120px) rotateY(-10deg) scale(0.88);
+    z-index: 1;
+  }
+
+  66.666% {
+    opacity: 0.86;
+    transform: translate3d(-128%, -50%, -70px) rotateY(10deg) scale(0.92);
+    z-index: 2;
+  }
+}
+
+@keyframes audienceCardRevolveTwo {
+  0%,
+  100% {
+    opacity: 0.74;
+    transform: translate3d(28%, -50%, -120px) rotateY(-10deg) scale(0.88);
+    z-index: 1;
+  }
+
+  33.333% {
+    opacity: 0.86;
+    transform: translate3d(-128%, -50%, -70px) rotateY(10deg) scale(0.92);
+    z-index: 2;
+  }
+
+  66.666% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 90px) rotateY(0deg) scale(1);
+    z-index: 3;
+  }
+}
+
+@keyframes audienceCardRevolveThree {
+  0%,
+  100% {
+    opacity: 0.86;
+    transform: translate3d(-128%, -50%, -70px) rotateY(10deg) scale(0.92);
+    z-index: 2;
+  }
+
+  33.333% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 90px) rotateY(0deg) scale(1);
+    z-index: 3;
+  }
+
+  66.666% {
+    opacity: 0.74;
+    transform: translate3d(28%, -50%, -120px) rotateY(-10deg) scale(0.88);
+    z-index: 1;
+  }
+}
+
 .contact-form-section {
   background-image: url("/form-backround.webp");
   background-size: cover;
@@ -99,6 +162,47 @@ textarea {
 @media (max-width: 768px) {
   .contact-form-section {
     background-attachment: scroll;
+  }
+}
+
+@media (min-width: 1024px) {
+  .who-it-is-for-revolve {
+    position: relative;
+    display: block;
+    min-height: 360px;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+  }
+
+  .who-it-is-for-revolve:hover .who-it-is-for-revolve-card {
+    animation-play-state: paused;
+  }
+
+  .who-it-is-for-revolve-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(360px, 36%);
+    min-height: 300px;
+    will-change: transform, opacity;
+  }
+
+  .who-it-is-for-revolve-card:nth-child(1) {
+    animation: audienceCardRevolveOne 12s ease-in-out infinite;
+  }
+
+  .who-it-is-for-revolve-card:nth-child(2) {
+    animation: audienceCardRevolveTwo 12s ease-in-out infinite;
+  }
+
+  .who-it-is-for-revolve-card:nth-child(3) {
+    animation: audienceCardRevolveThree 12s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-it-is-for-revolve-card {
+    animation: none !important;
   }
 }
 

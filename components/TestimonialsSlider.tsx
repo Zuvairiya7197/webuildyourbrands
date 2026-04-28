@@ -226,40 +226,6 @@ export function TestimonialsSlider({
           </div>
         </div>
       </article>
-
-      <div className="mt-5 hidden gap-3 lg:grid lg:grid-cols-4">
-        {testimonials.map((item, index) => (
-          <button
-            key={item.name}
-            type="button"
-            onClick={() => setActiveIndex(index)}
-            className={`group flex min-h-[86px] items-center gap-3 rounded-2xl border p-3 text-left transition duration-300 ${
-              index === activeIndex
-                ? "border-cyan-300/28 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_40px_rgba(22,216,255,0.08)]"
-                : "border-white/10 bg-white/[0.035] hover:border-white/18 hover:bg-white/[0.07]"
-            }`}
-            aria-pressed={index === activeIndex}
-          >
-            <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/10 bg-[#00001F]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-              <Image
-                src={item.image}
-                alt=""
-                fill
-                sizes="48px"
-                className="object-cover transition duration-300 group-hover:scale-105"
-              />
-            </span>
-            <span className="min-w-0">
-              <span className="block truncate text-sm font-bold text-white">
-                {item.name}
-              </span>
-              <span className="mt-1 block truncate text-xs text-white/52">
-                {item.title}
-              </span>
-            </span>
-          </button>
-        ))}
-      </div>
     </div>
   );
 }

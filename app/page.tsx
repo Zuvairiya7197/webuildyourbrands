@@ -294,7 +294,7 @@ export default function Home() {
 
       <section className="px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-10 lg:pb-14 lg:pt-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
-          <div className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>What We Do</Eyebrow>
             <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
               What you get when we build your website.
@@ -340,7 +340,7 @@ export default function Home() {
 
       <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
-          <div className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Who It&apos;s For</Eyebrow>
             <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
               For businesses that need a clearer website.
@@ -356,11 +356,11 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="who-it-is-for-revolve grid gap-4 md:grid-cols-3">
             {audiences.map(({ title, cue, Icon }, index) => (
               <article
                 key={title}
-                className="group relative min-h-[220px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.42))] p-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[0_28px_80px_rgba(124,60,255,0.16)]"
+                className="who-it-is-for-revolve-card group relative min-h-[220px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.42))] p-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[0_28px_80px_rgba(124,60,255,0.16)]"
               >
                 <span className="absolute right-5 top-5 text-xs font-bold uppercase tracking-[0.22em] text-white/30 transition duration-300 group-hover:text-cyan-100/70">
                   0{index + 1}
@@ -382,7 +382,7 @@ export default function Home() {
 
       <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
-          <div className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Your Launch Path</Eyebrow>
             <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
               From unclear website to confident launch.
@@ -429,7 +429,7 @@ export default function Home() {
 
       <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
-          <div className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Selected Work</Eyebrow>
             <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white">
               A glimpse of brands we&apos;ve helped shape and grow.
@@ -496,7 +496,7 @@ export default function Home() {
 
       <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
-          <div className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Why Choose Us</Eyebrow>
             <h2 className="max-w-xs text-2xl font-semibold leading-tight text-white sm:text-3xl">
               From idea to website, without the confusion.
