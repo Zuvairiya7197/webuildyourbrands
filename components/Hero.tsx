@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Rocket } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { CALENDLY_URL } from "@/lib/constants";
@@ -75,7 +75,7 @@ export default function Hero({
       >
         <div className="w-full max-w-5xl">
           <p className="mx-auto mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/45 bg-[#00001F]/50 px-3 py-2 text-xs font-medium text-white shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-md sm:mb-8 sm:px-4 sm:text-base">
-            <Rocket className="h-4 w-4 text-white sm:h-5 sm:w-5" aria-hidden="true" />
+            <Sparkles className="h-4 w-4 text-white sm:h-5 sm:w-5" aria-hidden="true" />
             <span className="min-w-0 break-words">{eyebrow}</span>
           </p>
           <h1 className="text-3xl font-bold leading-tight tracking-normal text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.7)] min-[360px]:text-4xl sm:text-5xl lg:text-7xl">

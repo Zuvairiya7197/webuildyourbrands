@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, Compass, Layers3, Sparkles, Target, TimerReset } from "lucide-react";
+import { ArrowRight, CheckCircle2, Compass, Paintbrush, Route, Telescope, Workflow } from "lucide-react";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { glassCardClass, neonButtonClass } from "@/lib/utils";
@@ -19,12 +19,12 @@ const approach = [
   {
     title: "Long-Term Thinking",
     text: "We think beyond launch day so the foundation can grow with the business.",
-    Icon: TimerReset
+    Icon: Route
   },
   {
     title: "Purposeful Design",
     text: "We prefer fewer, sharper choices over pages filled with decoration.",
-    Icon: Sparkles
+    Icon: Paintbrush
   }
 ];
 
@@ -94,7 +94,7 @@ export default function AboutPage() {
           </article>
 
           <article className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.52))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 sm:rounded-[32px] sm:p-8">
-            <Target className="h-10 w-10 text-cyan-100" aria-hidden="true" />
+            <Telescope className="h-10 w-10 text-cyan-100" aria-hidden="true" />
             <h3 className="mt-8 text-2xl font-semibold tracking-tight">
               Long-Term Goal
             </h3>
@@ -143,7 +143,7 @@ export default function AboutPage() {
       >
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-stretch">
           <div className="rounded-[28px] border border-white/10 bg-[#00001F]/44 p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-7">
-            <Layers3 className="h-9 w-9 text-cyan-100" aria-hidden="true" />
+            <Workflow className="h-9 w-9 text-cyan-100" aria-hidden="true" />
             <h3 className="mt-8 text-2xl font-semibold tracking-tight">
               What We Care About
             </h3>

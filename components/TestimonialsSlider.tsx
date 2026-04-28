@@ -10,8 +10,17 @@ type Testimonial = {
   quote: string;
   name: string;
   role: string;
-  image: string;
+  image?: string;
 };
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("");
+}
 
 export function TestimonialsSlider({
   testimonials
@@ -20,8 +29,23 @@ export function TestimonialsSlider({
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [failedImages, setFailedImages] = useState<Set<string>>(() => new Set());
   const touchStartX = useRef<number | null>(null);
   const active = testimonials[activeIndex];
+  const hasImage = Boolean(active.image && !failedImages.has(active.image));
+  const initials = getInitials(active.name);
+
+  const handleImageError = (image?: string) => {
+    if (!image) {
+      return;
+    }
+
+    setFailedImages((current) => {
+      const next = new Set(current);
+      next.add(image);
+      return next;
+    });
+  };
 
   const goToPrevious = useCallback(() => {
     setActiveIndex((current) =>
@@ -104,14 +128,34 @@ export function TestimonialsSlider({
         <div className="pointer-events-none absolute -bottom-28 left-1/4 h-64 w-64 rounded-full bg-[#7c3cff]/18 blur-3xl" />
 
         <div className="relative grid gap-5 lg:grid-cols-[0.82fr_1.18fr]">
-          <div className="relative hidden min-h-[280px] overflow-hidden rounded-[20px] border border-white/10 bg-[#00001F]/50 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:min-h-[360px] sm:rounded-[22px] lg:block">
-            <Image
-              src={active.image}
-              alt={`${active.name} testimonial`}
-              fill
-              sizes="(min-width: 1024px) 34vw, 100vw"
-              className="object-cover transition duration-500 group-hover:scale-105"
-            />
+          <div className="relative hidden aspect-[4/5] min-h-[360px] overflow-hidden rounded-[20px] border border-white/10 bg-[#00001F]/50 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:rounded-[22px] lg:block">
+            {hasImage ? (
+              <Image
+                src={active.image ?? ""}
+                alt={`${active.name} testimonial`}
+                fill
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="object-cover object-center transition duration-500 group-hover:scale-105"
+                onError={() => handleImageError(active.image)}
+              />
+            ) : (
+              <div className="absolute inset-0 overflow-hidden bg-[radial-gradient(circle_at_50%_34%,rgba(22,216,255,0.2),transparent_28%),radial-gradient(circle_at_35%_68%,rgba(124,60,255,0.32),transparent_34%),linear-gradient(145deg,#05031f,#170044_58%,#00001f)]">
+                <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-100/18 shadow-[0_0_90px_rgba(22,216,255,0.16)]" />
+                <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/12" />
+                <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[32px] border border-white/16 bg-white/[0.075] text-4xl font-black tracking-tight text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_24px_70px_rgba(0,0,31,0.36)] backdrop-blur-xl">
+                  {initials}
+                </div>
+                <div className="absolute inset-x-10 bottom-24 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.65),transparent)]" />
+                <div className="absolute bottom-12 left-10 right-10 grid grid-cols-3 gap-2">
+                  {[0, 1, 2].map((item) => (
+                    <span
+                      key={item}
+                      className="h-1 rounded-full bg-[image:var(--button-gradient)] opacity-70"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02),rgba(0,0,31,0.18)_42%,rgba(0,0,31,0.9))]" />
             <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#00001F]/62 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/76 backdrop-blur-md">
               <Sparkles className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
@@ -171,14 +215,21 @@ export function TestimonialsSlider({
                   ))}
                 </div>
                 <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.055] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] lg:hidden">
-                  <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-white/12 bg-[#00001F]/70">
-                    <Image
-                      src={active.image}
-                      alt={`${active.name} testimonial`}
-                      fill
-                      sizes="48px"
-                      className="object-cover"
-                    />
+                  <span className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-full border border-white/12 bg-[#00001F]/70">
+                    {hasImage ? (
+                      <Image
+                        src={active.image ?? ""}
+                        alt={`${active.name} testimonial`}
+                        fill
+                        sizes="56px"
+                        className="object-cover object-center"
+                        onError={() => handleImageError(active.image)}
+                      />
+                    ) : (
+                      <span className="flex h-full w-full items-center justify-center bg-[image:var(--button-gradient)] text-sm font-black tracking-tight text-white">
+                        {initials}
+                      </span>
+                    )}
                   </span>
                   <span className="min-w-0">
                     <span className="block text-sm font-bold text-white">

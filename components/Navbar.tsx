@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { CalendarDays, Mail, Menu, X } from "lucide-react";
+import { CalendarDays, Linkedin, Menu, X } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { cn, neonButtonClass } from "@/lib/utils";
@@ -17,6 +17,8 @@ const links = [
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" }
 ];
+
+const LINKEDIN_URL = "https://www.linkedin.com/company/webuildyourbrands";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -98,9 +100,9 @@ export default function Navbar() {
             className={`h-11 rounded-full px-6 text-sm font-semibold ${neonButtonClass}`}
           >
             {isContactPage ? (
-              <a href="mailto:contactus@webuildyourbrands.com">
-                <Mail className="h-4 w-4" aria-hidden="true" />
-                Email Us
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-4 w-4" aria-hidden="true" />
+                LinkedIn
               </a>
             ) : (
               <CalendlyLink>
@@ -154,9 +156,9 @@ export default function Navbar() {
               className={`mt-3 h-12 w-full rounded-full ${neonButtonClass}`}
             >
               {isContactPage ? (
-                <a href="mailto:contactus@webuildyourbrands.com">
-                  <Mail className="h-4 w-4" aria-hidden="true" />
-                  Email Us
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4" aria-hidden="true" />
+                  LinkedIn
                 </a>
               ) : (
                 <CalendlyLink>

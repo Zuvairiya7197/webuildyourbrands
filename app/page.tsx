@@ -3,15 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  BarChart3,
-  ChevronRight,
+  BadgePlus,
+  BriefcaseBusiness,
+  ClipboardList,
+  FileSearch,
   Lightbulb,
-  Monitor,
-  Pencil,
+  PanelsTopLeft,
+  PenTool,
   Rocket,
-  Search,
-  Send,
-  Target
+  TrendingUp
 } from "lucide-react";
 import { TestimonialsSlider } from "@/components/TestimonialsSlider";
 import StatsBar from "@/components/StatsBar";
@@ -30,19 +30,19 @@ const services = [
     title: "Website Strategy",
     description:
       "We shape your message, pages, and user journey before design begins.",
-    Icon: Target
+    Icon: ClipboardList
   },
   {
     title: "Custom Web Design",
     description:
       "We design polished, mobile-first websites that make your business look credible.",
-    Icon: Rocket
+    Icon: PenTool
   },
   {
     title: "Development & Launch",
     description:
       "We build fast, responsive websites that are ready to publish, share, and convert.",
-    Icon: Monitor
+    Icon: PanelsTopLeft
   }
 ];
 
@@ -50,17 +50,17 @@ const audiences = [
   {
     title: "Service Businesses",
     cue: "Make a strong first impression",
-    Icon: Search
+    Icon: BriefcaseBusiness
   },
   {
     title: "New Brands",
     cue: "Launch with a clear message",
-    Icon: Send
+    Icon: BadgePlus
   },
   {
     title: "Growing Businesses",
     cue: "Get more website inquiries",
-    Icon: BarChart3
+    Icon: TrendingUp
   }
 ];
 
@@ -75,19 +75,19 @@ const process = [
     title: "Map the Offer",
     description:
       "We clarify what you sell, who it is for, and what visitors need to believe before they contact you.",
-    Icon: Search
+    Icon: FileSearch
   },
   {
     title: "Shape the Pages",
     description:
       "We turn that message into focused sections, polished visuals, and a mobile-first page flow.",
-    Icon: Pencil
+    Icon: PanelsTopLeft
   },
   {
     title: "Launch & Improve",
     description:
       "We prepare the site for launch with responsive checks, speed focus, and clear next actions.",
-    Icon: Send
+    Icon: Rocket
   }
 ];
 
@@ -129,13 +129,13 @@ const reasons = [
     title: "Quick Process",
     signal: "Move without confusion",
     visual: "Build",
-    Icon: ChevronRight
+    Icon: PanelsTopLeft
   },
   {
     title: "Ready Website",
     signal: "Launch with confidence",
     visual: "Live",
-    Icon: BarChart3
+    Icon: Rocket
   }
 ];
 
@@ -271,7 +271,7 @@ export default function Home() {
                   height={18}
                   className="h-auto w-9 object-contain"
                 />
-                <Monitor className="h-4 w-4 text-white/70" />
+                <PanelsTopLeft className="h-4 w-4 text-white/70" />
               </div>
               <h3 className="text-xl font-bold leading-tight text-white">
                 We build brands that connect.

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ChevronRight } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
@@ -118,7 +118,7 @@ export default function PricingPage() {
                       key={feature}
                       className="flex items-start gap-3 text-sm leading-7 text-white/78"
                     >
-                      <ChevronRight
+                      <CheckCircle2
                         className="mt-1 h-4 w-4 shrink-0 text-[#8aa2ff]"
                         aria-hidden="true"
                       />

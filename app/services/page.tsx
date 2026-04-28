@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowRight,
-  BadgeCheck,
-  Brush,
   Check,
+  ClipboardList,
   Gauge,
-  Layers3,
-  RefreshCcw,
-  SearchCheck,
-  ShieldCheck,
+  LifeBuoy,
+  MessagesSquare,
+  MousePointerClick,
+  Paintbrush,
+  Palette,
+  PanelsTopLeft,
   ShoppingBag,
-  Target,
-  Wrench
+  TrendingUp,
+  Workflow
 } from "lucide-react";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
@@ -32,7 +33,7 @@ const services = [
       "Fast, modern, conversion-focused websites built around your offer, audience, and next step.",
     outcome: "Best for complete website launches",
     image: "/Website Design & Development ICON.webp",
-    Icon: Layers3,
+    Icon: PanelsTopLeft,
     features: [
       "Custom website design",
       "SEO-ready structure",
@@ -48,7 +49,7 @@ const services = [
       "Focused pages built for campaigns, launches, and offers that need one clear action.",
     outcome: "Best for lead generation",
     image: "/Landing Page Design.webp",
-    Icon: Target,
+    Icon: MousePointerClick,
     features: [
       "Sales pages",
       "Funnel landing pages",
@@ -63,7 +64,7 @@ const services = [
       "Already have a website but it feels outdated or messy? We reshape it into something sharper.",
     outcome: "Best for improving trust quickly",
     image: "/Website Redesign.webp",
-    Icon: RefreshCcw,
+    Icon: Paintbrush,
     features: [
       "UI/UX improvement",
       "Better structure & clarity",
@@ -93,7 +94,7 @@ const services = [
       "A stronger visual foundation so your website feels consistent, recognizable, and intentional.",
     outcome: "Best before a new website build",
     image: "/Brand Identity & Visual Design.webp",
-    Icon: Brush,
+    Icon: Palette,
     features: [
       "Logo design",
       "Color palette & typography",
@@ -107,7 +108,7 @@ const services = [
     description: "Ongoing care for updates, fixes, security, and performance after launch.",
     outcome: "Best for keeping the site healthy",
     image: "/Website Maintenance & Support.webp",
-    Icon: ShieldCheck,
+    Icon: LifeBuoy,
     features: [
       "Regular updates",
       "Security monitoring",
@@ -137,7 +138,7 @@ const services = [
       "Improve the structure, CTAs, and page flow so more visitors know what to do next.",
     outcome: "Best for improving inquiries",
     image: "/Conversion Optimization.webp",
-    Icon: BadgeCheck,
+    Icon: TrendingUp,
     features: [
       "CTA placement strategy",
       "A/B testing guidance",
@@ -152,7 +153,7 @@ const services = [
       "Not sure what you need yet? We help you make the website plan clear before spending.",
     outcome: "Best before design starts",
     image: "/Website Strategy & Consultation.webp",
-    Icon: SearchCheck,
+    Icon: ClipboardList,
     features: [
       "Website planning",
       "Business-focused strategy",
@@ -167,13 +168,13 @@ const serviceSystems = [
     title: "Plan the Message",
     description:
       "We clarify the offer, audience, page structure, and conversion goal before the visuals take over.",
-    Icon: SearchCheck
+    Icon: MessagesSquare
   },
   {
     title: "Build the Experience",
     description:
       "We turn the plan into responsive sections, clear navigation, polished visuals, and a smooth user flow.",
-    Icon: Wrench
+    Icon: Workflow
   },
   {
     title: "Improve the Outcome",
