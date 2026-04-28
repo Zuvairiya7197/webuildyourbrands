@@ -616,14 +616,14 @@ textarea {
 .pricing-card {
   position: relative;
   display: flex;
-  min-height: 620px;
+  min-height: 650px;
   flex-direction: column;
   overflow: visible;
-  border-radius: 30px;
-  padding: 28px;
+  border-radius: 32px;
+  padding: 26px;
   border: 1px solid rgba(190, 170, 255, 0.14);
   background:
-    radial-gradient(circle at 18% 0%, rgba(8, 1, 94, 0.3), transparent 34%),
+    radial-gradient(circle at 18% 0%, rgba(22, 216, 255, 0.08), transparent 34%),
     radial-gradient(
       circle at 100% 100%,
       rgba(34, 0, 103, 0.36),
@@ -684,8 +684,9 @@ textarea {
 
 .pricing-card-featured {
   border-color: rgba(124, 60, 255, 0.68);
+  transform: translateY(-14px);
   background:
-    radial-gradient(circle at 18% 0%, rgba(8, 1, 94, 0.38), transparent 35%),
+    radial-gradient(circle at 18% 0%, rgba(22, 216, 255, 0.12), transparent 35%),
     radial-gradient(circle at 92% 92%, rgba(34, 0, 103, 0.46), transparent 36%),
     linear-gradient(145deg, #01010f 0%, #05031f 44%, #08012f 68%, #150044 100%);
   box-shadow:
@@ -719,7 +720,7 @@ textarea {
 .pricing-card-shine {
   position: absolute;
   inset: 1px;
-  border-radius: 29px;
+  border-radius: 31px;
   background: linear-gradient(
     135deg,
     rgba(8, 1, 94, 0.18),
@@ -770,16 +771,46 @@ textarea {
 }
 
 .pricing-card-subtitle {
-  margin-top: 28px;
-  min-height: 56px;
+  margin-top: 26px;
+  min-height: 52px;
   color: rgba(255, 255, 255, 0.76);
   font-size: 18px;
   font-weight: 650;
   line-height: 1.55;
 }
 
+.pricing-fit-panel {
+  position: relative;
+  z-index: 1;
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 15px 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.pricing-fit-label {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.pricing-fit-value {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .pricing-price-panel {
-  margin-top: 28px;
+  margin-top: 18px;
   border-radius: 22px;
   border: 1px solid rgba(124, 60, 255, 0.18);
   background: linear-gradient(
@@ -809,6 +840,22 @@ textarea {
   line-height: 1.7;
 }
 
+.pricing-outcome {
+  position: relative;
+  z-index: 1;
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(22, 216, 255, 0.16);
+  background: rgba(22, 216, 255, 0.055);
+  padding: 10px 14px;
+  color: rgba(207, 247, 255, 0.78);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 @media (max-width: 767px) {
   body {
     background-attachment: scroll;
@@ -833,6 +880,10 @@ textarea {
     min-height: auto;
     border-radius: 24px;
     padding: 22px;
+  }
+
+  .pricing-card-featured {
+    transform: none;
   }
 
   .pricing-card:hover {

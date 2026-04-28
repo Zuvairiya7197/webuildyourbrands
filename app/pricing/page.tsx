@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Target } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
@@ -15,45 +15,48 @@ export const metadata: Metadata = {
 const tiers = [
   {
     name: "LAUNCH",
-    subtitle: "Perfect for businesses getting online the right way",
+    subtitle: "For getting online with confidence",
+    bestFor: "New website",
+    outcome: "Look credible fast",
     price: "$ 599",
-    note: "One-time payment • No monthly fees",
+    note: "One-time payment",
     cta: "Get Started",
     features: [
-      "1-3 High-Impact Pages",
-      "Mobile-Optimized Design",
-      "Fast Loading Speed",
-      "Basic SEO Setup",
-      "Contact Form"
+      "1-3 key pages",
+      "Mobile-first design",
+      "Contact-ready flow",
+      "Basic SEO setup"
     ]
   },
   {
     name: "GROWTH",
-    subtitle: "Built to convert visitors into customers",
+    subtitle: "For turning visitors into inquiries",
+    bestFor: "Most businesses",
+    outcome: "More booked calls",
     price: "$ 999",
-    note: "Most Popular • One-time payment",
+    note: "Recommended path",
     cta: "Book A Call",
     featured: true,
     features: [
-      "5-8 Conversion-Focused Pages",
-      "Custom UI/UX Design",
-      "SEO Optimization Setup",
-      "Speed Optimization (Core Web Vitals)",
-      "Lead-Driven Layout Strategy"
+      "5-8 focused pages",
+      "Custom UI/UX",
+      "Lead-driven layout",
+      "Speed optimization"
     ]
   },
   {
     name: "PREMIUM",
-    subtitle: "For scaling businesses",
+    subtitle: "For brands that need a deeper system",
+    bestFor: "Custom build",
+    outcome: "Competitive edge",
     price: "$ 1599+",
-    note: "For serious businesses that want a competitive edge",
+    note: "Custom scope",
     cta: "Let's Build",
     features: [
-      "Fully Custom Website",
-      "Advanced UI/UX Experience",
-      "Integrations (Forms, CRM, Payments, etc.)",
-      "E-commerce / Advanced Features",
-      "Full Branding + Strategy Support"
+      "Fully custom website",
+      "Advanced UI/UX",
+      "Integrations",
+      "Strategy support"
     ]
   }
 ];
@@ -78,6 +81,19 @@ export default function PricingPage() {
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-100/58">
+              Pick Your Path
+            </p>
+            <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-4xl">
+              Choose the level of trust your website needs to create.
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/58">
+              Simple options. Clear outcomes. Book a call if you want help
+              choosing the right path.
+            </p>
+          </div>
+
           <div id="packages" className="grid scroll-mt-24 items-stretch gap-6 lg:grid-cols-3">
           {tiers.map((tier, index) => (
             <article
@@ -107,16 +123,29 @@ export default function PricingPage() {
                   {tier.subtitle}
                 </p>
 
+                <div className="pricing-fit-panel">
+                  <div>
+                    <p className="pricing-fit-label">Best for</p>
+                    <p className="pricing-fit-value">{tier.bestFor}</p>
+                  </div>
+                  <Target className="h-5 w-5 text-cyan-100/70" aria-hidden="true" />
+                </div>
+
                 <div className="pricing-price-panel">
                   <p className="pricing-price">{tier.price}</p>
                   <p className="pricing-note">{tier.note}</p>
                 </div>
 
-                <ul className="mt-8 grid gap-4">
+                <div className="pricing-outcome">
+                  <Sparkles className="h-4 w-4 text-cyan-100" aria-hidden="true" />
+                  <span>{tier.outcome}</span>
+                </div>
+
+                <ul className="mt-7 grid gap-3">
                   {tier.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-sm leading-7 text-white/78"
+                      className="flex items-start gap-3 text-sm leading-6 text-white/76"
                     >
                       <CheckCircle2
                         className="mt-1 h-4 w-4 shrink-0 text-[#8aa2ff]"
@@ -139,6 +168,7 @@ export default function PricingPage() {
                   >
                     <CalendlyLink>
                       {tier.cta}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </CalendlyLink>
                   </Button>
                 </div>
