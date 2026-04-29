@@ -118,7 +118,7 @@ function TestimonialsSliderComponent({
               />
             ) : null}
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02),rgba(0,0,31,0.18)_42%,rgba(0,0,31,0.9))]" />
-            <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#00001F]/62 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/76 backdrop-blur-md">
+            <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#00001F]/62 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/58 backdrop-blur-md">
               <Sparkles className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
               Client Story
             </div>
@@ -158,7 +158,7 @@ function TestimonialsSliderComponent({
               <h3 className="max-w-2xl text-xl font-bold leading-tight text-white sm:text-2xl">
                 {active.title}
               </h3>
-              <p className="mt-4 line-clamp-4 max-w-2xl text-sm leading-7 text-white/72">
+              <p className="mt-4 line-clamp-4 max-w-2xl text-sm leading-7 text-white/62">
                 {active.quote}
               </p>
             </div>

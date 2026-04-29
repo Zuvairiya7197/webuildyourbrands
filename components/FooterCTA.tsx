@@ -163,7 +163,7 @@ export default function FooterCTA() {
             <h2 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-4xl">
               {copy.title}
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/62">
               {copy.description}
             </p>
           </div>

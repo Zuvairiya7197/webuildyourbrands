@@ -26,17 +26,17 @@ export default function Section({
         {(eyebrow || title || description) && (
           <div className="mb-8 max-w-3xl sm:mb-10">
             {eyebrow && (
-              <p className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              <p className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-white/44">
                 {eyebrow}
               </p>
             )}
             {title && (
-              <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
+              <p className="mt-5 text-base leading-8 text-white/58 sm:text-lg">
                 {description}
               </p>
             )}
