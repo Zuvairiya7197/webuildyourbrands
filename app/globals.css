@@ -167,7 +167,7 @@ textarea {
 
   .hanging-service-card {
     transform-origin: 50% -58px;
-    animation: hangingCardSwing 5.8s ease-in-out infinite;
+    animation: hangingCardSwing 4.6s ease-in-out infinite;
   }
 
   .hanging-service-card:nth-child(2) {

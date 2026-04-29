@@ -92,7 +92,7 @@ export default function Hero({
             loop
             playsInline
             preload="metadata"
-            aria-label="Brand website preview video"
+            aria-hidden="true"
           />
       )}
       <div

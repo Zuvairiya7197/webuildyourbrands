@@ -30,6 +30,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website"
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "We Build Your Brands",
+    description:
+      "High-converting websites for modern brands, built with strategy, design, and performance."
+  },
+  alternates: {
+    canonical: "/"
+  },
   robots: {
     index: true,
     follow: true
