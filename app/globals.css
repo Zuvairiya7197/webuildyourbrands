@@ -3,16 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: 240 100% 6%;
   --foreground: 0 0% 100%;
-  --card: 252 70% 9%;
-  --card-foreground: 0 0% 100%;
-  --primary: 280 100% 42%;
   --primary-foreground: 0 0% 100%;
-  --muted: 252 72% 10%;
   --muted-foreground: 258 22% 72%;
-  --border: 258 38% 24%;
-  --input: 258 38% 24%;
   --ring: 0 0% 100%;
   --neon-cyan: #16d8ff;
   --neon-blue: #355cff;

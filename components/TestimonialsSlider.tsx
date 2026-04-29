@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Quote, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,8 @@ type Testimonial = {
   image?: string;
 };
 
+const testimonialTags = ["Clearer brand", "Fast edits"];
+
 function TestimonialsSliderComponent({
   testimonials
 }: {
@@ -23,7 +25,6 @@ function TestimonialsSliderComponent({
   const touchStartX = useRef<number | null>(null);
   const active = testimonials[activeIndex];
   const hasImage = Boolean(active.image);
-  const tags = useMemo(() => ["Clearer brand", "Fast edits"], []);
 
   const goToPrevious = useCallback(() => {
     setActiveIndex((current) =>
@@ -165,7 +166,7 @@ function TestimonialsSliderComponent({
             <div className="mt-6">
               <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-wrap gap-2">
-                  {tags.map((item) => (
+                  {testimonialTags.map((item) => (
                     <span
                       key={item}
                       className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.12em] text-white/52 sm:text-[10px] sm:tracking-[0.14em]"

@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { CalendlyModalProvider } from "@/components/CalendlyModal";
-import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={cn("min-h-screen overflow-x-clip font-sans antialiased")}>
+      <body className="min-h-screen overflow-x-clip font-sans antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

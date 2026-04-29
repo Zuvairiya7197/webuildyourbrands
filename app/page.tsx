@@ -706,26 +706,6 @@ export default function Home() {
       </section>
 
       <section className="mobile-render-defer px-4 py-12 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="mx-auto mb-5 max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] p-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_84px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:mb-6 sm:p-8">
-          <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.26em] text-white/46">
-            Ready To Grow
-          </p>
-          <h2 className="text-2xl font-bold leading-tight sm:text-4xl">
-            Ready to grow your business?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/62">
-            Let&apos;s build a website that actually works.
-          </p>
-          <Button
-            asChild
-            className={`mt-6 h-12 rounded-full px-7 text-base font-bold ${neonButtonClass}`}
-          >
-            <CalendlyLink>
-              Book a Free Call →
-              <CalendarDays className="h-4 w-4" aria-hidden="true" />
-            </CalendlyLink>
-          </Button>
-        </div>
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] px-4 py-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_84px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:px-6 sm:py-8 lg:px-8">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)]" />
           <div className="mx-auto mb-6 max-w-2xl text-center">
