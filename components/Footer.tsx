@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUp, Instagram, Linkedin } from "lucide-react";
-import { useState } from "react";
+import { useRef } from "react";
 import FooterCTA from "@/components/FooterCTA";
 
 const footerLinks = [
@@ -39,20 +39,32 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const [spotlight, setSpotlight] = useState({ x: 50, y: 50 });
+  const footerRef = useRef<HTMLElement | null>(null);
+  const frameRef = useRef(0);
 
   function handleMouseMove(event: React.MouseEvent<HTMLElement>) {
     const rect = event.currentTarget.getBoundingClientRect();
-    setSpotlight({
-      x: ((event.clientX - rect.left) / rect.width) * 100,
-      y: ((event.clientY - rect.top) / rect.height) * 100
+    const x = `${((event.clientX - rect.left) / rect.width) * 100}%`;
+    const y = `${((event.clientY - rect.top) / rect.height) * 100}%`;
+
+    cancelAnimationFrame(frameRef.current);
+    frameRef.current = requestAnimationFrame(() => {
+      footerRef.current?.style.setProperty("--footer-spotlight-x", x);
+      footerRef.current?.style.setProperty("--footer-spotlight-y", y);
     });
   }
 
   return (
     <footer
+      ref={footerRef}
       className="group/footer relative overflow-hidden border-t border-cyan-300/10 px-4 text-white sm:px-8 lg:px-24 xl:px-32"
       onMouseMove={handleMouseMove}
+      style={
+        {
+          "--footer-spotlight-x": "50%",
+          "--footer-spotlight-y": "50%"
+        } as React.CSSProperties
+      }
     >
       <Image
         src="/footerbackround.webp"
@@ -67,7 +79,8 @@ export default function Footer() {
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover/footer:opacity-100"
         style={{
-          background: `radial-gradient(circle at ${spotlight.x}% ${spotlight.y}%, rgba(22,216,255,0.16), rgba(124,60,255,0.08) 22%, transparent 42%)`
+          background:
+            "radial-gradient(circle at var(--footer-spotlight-x) var(--footer-spotlight-y), rgba(22,216,255,0.16), rgba(124,60,255,0.08) 22%, transparent 42%)"
         }}
         aria-hidden="true"
       />

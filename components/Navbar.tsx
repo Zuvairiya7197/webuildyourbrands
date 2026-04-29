@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { memo, useCallback, useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { CalendarDays, Linkedin, Menu, X } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
@@ -22,9 +22,9 @@ const LINKEDIN_URL = "https://www.linkedin.com/company/webuildyourbrands";
 
 function Navbar() {
   const pathname = usePathname();
-  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isScrolledRef = useRef(false);
   const isContactPage = pathname === "/contact";
   const toggleMenu = useCallback(
     () => setIsMenuOpen((current) => !current),
@@ -33,7 +33,12 @@ function Navbar() {
 
   useEffect(() => {
     const updateScrollState = () => {
-      setIsScrolled(window.scrollY > 24);
+      const nextIsScrolled = window.scrollY > 24;
+
+      if (nextIsScrolled !== isScrolledRef.current) {
+        isScrolledRef.current = nextIsScrolled;
+        setIsScrolled(nextIsScrolled);
+      }
     };
 
     updateScrollState();
@@ -47,14 +52,6 @@ function Navbar() {
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
-
-  useEffect(() => {
-    links.forEach((link) => {
-      if (link.href !== pathname) {
-        router.prefetch(link.href);
-      }
-    });
-  }, [pathname, router]);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -81,6 +78,7 @@ function Navbar() {
             src="/wbyblogo.webp"
             alt="WEBuildYourBrands"
             fill
+            priority
             sizes="(min-width: 640px) 192px, 160px"
             className="object-contain"
           />
