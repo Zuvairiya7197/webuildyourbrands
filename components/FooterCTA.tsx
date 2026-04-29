@@ -12,10 +12,10 @@ type TrailDot = {
 
 const footerCtaCopy: Record<string, { eyebrow: string; title: string; description: string }> = {
   "/": {
-    eyebrow: "Start your project",
-    title: "Ready for a clearer website?",
+    eyebrow: "Book your free call",
+    title: "Ready to grow your business?",
     description:
-      "We build clarity-driven websites that help businesses grow, stand out, and convert."
+      "Let's build a fast, custom website that turns more visitors into leads."
   },
   "/projects": {
     eyebrow: "Seen enough?",

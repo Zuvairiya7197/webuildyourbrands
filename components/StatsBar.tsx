@@ -1,12 +1,13 @@
 "use client";
 
 import { memo, useEffect, useMemo, useRef, useState } from "react";
-import { Fingerprint, Smartphone, Zap } from "lucide-react";
+import { Search, Smartphone, Target, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type StatItem = {
   value: number;
   suffix?: string;
+  status?: string;
   label: string;
 };
 
@@ -76,9 +77,14 @@ function StatsBar({ stats }: StatsBarProps) {
         tone: "from-violet-300/24 to-cyan-300/10"
       },
       {
-        Icon: Fingerprint,
-        status: "Custom",
+        Icon: Target,
+        status: "Conversion Focused",
         tone: "from-fuchsia-300/18 to-violet-500/10"
+      },
+      {
+        Icon: Search,
+        status: "SEO Ready",
+        tone: "from-cyan-300/18 to-violet-500/10"
       }
     ],
     []
@@ -117,17 +123,17 @@ function StatsBar({ stats }: StatsBarProps) {
       <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.78),rgba(124,60,255,0.78),transparent)]" />
       <div className="relative z-10 px-4 pb-5 pt-6 text-center sm:px-8 sm:pt-8">
         <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-100/58">
-          Built To Convert
+          Built To Perform
         </p>
         <h2 className="mx-auto mt-3 max-w-3xl text-2xl font-bold leading-tight text-white sm:text-4xl">
-          The first impression should already be doing the selling.
+          Everything your website needs to turn traffic into leads.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/58">
-          Mobile polish, speed, and custom design. No template shortcut.
+          Fast, responsive, SEO-ready, and built around clear next steps.
         </p>
       </div>
-      <div className="relative z-10 grid gap-3 md:grid-cols-3">
-        {stats.map(({ value, suffix, label }, index) => {
+      <div className="relative z-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {stats.map(({ value, suffix, status: itemStatus, label }, index) => {
         const { Icon, status, tone } = statVisuals[index] ?? statVisuals[0];
         const progress = isVisible ? value : 0;
         const arcColor =
@@ -144,7 +150,7 @@ function StatsBar({ stats }: StatsBarProps) {
           <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.75),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
           <div className="relative z-10 flex items-start justify-between gap-4">
             <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-100/72">
-              {status}
+              {itemStatus ?? status}
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/56 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_28px_rgba(53,92,255,0.2)] transition duration-300 group-hover:bg-[image:var(--button-gradient)]">
               <Icon className="h-5 w-5" aria-hidden="true" />
