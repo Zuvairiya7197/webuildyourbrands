@@ -62,6 +62,8 @@ export default function FooterCTA() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const lastTrailTime = useRef(0);
   const trailId = useRef(0);
+  const isDragging = useRef(false);
+  const isCompleteRef = useRef(false);
   const [handleX, setHandleX] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
@@ -77,27 +79,28 @@ export default function FooterCTA() {
     }, 600);
   }
 
-  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-    if (isComplete || !sliderRef.current) return;
+  function updateSlider(clientX: number, clientY: number, timeStamp: number) {
+    if (isCompleteRef.current || !sliderRef.current) return;
 
     const rect = sliderRef.current.getBoundingClientRect();
     const padding = 5;
     const handleWidth = 50;
     const min = padding;
     const max = rect.width - handleWidth - padding;
-    const rawX = event.clientX - rect.left - handleWidth / 2;
+    const rawX = clientX - rect.left - handleWidth / 2;
     const x = Math.max(min, Math.min(rawX, max));
     const nextProgress = (x - min) / (max - min);
 
     setHandleX(x - padding);
     setProgress(nextProgress);
 
-    if (event.timeStamp - lastTrailTime.current > 35) {
-      createTrailDot(event.clientX - rect.left, event.clientY - rect.top);
-      lastTrailTime.current = event.timeStamp;
+    if (timeStamp - lastTrailTime.current > 35) {
+      createTrailDot(clientX - rect.left, clientY - rect.top);
+      lastTrailTime.current = timeStamp;
     }
 
     if (nextProgress >= 0.985) {
+      isCompleteRef.current = true;
       setIsComplete(true);
       setHandleX(max - padding);
       setProgress(1);
@@ -108,11 +111,38 @@ export default function FooterCTA() {
     }
   }
 
-  function handleMouseLeave() {
-    if (isComplete) return;
+  function resetSlider() {
+    if (isCompleteRef.current) return;
 
     setHandleX(0);
     setProgress(0);
+  }
+
+  function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
+    isDragging.current = true;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    updateSlider(event.clientX, event.clientY, event.timeStamp);
+  }
+
+  function handlePointerMove(event: React.PointerEvent<HTMLDivElement>) {
+    if (event.pointerType !== "mouse" && !isDragging.current) return;
+
+    updateSlider(event.clientX, event.clientY, event.timeStamp);
+  }
+
+  function handlePointerUp(event: React.PointerEvent<HTMLDivElement>) {
+    isDragging.current = false;
+    event.currentTarget.releasePointerCapture(event.pointerId);
+
+    if (!isCompleteRef.current) {
+      resetSlider();
+    }
+  }
+
+  function handlePointerLeave(event: React.PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse" && !isDragging.current) {
+      resetSlider();
+    }
   }
 
   return (
@@ -145,12 +175,12 @@ export default function FooterCTA() {
         >
           <div
             ref={sliderRef}
-            onTouchEnd={() => {
-              window.location.href = "/contact";
-            }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className={`relative h-full w-full cursor-pointer overflow-hidden rounded-full border-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),inset_0_0_26px_rgba(255,255,255,0.04),0_16px_34px_rgba(0,0,0,0.42)] backdrop-blur-xl transition-colors duration-300 ${
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
+            onPointerLeave={handlePointerLeave}
+            className={`relative h-full w-full touch-none cursor-pointer overflow-hidden rounded-full border-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),inset_0_0_26px_rgba(255,255,255,0.04),0_16px_34px_rgba(0,0,0,0.42)] backdrop-blur-xl transition-colors duration-300 ${
               isComplete
                 ? "border-[#220067] bg-[#220067]"
                 : "border-white/35 bg-white/[0.055]"

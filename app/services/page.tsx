@@ -218,7 +218,7 @@ export default function ServicesPage() {
                   alt={`${service.title} service visual`}
                   fill
                   sizes="(min-width: 1024px) 34vw, 100vw"
-                  className="object-cover object-[center_58%] transition duration-700 group-hover:scale-105"
+                  className="object-contain object-center transition duration-700 sm:object-cover sm:object-[center_58%] sm:group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0)_0%,rgba(0,0,31,0.04)_48%,rgba(0,0,31,0.42)_100%)]" />
                 <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-[#00001F]/62 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.22)] backdrop-blur-md transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)]">
