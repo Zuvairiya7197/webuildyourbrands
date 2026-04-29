@@ -153,8 +153,6 @@ function StatsBar({ stats }: StatsBarProps) {
         {stats.map(({ value, suffix, status: itemStatus, label }, index) => {
         const { Icon, status, tone } = statVisuals[index] ?? statVisuals[0];
         const progress = isVisible ? value : 0;
-        const arcColor =
-          value === 0 ? "rgba(124,60,255,0.82)" : "rgba(22,216,255,0.92)";
 
         return (
         <div
@@ -182,10 +180,9 @@ function StatsBar({ stats }: StatsBarProps) {
 
           <div className="relative z-10 mt-6 h-1 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
             <div
-              className="h-full rounded-full transition-[width] duration-1000 ease-out"
+              className="h-full rounded-full bg-[linear-gradient(90deg,#16d8ff_0%,#355cff_48%,#7c3cff_100%)] transition-[width] duration-1000 ease-out"
               style={{
-                width: isVisible ? `${Math.max(progress, 8)}%` : "0%",
-                background: arcColor
+                width: isVisible ? `${Math.max(progress, 8)}%` : "0%"
               }}
               aria-hidden="true"
             />
