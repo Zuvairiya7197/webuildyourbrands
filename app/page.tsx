@@ -556,7 +556,7 @@ export default function Home() {
             </p>
           </div>
           <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl sm:p-6">
-            <div className="pointer-events-none absolute bottom-10 left-[56px] top-10 w-px bg-[linear-gradient(180deg,rgba(22,216,255,0),rgba(22,216,255,0.36),rgba(124,60,255,0.36),rgba(22,216,255,0))] sm:left-[68px]" />
+            <div className="pointer-events-none absolute bottom-10 left-[68px] top-10 hidden w-px bg-[linear-gradient(180deg,rgba(22,216,255,0),rgba(22,216,255,0.36),rgba(124,60,255,0.36),rgba(22,216,255,0))] sm:block" />
             <div className="grid gap-4">
             {process.map(({ title, description }, index) => (
               <article

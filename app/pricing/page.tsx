@@ -167,8 +167,8 @@ export default function PricingPage() {
                     variant={tier.featured ? "default" : "outline"}
                     className={
                       tier.featured
-                        ? `h-12 w-full rounded-full px-6 text-base font-bold ${neonButtonClass}`
-                        : "h-12 w-full rounded-full px-6 text-base font-bold"
+                        ? `h-12 w-full whitespace-nowrap rounded-full px-5 text-sm font-bold sm:px-6 sm:text-base ${neonButtonClass}`
+                        : "h-12 w-full whitespace-nowrap rounded-full px-5 text-sm font-bold sm:px-6 sm:text-base"
                     }
                   >
                     <CalendlyLink>
