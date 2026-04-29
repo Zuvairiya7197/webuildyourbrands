@@ -117,72 +117,83 @@ function StatsBar({ stats }: StatsBarProps) {
   return (
     <div
       ref={barRef}
-      className="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_12%_10%,rgba(22,216,255,0.14),transparent_30%),radial-gradient(circle_at_88%_85%,rgba(124,60,255,0.22),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.08),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_68%,rgba(0,0,31,0.5))] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_28px_90px_rgba(0,0,31,0.28),0_14px_60px_rgba(53,92,255,0.12)] backdrop-blur-xl"
+      className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_14%_12%,rgba(22,216,255,0.12),transparent_30%),radial-gradient(circle_at_92%_82%,rgba(124,60,255,0.16),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.46))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-6 lg:p-8"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.028)_1px,transparent_1px)] bg-[size:34px_34px] opacity-35" />
-      <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.78),rgba(124,60,255,0.78),transparent)]" />
-      <div className="relative z-10 px-4 pb-5 pt-6 text-center sm:px-8 sm:pt-8">
-        <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-100/58">
-          Built To Perform
-        </p>
-        <h2 className="mx-auto mt-3 max-w-3xl text-2xl font-bold leading-tight text-white sm:text-4xl">
-          Everything your website needs to turn traffic into leads.
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/58">
-          Fast, responsive, SEO-ready, and built around clear next steps.
-        </p>
+      <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),rgba(124,60,255,0.58),transparent)]" />
+      <div className="relative z-10">
+        <div className="grid gap-6 border-b border-white/10 pb-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-white/50">
+              Built To Perform
+            </p>
+            <h2 className="mt-4 max-w-xl text-2xl font-semibold leading-tight text-white sm:text-4xl">
+              Performance that feels premium.
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-white/60">
+              Clean structure, fast loading, and conversion flow working quietly in the background.
+            </p>
+          </div>
+          <div className="grid w-full max-w-sm grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-[#00001F]/34 lg:w-[360px]">
+            {["Mobile", "Speed", "Leads"].map((item) => (
+              <div
+                key={item}
+                className="border-r border-white/10 px-3 py-4 text-center last:border-r-0"
+              >
+                <span className="mx-auto mb-3 block h-1.5 w-7 rounded-full bg-[image:var(--button-gradient)]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/56">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="relative z-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="relative z-10 mt-7">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map(({ value, suffix, status: itemStatus, label }, index) => {
         const { Icon, status, tone } = statVisuals[index] ?? statVisuals[0];
         const progress = isVisible ? value : 0;
         const arcColor =
-          value === 0 ? "rgba(255,244,168,0.7)" : "rgba(22,216,255,0.92)";
+          value === 0 ? "rgba(124,60,255,0.82)" : "rgba(22,216,255,0.92)";
 
         return (
         <div
           key={label}
           className={cn(
-            "group relative min-h-[230px] overflow-hidden rounded-xl border border-white/10 px-5 py-5 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_18px_48px_rgba(22,216,255,0.1)]",
+            "group relative overflow-hidden rounded-[22px] border border-white/10 bg-[#00001F]/38 px-5 py-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 hover:bg-white/[0.045]",
             `bg-gradient-to-br ${tone}`
           )}
         >
-          <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.75),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-          <div className="relative z-10 flex items-start justify-between gap-4">
-            <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-100/72">
-              {itemStatus ?? status}
-            </div>
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/56 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_28px_rgba(53,92,255,0.2)] transition duration-300 group-hover:bg-[image:var(--button-gradient)]">
+          <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-white transition duration-300 group-hover:bg-[image:var(--button-gradient)]">
               <Icon className="h-5 w-5" aria-hidden="true" />
-            </div>
           </div>
 
-          <div className="relative z-10 mx-auto mt-4 flex h-28 w-28 items-center justify-center rounded-full">
-            <div
-              className="absolute inset-0 rounded-full transition duration-1000 ease-out"
-              style={{
-                background: `conic-gradient(${arcColor} ${Math.max(progress, value === 0 && isVisible ? 8 : 0)}%, rgba(255,255,255,0.09) 0)`
-              }}
-              aria-hidden="true"
-            />
-            <div className="absolute inset-2 rounded-full bg-[#05031f] shadow-[inset_0_0_26px_rgba(0,0,31,0.86)]" />
-            <p className="relative text-4xl font-black tracking-tight text-white tabular-nums">
+          <div className="relative z-10 mt-8">
+            <p className="text-4xl font-black tracking-tight text-white tabular-nums">
               <CountUpValue value={value} suffix={suffix} isActive={isVisible} />
+            </p>
+            <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-100/68">
+              {itemStatus ?? status}
+            </p>
+            <p className="mt-3 text-sm font-semibold leading-6 text-white/62 transition duration-300 group-hover:text-white/82">
+              {label}
             </p>
           </div>
 
-          <p className="relative z-10 mx-auto mt-4 max-w-xs text-center text-sm font-bold leading-6 text-white/76 transition duration-300 group-hover:text-white/90">
-            {label}
-          </p>
-          <div className="relative z-10 mx-auto mt-4 h-1 max-w-36 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
+          <div className="relative z-10 mt-6 h-1 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
             <div
-              className="h-full rounded-full bg-[image:var(--button-gradient)] transition-[width] duration-1000 ease-out"
-              style={{ width: isVisible ? `${Math.max(value, 8)}%` : "0%" }}
+              className="h-full rounded-full transition-[width] duration-1000 ease-out"
+              style={{
+                width: isVisible ? `${Math.max(progress, 8)}%` : "0%",
+                background: arcColor
+              }}
+              aria-hidden="true"
             />
           </div>
         </div>
         );
         })}
+        </div>
       </div>
     </div>
   );

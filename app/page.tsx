@@ -550,36 +550,43 @@ export default function Home() {
               No confusion. No endless back-and-forth. Just a clear path from idea to launch.
             </p>
           </div>
-          <div className="relative grid gap-5 md:grid-cols-3">
-            <div className="absolute left-[16.66%] right-[16.66%] top-8 hidden h-px bg-[linear-gradient(90deg,rgba(22,216,255,0),rgba(22,216,255,0.32),rgba(124,60,255,0.36),rgba(22,216,255,0))] md:block" />
+          <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[radial-gradient(circle_at_14%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_92%_82%,rgba(124,60,255,0.14),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.065),rgba(0,0,31,0.44))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_86px_rgba(0,0,31,0.22)] backdrop-blur-xl sm:p-6">
+            <div className="pointer-events-none absolute bottom-10 left-[56px] top-10 w-px bg-[linear-gradient(180deg,rgba(22,216,255,0),rgba(22,216,255,0.36),rgba(124,60,255,0.36),rgba(22,216,255,0))] sm:left-[68px]" />
+            <div className="grid gap-4">
             {process.map(({ title, description, Icon }, index) => (
               <article
                 key={title}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(53,92,255,0.08)_62%,rgba(0,0,31,0.42))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_70px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:bg-[linear-gradient(145deg,rgba(255,255,255,0.1),rgba(22,216,255,0.055)_34%,rgba(124,60,255,0.13)_70%,rgba(0,0,31,0.46))] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_88px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)]"
+                className="group relative grid gap-4 rounded-[24px] border border-white/10 bg-[#00001F]/44 p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.05] sm:grid-cols-[76px_1fr_auto] sm:items-center sm:gap-5 sm:p-5"
               >
-                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.7),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                <div className="relative z-10 flex items-center justify-between gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.2)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.2)]">
+                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                <div className="relative z-10 flex items-center gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan-100/16 bg-[#00001F] text-xs font-black text-white shadow-[0_0_24px_rgba(22,216,255,0.16)]">
+                    0{index + 1}
+                  </span>
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-white transition duration-300 group-hover:bg-[image:var(--button-gradient)] sm:mx-auto">
                     <Icon className="h-7 w-7" aria-hidden="true" />
                   </div>
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-white/44 transition duration-300 group-hover:border-cyan-300/24 group-hover:text-white/76">
-                    Step 0{index + 1}
-                  </span>
                 </div>
-                <div className="relative z-10 mt-12">
+                <div className="relative z-10">
                   <h3 className="text-xl font-bold text-white">{title}</h3>
                   <p className="mt-4 text-sm leading-7 text-white/64">
                     {description}
                   </p>
-                  <div className="mt-8 h-1 overflow-hidden rounded-full bg-white/10">
+                </div>
+                <div className="relative z-10 sm:w-36">
+                  <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
                     <div
-                      className="h-full rounded-full bg-[image:var(--button-gradient)] transition-[width] duration-500 group-hover:w-full"
-                      style={{ width: `${(index + 1) * 28}%` }}
+                      className="h-full rounded-full bg-[image:var(--button-gradient)] transition-[width] duration-500"
+                      style={{ width: `${((index + 1) / process.length) * 100}%` }}
                     />
                   </div>
+                  <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white/34">
+                    Phase {index + 1}
+                  </p>
                 </div>
               </article>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -699,7 +706,7 @@ export default function Home() {
       </section>
 
       <section className="mobile-render-defer px-4 py-12 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="mx-auto mb-10 max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] p-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_84px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-8">
+        <div className="mx-auto mb-5 max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] p-6 text-center text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_84px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:mb-6 sm:p-8">
           <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.26em] text-white/46">
             Ready To Grow
           </p>
