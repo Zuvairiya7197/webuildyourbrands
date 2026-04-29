@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, MonitorSmartphone, MousePointerClick, Sparkles } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, MonitorSmartphone, MousePointerClick, Sparkles } from "lucide-react";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { Button } from "@/components/ui/button";
@@ -17,36 +17,46 @@ const projects = [
   {
     title: "Organise With Kopal",
     category: "Service Brand",
-    description: "Calm, clear, and trust-led.",
-    result: "Premium first impression",
+    description: "A calm service website built to explain the offer quickly and make the brand feel easy to trust.",
+    result: "Clearer service positioning and a premium first impression.",
+    proofBefore: "Built From Scratch: No existing structure or system.",
+    proofAfter: "Now: A clean, premium website with a strong first impression and clear brand positioning.",
     image: "/project-organise-with-kopal.webp",
     projectUrl: "https://www.organisewithkopal.com/"
   },
   {
     title: "SM Classes",
     category: "Education",
-    description: "Structured for parents and students.",
-    result: "Clearer program discovery",
+    description: "An education website structured so parents and students can find key details without confusion.",
+    result: "Improved program clarity and easier inquiry decisions.",
+    proofBefore: "Before: Unclear structure. Parents had to search to understand programs.",
+    proofAfter: "After: Clear layout with easy navigation. Parents can quickly find and trust the right information.",
     image: "/project-sm-classes.webp",
     projectUrl: "https://smclasses.in/"
   },
   {
     title: "Little Ilmies",
     category: "Learning Platform",
-    description: "Friendly, focused, and easy to explore.",
-    result: "Simple learner pathways",
+    description: "A friendly learning platform designed to make exploration simple and keep families moving forward.",
+    result: "Clearer learner pathways and a smoother first experience.",
+    proofBefore: "Built From Scratch: No clear structure or guided learning flow.",
+    proofAfter: "Now: Simple, friendly pathways that make exploring and understanding easy for users.",
     image: "/project-little-ilmies.webp",
     projectUrl: "https://littleilmies.com/"
   },
   {
     title: "Zarrar Palekar",
     category: "Portfolio",
-    description: "Sharp presentation for credibility.",
-    result: "Work made easier to trust",
+    description: "A focused portfolio built to present work clearly, create credibility, and make projects easier to understand.",
+    result: "Sharper positioning and stronger trust around the work.",
+    proofBefore: "Before: Work was scattered and hard to present professionally.",
+    proofAfter: "After: Structured portfolio that showcases projects clearly and builds instant credibility.",
     image: "/project-zarrar-palekar.webp",
     projectUrl: "https://zarrarpalekar.vercel.app/"
   }
 ];
+
+const trustPoints = ["Built for clarity", "Designed to convert", "Trusted by real businesses"];
 
 export default function ProjectsPage() {
   return (
@@ -54,7 +64,7 @@ export default function ProjectsPage() {
       <Hero
         eyebrow="Projects"
         title="Selected work across strategy, design, and development."
-        description="A grid of polished website experiences built for clarity, trust, and conversion."
+        description="These aren't just websites. They're built to make people trust faster and take action."
         videoSrc="/Projectpagehero.mp4"
         primaryLabel="View Projects"
         primaryHref="#projects"
@@ -66,7 +76,7 @@ export default function ProjectsPage() {
         className="scroll-mt-24 pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Projects"
         title="A premium gallery of websites built to be trusted fast."
-        description="Each project is shaped around a clearer first impression, easier decisions, and a stronger reason to take action."
+        description="These aren't just websites. They're built to make people trust faster and take action."
       >
         <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-[radial-gradient(circle_at_12%_8%,rgba(22,216,255,0.14),transparent_32%),radial-gradient(circle_at_90%_18%,rgba(124,60,255,0.2),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.075),rgba(0,0,31,0.52))] p-3 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_34px_120px_rgba(0,0,31,0.32)] backdrop-blur-xl sm:p-5">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.78),rgba(124,60,255,0.68),transparent)]" />
@@ -126,7 +136,7 @@ export default function ProjectsPage() {
 
                 <div className="flex flex-col justify-between p-4 sm:p-6">
                   <div className="grid gap-3">
-                    {["Clear message", "Premium visual system", "Live and ready"].map((item) => (
+                    {["Clear message", "Trust-led structure", "Easy next step"].map((item) => (
                       <div
                         key={item}
                         className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-bold text-white/74"
@@ -139,6 +149,10 @@ export default function ProjectsPage() {
                     <p className="text-sm leading-7 text-white/58">
                       {projects[0].description}
                     </p>
+                    <div className="mt-4 grid gap-2 text-sm font-semibold leading-6 text-white/70">
+                      <p>{projects[0].proofBefore}</p>
+                      <p>{projects[0].proofAfter}</p>
+                    </div>
                     <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-white">
                       View Live Project
                       <ArrowUpRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
@@ -176,6 +190,10 @@ export default function ProjectsPage() {
                       </p>
                       <h3 className="mt-3 text-2xl font-bold text-white">{project.title}</h3>
                       <p className="mt-3 text-sm leading-6 text-white/58">{project.description}</p>
+                      <div className="mt-3 grid gap-1.5 text-sm font-semibold leading-6 text-white/70">
+                        <p>{project.proofBefore}</p>
+                        <p>{project.proofAfter}</p>
+                      </div>
                       <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-cyan-100/64">
                         {project.result}
                       </p>
@@ -192,13 +210,27 @@ export default function ProjectsPage() {
             </div>
           </div>
 
+          <div className="mt-5 flex flex-wrap justify-center gap-2 border-y border-white/10 py-5">
+            {trustPoints.map((point) => (
+              <span
+                key={point}
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/58"
+              >
+                <CheckCircle2 className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
+                {point}
+              </span>
+            ))}
+          </div>
+          <p className="mx-auto mt-5 max-w-2xl text-center text-sm font-semibold leading-7 text-white/64">
+            If your website isn&apos;t building trust, it&apos;s costing you opportunities.
+          </p>
           <div className="mt-4 flex justify-center">
             <Button
               asChild
               className={`h-12 rounded-full px-7 text-sm font-bold ${neonButtonClass}`}
             >
               <Link href="https://calendly.com/meetwbybfounder/30min?month=2026-05">
-                Plan A Similar Website
+                Get a Website Like This →
                 <MousePointerClick className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>

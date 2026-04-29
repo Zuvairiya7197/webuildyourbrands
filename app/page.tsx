@@ -388,7 +388,7 @@ export default function Home() {
       </section>
 
       <section className="px-4 pb-10 sm:px-8 sm:pb-12 lg:px-24 lg:pb-14 xl:px-32">
-        <div className="mx-auto grid max-w-6xl gap-4 rounded-[24px] border border-white/10 bg-white/[0.035] p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:grid-cols-[1fr_auto] sm:items-center sm:p-5">
+        <div className="mx-auto grid max-w-6xl gap-4 border-y border-white/10 py-5 text-white sm:grid-cols-[1fr_auto] sm:items-center">
           <p className="text-sm font-bold text-white/72">
             Built with precision, not templates.
           </p>
@@ -399,12 +399,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer relative px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-24 lg:pb-14 lg:pt-32 xl:px-32">
+      <section className="mobile-render-defer relative px-4 pb-10 pt-14 sm:px-8 sm:pb-12 sm:pt-20 lg:px-24 lg:pb-14 lg:pt-24 xl:px-32">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_14%_12%,rgba(22,216,255,0.12),transparent_30%),radial-gradient(circle_at_92%_82%,rgba(124,60,255,0.16),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.46))] p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-6 lg:p-8">
-          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),rgba(124,60,255,0.58),transparent)]" />
+        <div className="mx-auto max-w-6xl text-white">
           <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
-            <div className="relative flex flex-col justify-between rounded-[26px] border border-white/10 bg-[#00001F]/46 p-6 sm:p-8">
+            <div className="relative flex flex-col justify-between border-l border-cyan-100/20 pl-5 sm:pl-7">
               <div>
                 <Eyebrow>What You Get</Eyebrow>
                 <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-4xl">
@@ -418,7 +417,7 @@ export default function Home() {
                 {["Clear offer", "Fast pages", "Stronger trust", "More inquiries"].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3"
+                    className="flex items-center justify-between gap-4 border-b border-white/10 py-3 last:border-b-0"
                   >
                     <span>{item}</span>
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100/70" aria-hidden="true" />
@@ -442,7 +441,7 @@ export default function Home() {
                 <Link
                   key={title}
                   href="/services"
-                  className="group relative min-h-[220px] overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_22px_70px_rgba(22,216,255,0.1)] sm:p-6"
+                  className="group relative min-h-[220px] overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.035] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] sm:p-6"
                 >
                   <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
                   <div className="flex items-start justify-between gap-5">
@@ -469,14 +468,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 pb-16 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:px-24 lg:pb-28 lg:pt-24 xl:px-32">
+      <section className="mobile-render-defer px-4 pb-14 pt-10 sm:px-8 sm:pb-20 sm:pt-14 lg:px-24 lg:pb-24 lg:pt-20 xl:px-32">
         <StatsBar stats={stats} />
       </section>
 
-      <section className="mobile-render-defer px-4 py-16 sm:px-8 sm:py-24 lg:px-24 lg:py-28 xl:px-32">
-        <div className="relative mx-auto grid max-w-6xl gap-5 overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_18%_18%,rgba(22,216,255,0.12),transparent_30%),radial-gradient(circle_at_88%_72%,rgba(124,60,255,0.18),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.42))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-6 lg:grid-cols-[0.9fr_1.4fr] lg:p-8">
-          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),rgba(124,60,255,0.64),transparent)]" />
-          <div className="relative rounded-[26px] border border-white/10 bg-[#00001F]/44 p-6 sm:p-8">
+      <section className="mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+        <div className="relative mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
+          <div className="relative border-l border-violet-300/20 pl-5 sm:pl-7">
             <Eyebrow>The Problem</Eyebrow>
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
               Most websites don&apos;t convert. Here&apos;s why:
@@ -488,7 +486,7 @@ export default function Home() {
               {["Slow loading", "Poor mobile experience", "No clear message", "No conversion strategy"].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3"
+                  className="flex items-center justify-between gap-4 border-b border-white/10 py-3 last:border-b-0"
                 >
                   <span className="text-sm font-bold text-white/76">{item}</span>
                   <ArrowRight className="h-4 w-4 text-cyan-100/54" aria-hidden="true" />
@@ -501,7 +499,7 @@ export default function Home() {
             {audiences.map(({ title, cue, fit, outcome, Icon }, index) => (
               <article
                 key={title}
-                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),rgba(22,216,255,0.025)_42%,rgba(124,60,255,0.09))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:shadow-[0_22px_70px_rgba(22,216,255,0.12)] sm:p-6"
+                className="group relative overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.035] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 sm:p-6"
               >
                 <div className="pointer-events-none absolute inset-y-6 left-0 w-px bg-[linear-gradient(180deg,transparent,rgba(22,216,255,0.7),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
                 <div className="grid gap-5 sm:grid-cols-[72px_1fr_auto] sm:items-center">
@@ -539,7 +537,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
+      <section className="mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Process</Eyebrow>
@@ -550,13 +548,13 @@ export default function Home() {
               No confusion. No endless back-and-forth. Just a clear path from idea to launch.
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[radial-gradient(circle_at_14%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_92%_82%,rgba(124,60,255,0.14),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.065),rgba(0,0,31,0.44))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_86px_rgba(0,0,31,0.22)] backdrop-blur-xl sm:p-6">
+          <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl sm:p-6">
             <div className="pointer-events-none absolute bottom-10 left-[56px] top-10 w-px bg-[linear-gradient(180deg,rgba(22,216,255,0),rgba(22,216,255,0.36),rgba(124,60,255,0.36),rgba(22,216,255,0))] sm:left-[68px]" />
             <div className="grid gap-4">
             {process.map(({ title, description, Icon }, index) => (
               <article
                 key={title}
-                className="group relative grid gap-4 rounded-[24px] border border-white/10 bg-[#00001F]/44 p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.05] sm:grid-cols-[76px_1fr_auto] sm:items-center sm:gap-5 sm:p-5"
+                className="group relative grid gap-4 rounded-[18px] border border-white/10 bg-[#00001F]/34 p-4 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.05] sm:grid-cols-[76px_1fr_auto] sm:items-center sm:gap-5 sm:p-5"
               >
                 <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
                 <div className="relative z-10 flex items-center gap-4">
@@ -591,7 +589,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
+      <section className="mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Selected Work</Eyebrow>
@@ -622,7 +620,7 @@ export default function Home() {
                   href={project.projectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_36%,rgba(124,60,255,0.1)_72%,rgba(0,0,31,0.44))] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.24)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.13),0_18px_72px_rgba(124,60,255,0.16)] ${index === 0 ? "sm:col-span-2" : ""}`}
+                  className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 ${index === 0 ? "sm:col-span-2" : ""}`}
                 >
                   <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
                   <div className={`relative overflow-hidden rounded-xl ${index === 0 ? "aspect-[16/8]" : "aspect-[16/11]"}`}>
@@ -657,7 +655,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
+      <section className="mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Business Results</Eyebrow>
@@ -705,8 +703,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 py-12 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] px-4 py-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_84px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:px-6 sm:py-8 lg:px-8">
+      <section className="mobile-render-defer px-4 py-12 sm:px-8 sm:py-16 lg:px-24 lg:py-20 xl:px-32">
+        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] px-4 py-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl sm:px-6 sm:py-8 lg:px-8">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)]" />
           <div className="mx-auto mb-6 max-w-2xl text-center">
             <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.26em] text-white/46">

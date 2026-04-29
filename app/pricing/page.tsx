@@ -19,13 +19,13 @@ const tiers = [
     bestFor: "New website",
     outcome: "Look credible fast",
     price: "$ 599",
-    note: "One-time payment",
+    note: "Best for getting online fast without overthinking",
     cta: "Get Started",
     features: [
       "1-3 key pages",
-      "Mobile-first design",
-      "Contact-ready flow",
-      "Basic SEO setup"
+      "Works smoothly where most users visit (mobile)",
+      "Simple contact flow so visitors can reach you fast",
+      "Basic SEO setup that helps Google understand your site"
     ]
   },
   {
@@ -34,14 +34,14 @@ const tiers = [
     bestFor: "Most businesses",
     outcome: "More booked calls",
     price: "$ 999",
-    note: "Recommended path",
-    cta: "Book A Call",
+    note: "Designed to bring consistent inquiries",
+    cta: "Book a Free Call",
     featured: true,
     features: [
       "5-8 focused pages",
-      "Custom UI/UX",
-      "Lead-driven layout",
-      "Speed optimization"
+      "Custom UI/UX that builds trust faster",
+      "Lead-driven layout that guides visitors to act",
+      "Faster load times so visitors do not leave"
     ]
   },
   {
@@ -50,24 +50,26 @@ const tiers = [
     bestFor: "Custom build",
     outcome: "Competitive edge",
     price: "$ 1599+",
-    note: "Custom scope",
-    cta: "Let's Build",
+    note: "Built for brands that need a serious competitive edge",
+    cta: "Request Custom Quote",
     features: [
-      "Fully custom website",
-      "Advanced UI/UX",
-      "Integrations",
-      "Strategy support"
+      "Fully custom website built around your business goals",
+      "Advanced UI/UX that improves trust and clarity",
+      "Integrations that support your sales process",
+      "Strategy support so the site has a clear plan"
     ]
   }
 ];
+
+const trustPoints = ["100% Custom Built", "Fast Delivery", "Conversion-Focused"];
 
 export default function PricingPage() {
   return (
     <>
       <Hero
         eyebrow="Pricing"
-        title="Website packages built for clear growth."
-        description="Choose the right launch path for your brand, from lean websites to fully custom conversion systems."
+        title="Choose the website that brings you more inquiries - not just a better design."
+        description="Clear packages designed to help your business attract, build trust, and convert visitors into leads."
         videoSrc="/Serviceshero.mp4"
         primaryLabel="Compare Packages"
         primaryHref="#packages"
@@ -83,7 +85,7 @@ export default function PricingPage() {
         <div className="relative mx-auto max-w-6xl">
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-100/58">
-              Pick Your Path
+              Choose the right level for your business
             </p>
             <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-4xl">
               Choose the level of trust your website needs to create.
@@ -91,6 +93,9 @@ export default function PricingPage() {
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/58">
               Simple options. Clear outcomes. Book a call if you want help
               choosing the right path.
+            </p>
+            <p className="mx-auto mt-4 max-w-xl rounded-full border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-semibold leading-6 text-white/68">
+              Not sure which plan fits you? We&apos;ll guide you on a quick call.
             </p>
           </div>
 
@@ -176,6 +181,44 @@ export default function PricingPage() {
             </article>
           ))}
           </div>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-2 border-y border-white/10 py-5">
+            {trustPoints.map((point) => (
+              <span
+                key={point}
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/58"
+              >
+                <CheckCircle2 className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
+                {point}
+              </span>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-7 max-w-2xl text-center text-sm font-semibold leading-7 text-white/62">
+            Clear process. No confusion. Full support at every step.
+          </p>
+        </div>
+      </section>
+
+      <section className="px-5 pb-24 text-white sm:px-8 sm:pb-28 lg:px-24 lg:pb-32 xl:px-32">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] p-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_84px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-10">
+          <p className="mx-auto max-w-2xl text-sm font-semibold leading-7 text-white/64 sm:text-base">
+            If your website isn&apos;t bringing inquiries, it&apos;s costing you every day.
+          </p>
+          <h2 className="mx-auto mt-4 max-w-4xl text-2xl font-bold leading-tight sm:text-4xl">
+            Ready to turn your website into a lead generator?
+          </h2>
+          <Button
+            asChild
+            className={`mt-8 h-12 rounded-full px-7 text-base font-bold ${neonButtonClass}`}
+          >
+            <CalendlyLink>
+              Book a Free Call →
+            </CalendlyLink>
+          </Button>
+          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-white/42">
+            Limited projects each month to maintain quality.
+          </p>
         </div>
       </section>
     </>
