@@ -755,6 +755,23 @@ textarea {
     background-attachment: scroll;
   }
 
+  .mobile-render-defer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 760px;
+  }
+
+  .backdrop-blur-md,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl {
+    -webkit-backdrop-filter: blur(4px) saturate(110%);
+    backdrop-filter: blur(4px) saturate(110%);
+  }
+
+  .blur-2xl,
+  .blur-3xl {
+    filter: blur(16px);
+  }
+
   h1,
   h2,
   h3,

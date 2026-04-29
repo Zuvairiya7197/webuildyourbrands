@@ -91,7 +91,7 @@ export default function Hero({
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             aria-hidden="true"
           />
       )}

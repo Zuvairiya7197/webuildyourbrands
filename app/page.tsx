@@ -216,7 +216,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.76),rgba(0,0,31,0.52)_50%,rgba(0,0,31,0.72)),linear-gradient(180deg,rgba(53,92,255,0.06),rgba(124,60,255,0.04)_38%,transparent_78%)]" />
@@ -354,7 +354,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-24 lg:pb-14 lg:pt-32 xl:px-32">
+      <section className="mobile-render-defer relative px-4 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-28 lg:px-24 lg:pb-14 lg:pt-32 xl:px-32">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
@@ -396,11 +396,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 pb-16 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:px-24 lg:pb-28 lg:pt-24 xl:px-32">
+      <section className="mobile-render-defer px-4 pb-16 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:px-24 lg:pb-28 lg:pt-24 xl:px-32">
         <StatsBar stats={stats} />
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-24 lg:px-24 lg:py-28 xl:px-32">
+      <section className="mobile-render-defer px-4 py-16 sm:px-8 sm:py-24 lg:px-24 lg:py-28 xl:px-32">
         <div className="relative mx-auto grid max-w-6xl gap-5 overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_18%_18%,rgba(22,216,255,0.12),transparent_30%),radial-gradient(circle_at_88%_72%,rgba(124,60,255,0.18),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.42))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-6 lg:grid-cols-[0.9fr_1.4fr] lg:p-8">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),rgba(124,60,255,0.64),transparent)]" />
           <div className="relative rounded-[26px] border border-white/10 bg-[#00001F]/44 p-6 sm:p-8">
@@ -466,7 +466,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
+      <section className="mobile-render-defer px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Your Launch Path</Eyebrow>
@@ -511,7 +511,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
+      <section className="mobile-render-defer px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Selected Work</Eyebrow>
@@ -577,7 +577,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
+      <section className="mobile-render-defer px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Why Choose Us</Eyebrow>
@@ -625,7 +625,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-12 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+      <section className="mobile-render-defer px-4 py-12 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.065),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] px-4 py-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_84px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:px-6 sm:py-8 lg:px-8">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)]" />
           <div className="mx-auto mb-6 max-w-2xl text-center">

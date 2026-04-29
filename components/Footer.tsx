@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Instagram, Linkedin } from "lucide-react";
-import FooterCTA from "@/components/FooterCTA";
 import {
   BackToTopButton,
   FooterInteractionShell
 } from "@/components/FooterInteractionShell";
+
+const FooterCTA = dynamic(() => import("@/components/FooterCTA"), {
+  loading: () => null
+});
 
 const footerLinks = [
   { label: "Home", href: "/" },
