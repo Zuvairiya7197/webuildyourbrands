@@ -411,7 +411,7 @@ export default function ServicesPage() {
           </p>
           <Button
             asChild
-            className={`mt-8 h-12 rounded-full px-7 text-base font-bold ${neonButtonClass}`}
+            className={`mt-8 h-12 whitespace-nowrap rounded-full px-5 text-sm font-bold sm:px-7 sm:text-base ${neonButtonClass}`}
           >
             <CalendlyLink>
               Book a Free Strategy Call →
