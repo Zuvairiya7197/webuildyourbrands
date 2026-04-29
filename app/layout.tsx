@@ -20,12 +20,34 @@ export const metadata: Metadata = {
   },
   description:
     "Strategy, design, and performance-driven development for modern brands that want websites built to convert.",
+  icons: {
+    icon: [
+      {
+        url: "/wbyblogo.webp",
+        type: "image/webp"
+      }
+    ],
+    apple: [
+      {
+        url: "/wbyblogo.webp",
+        type: "image/webp"
+      }
+    ]
+  },
   openGraph: {
     title: "We Build Your Brands",
     description:
       "High-converting websites for modern brands, built with strategy, design, and performance.",
     url: "https://webuildyourbrands.com",
     siteName: "We Build Your Brands",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "We Build Your Brands - High-converting websites built to bring inquiries"
+      }
+    ],
     locale: "en_US",
     type: "website"
   },
@@ -33,7 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "We Build Your Brands",
     description:
-      "High-converting websites for modern brands, built with strategy, design, and performance."
+      "High-converting websites for modern brands, built with strategy, design, and performance.",
+    images: ["/opengraph-image"]
   },
   alternates: {
     canonical: "/"
