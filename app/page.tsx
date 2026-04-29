@@ -349,7 +349,7 @@ export default function Home() {
                         Real pages built around trust.
                       </p>
                     </div>
-                    <div className="absolute right-5 top-1/2 w-44 -translate-y-1/2 rounded-[24px] border border-white/12 bg-[#05051b]/82 p-3 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
+                    <div className="absolute right-5 top-5 w-40 rounded-[22px] border border-white/12 bg-[#05051b]/82 p-3 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
                       <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#00001F]/72">
                         {heroProjectPreviews.map((_, index) => {
                           const upcomingProject =
