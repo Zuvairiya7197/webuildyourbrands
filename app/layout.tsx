@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "We Build Your Brands",
     images: [
       {
-        url: "/opengraph-image",
+        url: "https://webuildyourbrands.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "We Build Your Brands - High-converting websites built to bring inquiries"
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "We Build Your Brands",
     description:
       "High-converting websites for modern brands, built with strategy, design, and performance.",
-    images: ["/opengraph-image"]
+    images: ["https://webuildyourbrands.com/og-image.png"]
   },
   alternates: {
     canonical: "/"

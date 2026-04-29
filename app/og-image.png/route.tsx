@@ -1,14 +1,13 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "We Build Your Brands - High-converting websites built to bring inquiries";
-export const size = {
+
+const size = {
   width: 1200,
   height: 630
 };
-export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+export function GET() {
   return new ImageResponse(
     (
       <div
@@ -19,9 +18,9 @@ export default function OpenGraphImage() {
           height: "100%",
           overflow: "hidden",
           background:
-            "radial-gradient(circle at 14% 12%, rgba(22, 216, 255, 0.26), transparent 30%), radial-gradient(circle at 86% 10%, rgba(124, 60, 255, 0.42), transparent 32%), linear-gradient(135deg, #00001f 0%, #060025 46%, #18004b 100%)",
+            "radial-gradient(circle at 14% 12%, rgba(22,216,255,0.26), transparent 30%), radial-gradient(circle at 86% 10%, rgba(124,60,255,0.42), transparent 32%), linear-gradient(135deg, #00001f 0%, #060025 46%, #18004b 100%)",
           color: "white",
-          fontFamily: "Inter, Arial, sans-serif"
+          fontFamily: "Arial, sans-serif"
         }}
       >
         <div
@@ -29,7 +28,7 @@ export default function OpenGraphImage() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(90deg, rgba(0, 0, 31, 0.24), rgba(255, 255, 255, 0.04), rgba(0, 0, 31, 0.2))"
+              "linear-gradient(90deg, rgba(0,0,31,0.18), rgba(255,255,255,0.045), rgba(0,0,31,0.24))"
           }}
         />
         <div
@@ -39,10 +38,10 @@ export default function OpenGraphImage() {
             right: 70,
             top: 54,
             bottom: 54,
-            border: "1px solid rgba(255, 255, 255, 0.18)",
+            border: "1px solid rgba(255,255,255,0.18)",
             borderRadius: 44,
             background:
-              "linear-gradient(145deg, rgba(255, 255, 255, 0.105), rgba(22, 216, 255, 0.045) 34%, rgba(124, 60, 255, 0.12) 72%, rgba(0, 0, 31, 0.56))"
+              "linear-gradient(145deg, rgba(255,255,255,0.105), rgba(22,216,255,0.045) 34%, rgba(124,60,255,0.12) 72%, rgba(0,0,31,0.56))"
           }}
         />
         <div
@@ -64,26 +63,30 @@ export default function OpenGraphImage() {
                 width: 84,
                 alignItems: "center",
                 justifyContent: "center",
-                overflow: "hidden",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
+                border: "1px solid rgba(255,255,255,0.22)",
                 borderRadius: 24,
-                background: "rgba(0, 0, 31, 0.72)"
+                background:
+                  "linear-gradient(145deg, rgba(22,216,255,0.16), rgba(124,60,255,0.22), rgba(0,0,31,0.78))",
+                boxShadow: "0 0 42px rgba(22,216,255,0.16)"
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element -- next/og renders static preview images and cannot use next/image here. */}
-              <img
-                src="https://webuildyourbrands.com/wbyblogo.webp"
-                width="74"
-                height="74"
-                alt=""
-                style={{ objectFit: "contain" }}
-              />
+              <div
+                style={{
+                  display: "flex",
+                  color: "#ffffff",
+                  fontSize: 28,
+                  fontWeight: 900,
+                  letterSpacing: "-0.08em"
+                }}
+              >
+                WBYB
+              </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <div
                 style={{
                   display: "flex",
-                  color: "rgba(255, 255, 255, 0.9)",
+                  color: "rgba(255,255,255,0.92)",
                   fontSize: 32,
                   fontWeight: 800,
                   letterSpacing: "-0.02em"
@@ -94,7 +97,7 @@ export default function OpenGraphImage() {
               <div
                 style={{
                   display: "flex",
-                  color: "rgba(207, 247, 255, 0.68)",
+                  color: "rgba(207,247,255,0.68)",
                   fontSize: 20,
                   fontWeight: 700,
                   letterSpacing: "0.18em",
@@ -122,7 +125,7 @@ export default function OpenGraphImage() {
               style={{
                 display: "flex",
                 maxWidth: 790,
-                color: "rgba(255, 255, 255, 0.72)",
+                color: "rgba(255,255,255,0.72)",
                 fontSize: 30,
                 lineHeight: 1.32,
                 fontWeight: 500
@@ -140,11 +143,11 @@ export default function OpenGraphImage() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
+                    border: "1px solid rgba(255,255,255,0.15)",
                     borderRadius: 999,
-                    background: "rgba(255, 255, 255, 0.055)",
+                    background: "rgba(255,255,255,0.055)",
                     padding: "14px 20px",
-                    color: "rgba(255, 255, 255, 0.82)",
+                    color: "rgba(255,255,255,0.82)",
                     fontSize: 20,
                     fontWeight: 800
                   }}
