@@ -265,11 +265,11 @@ export default function Home() {
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/74 sm:mt-6 sm:text-base sm:leading-8">
               Custom-designed, lightning-fast websites built to generate leads - not just look good.
             </p>
-            <div className="mt-6 grid max-w-xl gap-3 text-sm font-semibold text-white/68 sm:grid-cols-3">
+            <div className="mt-6 grid max-w-2xl gap-3 text-sm font-semibold text-white/68 sm:grid-cols-3">
               {["Fast to load", "Built to convert", "Ready for leads"].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-2 rounded-full border border-white/10 bg-[#00001F]/36 px-3 py-2"
+                  className="flex items-center gap-2 rounded-full border border-white/10 bg-[#00001F]/36 px-3 py-2 whitespace-nowrap"
                 >
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100" aria-hidden="true" />
                   <span>{item}</span>
@@ -282,7 +282,7 @@ export default function Home() {
                 className={`h-12 w-full gap-0 rounded-full px-7 text-base font-bold sm:h-14 sm:w-auto ${neonButtonClass}`}
               >
                 <CalendlyLink className="group">
-                  Get Your Website Audit →
+                  Get Your Website Audit
                   <CalendarDays className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
                 </CalendlyLink>
               </Button>
@@ -333,50 +333,57 @@ export default function Home() {
                         />
                       ))}
                     </div>
-                    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.94),rgba(0,0,31,0.42)_48%,rgba(0,0,31,0.2)),linear-gradient(0deg,rgba(0,0,31,0.96),transparent_58%)]" />
-                    <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.075] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/72 backdrop-blur-md">
+                    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.98),rgba(0,0,31,0.72)_54%,rgba(0,0,31,0.34)),linear-gradient(0deg,rgba(0,0,31,0.98),rgba(0,0,31,0.64)_48%,transparent_76%)]" />
+                    <div className="absolute left-8 top-8 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.075] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 backdrop-blur-md">
                       <span className="h-2 w-2 rounded-full bg-cyan-200 shadow-[0_0_16px_rgba(22,216,255,0.9)]" />
-                      Bespoke Build
+                      Live Work Preview
                     </div>
-                    <div className="absolute bottom-6 left-6 max-w-[330px]">
-                      <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-100/60">
-                        Live Work Preview
-                      </p>
-                      <h2 className="mt-3 text-4xl font-bold leading-tight text-white">
-                        Clarity that feels expensive.
-                      </h2>
-                      <p className="mt-4 max-w-xs text-sm leading-6 text-white/62">
-                        Real pages built around trust.
-                      </p>
-                    </div>
-                    <div className="absolute right-5 top-5 w-40 rounded-[22px] border border-white/12 bg-[#05051b]/82 p-3 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
-                      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#00001F]/72">
-                        {heroProjectPreviews.map((_, index) => {
-                          const upcomingProject =
-                            heroProjectPreviews[
-                              (index + 1) % heroProjectPreviews.length
-                            ];
-
-                          return (
-                            <Image
-                              key={upcomingProject.title}
-                              src={upcomingProject.image}
-                              alt={`${upcomingProject.title} upcoming website preview`}
-                              width={320}
-                              height={220}
-                              className="hero-proof-mini-slide absolute inset-0 h-full w-full object-cover object-top opacity-0"
-                              style={{ animationDelay: `${index * 4}s` }}
-                            />
-                          );
-                        })}
+                    <div className="absolute inset-x-8 bottom-8 top-24 grid grid-cols-[minmax(0,1fr)_146px] items-end gap-6">
+                      <div className="max-w-[320px] pr-2">
+                        <h2 className="text-[2rem] font-bold leading-[1.08] text-white drop-shadow-[0_8px_24px_rgba(0,0,31,0.88)]">
+                          Premium websites that bring inquiries.
+                        </h2>
+                        <p className="mt-4 max-w-xs text-sm leading-6 text-white/64 drop-shadow-[0_6px_18px_rgba(0,0,31,0.8)]">
+                          Pages built to earn trust fast.
+                        </p>
+                        <Button
+                          asChild
+                          className={`mt-5 h-10 rounded-full px-5 text-xs font-bold whitespace-nowrap ${neonButtonClass}`}
+                        >
+                          <CalendlyLink>
+                            Get a Website That Converts
+                            <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/14 text-white/86">
+                              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                            </span>
+                          </CalendlyLink>
+                        </Button>
                       </div>
-                      <div className="px-2 py-3">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/36">
-                          Up Next
-                        </p>
-                        <p className="mt-1 text-sm font-bold text-white">
-                          Next preview.
-                        </p>
+                      <div className="self-start rounded-[20px] border border-white/12 bg-[#05051b]/82 p-2.5 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#00001F]/72">
+                          {heroProjectPreviews.map((_, index) => {
+                            const upcomingProject =
+                              heroProjectPreviews[
+                                (index + 1) % heroProjectPreviews.length
+                              ];
+
+                            return (
+                              <Image
+                                key={upcomingProject.title}
+                                src={upcomingProject.image}
+                                alt={`${upcomingProject.title} upcoming website preview`}
+                                width={320}
+                                height={220}
+                                className="hero-proof-mini-slide absolute inset-0 h-full w-full object-cover object-top opacity-0"
+                                style={{ animationDelay: `${index * 4}s` }}
+                              />
+                            );
+                          })}
+                        </div>
+                        <div className="px-1.5 py-2.5">
+                          <p className="text-xs font-bold leading-5 text-white/78">
+                            See what your website could look like →
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
