@@ -219,7 +219,7 @@ export default function Home() {
           preload="metadata"
           aria-label="Website development background video"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.48),rgba(0,0,31,0.24)_50%,rgba(0,0,31,0.42)),linear-gradient(180deg,rgba(53,92,255,0.04),rgba(124,60,255,0.03)_38%,transparent_78%)] sm:bg-[linear-gradient(90deg,rgba(0,0,31,0.76),rgba(0,0,31,0.52)_50%,rgba(0,0,31,0.72)),linear-gradient(180deg,rgba(53,92,255,0.06),rgba(124,60,255,0.04)_38%,transparent_78%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.76),rgba(0,0,31,0.52)_50%,rgba(0,0,31,0.72)),linear-gradient(180deg,rgba(53,92,255,0.06),rgba(124,60,255,0.04)_38%,transparent_78%)]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#00001f] to-transparent" />
         <div className="relative mx-auto grid min-h-[560px] max-w-6xl items-center gap-12 sm:min-h-[680px] lg:grid-cols-[0.9fr_1.05fr] lg:gap-16">
           <div className="max-w-2xl">
