@@ -558,7 +558,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl sm:p-6">
             <div className="pointer-events-none absolute bottom-10 left-[56px] top-10 w-px bg-[linear-gradient(180deg,rgba(22,216,255,0),rgba(22,216,255,0.36),rgba(124,60,255,0.36),rgba(22,216,255,0))] sm:left-[68px]" />
             <div className="grid gap-4">
-            {process.map(({ title, description, Icon }, index) => (
+            {process.map(({ title, description }, index) => (
               <article
                 key={title}
                 className="group relative grid gap-4 rounded-[18px] border border-white/10 bg-[#00001F]/34 p-4 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.05] sm:grid-cols-[76px_1fr_auto] sm:items-center sm:gap-5 sm:p-5"
@@ -568,9 +568,6 @@ export default function Home() {
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan-100/16 bg-[#00001F] text-xs font-black text-white shadow-[0_0_24px_rgba(22,216,255,0.16)]">
                     0{index + 1}
                   </span>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-white transition duration-300 group-hover:bg-[image:var(--button-gradient)] sm:mx-auto">
-                    <Icon className="h-7 w-7" aria-hidden="true" />
-                  </div>
                 </div>
                 <div className="relative z-10">
                   <h3 className="text-xl font-bold text-white">{title}</h3>
