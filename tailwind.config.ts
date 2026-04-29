@@ -10,12 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         ring: "hsl(var(--ring))",
-        foreground: "hsl(var(--foreground))",
         primary: {
           foreground: "hsl(var(--primary-foreground))"
-        },
-        muted: {
-          foreground: "hsl(var(--muted-foreground))"
         }
       }
     }

@@ -5,12 +5,8 @@
 :root {
   --foreground: 0 0% 100%;
   --primary-foreground: 0 0% 100%;
-  --muted-foreground: 258 22% 72%;
   --ring: 0 0% 100%;
   --neon-cyan: #16d8ff;
-  --neon-blue: #355cff;
-  --neon-violet: #7c3cff;
-  --neon-magenta: #ef2fff;
   --site-gradient: linear-gradient(
     135deg,
     rgba(0, 0, 31, 1) 0%,

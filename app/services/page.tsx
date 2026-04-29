@@ -222,7 +222,6 @@ export default function ServicesPage() {
         primaryHref="#services"
         secondaryLabel="See Pricing"
         secondaryHref="/pricing"
-        align="center"
       />
 
       <Section

@@ -23,7 +23,6 @@ type HeroProps = {
   primaryHref?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
-  align?: "left" | "center";
 };
 
 export default function Hero({

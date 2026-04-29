@@ -8,7 +8,6 @@ import {
   BriefcaseBusiness,
   CalendarDays,
   CheckCircle2,
-  ClipboardList,
   FileSearch,
   Lightbulb,
   PanelsTopLeft,
@@ -115,18 +114,15 @@ const stats = [
 const process = [
   {
     title: "Strategy & Planning",
-    description: "We define your offer, audience, pages, and conversion goal before design starts.",
-    Icon: ClipboardList
+    description: "We define your offer, audience, pages, and conversion goal before design starts."
   },
   {
     title: "Design & Development",
-    description: "We design and build a fast, custom website that makes your message clear.",
-    Icon: PanelsTopLeft
+    description: "We design and build a fast, custom website that makes your message clear."
   },
   {
     title: "Launch & Growth",
-    description: "We launch with performance, SEO basics, and a clear path for more inquiries.",
-    Icon: Rocket
+    description: "We launch with performance, SEO basics, and a clear path for more inquiries."
   }
 ];
 
