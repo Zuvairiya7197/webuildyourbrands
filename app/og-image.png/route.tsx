@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
@@ -7,7 +8,9 @@ const size = {
   height: 630
 };
 
-export function GET() {
+export function GET(request: Request) {
+  const logoUrl = new URL("/wbyblogo.png", request.url).toString();
+
   return new ImageResponse(
     (
       <div
@@ -70,17 +73,17 @@ export function GET() {
                 boxShadow: "0 0 42px rgba(22,216,255,0.16)"
               }}
             >
-              <div
+              <img
+                src={logoUrl}
+                alt="We Build Your Brands"
+                width={68}
+                height={68}
                 style={{
-                  display: "flex",
-                  color: "#ffffff",
-                  fontSize: 28,
-                  fontWeight: 900,
-                  letterSpacing: "-0.08em"
+                  width: 68,
+                  height: 68,
+                  objectFit: "contain"
                 }}
-              >
-                WBYB
-              </div>
+              />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <div
