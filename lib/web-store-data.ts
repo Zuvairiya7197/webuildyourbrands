@@ -32,7 +32,7 @@ export const websiteStoreItems: WebsiteStoreItem[] = [
       "Upfront pricing and response-time highlights",
       "Review-ready layout for plumber credibility"
     ],
-    previewUrl: "/Plumbing sevices.png",
+    previewUrl: "https://plumbing-services-wbyb.vercel.app/",
     thumbnail: "/Plumbing sevices.png",
     seoScore: 100,
     performanceScore: 100
