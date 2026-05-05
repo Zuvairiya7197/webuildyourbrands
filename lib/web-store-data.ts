@@ -32,8 +32,8 @@ export const websiteStoreItems: WebsiteStoreItem[] = [
       "Upfront pricing and response-time highlights",
       "Review-ready layout for plumber credibility"
     ],
-    previewUrl: "/plumbing-website-template.webp",
-    thumbnail: "/plumbing-website-template.webp",
+    previewUrl: "/Plumbing sevices.png",
+    thumbnail: "/Plumbing sevices.png",
     seoScore: 100,
     performanceScore: 100
   }
