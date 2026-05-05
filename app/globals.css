@@ -132,9 +132,290 @@ textarea {
   background-attachment: fixed;
 }
 
+.what-you-get-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.what-you-get-card {
+  position: relative;
+  min-height: 168px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.035);
+  padding: 20px;
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition:
+    flex 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
+    min-width 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease,
+    opacity 0.28s ease,
+    transform 0.28s ease;
+}
+
+.what-you-get-card-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(22, 216, 255, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(124, 60, 255, 0.14) 66%, rgba(0, 0, 31, 0.42));
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.what-you-get-card-glow::before {
+  content: "";
+  position: absolute;
+  inset-inline: 32px;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(22, 216, 255, 0.72), transparent);
+}
+
+.what-you-get-card-head,
+.what-you-get-card-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.what-you-get-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.what-you-get-card-icon {
+  display: flex;
+  height: 56px;
+  width: 56px;
+  flex: 0 0 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 31, 0.58);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 28px rgba(53, 92, 255, 0.18);
+  transition:
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.what-you-get-card-index {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 12px;
+  color: rgba(255, 255, 255, 0.36);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.28s ease;
+}
+
+.what-you-get-card-copy {
+  margin-top: 20px;
+}
+
+.what-you-get-card-copy h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.what-you-get-card-copy p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.what-you-get-card-link,
+.what-you-get-card-cta {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.what-you-get-card-cta {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-image: var(--button-gradient);
+  padding: 10px 16px;
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 16px 32px rgba(23, 70, 216, 0.24);
+}
+
+.what-you-get-card:is(:hover, :focus-visible) {
+  border-color: rgba(22, 216, 255, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 30px 90px rgba(22, 216, 255, 0.12),
+    0 18px 70px rgba(124, 60, 255, 0.16);
+  opacity: 1;
+  transform: none;
+}
+
+.what-you-get-card:is(:hover, :focus-visible) .what-you-get-card-glow,
+.what-you-get-card:first-child .what-you-get-card-glow {
+  opacity: 1;
+}
+
+.what-you-get-card:is(:hover, :focus-visible) .what-you-get-card-icon,
+.what-you-get-card:first-child .what-you-get-card-icon {
+  border-color: rgba(22, 216, 255, 0.28);
+  background-image: var(--button-gradient);
+  box-shadow: 0 0 34px rgba(22, 216, 255, 0.18);
+}
+
+.what-you-get-card:is(:hover, :focus-visible) .what-you-get-card-index,
+.what-you-get-card:first-child .what-you-get-card-index {
+  color: rgba(207, 247, 255, 0.78);
+}
+
+@supports selector(:has(*)) {
+  .what-you-get-cards:has(.what-you-get-card:is(:hover, :focus-visible)) .what-you-get-card:first-child:not(:hover, :focus-visible) .what-you-get-card-glow {
+    opacity: 0;
+  }
+
+  .what-you-get-cards:has(.what-you-get-card:is(:hover, :focus-visible)) .what-you-get-card:first-child:not(:hover, :focus-visible) .what-you-get-card-icon {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 31, 0.58);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 0 28px rgba(53, 92, 255, 0.18);
+  }
+
+  .what-you-get-cards:has(.what-you-get-card:is(:hover, :focus-visible)) .what-you-get-card:first-child:not(:hover, :focus-visible) .what-you-get-card-index {
+    color: rgba(255, 255, 255, 0.36);
+  }
+}
+
 @media (max-width: 768px) {
   .contact-form-section {
     background-attachment: scroll;
+  }
+}
+
+@media (min-width: 640px) {
+  .what-you-get-card {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .what-you-get-cards {
+    display: flex;
+    min-height: 248px;
+    align-items: stretch;
+  }
+
+  .what-you-get-card {
+    display: flex;
+    height: 248px;
+    min-height: 0;
+    min-width: 104px;
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0.56;
+  }
+
+  .what-you-get-card:first-child {
+    flex-grow: 2.85;
+    opacity: 1;
+  }
+
+  .what-you-get-card-copy {
+    max-width: 340px;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.24s ease,
+      transform 0.24s ease;
+  }
+
+  .what-you-get-card-ready .what-you-get-card-copy {
+    max-width: 260px;
+  }
+
+  .what-you-get-card:first-child .what-you-get-card-copy,
+  .what-you-get-card:is(:hover, :focus-visible) .what-you-get-card-copy {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+  }
+
+  .what-you-get-card:not(:first-child) .what-you-get-card-copy h3,
+  .what-you-get-card:not(:first-child) .what-you-get-card-copy p,
+  .what-you-get-card:not(:first-child) .what-you-get-card-link,
+  .what-you-get-card:not(:first-child) .what-you-get-card-cta {
+    pointer-events: none;
+  }
+
+  .what-you-get-card-head {
+    min-width: 56px;
+  }
+
+  .what-you-get-card-index {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition:
+      color 0.28s ease,
+      opacity 0.28s ease,
+      transform 0.28s ease;
+  }
+
+  .what-you-get-card:first-child .what-you-get-card-index,
+  .what-you-get-card:is(:hover, :focus-visible) .what-you-get-card-index {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .what-you-get-card:is(:hover, :focus-visible) {
+    flex-grow: 3.2;
+  }
+
+  .what-you-get-cards:hover .what-you-get-card:not(:hover),
+  .what-you-get-cards:focus-within .what-you-get-card:not(:focus-visible) {
+    flex-grow: 0.56;
+    opacity: 0.38;
+    transform: none;
+  }
+
+  .what-you-get-cards:hover .what-you-get-card:not(:hover) .what-you-get-card-copy,
+  .what-you-get-cards:focus-within .what-you-get-card:not(:focus-visible) .what-you-get-card-copy {
+    opacity: 0;
+    transform: translateY(14px);
+    transition-delay: 0s;
+  }
+
+  .what-you-get-cards:hover .what-you-get-card:not(:hover) .what-you-get-card-index,
+  .what-you-get-cards:focus-within .what-you-get-card:not(:focus-visible) .what-you-get-card-index {
+    opacity: 0;
+    transform: translateY(-8px);
   }
 }
 

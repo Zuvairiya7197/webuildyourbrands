@@ -50,6 +50,12 @@ const services = [
     title: "Conversion-Focused Layout",
     description: "Clear sections, strong CTAs, and a path that turns visitors into leads.",
     Icon: PanelsTopLeft
+  },
+  {
+    title: "Ready?",
+    description: "Book a free strategy call and let us map the clearest path for your website.",
+    Icon: CalendarDays,
+    cta: "Book a Call"
   }
 ];
 
@@ -405,67 +411,90 @@ export default function Home() {
       <section className="mobile-render-defer relative px-4 pb-10 pt-14 sm:px-8 sm:pb-12 sm:pt-20 lg:px-24 lg:pb-14 lg:pt-24 xl:px-32">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
         <div className="mx-auto max-w-6xl text-white">
-          <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
-            <div className="relative flex flex-col justify-between border-l border-cyan-100/20 pl-5 sm:pl-7">
+          <div className="grid gap-8">
+            <div className="relative grid gap-8 border-l border-cyan-100/20 pl-5 sm:pl-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.62fr)] lg:items-start lg:gap-12">
               <div>
                 <Eyebrow>What You Get</Eyebrow>
-                <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-4xl">
+                <h2 className="max-w-[560px] text-2xl font-semibold leading-tight text-white sm:text-4xl">
                   A website system built to win leads.
                 </h2>
-                <p className="mt-5 max-w-md text-sm leading-7 text-white/62">
+                <p className="mt-5 max-w-[540px] text-sm leading-7 text-white/62 sm:text-base sm:leading-8">
                   Strategy, design, speed, SEO, and conversion flow shaped into one custom build.
                 </p>
               </div>
-              <div className="mt-8 grid gap-3 text-sm font-bold text-white/72">
-                {["Clear offer", "Fast pages", "Stronger trust", "More inquiries"].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center justify-between gap-4 border-b border-white/10 py-3 last:border-b-0"
-                  >
-                    <span>{item}</span>
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100/70" aria-hidden="true" />
-                  </div>
-                ))}
+              <div className="grid gap-5 lg:pt-11">
+                <div className="grid gap-x-5 gap-y-1 text-sm font-bold text-white/76 sm:grid-cols-2">
+                  {["Clear offer", "Fast pages", "Stronger trust", "More inquiries"].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center justify-between gap-4 border-b border-white/10 py-3.5"
+                    >
+                      <span>{item}</span>
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100/70" aria-hidden="true" />
+                    </div>
+                  ))}
+                </div>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-12 w-full justify-between rounded-full border-white/16 bg-white/[0.035] px-6 text-xs font-bold uppercase tracking-[0.18em] hover:bg-white hover:text-[#00001F] sm:max-w-[260px] lg:justify-center lg:justify-self-end"
+                >
+                  <Link href="/services">
+                    View Services
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
               </div>
-              <Button
-                asChild
-                variant="outline"
-                className="mt-7 h-11 w-full rounded-full border-white/14 bg-white/[0.035] px-5 text-xs font-bold uppercase tracking-[0.16em] hover:bg-white hover:text-[#00001F]"
-              >
-                <Link href="/services">
-                  View Services
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </Button>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {services.map(({ title, description, Icon }, index) => (
-                <Link
-                  key={title}
-                  href="/services"
-                  className="group relative min-h-[220px] overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.035] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] sm:p-6"
-                >
-                  <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                  <div className="flex items-start justify-between gap-5">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_28px_rgba(53,92,255,0.18)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.18)]">
-                      <Icon className="h-6 w-6" aria-hidden="true" />
+            <div className="what-you-get-cards">
+              {services.map(({ title, description, Icon, cta }, index) => {
+                const cardContent = (
+                  <>
+                    <div className="what-you-get-card-glow" aria-hidden="true" />
+                    <div className="what-you-get-card-head">
+                      <div className="what-you-get-card-icon">
+                        <Icon className="h-6 w-6" aria-hidden="true" />
+                      </div>
+                      <span className="what-you-get-card-index">0{index + 1}</span>
                     </div>
-                    <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white/36 transition duration-300 group-hover:text-cyan-100/74">
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <h3 className="mt-9 text-xl font-bold text-white">{title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/62">
-                    {description}
-                  </p>
-                  <div className="mt-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/36 transition duration-300 group-hover:text-white/78">
-                    Explore
-                    <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.2),transparent)]" />
-                    <ArrowRight className="h-3.5 w-3.5 transition duration-300 group-hover:translate-x-1" aria-hidden="true" />
-                  </div>
-                </Link>
-              ))}
+                    <div className="what-you-get-card-copy">
+                      <h3>{title}</h3>
+                      <p>{description}</p>
+                      {cta ? (
+                        <span className="what-you-get-card-cta">
+                          {cta}
+                          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                        </span>
+                      ) : (
+                        <span className="what-you-get-card-link">
+                          Explore
+                          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                        </span>
+                      )}
+                    </div>
+                  </>
+                );
+
+                return cta ? (
+                  <CalendlyLink
+                    key={title}
+                    className="what-you-get-card what-you-get-card-ready"
+                    aria-label="Book a free strategy call"
+                  >
+                    {cardContent}
+                  </CalendlyLink>
+                ) : (
+                  <Link
+                    key={title}
+                    href="/services"
+                    className="what-you-get-card"
+                    aria-label={`${title}: view services`}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
