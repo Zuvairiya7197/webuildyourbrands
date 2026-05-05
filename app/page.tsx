@@ -346,12 +346,12 @@ export default function Home() {
                           asChild
                           className={`mt-5 h-10 rounded-full px-5 text-xs font-bold whitespace-nowrap ${neonButtonClass}`}
                         >
-                          <CalendlyLink>
+                          <Link href="/web-store">
                             Get a Website That Converts
                             <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/14 text-white/86">
                               <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                             </span>
-                          </CalendlyLink>
+                          </Link>
                         </Button>
                       </div>
                       <div className="self-start rounded-[20px] border border-white/12 bg-[#05051b]/82 p-2.5 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">

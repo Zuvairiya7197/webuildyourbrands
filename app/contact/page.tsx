@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import {
   CheckCircle2,
   Instagram,
@@ -8,6 +9,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
+import ContactInquiryForm from "@/components/contact/ContactInquiryForm";
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { CALENDLY_EMBED_URL } from "@/lib/constants";
@@ -211,6 +213,34 @@ export default function ContactPage() {
           </aside>
 
           <div className="grid gap-8">
+            <div className="relative overflow-hidden rounded-[26px] border border-white/22 bg-white/[0.075] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),inset_0_-1px_0_rgba(255,255,255,0.06),0_28px_100px_rgba(0,0,31,0.38),0_0_52px_rgba(124,60,255,0.16)] backdrop-blur-2xl sm:rounded-[32px]">
+              <div
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.16),transparent_34%),radial-gradient(circle_at_92%_10%,rgba(124,60,255,0.2),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.09),rgba(255,255,255,0.032)_44%,rgba(0,0,31,0.34))]"
+                aria-hidden="true"
+              />
+              <div className="relative border-b border-white/14 bg-white/[0.045] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-8">
+                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/70">
+                  Website inquiry
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+                  Send your details directly.
+                </h2>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-white/62">
+                  If you came from the Web Store, your selected website is
+                  prefilled and included with the inquiry.
+                </p>
+              </div>
+              <div className="relative p-3 sm:p-5">
+                <Suspense
+                  fallback={
+                    <div className="min-h-[420px] rounded-[26px] border border-white/12 bg-white/[0.055]" />
+                  }
+                >
+                  <ContactInquiryForm />
+                </Suspense>
+              </div>
+            </div>
+
             <div className="relative overflow-hidden rounded-[26px] border border-white/22 bg-white/[0.075] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),inset_0_-1px_0_rgba(255,255,255,0.06),0_28px_100px_rgba(0,0,31,0.38),0_0_52px_rgba(124,60,255,0.16)] backdrop-blur-2xl sm:rounded-[32px]">
               <div
                 className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.18),transparent_34%),radial-gradient(circle_at_92%_10%,rgba(124,60,255,0.24),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.1),rgba(255,255,255,0.035)_44%,rgba(0,0,31,0.38))]"
