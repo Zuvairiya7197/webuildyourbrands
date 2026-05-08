@@ -35,11 +35,6 @@ const socialLinks = [
     label: "Facebook",
     href: "https://www.facebook.com/profile.php?id=61589040772725",
     Icon: null
-  },
-  {
-    label: "WhatsApp",
-    href: "https://wa.me/919987448073?text=Hi%2C%20I%20want%20to%20discuss%20a%20website%20project.",
-    Icon: null
   }
 ];
 
