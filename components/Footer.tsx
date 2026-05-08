@@ -68,7 +68,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-6xl">
         <FooterCTA />
 
-        <div className="grid gap-6 border-t border-cyan-300/10 py-8 md:grid-cols-[1fr_auto] md:items-center">
+        <div className="hidden gap-6 border-t border-cyan-300/10 py-8 md:grid md:grid-cols-[1fr_auto] md:items-center">
           <nav aria-label="Footer navigation">
             <ul className="flex flex-wrap gap-2">
               {footerLinks.map((item) => (
