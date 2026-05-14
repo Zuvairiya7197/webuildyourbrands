@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  BadgePlus,
   BriefcaseBusiness,
   CalendarDays,
   CheckCircle2,
@@ -13,10 +12,10 @@ import {
   PanelsTopLeft,
   PenTool,
   Rocket,
-  TrendingUp
 } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
+import { ProblemAccordionCards } from "@/components/ProblemAccordionCards";
 import { neonButtonClass } from "@/lib/utils";
 
 const StatsBar = dynamic(() => import("@/components/StatsBar"));
@@ -65,28 +64,28 @@ const audiences = [
     cue: "Visitors leave fast",
     fit: "A slow website loses attention before your offer is even seen.",
     outcome: "Speed matters",
-    Icon: Rocket
+    icon: "rocket" as const
   },
   {
     title: "Poor Mobile Experience",
     cue: "Most traffic is mobile",
     fit: "If the mobile version feels weak, trust drops before the first click.",
     outcome: "Mobile first",
-    Icon: BadgePlus
+    icon: "badgePlus" as const
   },
   {
     title: "No Clear Message",
     cue: "Confused visitors do not convert",
     fit: "People need to understand what you do, who it is for, and why it matters.",
     outcome: "Clear offer",
-    Icon: BriefcaseBusiness
+    icon: "briefcaseBusiness" as const
   },
   {
     title: "No Conversion Strategy",
     cue: "Design alone is not enough",
     fit: "A beautiful site still fails if there is no clear path to inquire or book.",
     outcome: "Lead flow",
-    Icon: TrendingUp
+    icon: "trendingUp" as const
   }
 ];
 
@@ -527,45 +526,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-3">
-            {audiences.map(({ title, cue, fit, outcome, Icon }, index) => (
-              <article
-                key={title}
-                className="group relative overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.035] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 sm:p-6"
-              >
-                <div className="pointer-events-none absolute inset-y-6 left-0 w-px bg-[linear-gradient(180deg,transparent,rgba(22,216,255,0.7),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                <div className="grid gap-5 sm:grid-cols-[72px_1fr_auto] sm:items-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/10 bg-[#00001F]/58 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.18)] transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)] group-hover:shadow-[0_0_34px_rgba(22,216,255,0.18)]">
-                    <Icon className="h-7 w-7" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white/30">
-                        0{index + 1}
-                      </span>
-                      <p className="rounded-full border border-cyan-100/12 bg-cyan-100/[0.055] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100/68">
-                        {cue}
-                      </p>
-                    </div>
-                    <h3 className="mt-3 text-xl font-bold text-white">
-                      {title}
-                    </h3>
-                    <p className="mt-3 max-w-xl text-sm leading-7 text-white/56">
-                      {fit}
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-[#00001F]/42 px-4 py-3 sm:max-w-[180px]">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/34">
-                      Outcome
-                    </p>
-                    <p className="mt-2 text-sm font-bold leading-5 text-white/82">
-                      {outcome}
-                    </p>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ProblemAccordionCards items={audiences} />
         </div>
       </section>
 
