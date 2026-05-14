@@ -564,12 +564,15 @@ textarea {
 }
 
 .problem-card__meta {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-flex;
+  flex-wrap: nowrap;
   justify-content: flex-end;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
   padding-top: 3px;
   text-align: right;
+  white-space: nowrap;
 }
 
 .problem-card__meta span,
@@ -586,9 +589,10 @@ textarea {
 }
 
 .problem-card__meta p {
-  max-width: min(360px, 70%);
+  max-width: none;
   color: rgba(207, 247, 255, 0.5);
-  line-height: 1.25;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .problem-card__body {
