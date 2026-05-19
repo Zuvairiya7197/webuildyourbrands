@@ -664,16 +664,6 @@ export default function Home() {
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
               Your website should help you grow, get found, and win more trust before the first call.
             </p>
-            <div className="mt-7 grid max-w-sm grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] text-center text-[10px] font-bold uppercase tracking-[0.16em] text-white/46">
-              {["Plan", "Build", "Launch"].map((item) => (
-                <div
-                  key={item}
-                  className="border-r border-white/10 px-3 py-4 last:border-r-0"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
           </div>
           <div className="clarity-pipeline">
             {reasons.map(({ title, signal, visual, Icon }, index) => (
