@@ -633,13 +633,8 @@ textarea {
 }
 
 .problem-card.is-active .problem-card__body h3 {
-  background: linear-gradient(100deg, #fff 0%, #16d8ff 38%, #8a5cff 72%, #fff 100%);
-  background-size: 210% 100%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: #fff;
   filter: drop-shadow(0 0 18px rgba(22, 216, 255, 0.24));
-  animation: problemTitleSheen 4.6s ease-in-out infinite;
 }
 
 .problem-card__reveal {
