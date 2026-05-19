@@ -155,6 +155,18 @@ const projects = [
     category: "Portfolio Website",
     image: "/project-zarrar-palekar.webp",
     projectUrl: "https://zarrarpalekar.vercel.app/"
+  },
+  {
+    title: "Emlak Real Estate",
+    category: "Real Estate Website",
+    image: "/Project Emlak.png",
+    projectUrl: "https://emlakrealestatellc.vercel.app/"
+  },
+  {
+    title: "Zuvi Personal Portfolio",
+    category: "Portfolio Website",
+    image: "/Project ZUVI website.png",
+    projectUrl: "https://zuvi.vercel.app/"
   }
 ];
 
@@ -174,6 +186,14 @@ const heroProjectPreviews = [
   {
     title: "Zarrar Palekar",
     image: "/project-zarrar-palekar.webp"
+  },
+  {
+    title: "Emlak Real Estate",
+    image: "/Project Emlak.png"
+  },
+  {
+    title: "Zuvi Personal Portfolio",
+    image: "/Project ZUVI website.png"
   }
 ];
 

@@ -53,6 +53,26 @@ const projects = [
     proofAfter: "After: Structured portfolio that showcases projects clearly and builds instant credibility.",
     image: "/project-zarrar-palekar.webp",
     projectUrl: "https://zarrarpalekar.vercel.app/"
+  },
+  {
+    title: "Emlak Real Estate",
+    category: "Real Estate",
+    description: "A polished real estate website built to present properties with confidence and guide buyers toward clear inquiries.",
+    result: "Premium property presentation with a smoother path to contact.",
+    proofBefore: "Built From Scratch: No dedicated property experience for visitors to explore listings clearly.",
+    proofAfter: "Now: A refined real estate website with strong visuals, cleaner browsing, and direct inquiry flow.",
+    image: "/Project Emlak.png",
+    projectUrl: "https://emlakrealestatellc.vercel.app/"
+  },
+  {
+    title: "Zuvi Personal Portfolio",
+    category: "Personal Portfolio",
+    description: "A personal portfolio designed to make the work, identity, and next step feel sharp from the first visit.",
+    result: "Stronger personal positioning and a clearer showcase of work.",
+    proofBefore: "Built From Scratch: No focused personal website to present the brand and work in one place.",
+    proofAfter: "Now: A clean portfolio experience that communicates credibility and makes the work easy to explore.",
+    image: "/Project ZUVI website.png",
+    projectUrl: "https://zuvi.vercel.app/"
   }
 ];
 

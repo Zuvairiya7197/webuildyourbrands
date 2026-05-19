@@ -32,7 +32,7 @@ export const websiteStoreItems: WebsiteStoreItem[] = [
       "Review-ready layout for HVAC credibility"
     ],
     previewUrl: "https://ac-repair-wbyb.vercel.app/",
-    thumbnail: "/AC Repair.png",
+    thumbnail: "/ Project AC Repair.png",
     seoScore: 100,
     performanceScore: 100
   },
@@ -57,7 +57,7 @@ export const websiteStoreItems: WebsiteStoreItem[] = [
       "Review-ready layout for plumber credibility"
     ],
     previewUrl: "https://plumbing-services-wbyb.vercel.app/",
-    thumbnail: "/Plumbing sevices.png",
+    thumbnail: "/ Project Plumbing sevices.png",
     seoScore: 100,
     performanceScore: 100
   }
