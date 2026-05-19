@@ -9,7 +9,7 @@ const size = {
 };
 
 export function GET(request: Request) {
-  const logoUrl = new URL("/wbyblogo.png", request.url).toString();
+  const logoUrl = new URL("/wbyblogo.webp", request.url).toString();
 
   return new ImageResponse(
     (

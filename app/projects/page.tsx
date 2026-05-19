@@ -61,7 +61,7 @@ const projects = [
     result: "Premium property presentation with a smoother path to contact.",
     proofBefore: "Built From Scratch: No dedicated property experience for visitors to explore listings clearly.",
     proofAfter: "Now: A refined real estate website with strong visuals, cleaner browsing, and direct inquiry flow.",
-    image: "/Project Emlak.png",
+    image: "/Project Emlak.webp",
     projectUrl: "https://emlakrealestatellc.vercel.app/"
   },
   {
@@ -71,7 +71,7 @@ const projects = [
     result: "Stronger personal positioning and a clearer showcase of work.",
     proofBefore: "Built From Scratch: No focused personal website to present the brand and work in one place.",
     proofAfter: "Now: A clean portfolio experience that communicates credibility and makes the work easy to explore.",
-    image: "/Project ZUVI website.png",
+    image: "/Project ZUVI website.webp",
     projectUrl: "https://zuvi.vercel.app/"
   }
 ];

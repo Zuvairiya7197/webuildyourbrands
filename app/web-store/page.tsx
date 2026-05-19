@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "We Build Your Brands",
     images: [
       {
-        url: "/social-preview.png",
+        url: "/social-preview.webp",
         width: 1200,
         height: 630,
         alt: "Ready-made websites for sale by WEBuildYourBrands"
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Buy Ready-Made Websites | Web Store",
     description,
-    images: ["/social-preview.png"]
+    images: ["/social-preview.webp"]
   },
   robots: {
     index: true,

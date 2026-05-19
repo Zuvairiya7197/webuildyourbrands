@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 const siteUrl = "https://www.webuildyourbrands.com";
-const socialPreviewImage = `${siteUrl}/social-preview.png`;
+const socialPreviewImage = `${siteUrl}/social-preview.webp`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/wbyblogo.png",
-        type: "image/png"
+        url: "/wbyblogo.webp",
+        type: "image/webp"
       },
       {
         url: "/wbyblogo.webp",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     ],
     apple: [
       {
-        url: "/wbyblogo.png",
-        type: "image/png"
+        url: "/wbyblogo.webp",
+        type: "image/webp"
       }
     ]
   },
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: socialPreviewImage,
         width: 1200,
         height: 630,
-        type: "image/png",
+        type: "image/webp",
         alt: "We Build Your Brands - High-converting websites built to bring inquiries"
       }
     ],

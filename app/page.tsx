@@ -159,13 +159,13 @@ const projects = [
   {
     title: "Emlak Real Estate",
     category: "Real Estate Website",
-    image: "/Project Emlak.png",
+    image: "/Project Emlak.webp",
     projectUrl: "https://emlakrealestatellc.vercel.app/"
   },
   {
     title: "Zuvi Personal Portfolio",
     category: "Portfolio Website",
-    image: "/Project ZUVI website.png",
+    image: "/Project ZUVI website.webp",
     projectUrl: "https://zuvi.vercel.app/"
   }
 ];
@@ -189,11 +189,11 @@ const heroProjectPreviews = [
   },
   {
     title: "Emlak Real Estate",
-    image: "/Project Emlak.png"
+    image: "/Project Emlak.webp"
   },
   {
     title: "Zuvi Personal Portfolio",
-    image: "/Project ZUVI website.png"
+    image: "/Project ZUVI website.webp"
   }
 ];
 
@@ -713,19 +713,51 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 py-12 sm:px-8 sm:py-16 lg:px-24 lg:py-20 xl:px-32">
-        <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] px-4 py-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl sm:px-6 sm:py-8 lg:px-8">
-          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)]" />
-          <div className="mx-auto mb-6 max-w-2xl text-center">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.26em] text-white/46">
-              Social Proof
-            </p>
-            <h2 className="text-xl font-bold leading-tight sm:text-3xl">
-              Clients love working with us
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-white/56">
-              They came for a website. They left with a clearer brand and a stronger way to win leads.
-            </p>
+      <section className="mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-16 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.74),rgba(124,60,255,0.62),transparent)]" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid min-h-[270px] gap-10 lg:grid-cols-[0.75fr_1fr_0.45fr]">
+            <div>
+              <p className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white/76">
+                <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(22,216,255,0.8)]" />
+                Testimonials
+              </p>
+            </div>
+            <div className="lg:col-start-2">
+              <h2 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-normal text-white sm:text-5xl lg:text-6xl">
+                Look What Our Clients
+                <span className="mt-2 flex flex-wrap items-center gap-4 sm:mt-3">
+                  <span>Say</span>
+                  <span className="flex items-center" aria-label="Happy clients">
+                    {[
+                      "/SM classes Founder.webp",
+                      "/Zarrar-Photo.webp",
+                      "/project-organise-with-kopal.webp"
+                    ].map((image, index) => (
+                      <span
+                        key={image}
+                        className="-ml-3 first:ml-0 relative block h-12 w-12 overflow-hidden rounded-full border-2 border-[#00001F] bg-white/10 shadow-[0_12px_32px_rgba(0,0,31,0.34)] sm:h-14 sm:w-14"
+                      >
+                        <Image
+                          src={image}
+                          alt=""
+                          fill
+                          sizes="56px"
+                          className={`object-cover ${index === 2 ? "object-top" : "object-center"}`}
+                        />
+                      </span>
+                    ))}
+                    <span className="-ml-3 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#00001F] bg-cyan-300 text-sm font-extrabold text-[#00001F] shadow-[0_0_34px_rgba(22,216,255,0.34)] sm:h-14 sm:w-14 sm:text-base">
+                      +{testimonials.length}
+                    </span>
+                  </span>
+                </span>
+              </h2>
+              <p className="mt-6 max-w-md text-sm font-semibold leading-7 text-white/48 sm:text-base">
+                Clear websites, fast delivery, polished design, and edits handled with care. Read what our clients experienced.
+              </p>
+            </div>
           </div>
           <TestimonialsSlider testimonials={testimonials} />
         </div>
