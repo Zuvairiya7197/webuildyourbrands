@@ -253,7 +253,8 @@ const testimonials = [
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.28em] text-white/42">
+    <p className="mb-4 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white/76">
+      <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(22,216,255,0.8)]" />
       {children}
     </p>
   );
@@ -442,17 +443,6 @@ export default function Home() {
                 </p>
               </div>
               <div className="grid gap-5 lg:pt-11">
-                <div className="grid gap-x-5 gap-y-1 text-sm font-bold text-white/76 sm:grid-cols-2">
-                  {["Clear offer", "Fast pages", "Stronger trust", "More inquiries"].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center justify-between gap-4 border-b border-white/10 py-3.5"
-                    >
-                      <span>{item}</span>
-                      <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100/70" aria-hidden="true" />
-                    </div>
-                  ))}
-                </div>
                 <Button
                   asChild
                   variant="outline"
@@ -550,40 +540,31 @@ export default function Home() {
               No confusion. No endless back-and-forth. Just a clear path from idea to launch.
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl sm:p-6">
-            <div className="pointer-events-none absolute bottom-10 left-[68px] top-10 hidden w-px bg-[linear-gradient(180deg,rgba(22,216,255,0),rgba(22,216,255,0.36),rgba(124,60,255,0.36),rgba(22,216,255,0))] sm:block" />
-            <div className="grid gap-4">
+          <div className="clarity-pipeline">
             {process.map(({ title, description }, index) => (
               <article
                 key={title}
-                className="group relative grid gap-4 rounded-[18px] border border-white/10 bg-[#00001F]/34 p-4 text-white transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.05] sm:grid-cols-[76px_1fr_auto] sm:items-center sm:gap-5 sm:p-5"
+                className="clarity-pipeline-card group"
               >
-                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                <div className="relative z-10 flex items-center gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan-100/16 bg-[#00001F] text-xs font-black text-white shadow-[0_0_24px_rgba(22,216,255,0.16)]">
+                <span className="clarity-pipeline-index">
+                  0{index + 1}
+                </span>
+                <div className="clarity-pipeline-icon text-xs font-black">
+                  <span aria-hidden="true">
                     0{index + 1}
                   </span>
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white">{title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/64">
-                    {description}
-                  </p>
-                </div>
-                <div className="relative z-10 sm:w-36">
-                  <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
-                    <div
-                      className="h-full rounded-full bg-[image:var(--button-gradient)] transition-[width] duration-500"
-                      style={{ width: `${((index + 1) / process.length) * 100}%` }}
-                    />
-                  </div>
-                  <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white/34">
+                  <p className="clarity-pipeline-badge">
                     Phase {index + 1}
+                  </p>
+                  <h3 className="mt-4 text-2xl font-bold text-white">{title}</h3>
+                  <p className="mt-3 text-sm font-semibold leading-6 text-white/62">
+                    {description}
                   </p>
                 </div>
               </article>
             ))}
-            </div>
           </div>
         </div>
       </section>
