@@ -533,17 +533,6 @@ export default function Home() {
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
               Visitors need speed, clarity, and a reason to take action. We fix all of this.
             </p>
-            <div className="mt-8 grid gap-3">
-              {["Slow loading", "Poor mobile experience", "No clear message", "No conversion strategy"].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center justify-between gap-4 border-b border-white/10 py-3 last:border-b-0"
-                >
-                  <span className="text-sm font-bold text-white/76">{item}</span>
-                  <ArrowRight className="h-4 w-4 text-cyan-100/54" aria-hidden="true" />
-                </div>
-              ))}
-            </div>
           </div>
 
           <ProblemAccordionCards items={audiences} />
