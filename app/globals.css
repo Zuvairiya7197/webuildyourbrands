@@ -596,7 +596,7 @@ main {
   }
 
   .process-cinema-stage {
-    min-height: 900px;
+    min-height: 980px;
   }
 
   .process-cinema-copy {
@@ -660,34 +660,34 @@ main {
   .process-cinema-node-1 {
     left: 50%;
     top: 190px;
-    height: 106px;
-    width: 106px;
-    margin-left: -53px;
+    height: 128px;
+    width: 128px;
+    margin-left: -64px;
   }
 
   .process-cinema-node-2 {
     left: 50%;
-    top: 306px;
-    height: 132px;
-    width: 132px;
-    margin-left: -66px;
+    top: 330px;
+    height: 158px;
+    width: 158px;
+    margin-left: -79px;
   }
 
   .process-cinema-node-3 {
     left: 50%;
-    top: 452px;
-    height: 166px;
-    width: 166px;
-    margin-left: -83px;
+    top: 506px;
+    height: 198px;
+    width: 198px;
+    margin-left: -99px;
   }
 
   .process-cinema-node-4 {
     left: 50%;
     right: auto;
-    top: 630px;
-    height: 118px;
-    width: 118px;
-    margin-left: -59px;
+    top: 720px;
+    height: 144px;
+    width: 144px;
+    margin-left: -72px;
   }
 
   .process-cinema-title {
