@@ -36,7 +36,7 @@ export default function Hero({
   secondaryHref = "/projects"
 }: HeroProps) {
   const renderHeroLink = (href: string, label: string) => {
-    const isExternal = href.startsWith("http");
+    const isExternal = /^(https?:|mailto:|tel:)/.test(href);
     const normalizedLabel = label.toLowerCase();
     const Icon = href === CALENDLY_URL || normalizedLabel.includes("book")
       ? CalendarDays
@@ -67,13 +67,22 @@ export default function Hero({
       );
     }
 
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          target={href.startsWith("http") ? "_blank" : undefined}
+          rel={href.startsWith("http") ? "noreferrer" : undefined}
+          className="group"
+        >
+          {label}
+          {icon}
+        </a>
+      );
+    }
+
     return (
-      <Link
-        href={href}
-        target={isExternal ? "_blank" : undefined}
-        rel={isExternal ? "noreferrer" : undefined}
-        className="group"
-      >
+      <Link href={href} className="group">
         {label}
         {icon}
       </Link>

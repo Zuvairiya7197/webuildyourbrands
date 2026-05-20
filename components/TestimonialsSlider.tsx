@@ -112,8 +112,8 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="relative mx-auto h-[300px] w-full max-w-[340px] overflow-hidden sm:h-[460px] sm:max-w-[460px] lg:mx-0 lg:h-[560px] lg:max-w-[560px]">
-          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,340px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,440px)] sm:gap-4 lg:w-[min(100%,540px)] lg:gap-5">
+        <div className="relative mx-auto h-[330px] w-full max-w-[380px] overflow-hidden sm:h-[460px] sm:max-w-[460px] lg:mx-0 lg:h-[560px] lg:max-w-[560px]">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,380px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,440px)] sm:gap-4 lg:w-[min(100%,540px)] lg:gap-5">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
                 key={index}
@@ -133,7 +133,7 @@ function TestimonialsSliderComponent({
                         src={portrait}
                         alt={`${activeTestimonial.name} testimonial`}
                         fill
-                        sizes="(min-width: 1024px) 167px, (min-width: 640px) 136px, 105px"
+                        sizes="(min-width: 1024px) 167px, (min-width: 640px) 136px, 119px"
                         className="object-cover object-center"
                       />
                       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(22,216,255,0.08),transparent_44%,rgba(124,60,255,0.16))]" />

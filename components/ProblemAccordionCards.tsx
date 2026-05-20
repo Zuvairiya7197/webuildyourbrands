@@ -129,7 +129,11 @@ export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
             onClick={() => {
               setActiveIndex((current) => (current === index ? null : index));
             }}
-            onFocus={() => setActiveIndex(index)}
+            onFocus={() => {
+              if (!window.matchMedia("(max-width: 640px)").matches) {
+                setActiveIndex(index);
+              }
+            }}
             onKeyDown={(event) => handleKeyDown(event, index)}
             animate={{
               opacity: isMuted ? 0.5 : 1,

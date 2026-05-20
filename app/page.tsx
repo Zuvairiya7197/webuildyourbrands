@@ -266,7 +266,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden px-4 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:px-24 lg:pb-32 xl:px-32">
+      <section className="relative overflow-hidden px-4 pb-20 pt-24 sm:px-8 sm:pb-28 sm:pt-28 lg:min-h-screen lg:px-24 lg:py-16 xl:px-32">
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-60"
           src="/Homehero.mp4"
@@ -279,12 +279,12 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.76),rgba(0,0,31,0.52)_50%,rgba(0,0,31,0.72)),linear-gradient(180deg,rgba(53,92,255,0.06),rgba(124,60,255,0.04)_38%,transparent_78%)]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#00001f] to-transparent" />
-        <div className="relative mx-auto grid min-h-[560px] w-full items-center gap-12 sm:min-h-[680px] lg:grid-cols-[0.9fr_1.05fr] lg:gap-16">
+        <div className="relative mx-auto grid min-h-[560px] w-full items-center gap-12 sm:min-h-[680px] lg:min-h-[520px] lg:grid-cols-[0.9fr_1.05fr] lg:gap-14 xl:min-h-[560px] xl:gap-16">
           <div className="max-w-2xl">
             <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md lg:text-[11px]">
               <span>Lead-focused websites</span>
             </p>
-            <h1 className="mt-7 text-3xl font-bold leading-[1.1] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[2.2rem]">
+            <h1 className="mt-7 text-3xl font-bold leading-[1.1] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[2.8rem]">
               We build high-converting websites that turn visitors into clients.
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/64 sm:mt-6 sm:text-base sm:leading-8">
@@ -336,8 +336,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative hidden min-h-[540px] lg:block">
-            <div className="absolute inset-y-8 right-0 w-[min(580px,100%)]">
+          <div className="relative hidden min-h-[500px] lg:block xl:min-h-[540px]">
+            <div className="absolute inset-y-4 right-0 w-[min(560px,100%)] xl:w-[min(580px,100%)]">
               <div className="absolute -right-8 top-10 h-64 w-64 rounded-full border border-cyan-200/10 bg-cyan-200/[0.035] blur-2xl" />
               <div className="absolute -bottom-4 left-10 h-72 w-72 rounded-full border border-violet-300/10 bg-violet-400/[0.055] blur-2xl" />
               <div className="relative h-full rounded-[34px] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025)_36%,rgba(124,60,255,0.08)_100%)] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_34px_120px_rgba(0,0,31,0.5)] backdrop-blur-2xl">
@@ -357,7 +357,7 @@ export default function Home() {
                   </div>
 
                   <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#00001F]/62">
-                    <div className="relative h-full min-h-[456px]">
+                    <div className="relative h-full min-h-[420px] xl:min-h-[456px]">
                       {heroProjectPreviews.map((project, index) => (
                         <Image
                           key={project.title}
