@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -82,8 +83,39 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="min-h-screen overflow-x-clip font-sans antialiased">
+        <Script id="dom-mutation-guard" strategy="beforeInteractive">
+          {`
+            (() => {
+              if (typeof Node === "undefined" || Node.prototype.__wbybDomGuard) return;
+
+              Object.defineProperty(Node.prototype, "__wbybDomGuard", {
+                value: true,
+                configurable: false
+              });
+
+              const removeChild = Node.prototype.removeChild;
+              const insertBefore = Node.prototype.insertBefore;
+
+              Node.prototype.removeChild = function(child) {
+                if (child && child.parentNode !== this) {
+                  return child;
+                }
+
+                return removeChild.call(this, child);
+              };
+
+              Node.prototype.insertBefore = function(newNode, referenceNode) {
+                if (referenceNode && referenceNode.parentNode !== this) {
+                  return this.appendChild(newNode);
+                }
+
+                return insertBefore.call(this, newNode, referenceNode);
+              };
+            })();
+          `}
+        </Script>
         <Navbar />
         <main>{children}</main>
         <Footer />
