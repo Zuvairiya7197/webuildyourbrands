@@ -121,7 +121,7 @@ function TestimonialsSliderComponent({
               />
             ))}
           </div>
-          <div className="absolute left-1/2 top-1/2 z-10 h-[104px] w-[104px] -translate-x-1/2 -translate-y-1/2 sm:h-[136px] sm:w-[136px] lg:h-[160px] lg:w-[160px]">
+          <div className="absolute left-1/2 top-1/2 z-10 h-[calc((min(100%,340px)-1.5rem)/3)] w-[calc((min(100%,340px)-1.5rem)/3)] -translate-x-1/2 -translate-y-1/2 sm:h-[calc((min(100%,440px)-2rem)/3)] sm:w-[calc((min(100%,440px)-2rem)/3)] lg:h-[calc((min(100%,540px)-2.5rem)/3)] lg:w-[calc((min(100%,540px)-2.5rem)/3)]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTestimonial.name}
