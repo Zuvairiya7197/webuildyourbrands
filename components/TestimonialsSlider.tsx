@@ -145,7 +145,7 @@ function TestimonialsSliderComponent({
           </div>
         </div>
 
-        <div className="relative max-w-4xl lg:pl-10 lg:pt-[118px]">
+        <div className="relative max-w-4xl lg:pl-10 lg:pt-[78px]">
           <span
             className="mb-2 block font-serif text-[3.6rem] font-bold leading-none text-[#16d8ff]/8 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.04))] sm:mb-7 sm:text-[6rem]"
             aria-hidden="true"
