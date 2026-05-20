@@ -284,7 +284,7 @@ export default function Home() {
             <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md lg:text-[11px]">
               <span>Lead-focused websites</span>
             </p>
-            <h1 className="mt-7 text-3xl font-bold leading-[1.05] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[2.15rem]">
+            <h1 className="mt-7 text-3xl font-bold leading-[1.1] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[1.85rem]">
               We build high-converting websites that turn visitors into clients.
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/64 sm:mt-6 sm:text-base sm:leading-8">
