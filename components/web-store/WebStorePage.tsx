@@ -15,23 +15,23 @@ const storeBenefits = [
 export default function WebStorePage() {
   return (
     <>
-      <section className="relative overflow-hidden px-4 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40 lg:px-24 xl:px-32">
+      <section className="relative overflow-hidden px-4 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40 lg:min-h-[100svh] lg:px-24 lg:pb-10 lg:pt-28 xl:px-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(22,216,255,0.18),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(124,60,255,0.24),transparent_38%)]" />
-        <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+        <div className="relative mx-auto grid max-w-6xl gap-10 lg:min-h-[calc(100svh-8.5rem)] lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-100/72">
               <Store className="h-4 w-4" aria-hidden="true" />
               Web Store
             </p>
-            <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl lg:text-[4.25rem] xl:text-[4.8rem]">
               Buy ready-made websites built to load fast and convert.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-white/62 sm:text-lg lg:text-base lg:leading-7">
               Explore ready-made websites for sale with strong SEO foundations,
               responsive layouts, optimized WebP previews, and clear inquiry
               paths for service brands, educators, creators, and founders.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap gap-3">
               <Button
                 asChild
                 className={`h-12 rounded-full px-7 text-base font-bold ${neonButtonClass}`}

@@ -90,7 +90,7 @@ export default function Hero({
   };
 
   return (
-    <section className="relative min-h-[min(820px,100svh)] overflow-hidden px-4 pb-14 pt-24 sm:px-8 sm:pt-32 lg:min-h-screen lg:px-24 xl:px-32">
+    <section className="relative min-h-[min(760px,100svh)] overflow-hidden px-4 pb-14 pt-24 sm:px-8 sm:pt-32 lg:min-h-[100svh] lg:px-24 lg:pb-10 lg:pt-28 xl:px-32">
       {videoSrc && (
           <video
             className="absolute inset-0 h-full w-full object-cover"
@@ -109,22 +109,22 @@ export default function Hero({
       />
       <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
       <div
-        className="relative mx-auto flex min-h-[calc(100svh-6rem)] max-w-6xl items-center justify-center text-center lg:min-h-[calc(100vh-7rem)]"
+        className="relative mx-auto flex min-h-[calc(100svh-6rem)] max-w-6xl items-center justify-center text-center lg:min-h-[calc(100svh-8.5rem)]"
       >
         <div className="w-full max-w-5xl">
-          <p className="mx-auto mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/28 bg-[#00001F]/50 px-3 py-2 text-xs font-medium text-white/62 shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-md sm:mb-8 sm:px-4 sm:text-base">
+          <p className="mx-auto mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/28 bg-[#00001F]/50 px-3 py-2 text-xs font-medium text-white/62 shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-md sm:mb-8 sm:px-4 sm:text-base lg:mb-6 lg:text-sm">
             <Sparkles className="h-4 w-4 text-white/70 sm:h-5 sm:w-5" aria-hidden="true" />
             <span className="min-w-0 break-words">{eyebrow}</span>
           </p>
-          <h1 className="text-3xl font-bold leading-tight tracking-normal text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.7)] min-[360px]:text-4xl sm:text-5xl lg:text-7xl">
+          <h1 className="text-3xl font-bold leading-tight tracking-normal text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.7)] min-[360px]:text-4xl sm:text-5xl lg:text-[4.25rem] xl:text-[4.8rem]">
             {title}
           </h1>
           <p
-            className="mx-auto mt-5 max-w-4xl text-sm leading-7 text-white/68 drop-shadow-[0_6px_18px_rgba(0,0,0,0.75)] sm:mt-7 sm:text-lg sm:leading-8 lg:text-xl"
+            className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-white/68 drop-shadow-[0_6px_18px_rgba(0,0,0,0.75)] sm:mt-7 sm:text-lg sm:leading-8 lg:mt-5 lg:text-lg"
           >
             {description}
           </p>
-          <div className="mt-7 flex flex-col justify-center gap-3 sm:mt-8 sm:flex-row">
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:mt-8 sm:flex-row lg:mt-7">
             <Button
               asChild
               size="lg"
