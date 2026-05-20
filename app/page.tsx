@@ -21,42 +21,49 @@ import { neonButtonClass } from "@/lib/utils";
 
 const StatsBar = dynamic(() => import("@/components/StatsBar"));
 const TestimonialsSlider = dynamic(() =>
-  import("@/components/TestimonialsSlider").then((module) => module.TestimonialsSlider)
+  import("@/components/TestimonialsSlider").then(
+    (module) => module.TestimonialsSlider,
+  ),
 );
 
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "High-converting custom websites built to generate leads, improve trust, and help growing businesses turn visitors into clients."
+    "High-converting custom websites built to generate leads, improve trust, and help growing businesses turn visitors into clients.",
 };
 
 const services = [
   {
     title: "Custom Design",
-    description: "No templates. A website shaped around your offer, audience, and goals.",
-    Icon: PenTool
+    description:
+      "No templates. A website shaped around your offer, audience, and goals.",
+    Icon: PenTool,
   },
   {
     title: "High-Speed Performance",
-    description: "Fast pages that feel smooth on mobile and keep visitors moving.",
-    Icon: Rocket
+    description:
+      "Fast pages that feel smooth on mobile and keep visitors moving.",
+    Icon: Rocket,
   },
   {
     title: "SEO-Optimized Structure",
-    description: "Clean pages built to rank, load fast, and get found on Google.",
-    Icon: FileSearch
+    description:
+      "Clean pages built to rank, load fast, and get found on Google.",
+    Icon: FileSearch,
   },
   {
     title: "Conversion-Focused Layout",
-    description: "Clear sections, strong CTAs, and a path that turns visitors into leads.",
-    Icon: PanelsTopLeft
+    description:
+      "Clear sections, strong CTAs, and a path that turns visitors into leads.",
+    Icon: PanelsTopLeft,
   },
   {
     title: "Ready?",
-    description: "Book a free strategy call and let us map the clearest path for your website.",
+    description:
+      "Book a free strategy call and let us map the clearest path for your website.",
     Icon: CalendarDays,
-    cta: "Book a Call"
-  }
+    cta: "Book a Call",
+  },
 ];
 
 const audiences = [
@@ -65,29 +72,29 @@ const audiences = [
     cue: "Visitors leave fast",
     fit: "A slow website loses attention before your offer is even seen.",
     outcome: "Speed matters",
-    icon: "rocket" as const
+    icon: "rocket" as const,
   },
   {
     title: "Poor Mobile Experience",
     cue: "Most traffic is mobile",
     fit: "If the mobile version feels weak, trust drops before the first click.",
     outcome: "Mobile first",
-    icon: "badgePlus" as const
+    icon: "badgePlus" as const,
   },
   {
     title: "No Clear Message",
     cue: "Confused visitors do not convert",
     fit: "People need to understand what you do, who it is for, and why it matters.",
     outcome: "Clear offer",
-    icon: "briefcaseBusiness" as const
+    icon: "briefcaseBusiness" as const,
   },
   {
     title: "No Conversion Strategy",
     cue: "Design alone is not enough",
     fit: "A beautiful site still fails if there is no clear path to inquire or book.",
     outcome: "Lead flow",
-    icon: "trendingUp" as const
-  }
+    icon: "trendingUp" as const,
+  },
 ];
 
 const stats = [
@@ -95,45 +102,45 @@ const stats = [
     value: 100,
     suffix: "%",
     status: "Responsive",
-    label: "Pixel-perfect on every device"
+    label: "Pixel-perfect on every device",
   },
   {
     value: 100,
     suffix: "%",
     status: "Fast",
-    label: "Optimized for speed and performance"
+    label: "Optimized for speed and performance",
   },
   {
     value: 100,
     suffix: "%",
     status: "Conversion Focused",
-    label: "Designed to turn visitors into leads"
+    label: "Designed to turn visitors into leads",
   },
   {
     value: 100,
     suffix: "%",
     status: "SEO Ready",
-    label: "Built to rank and get found on Google"
-  }
+    label: "Built to rank and get found on Google",
+  },
 ];
 
 const process = [
   {
     title: "Discovery",
-    description: ""
+    description: "",
   },
   {
     title: "Strategy & Structure",
-    description: ""
+    description: "",
   },
   {
     title: "Design & Experience",
-    description: ""
+    description: "",
   },
   {
     title: "Launch & Growth",
-    description: ""
-  }
+    description: "",
+  },
 ];
 
 const projects = [
@@ -141,55 +148,55 @@ const projects = [
     title: "Organise With Kopal",
     category: "Business Web Design",
     image: "/project-organise-with-kopal.webp",
-    projectUrl: "https://www.organisewithkopal.com/"
+    projectUrl: "https://www.organisewithkopal.com/",
   },
   {
     title: "SM Classes",
     category: "Education Website",
     image: "/project-sm-classes.webp",
-    projectUrl: "https://smclasses.in/"
+    projectUrl: "https://smclasses.in/",
   },
   {
     title: "Zarrar Palekar",
     category: "Portfolio Website",
     image: "/project-zarrar-palekar.webp",
-    projectUrl: "https://zarrarpalekar.vercel.app/"
+    projectUrl: "https://zarrarpalekar.vercel.app/",
   },
   {
     title: "Emlak Real Estate",
     category: "Real Estate Website",
     image: "/Project Emlak.webp",
-    projectUrl: "https://emlakrealestatellc.vercel.app/"
+    projectUrl: "https://emlakrealestatellc.vercel.app/",
   },
   {
     title: "Zuvi Personal Portfolio",
     category: "Portfolio Website",
     image: "/Project ZUVI website.webp",
-    projectUrl: "https://zuvi.vercel.app/"
-  }
+    projectUrl: "https://zuvi.vercel.app/",
+  },
 ];
 
 const heroProjectPreviews = [
   {
     title: "Organise With Kopal",
-    image: "/project-organise-with-kopal.webp"
+    image: "/project-organise-with-kopal.webp",
   },
   {
     title: "SM Classes",
-    image: "/project-sm-classes.webp"
+    image: "/project-sm-classes.webp",
   },
   {
     title: "Zarrar Palekar",
-    image: "/project-zarrar-palekar.webp"
+    image: "/project-zarrar-palekar.webp",
   },
   {
     title: "Emlak Real Estate",
-    image: "/Project Emlak.webp"
+    image: "/Project Emlak.webp",
   },
   {
     title: "Zuvi Personal Portfolio",
-    image: "/Project ZUVI website.webp"
-  }
+    image: "/Project ZUVI website.webp",
+  },
 ];
 
 const reasons = [
@@ -197,20 +204,20 @@ const reasons = [
     title: "More Leads",
     signal: "Clear paths to calls and inquiries.",
     visual: "Leads",
-    Icon: Lightbulb
+    Icon: Lightbulb,
   },
   {
     title: "Better Conversions",
     signal: "Less confusion. Faster decisions.",
     visual: "Convert",
-    Icon: PanelsTopLeft
+    Icon: PanelsTopLeft,
   },
   {
     title: "Strong Online Presence",
     signal: "A sharper first impression.",
     visual: "Trust",
-    Icon: Rocket
-  }
+    Icon: Rocket,
+  },
 ];
 
 const testimonials = [
@@ -220,7 +227,7 @@ const testimonials = [
       "WBYB (we build your brands) develop our classes website (smclasses.in) which exceeds our expectations.. Website covers all informative content which were basically required for growth of any coaching classes..the best part is whenever modifications required they do immediately and with lots of ideas.. We recommend WBYB for anyone who like to build best website for their business..",
     name: "Saquib Dalvi",
     role: "Education Brand",
-    image: "/wbyb-sm-classes-founder.webp"
+    image: "/wbyb-sm-classes-founder.webp",
   },
   {
     title: "My work now feels easier to share and explain.",
@@ -228,14 +235,14 @@ const testimonials = [
       "The portfolio website gave my work a sharper, more polished presence online. It became much easier to share my projects, explain what I do, and make a strong first impression with clients.",
     name: "Zarrar Palekar",
     role: "Portfolio Website Client",
-    image: "/Zarrar-Photo.webp"
+    image: "/Zarrar-Photo.webp",
   },
   {
     title: "My website was live in two days, without the stress.",
     quote:
       "Hi, I'm Kopal and I run my business called Organise with Kopal. I needed a website for my business and I already knew that Zuvairiya would be the right call. She delivered the website within 2 days - at an affordable price. All edits were done within minutes.",
     name: "Kopal Dhir",
-    role: "Founder at Organise With Kopal"
+    role: "Founder at Organise With Kopal",
   },
   {
     title: "She understood my brand and made it look polished fast.",
@@ -243,8 +250,8 @@ const testimonials = [
       "I own an appointment setting agency and get a lot of my leads from Facebook and LinkedIn, so I had an urgent requirement for professional covers. Zuvairiya delivered exceptionally beautiful and professional designs in no time, making sure everything matched my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing. I can't recommend her enough - she's my go-to for all things graphic design.",
     name: "Shreya Batra",
     role: "Co-Founder @ Organic Appointments Agency",
-    image: "/Shreya Batra.webp"
-  }
+    image: "/Shreya Batra.webp",
+  },
 ];
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -277,22 +284,28 @@ export default function Home() {
             <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md lg:text-[11px]">
               <span>Lead-focused websites</span>
             </p>
-            <h1 className="mt-7 text-3xl font-bold leading-[1.05] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[3.65rem]">
+            <h1 className="mt-7 text-3xl font-bold leading-[1.05] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[2.15rem]">
               We build high-converting websites that turn visitors into clients.
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/64 sm:mt-6 sm:text-base sm:leading-8">
-              Custom-designed, lightning-fast websites built to generate leads - not just look good.
+              Custom-designed, lightning-fast websites built to generate leads -
+              not just look good.
             </p>
             <div className="mt-6 grid max-w-2xl gap-3 text-sm font-semibold text-white/62 sm:grid-cols-3">
-              {["Fast to load", "Built to convert", "Ready for leads"].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2 rounded-full border border-white/10 bg-[#00001F]/36 px-3 py-2 whitespace-nowrap"
-                >
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100" aria-hidden="true" />
-                  <span>{item}</span>
-                </div>
-              ))}
+              {["Fast to load", "Built to convert", "Ready for leads"].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 rounded-full border border-white/10 bg-[#00001F]/36 px-3 py-2 whitespace-nowrap"
+                  >
+                    <CheckCircle2
+                      className="h-4 w-4 shrink-0 text-cyan-100"
+                      aria-hidden="true"
+                    />
+                    <span>{item}</span>
+                  </div>
+                ),
+              )}
             </div>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button
@@ -301,7 +314,10 @@ export default function Home() {
               >
                 <CalendlyLink className="group">
                   Get Your Website Audit
-                  <CalendarDays className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
+                  <CalendarDays
+                    className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100"
+                    aria-hidden="true"
+                  />
                 </CalendlyLink>
               </Button>
               <Button
@@ -311,7 +327,10 @@ export default function Home() {
               >
                 <Link href="/projects" className="group">
                   View Our Work
-                  <BriefcaseBusiness className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100" aria-hidden="true" />
+                  <BriefcaseBusiness
+                    className="h-5 w-0 shrink-0 opacity-0 transition-[width,margin,opacity,transform] duration-300 group-hover:ml-2 group-hover:w-5 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:w-5 group-focus-visible:opacity-100"
+                    aria-hidden="true"
+                  />
                 </Link>
               </Button>
             </div>
@@ -326,7 +345,10 @@ export default function Home() {
                   <div className="relative flex flex-col items-center justify-between rounded-[26px] border border-white/10 bg-[#00001F]/46 px-4 py-8">
                     <span className="absolute inset-y-12 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-100/36 to-transparent" />
                     {["Plan", "Design", "Launch"].map((item) => (
-                      <div key={item} className="relative z-10 flex min-h-[106px] flex-col items-center text-center">
+                      <div
+                        key={item}
+                        className="relative z-10 flex min-h-[106px] flex-col items-center text-center"
+                      >
                         <p className="mt-8 -rotate-90 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] text-white/48">
                           {item}
                         </p>
@@ -368,7 +390,10 @@ export default function Home() {
                           <Link href="/web-store">
                             Get a Website That Converts
                             <span className="ml-2 flex h-5 w-5 items-center justify-center rounded-full bg-white/14 text-white/86">
-                              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                              <ArrowRight
+                                className="h-3.5 w-3.5"
+                                aria-hidden="true"
+                              />
                             </span>
                           </Link>
                         </Button>
@@ -420,7 +445,8 @@ export default function Home() {
                   A website system built to win leads.
                 </h2>
                 <p className="mt-5 max-w-[540px] text-sm leading-7 text-white/62 sm:text-base sm:leading-8">
-                  Strategy, design, speed, SEO, and conversion flow shaped into one custom build.
+                  Strategy, design, speed, SEO, and conversion flow shaped into
+                  one custom build.
                 </p>
               </div>
               <div className="grid gap-5 lg:pt-11">
@@ -441,7 +467,10 @@ export default function Home() {
               {services.map(({ title, description, Icon, cta }) => {
                 const cardContent = (
                   <>
-                    <div className="what-you-get-card-glow" aria-hidden="true" />
+                    <div
+                      className="what-you-get-card-glow"
+                      aria-hidden="true"
+                    />
                     <div className="what-you-get-card-head">
                       <div className="what-you-get-card-icon">
                         <Icon className="h-6 w-6" aria-hidden="true" />
@@ -453,12 +482,18 @@ export default function Home() {
                       {cta ? (
                         <span className="what-you-get-card-cta">
                           {cta}
-                          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                          <ArrowRight
+                            className="h-3.5 w-3.5"
+                            aria-hidden="true"
+                          />
                         </span>
                       ) : (
                         <span className="what-you-get-card-link">
                           Explore
-                          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                          <ArrowRight
+                            className="h-3.5 w-3.5"
+                            aria-hidden="true"
+                          />
                         </span>
                       )}
                     </div>
@@ -502,7 +537,8 @@ export default function Home() {
                 Most websites don&apos;t convert. Here&apos;s why:
               </h2>
               <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-                Visitors need speed, clarity, and a reason to take action. We fix all of this.
+                Visitors need speed, clarity, and a reason to take action. We
+                fix all of this.
               </p>
             </div>
 
@@ -521,7 +557,8 @@ export default function Home() {
               Websites built to look premium and convert.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Real projects for growing businesses that needed a stronger online presence.
+              Real projects for growing businesses that needed a stronger online
+              presence.
             </p>
           </div>
           <div>
@@ -547,7 +584,9 @@ export default function Home() {
                   className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 ${index === 0 ? "sm:col-span-2" : ""}`}
                 >
                   <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-                  <div className={`relative overflow-hidden rounded-xl ${index === 0 ? "aspect-[16/8]" : "aspect-[16/11]"}`}>
+                  <div
+                    className={`relative overflow-hidden rounded-xl ${index === 0 ? "aspect-[16/8]" : "aspect-[16/11]"}`}
+                  >
                     <Image
                       src={project.image}
                       alt={`${project.title} project`}
@@ -565,7 +604,9 @@ export default function Home() {
                       <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/36 transition duration-300 group-hover:text-cyan-100/70">
                         {project.category}
                       </p>
-                      <h3 className="text-lg font-bold text-white">{project.title}</h3>
+                      <h3 className="text-lg font-bold text-white">
+                        {project.title}
+                      </h3>
                     </div>
                     <div className="hidden h-px min-w-10 flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.2),transparent)] sm:block" />
                   </div>
@@ -584,7 +625,8 @@ export default function Home() {
               Built for real business results
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Your website should help you grow, get found, and win more trust before the first call.
+              Your website should help you grow, get found, and win more trust
+              before the first call.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
@@ -620,7 +662,6 @@ export default function Home() {
           <TestimonialsSlider testimonials={testimonials} />
         </div>
       </section>
-
     </>
   );
 }
