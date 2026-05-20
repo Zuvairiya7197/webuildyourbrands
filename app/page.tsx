@@ -16,6 +16,7 @@ import {
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { ProblemAccordionCards } from "@/components/ProblemAccordionCards";
+import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { neonButtonClass } from "@/lib/utils";
 
 const StatsBar = dynamic(() => import("@/components/StatsBar"));
@@ -118,16 +119,20 @@ const stats = [
 
 const process = [
   {
-    title: "Strategy & Planning",
-    description: "We define your offer, audience, pages, and conversion goal before design starts."
+    title: "Discovery",
+    description: ""
   },
   {
-    title: "Design & Development",
-    description: "We design and build a fast, custom website that makes your message clear."
+    title: "Strategy & Structure",
+    description: ""
+  },
+  {
+    title: "Design & Experience",
+    description: ""
   },
   {
     title: "Launch & Growth",
-    description: "We launch with performance, SEO basics, and a clear path for more inquiries."
+    description: ""
   }
 ];
 
@@ -143,12 +148,6 @@ const projects = [
     category: "Education Website",
     image: "/project-sm-classes.webp",
     projectUrl: "https://smclasses.in/"
-  },
-  {
-    title: "Little Ilmies",
-    category: "Learning Platform",
-    image: "/project-little-ilmies.webp",
-    projectUrl: "https://littleilmies.com/"
   },
   {
     title: "Zarrar Palekar",
@@ -178,10 +177,6 @@ const heroProjectPreviews = [
   {
     title: "SM Classes",
     image: "/project-sm-classes.webp"
-  },
-  {
-    title: "Little Ilmies",
-    image: "/project-little-ilmies.webp"
   },
   {
     title: "Zarrar Palekar",
@@ -276,7 +271,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.76),rgba(0,0,31,0.52)_50%,rgba(0,0,31,0.72)),linear-gradient(180deg,rgba(53,92,255,0.06),rgba(124,60,255,0.04)_38%,transparent_78%)]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#00001f] to-transparent" />
-        <div className="relative mx-auto grid min-h-[560px] max-w-6xl items-center gap-12 sm:min-h-[680px] lg:grid-cols-[0.9fr_1.05fr] lg:gap-16">
+        <div className="relative mx-auto grid min-h-[560px] w-full items-center gap-12 sm:min-h-[680px] lg:grid-cols-[0.9fr_1.05fr] lg:gap-16">
           <div className="max-w-2xl">
             <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md">
               <span>Lead-focused websites</span>
@@ -413,14 +408,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer relative px-4 pb-10 pt-14 sm:px-8 sm:pb-12 sm:pt-20 lg:px-24 lg:pb-14 lg:pt-24 xl:px-32">
+      <section className="home-section home-section-panel mobile-render-defer relative px-4 pb-10 pt-14 sm:px-8 sm:pb-12 sm:pt-20 lg:px-24 lg:pb-14 lg:pt-24 xl:px-32">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
-        <div className="mx-auto max-w-6xl text-white">
+        <div className="mx-auto w-full text-white">
           <div className="grid gap-8">
             <div className="relative grid gap-8 border-l border-cyan-100/20 pl-5 sm:pl-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.62fr)] lg:items-start lg:gap-12">
               <div>
                 <Eyebrow>What You Get</Eyebrow>
-                <h2 className="max-w-[560px] text-2xl font-semibold leading-tight text-white sm:text-4xl">
+                <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
                   A website system built to win leads.
                 </h2>
                 <p className="mt-5 max-w-[540px] text-sm leading-7 text-white/62 sm:text-base sm:leading-8">
@@ -493,61 +488,35 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 pb-14 pt-10 sm:px-8 sm:pb-20 sm:pt-14 lg:px-24 lg:pb-24 lg:pt-20 xl:px-32">
+      <section className="home-section home-section-slim mobile-render-defer px-4 pb-14 pt-10 sm:px-8 sm:pb-20 sm:pt-14 lg:px-24 lg:pb-24 lg:pt-20 xl:px-32">
         <StatsBar stats={stats} />
       </section>
 
-      <section className="mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="relative mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
-          <div className="relative border-l border-violet-300/20 pl-5 sm:pl-7">
-            <Eyebrow>The Problem</Eyebrow>
-            <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
-              Most websites don&apos;t convert. Here&apos;s why:
-            </h2>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              Visitors need speed, clarity, and a reason to take action. We fix all of this.
-            </p>
-          </div>
+      <section className="problem-scroll-section home-section home-section-muted mobile-render-defer relative min-h-[640vh] px-4 sm:px-8 lg:px-24 xl:px-32">
+        <div className="sticky top-0 flex min-h-screen items-center py-14 sm:py-20 lg:py-24">
+          <div className="relative mx-auto grid w-full gap-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
+            <div className="relative border-l border-violet-300/20 pl-5 sm:pl-7">
+              <Eyebrow>The Problem</Eyebrow>
+              <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
+                Most websites don&apos;t convert. Here&apos;s why:
+              </h2>
+              <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+                Visitors need speed, clarity, and a reason to take action. We fix all of this.
+              </p>
+            </div>
 
-          <ProblemAccordionCards items={audiences} />
-        </div>
-      </section>
-
-      <section className="mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <Eyebrow>Process</Eyebrow>
-            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
-              Simple 3-step process
-            </h2>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
-              No confusion. No endless back-and-forth. Just a clear path from idea to launch.
-            </p>
-          </div>
-          <div className="grid gap-4">
-            {process.map(({ title, description }, index) => (
-              <article
-                key={title}
-                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_22px_70px_rgba(0,0,31,0.18)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 hover:bg-white/[0.055]"
-              >
-                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/38">
-                  Phase {index + 1}
-                </p>
-                <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white">{title}</h3>
-                <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-white/56">
-                  {description}
-                </p>
-              </article>
-            ))}
+            <ProblemAccordionCards items={audiences} />
           </div>
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+      <ProcessTimeline steps={process} />
+
+      <section className="home-section home-section-deep mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+        <div className="mx-auto grid w-full gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Selected Work</Eyebrow>
-            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white">
+            <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
               Websites built to look premium and convert.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
@@ -606,11 +575,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+      <section className="home-section home-section-muted mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+        <div className="mx-auto grid w-full gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Business Results</Eyebrow>
-            <h2 className="max-w-sm text-2xl font-semibold leading-tight text-white sm:text-3xl">
+            <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
               Built for real business results
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
@@ -643,48 +612,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-16 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-16 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.74),rgba(124,60,255,0.62),transparent)]" />
-        <div className="relative mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white/76">
-              <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(22,216,255,0.8)]" />
-              Testimonials
-            </p>
-            <h2 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-normal text-white sm:text-5xl lg:text-6xl">
-              Look What Our Clients
-              <span className="mt-2 flex flex-wrap items-center gap-4 sm:mt-3">
-                <span>Say</span>
-                <span className="flex items-center" aria-label="Happy clients">
-                  {[
-                    "/SM classes Founder.webp",
-                    "/Zarrar-Photo.webp",
-                    "/project-organise-with-kopal.webp"
-                  ].map((image, index) => (
-                    <span
-                      key={image}
-                      className="-ml-3 first:ml-0 relative block h-12 w-12 overflow-hidden rounded-full border-2 border-[#00001F] bg-white/10 shadow-[0_12px_32px_rgba(0,0,31,0.34)] sm:h-14 sm:w-14"
-                    >
-                      <Image
-                        src={image}
-                        alt=""
-                        fill
-                        sizes="56px"
-                        className={`object-cover ${index === 2 ? "object-top" : "object-center"}`}
-                      />
-                    </span>
-                  ))}
-                  <span className="-ml-3 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#00001F] bg-cyan-300 text-sm font-extrabold text-[#00001F] shadow-[0_0_34px_rgba(22,216,255,0.34)] sm:h-14 sm:w-14 sm:text-base">
-                    +{testimonials.length}
-                  </span>
-                </span>
-              </span>
-            </h2>
-            <p className="mt-6 max-w-md text-sm font-semibold leading-7 text-white/48 sm:text-base">
-              Clear websites, fast delivery, polished design, and edits handled with care. Read what our clients experienced.
-            </p>
-          </div>
+        <div className="relative mx-auto w-full">
           <TestimonialsSlider testimonials={testimonials} />
         </div>
       </section>

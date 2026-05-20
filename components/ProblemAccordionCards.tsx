@@ -1,6 +1,6 @@
 "use client";
 
-import { type CSSProperties, type KeyboardEvent, useState } from "react";
+import { type CSSProperties, type KeyboardEvent, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { BadgePlus, BriefcaseBusiness, Rocket, TrendingUp } from "lucide-react";
 
@@ -26,8 +26,55 @@ const icons = {
 };
 
 export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const frameRef = useRef<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const [cursor, setCursor] = useState({ x: 72, y: 30 });
+
+  useEffect(() => {
+    const updateActiveCard = () => {
+      frameRef.current = null;
+      const container = containerRef.current;
+
+      if (!container || items.length === 0) {
+        return;
+      }
+
+      const scrollSection = container.closest<HTMLElement>(".problem-scroll-section");
+      const rect = (scrollSection ?? container).getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const scrollableDistance = Math.max(1, rect.height - viewportHeight);
+      const progress = scrollSection
+        ? Math.min(1, Math.max(0, -rect.top / scrollableDistance))
+        : Math.min(
+            1,
+            Math.max(0, (viewportHeight * 0.82 - rect.top) / (viewportHeight * 0.82 + rect.height * 0.18))
+          );
+      const nextIndex = Math.min(items.length - 1, Math.floor(progress * (items.length + 1)));
+      setActiveIndex(nextIndex);
+    };
+
+    const scheduleUpdate = () => {
+      if (frameRef.current !== null) {
+        return;
+      }
+
+      frameRef.current = window.requestAnimationFrame(updateActiveCard);
+    };
+
+    updateActiveCard();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+    };
+  }, [items.length]);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>, index: number) => {
     if (event.key !== "Enter" && event.key !== " ") {
@@ -40,10 +87,11 @@ export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
 
   return (
     <div
+      ref={containerRef}
       className="problem-accordion"
       onPointerLeave={(event) => {
         if (event.pointerType !== "touch") {
-          setActiveIndex(null);
+          setActiveIndex((current) => current ?? 0);
         }
       }}
     >

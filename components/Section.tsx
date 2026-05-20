@@ -22,7 +22,7 @@ export default function Section({
       id={id}
       className={cn("px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32", className)}
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto w-full">
         {(eyebrow || title || description) && (
           <div className="mb-8 max-w-3xl sm:mb-10">
             {eyebrow && (

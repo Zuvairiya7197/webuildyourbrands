@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { CalendlyModalProvider } from "@/components/CalendlyModal";
+import { ScrollRestorationGuard } from "@/components/ScrollRestorationGuard";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -88,6 +89,7 @@ export default function RootLayout({
         <Footer />
         <FloatingWhatsApp />
         <CalendlyModalProvider />
+        <ScrollRestorationGuard />
       </body>
     </html>
   );

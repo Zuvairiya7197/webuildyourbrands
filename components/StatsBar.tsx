@@ -90,7 +90,7 @@ function StatsBar({ stats }: StatsBarProps) {
   return (
     <div
       ref={barRef}
-      className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_14%_12%,rgba(22,216,255,0.12),transparent_30%),radial-gradient(circle_at_92%_82%,rgba(124,60,255,0.16),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.46))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-6 lg:p-8"
+      className="relative mx-auto w-full overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_14%_12%,rgba(22,216,255,0.12),transparent_30%),radial-gradient(circle_at_92%_82%,rgba(124,60,255,0.16),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.46))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_30px_100px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-6 lg:p-8"
     >
       <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),rgba(124,60,255,0.58),transparent)]" />
       <p className="relative z-10 text-center text-[11px] font-bold uppercase tracking-[0.28em] text-white/50">

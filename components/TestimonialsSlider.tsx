@@ -2,8 +2,8 @@
 
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 
 type Testimonial = {
   title: string;
@@ -13,18 +13,10 @@ type Testimonial = {
   image?: string;
 };
 
-const cardMotion = {
-  type: "spring",
-  stiffness: 86,
-  damping: 22,
-  mass: 0.9
+const testimonialMotion = {
+  duration: 0.58,
+  ease: [0.22, 1, 0.36, 1]
 } as const;
-
-function getCircularOffset(index: number, activeIndex: number, total: number) {
-  const offset = (index - activeIndex + total) % total;
-
-  return offset === total - 1 ? -1 : offset;
-}
 
 function TestimonialsSliderComponent({
   testimonials
@@ -34,11 +26,9 @@ function TestimonialsSliderComponent({
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
-  const previousOffsets = useRef<Map<number, number>>(new Map());
 
   const slides = useMemo(
-    () =>
-      testimonials.map((testimonial) => testimonial),
+    () => testimonials.map((testimonial) => testimonial),
     [testimonials]
   );
 
@@ -59,21 +49,12 @@ function TestimonialsSliderComponent({
       return;
     }
 
-    const intervalId = window.setInterval(goToNext, 3600);
+    const intervalId = window.setInterval(goToNext, 4600);
 
     return () => {
       window.clearInterval(intervalId);
     };
   }, [goToNext, isPaused, slides.length]);
-
-  useEffect(() => {
-    previousOffsets.current = new Map(
-      slides.map((_, index) => [
-        index,
-        getCircularOffset(index, activeIndex, slides.length)
-      ])
-    );
-  }, [activeIndex, slides]);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "ArrowLeft") {
@@ -104,20 +85,24 @@ function TestimonialsSliderComponent({
     }
   };
 
+  const activeTestimonial = slides[activeIndex];
+  const portrait = activeTestimonial.image ?? "/project-organise-with-kopal.webp";
+
   return (
     <div
-      className="relative mx-auto w-full"
+      className="relative mx-auto w-full overflow-hidden py-12 lg:min-h-[560px] lg:py-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
       onKeyDown={handleKeyDown}
       tabIndex={0}
-      aria-label="Cinematic testimonial carousel"
+      aria-label="Client testimonial carousel"
     >
+      <div className="pointer-events-none absolute inset-y-0 left-[44%] w-px bg-[linear-gradient(180deg,transparent,rgba(22,216,255,0.12),transparent)]" />
+
       <div
-        className="relative -mx-4 h-[430px] overflow-hidden px-4 [mask-image:linear-gradient(90deg,transparent,black_13%,black_87%,transparent)] sm:-mx-8 sm:h-[470px] sm:px-8 lg:-mx-24 lg:h-[500px] lg:px-24 xl:-mx-32 xl:px-32"
-        style={{ perspective: "1400px" }}
+        className="relative grid gap-8 lg:min-h-[560px] lg:grid-cols-[0.39fr_0.61fr] lg:items-start"
         onTouchStart={(event) => {
           touchStartX.current = event.touches[0].clientX;
           setIsPaused(true);
@@ -127,92 +112,75 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="pointer-events-none absolute inset-x-0 top-12 h-52 bg-[radial-gradient(ellipse_at_center,rgba(22,216,255,0.16),transparent_62%)] blur-2xl" />
-        <div className="absolute inset-0 mx-auto max-w-7xl">
-          {slides.map((testimonial, index) => {
-            const offset = getCircularOffset(index, activeIndex, slides.length);
-            const distance = Math.abs(offset);
-            const isCenter = offset === 1;
-            const isVisible = offset >= 0 && offset <= 2;
-            const previousOffset = previousOffsets.current.get(index);
-            const shouldJumpInFromLoop = previousOffset === -1 && offset === 2;
-            const x =
-              offset === -1
-                ? -380
-                : offset === 0
-                  ? -380
-                  : offset === 1
-                    ? 58
-                    : 496;
-            const scale = 1;
-            const opacity = isVisible ? 1 : 0;
-            const blur = "blur(0px)";
-            const rotateY = 0;
-            const z = offset === -1 ? -160 : 0;
-
-            return (
-              <motion.article
-                key={testimonial.name}
-                role="button"
-                tabIndex={isVisible ? 0 : -1}
-                aria-label={`Center ${testimonial.name} testimonial`}
-                onClick={() =>
-                  setActiveIndex((index - 1 + slides.length) % slides.length)
-                }
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    setActiveIndex((index - 1 + slides.length) % slides.length);
-                  }
-                }}
-                className="group absolute left-1/2 top-8 h-[370px] w-[82vw] max-w-[410px] -translate-x-1/2 cursor-pointer overflow-hidden rounded-[2px] border border-white/10 bg-[#00001F] shadow-[0_30px_100px_rgba(0,0,0,0.46)] outline-none transition-shadow duration-300 hover:shadow-[0_34px_110px_rgba(22,216,255,0.14)] sm:h-[410px] sm:w-[390px] lg:h-[430px]"
-                style={{
-                  pointerEvents: isVisible ? "auto" : "none",
-                  zIndex: offset === -1 ? 1 : offset === 0 ? 30 : isCenter ? 24 : 18
-                }}
-                initial={false}
-                animate={{
-                  x,
-                  scale,
-                  opacity,
-                  rotateY,
-                  z,
-                  filter: blur
-                }}
-                transition={shouldJumpInFromLoop ? { duration: 0 } : cardMotion}
+        <div className="relative mx-auto h-[560px] w-full max-w-[560px] overflow-hidden lg:mx-0">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,540px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 gap-5 opacity-70">
+            {Array.from({ length: 9 }).map((_, index) => (
+              <div
+                key={index}
+                className="rounded-[18px] border border-white/[0.05] bg-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]"
+              />
+            ))}
+          </div>
+          <div className="absolute left-1/2 top-1/2 z-10 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTestimonial.name}
+                className="relative h-full w-full overflow-hidden rounded-[14px] border border-white/10 bg-[#00001F] shadow-[0_22px_64px_rgba(0,0,31,0.46),0_0_34px_rgba(124,60,255,0.16)]"
+                initial={{ opacity: 0, y: 18, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -14, scale: 0.98 }}
+                transition={testimonialMotion}
               >
-                {testimonial.image ? (
-                  <Image
-                    src={testimonial.image}
-                    alt={`${testimonial.name} testimonial`}
-                    fill
-                    sizes="(min-width: 1024px) 410px, 82vw"
-                    className="object-cover object-center transition duration-700 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(22,216,255,0.035)_38%,rgba(124,60,255,0.08)_72%,rgba(0,0,31,0.96))]" />
-                )}
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02)_0%,rgba(0,0,31,0.05)_34%,rgba(0,0,31,0.5)_67%,rgba(0,0,31,0.94)_100%)]" />
-                <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-white/[0.06] p-6 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl sm:p-7">
-                  <p className="mx-auto line-clamp-4 max-w-[21rem] text-sm font-semibold leading-7 text-white/90 sm:text-[15px]">
-                    &quot;{testimonial.quote}&quot;
-                  </p>
-                  <div className="mt-5 flex items-center justify-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white/68">
-                    <span>— {testimonial.name}</span>
-                    <span className="flex gap-0.5 text-cyan-300 drop-shadow-[0_0_10px_rgba(22,216,255,0.45)]">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                          key={star}
-                          className="h-3.5 w-3.5 fill-current"
-                          aria-hidden="true"
-                        />
-                      ))}
-                    </span>
-                  </div>
-                </div>
-              </motion.article>
-            );
-          })}
+                <Image
+                  src={portrait}
+                  alt={`${activeTestimonial.name} testimonial`}
+                  fill
+                  sizes="160px"
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(22,216,255,0.08),transparent_44%,rgba(124,60,255,0.16))]" />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="relative max-w-4xl lg:pl-10 lg:pt-[118px]">
+          <Quote className="mb-9 h-14 w-14 text-white/18 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.18))_drop-shadow(0_-2px_2px_rgba(0,0,31,0.55))_drop-shadow(0_8px_10px_rgba(0,0,31,0.34))]" aria-hidden="true" />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTestimonial.quote}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -14 }}
+              transition={testimonialMotion}
+            >
+              <p className="max-w-[860px] text-lg font-medium leading-[1.42] tracking-normal text-white/82 sm:text-xl lg:text-[1.8rem]">
+                {activeTestimonial.quote}
+              </p>
+              <p className="mt-7 text-base font-medium text-[#9b98aa] sm:text-lg">
+                {activeTestimonial.name}, {activeTestimonial.role}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="mt-9 flex gap-4">
+            <button
+              type="button"
+              onClick={goToPrevious}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.035] text-white/80 transition hover:border-white hover:bg-white/[0.08] hover:text-white"
+              aria-label="Previous testimonial"
+            >
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={goToNext}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.035] text-white/80 transition hover:border-white hover:bg-white/[0.08] hover:text-white"
+              aria-label="Next testimonial"
+            >
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
