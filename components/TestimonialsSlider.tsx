@@ -99,7 +99,7 @@ function TestimonialsSliderComponent({
       tabIndex={0}
       aria-label="Client testimonial carousel"
     >
-      <div className="pointer-events-none absolute inset-y-0 left-[44%] w-px bg-[linear-gradient(180deg,transparent,rgba(22,216,255,0.12),transparent)]" />
+      <div className="pointer-events-none absolute inset-y-0 left-[44%] hidden w-px bg-[linear-gradient(180deg,transparent,rgba(22,216,255,0.12),transparent)] lg:block" />
 
       <div
         className="relative grid gap-8 lg:min-h-[560px] lg:grid-cols-[0.39fr_0.61fr] lg:items-start"
@@ -112,8 +112,8 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="relative mx-auto h-[560px] w-full max-w-[560px] overflow-hidden lg:mx-0">
-          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,540px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 gap-5 opacity-70">
+        <div className="relative mx-auto h-[360px] w-full max-w-[360px] overflow-hidden sm:h-[460px] sm:max-w-[460px] lg:mx-0 lg:h-[560px] lg:max-w-[560px]">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,340px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 gap-3 opacity-70 sm:w-[min(100%,440px)] sm:gap-4 lg:w-[min(100%,540px)] lg:gap-5">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
                 key={index}
@@ -121,7 +121,7 @@ function TestimonialsSliderComponent({
               />
             ))}
           </div>
-          <div className="absolute left-1/2 top-1/2 z-10 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-1/2 top-1/2 z-10 h-[104px] w-[104px] -translate-x-1/2 -translate-y-1/2 sm:h-[136px] sm:w-[136px] lg:h-[160px] lg:w-[160px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTestimonial.name}
@@ -145,7 +145,7 @@ function TestimonialsSliderComponent({
         </div>
 
         <div className="relative max-w-4xl lg:pl-10 lg:pt-[118px]">
-          <Quote className="mb-9 h-14 w-14 text-white/18 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.18))_drop-shadow(0_-2px_2px_rgba(0,0,31,0.55))_drop-shadow(0_8px_10px_rgba(0,0,31,0.34))]" aria-hidden="true" />
+          <Quote className="mb-6 h-11 w-11 text-white/18 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.18))_drop-shadow(0_-2px_2px_rgba(0,0,31,0.55))_drop-shadow(0_8px_10px_rgba(0,0,31,0.34))] sm:mb-9 sm:h-14 sm:w-14" aria-hidden="true" />
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTestimonial.quote}
@@ -154,7 +154,7 @@ function TestimonialsSliderComponent({
               exit={{ opacity: 0, y: -14 }}
               transition={testimonialMotion}
             >
-              <p className="max-w-[860px] text-lg font-medium leading-[1.42] tracking-normal text-white/82 sm:text-xl lg:text-[1.8rem]">
+              <p className="max-w-[860px] text-base font-medium leading-[1.48] tracking-normal text-white/82 sm:text-xl lg:text-[1.8rem]">
                 {activeTestimonial.quote}
               </p>
               <p className="mt-7 text-base font-medium text-[#9b98aa] sm:text-lg">
