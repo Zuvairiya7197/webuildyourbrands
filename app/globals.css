@@ -577,10 +577,12 @@ main {
 
 @media (max-width: 640px) {
   .problem-scroll-section {
-    min-height: 430vh !important;
+    min-height: auto !important;
   }
 
   .problem-scroll-section > .sticky {
+    position: static;
+    min-height: auto;
     align-items: start;
     padding-block: 4.5rem 2rem;
   }

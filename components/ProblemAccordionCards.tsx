@@ -28,10 +28,17 @@ const icons = {
 export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const frameRef = useRef<number | null>(null);
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [cursor, setCursor] = useState({ x: 72, y: 30 });
 
   useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 640px)");
+
+    if (mobileQuery.matches) {
+      setActiveIndex(null);
+      return;
+    }
+
     const updateActiveCard = () => {
       frameRef.current = null;
       const container = containerRef.current;

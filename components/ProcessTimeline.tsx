@@ -65,9 +65,9 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
           defaults: { ease: "power3.out" },
           scrollTrigger: {
             trigger: section,
-            start: "top top",
-            end: "+=360%",
-            pin: true,
+            start: isMobileTimeline ? "top 72%" : "top top",
+            end: isMobileTimeline ? "bottom 32%" : "+=360%",
+            pin: !isMobileTimeline,
             scrub: 1.15,
             anticipatePin: 1,
             invalidateOnRefresh: true

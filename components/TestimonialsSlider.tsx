@@ -90,7 +90,7 @@ function TestimonialsSliderComponent({
 
   return (
     <div
-      className="relative mx-auto w-full overflow-hidden py-12 lg:min-h-[560px] lg:py-0"
+      className="relative mx-auto w-full overflow-hidden py-8 sm:py-12 lg:min-h-[560px] lg:py-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
@@ -102,7 +102,7 @@ function TestimonialsSliderComponent({
       <div className="pointer-events-none absolute inset-y-0 left-[44%] hidden w-px bg-[linear-gradient(180deg,transparent,rgba(22,216,255,0.12),transparent)] lg:block" />
 
       <div
-        className="relative grid gap-8 lg:min-h-[560px] lg:grid-cols-[0.39fr_0.61fr] lg:items-start"
+        className="relative grid gap-3 sm:gap-8 lg:min-h-[560px] lg:grid-cols-[0.39fr_0.61fr] lg:items-start"
         onTouchStart={(event) => {
           touchStartX.current = event.touches[0].clientX;
           setIsPaused(true);
@@ -112,7 +112,7 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="relative mx-auto h-[360px] w-full max-w-[360px] overflow-hidden sm:h-[460px] sm:max-w-[460px] lg:mx-0 lg:h-[560px] lg:max-w-[560px]">
+        <div className="relative mx-auto h-[300px] w-full max-w-[340px] overflow-hidden sm:h-[460px] sm:max-w-[460px] lg:mx-0 lg:h-[560px] lg:max-w-[560px]">
           <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,340px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 gap-3 opacity-70 sm:w-[min(100%,440px)] sm:gap-4 lg:w-[min(100%,540px)] lg:gap-5">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
@@ -146,7 +146,7 @@ function TestimonialsSliderComponent({
 
         <div className="relative max-w-4xl lg:pl-10 lg:pt-[118px]">
           <span
-            className="mb-5 block font-serif text-[4.6rem] font-bold leading-none text-[#16d8ff]/8 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.04))] sm:mb-7 sm:text-[6rem]"
+            className="mb-2 block font-serif text-[3.6rem] font-bold leading-none text-[#16d8ff]/8 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.04))] sm:mb-7 sm:text-[6rem]"
             aria-hidden="true"
           >
             &ldquo;
