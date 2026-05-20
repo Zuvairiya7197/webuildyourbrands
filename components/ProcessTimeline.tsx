@@ -60,15 +60,17 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
           transformOrigin: isMobileTimeline ? "center top" : "left center"
         });
 
-        // One pinned scrubbed timeline drives all transform/opacity/SVG stroke work.
+        // Desktop keeps the pinned scrub. Mobile plays a quick reveal so the section
+        // is visible before the user naturally scrolls past it.
         const timeline = gsap.timeline({
           defaults: { ease: "power3.out" },
           scrollTrigger: {
             trigger: section,
-            start: isMobileTimeline ? "top 72%" : "top top",
-            end: isMobileTimeline ? "bottom 32%" : "+=360%",
+            start: isMobileTimeline ? "top 78%" : "top top",
+            end: isMobileTimeline ? undefined : "+=360%",
             pin: !isMobileTimeline,
-            scrub: 1.15,
+            scrub: isMobileTimeline ? false : 1.15,
+            toggleActions: isMobileTimeline ? "play none none none" : undefined,
             anticipatePin: 1,
             invalidateOnRefresh: true
           }
@@ -90,6 +92,10 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
           .to(nodes[3], { opacity: 1, scale: 1, duration: 1.1 }, 2.86)
           .to(grids[3], { opacity: 0.82, duration: 0.9 }, 2.98)
           .to(labels[3], { opacity: 1, y: 0, duration: 0.75 }, 3.04);
+
+        if (isMobileTimeline) {
+          timeline.timeScale(2.6);
+        }
       }, section);
     };
 
