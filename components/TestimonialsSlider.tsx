@@ -113,34 +113,35 @@ function TestimonialsSliderComponent({
         }}
       >
         <div className="relative mx-auto h-[300px] w-full max-w-[340px] overflow-hidden sm:h-[460px] sm:max-w-[460px] lg:mx-0 lg:h-[560px] lg:max-w-[560px]">
-          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,340px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 gap-3 opacity-70 sm:w-[min(100%,440px)] sm:gap-4 lg:w-[min(100%,540px)] lg:gap-5">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,340px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,440px)] sm:gap-4 lg:w-[min(100%,540px)] lg:gap-5">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
                 key={index}
-                className="rounded-[18px] border border-white/[0.05] bg-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]"
-              />
-            ))}
-          </div>
-          <div className="absolute left-1/2 top-1/2 z-10 h-[calc((min(100%,340px)-1.5rem)/3)] w-[calc((min(100%,340px)-1.5rem)/3)] -translate-x-1/2 -translate-y-1/2 sm:h-[calc((min(100%,440px)-2rem)/3)] sm:w-[calc((min(100%,440px)-2rem)/3)] lg:h-[calc((min(100%,540px)-2.5rem)/3)] lg:w-[calc((min(100%,540px)-2.5rem)/3)]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTestimonial.name}
-                className="relative h-full w-full overflow-hidden rounded-[14px] border border-white/10 bg-[#00001F] shadow-[0_22px_64px_rgba(0,0,31,0.46),0_0_34px_rgba(124,60,255,0.16)]"
-                initial={{ opacity: 0, y: 18, scale: 0.96 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -14, scale: 0.98 }}
-                transition={testimonialMotion}
+                className="relative overflow-hidden rounded-[18px] border border-white/[0.05] bg-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]"
               >
-                <Image
-                  src={portrait}
-                  alt={`${activeTestimonial.name} testimonial`}
-                  fill
-                  sizes="160px"
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(22,216,255,0.08),transparent_44%,rgba(124,60,255,0.16))]" />
-              </motion.div>
-            </AnimatePresence>
+                {index === 4 ? (
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeTestimonial.name}
+                      className="relative h-full w-full overflow-hidden rounded-[inherit] border border-white/10 bg-[#00001F] shadow-[0_22px_64px_rgba(0,0,31,0.46),0_0_34px_rgba(124,60,255,0.16)]"
+                      initial={{ opacity: 0, y: 18, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -14, scale: 0.98 }}
+                      transition={testimonialMotion}
+                    >
+                      <Image
+                        src={portrait}
+                        alt={`${activeTestimonial.name} testimonial`}
+                        fill
+                        sizes="(min-width: 1024px) 167px, (min-width: 640px) 136px, 105px"
+                        className="object-cover object-center"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(22,216,255,0.08),transparent_44%,rgba(124,60,255,0.16))]" />
+                    </motion.div>
+                  </AnimatePresence>
+                ) : null}
+              </div>
+            ))}
           </div>
         </div>
 
