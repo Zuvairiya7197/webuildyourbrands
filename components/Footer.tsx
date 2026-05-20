@@ -2,10 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Instagram, Linkedin } from "lucide-react";
-import {
-  BackToTopButton,
-  FooterInteractionShell
-} from "@/components/FooterInteractionShell";
+import { FooterInteractionShell } from "@/components/FooterInteractionShell";
 
 const FooterCTA = dynamic(() => import("@/components/FooterCTA"), {
   loading: () => null
@@ -63,7 +60,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-6xl">
         <FooterCTA />
 
-        <div className="hidden gap-6 border-t border-cyan-300/10 py-8 md:grid md:grid-cols-[1fr_auto] md:items-center">
+        <div className="hidden border-t border-cyan-300/10 py-8 md:block">
           <nav aria-label="Footer navigation">
             <ul className="flex flex-wrap gap-2">
               {footerLinks.map((item) => (
@@ -80,7 +77,6 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <BackToTopButton />
         </div>
 
         <div className="flex flex-col gap-5 border-t border-cyan-300/10 py-6 text-xs text-white/48 md:flex-row md:items-center md:justify-between">
