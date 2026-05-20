@@ -106,7 +106,6 @@ export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
               </motion.div>
 
               <div className="problem-card__meta">
-                <span>0{index + 1}</span>
                 <p>{cue}</p>
               </div>
             </div>

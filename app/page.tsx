@@ -200,20 +200,20 @@ const heroProjectPreviews = [
 const reasons = [
   {
     title: "More Leads",
-    signal: "Guide visitors toward calls, forms, and inquiries.",
+    signal: "Clear paths to calls and inquiries.",
     visual: "Leads",
     Icon: Lightbulb
   },
   {
     title: "Better Conversions",
-    signal: "Turn attention into action with clearer pages.",
+    signal: "Less confusion. Faster decisions.",
     visual: "Convert",
     Icon: PanelsTopLeft
   },
   {
     title: "Strong Online Presence",
-    signal: "Look credible when customers check you first.",
-    visual: "Grow",
+    signal: "A sharper first impression.",
+    visual: "Trust",
     Icon: Rocket
   }
 ];
@@ -329,11 +329,8 @@ export default function Home() {
                 <div className="grid h-full grid-cols-[104px_1fr] gap-6">
                   <div className="relative flex flex-col items-center justify-between rounded-[26px] border border-white/10 bg-[#00001F]/46 px-4 py-8">
                     <span className="absolute inset-y-12 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-100/36 to-transparent" />
-                    {["Plan", "Design", "Launch"].map((item, index) => (
+                    {["Plan", "Design", "Launch"].map((item) => (
                       <div key={item} className="relative z-10 flex min-h-[106px] flex-col items-center text-center">
-                        <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-[#080022] text-xs font-bold text-white shadow-[0_0_22px_rgba(22,216,255,0.13)]">
-                          0{index + 1}
-                        </span>
                         <p className="mt-8 -rotate-90 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] text-white/48">
                           {item}
                         </p>
@@ -416,18 +413,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 pb-10 sm:px-8 sm:pb-12 lg:px-24 lg:pb-14 xl:px-32">
-        <div className="mx-auto grid max-w-6xl gap-4 border-y border-white/10 py-5 text-white sm:grid-cols-[1fr_auto] sm:items-center">
-          <p className="text-sm font-bold text-white/72">
-            Built with precision, not templates.
-          </p>
-          <div className="grid gap-3 text-xs font-bold uppercase tracking-[0.16em] text-white/48 sm:grid-cols-2 sm:text-right">
-            <span>100% Custom Projects</span>
-            <span>Optimized for Speed</span>
-          </div>
-        </div>
-      </section>
-
       <section className="mobile-render-defer relative px-4 pb-10 pt-14 sm:px-8 sm:pb-12 sm:pt-20 lg:px-24 lg:pb-14 lg:pt-24 xl:px-32">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
         <div className="mx-auto max-w-6xl text-white">
@@ -457,7 +442,7 @@ export default function Home() {
             </div>
 
             <div className="what-you-get-cards">
-              {services.map(({ title, description, Icon, cta }, index) => {
+              {services.map(({ title, description, Icon, cta }) => {
                 const cardContent = (
                   <>
                     <div className="what-you-get-card-glow" aria-hidden="true" />
@@ -465,7 +450,6 @@ export default function Home() {
                       <div className="what-you-get-card-icon">
                         <Icon className="h-6 w-6" aria-hidden="true" />
                       </div>
-                      <span className="what-you-get-card-index">0{index + 1}</span>
                     </div>
                     <div className="what-you-get-card-copy">
                       <h3>{title}</h3>
@@ -540,29 +524,19 @@ export default function Home() {
               No confusion. No endless back-and-forth. Just a clear path from idea to launch.
             </p>
           </div>
-          <div className="clarity-pipeline">
+          <div className="grid gap-4">
             {process.map(({ title, description }, index) => (
               <article
                 key={title}
-                className="clarity-pipeline-card group"
+                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_22px_70px_rgba(0,0,31,0.18)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 hover:bg-white/[0.055]"
               >
-                <span className="clarity-pipeline-index">
-                  0{index + 1}
-                </span>
-                <div className="clarity-pipeline-icon text-xs font-black">
-                  <span aria-hidden="true">
-                    0{index + 1}
-                  </span>
-                </div>
-                <div className="relative z-10">
-                  <p className="clarity-pipeline-badge">
-                    Phase {index + 1}
-                  </p>
-                  <h3 className="mt-4 text-2xl font-bold text-white">{title}</h3>
-                  <p className="mt-3 text-sm font-semibold leading-6 text-white/62">
-                    {description}
-                  </p>
-                </div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/38">
+                  Phase {index + 1}
+                </p>
+                <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white">{title}</h3>
+                <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-white/56">
+                  {description}
+                </p>
               </article>
             ))}
           </div>
@@ -612,9 +586,6 @@ export default function Home() {
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02)_0%,rgba(0,0,31,0.18)_48%,rgba(0,0,31,0.82)_100%)]" />
-                    <span className="absolute left-4 top-4 rounded-full border border-white/14 bg-[#00001F]/58 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/74 backdrop-blur-md">
-                      0{index + 1}
-                    </span>
                     <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/16 bg-white/10 text-white opacity-0 shadow-[0_14px_36px_rgba(0,0,31,0.28)] backdrop-blur-md transition duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:translate-x-2">
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </div>
@@ -646,27 +617,26 @@ export default function Home() {
               Your website should help you grow, get found, and win more trust before the first call.
             </p>
           </div>
-          <div className="clarity-pipeline">
-            {reasons.map(({ title, signal, visual, Icon }, index) => (
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            {reasons.map(({ title, signal, visual, Icon }) => (
               <article
                 key={title}
-                className="clarity-pipeline-card group"
+                className="group relative overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.035] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 hover:bg-white/[0.055] sm:p-6"
               >
-                <span className="clarity-pipeline-index">
-                  0{index + 1}
-                </span>
-                <div className="clarity-pipeline-icon">
-                  <Icon className="h-8 w-8" aria-hidden="true" />
-                </div>
-                <div className="relative z-10">
-                  <p className="clarity-pipeline-badge">
+                <div className="flex items-start justify-between gap-4">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/42">
                     {visual}
                   </p>
-                  <h3 className="mt-4 text-2xl font-bold text-white">{title}</h3>
-                  <p className="mt-3 text-sm font-semibold leading-6 text-white/62">
-                    {signal}
-                  </p>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/42 text-cyan-100/78 transition duration-300 group-hover:border-cyan-300/24 group-hover:text-cyan-100">
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                  </span>
                 </div>
+                <h3 className="mt-8 text-xl font-semibold tracking-tight text-white">
+                  {title}
+                </h3>
+                <p className="mt-3 max-w-xs text-sm leading-6 text-white/54">
+                  {signal}
+                </p>
               </article>
             ))}
           </div>
@@ -677,47 +647,43 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.74),rgba(124,60,255,0.62),transparent)]" />
         <div className="relative mx-auto max-w-7xl">
-          <div className="grid min-h-[270px] gap-10 lg:grid-cols-[0.75fr_1fr_0.45fr]">
-            <div>
-              <p className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white/76">
-                <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(22,216,255,0.8)]" />
-                Testimonials
-              </p>
-            </div>
-            <div className="lg:col-start-2">
-              <h2 className="max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-normal text-white sm:text-5xl lg:text-6xl">
-                Look What Our Clients
-                <span className="mt-2 flex flex-wrap items-center gap-4 sm:mt-3">
-                  <span>Say</span>
-                  <span className="flex items-center" aria-label="Happy clients">
-                    {[
-                      "/SM classes Founder.webp",
-                      "/Zarrar-Photo.webp",
-                      "/project-organise-with-kopal.webp"
-                    ].map((image, index) => (
-                      <span
-                        key={image}
-                        className="-ml-3 first:ml-0 relative block h-12 w-12 overflow-hidden rounded-full border-2 border-[#00001F] bg-white/10 shadow-[0_12px_32px_rgba(0,0,31,0.34)] sm:h-14 sm:w-14"
-                      >
-                        <Image
-                          src={image}
-                          alt=""
-                          fill
-                          sizes="56px"
-                          className={`object-cover ${index === 2 ? "object-top" : "object-center"}`}
-                        />
-                      </span>
-                    ))}
-                    <span className="-ml-3 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#00001F] bg-cyan-300 text-sm font-extrabold text-[#00001F] shadow-[0_0_34px_rgba(22,216,255,0.34)] sm:h-14 sm:w-14 sm:text-base">
-                      +{testimonials.length}
+          <div className="max-w-3xl">
+            <p className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-white/76">
+              <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(22,216,255,0.8)]" />
+              Testimonials
+            </p>
+            <h2 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-normal text-white sm:text-5xl lg:text-6xl">
+              Look What Our Clients
+              <span className="mt-2 flex flex-wrap items-center gap-4 sm:mt-3">
+                <span>Say</span>
+                <span className="flex items-center" aria-label="Happy clients">
+                  {[
+                    "/SM classes Founder.webp",
+                    "/Zarrar-Photo.webp",
+                    "/project-organise-with-kopal.webp"
+                  ].map((image, index) => (
+                    <span
+                      key={image}
+                      className="-ml-3 first:ml-0 relative block h-12 w-12 overflow-hidden rounded-full border-2 border-[#00001F] bg-white/10 shadow-[0_12px_32px_rgba(0,0,31,0.34)] sm:h-14 sm:w-14"
+                    >
+                      <Image
+                        src={image}
+                        alt=""
+                        fill
+                        sizes="56px"
+                        className={`object-cover ${index === 2 ? "object-top" : "object-center"}`}
+                      />
                     </span>
+                  ))}
+                  <span className="-ml-3 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#00001F] bg-cyan-300 text-sm font-extrabold text-[#00001F] shadow-[0_0_34px_rgba(22,216,255,0.34)] sm:h-14 sm:w-14 sm:text-base">
+                    +{testimonials.length}
                   </span>
                 </span>
-              </h2>
-              <p className="mt-6 max-w-md text-sm font-semibold leading-7 text-white/48 sm:text-base">
-                Clear websites, fast delivery, polished design, and edits handled with care. Read what our clients experienced.
-              </p>
-            </div>
+              </span>
+            </h2>
+            <p className="mt-6 max-w-md text-sm font-semibold leading-7 text-white/48 sm:text-base">
+              Clear websites, fast delivery, polished design, and edits handled with care. Read what our clients experienced.
+            </p>
           </div>
           <TestimonialsSlider testimonials={testimonials} />
         </div>

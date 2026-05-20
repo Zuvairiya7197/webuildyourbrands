@@ -110,13 +110,11 @@ export default function ProjectsPage() {
                 </p>
               </div>
               <div className="grid gap-2">
-                {projects.map((project, index) => (
+                {projects.map((project) => (
                   <span
                     key={project.title}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.035] text-[10px] font-bold text-white/58"
-                  >
-                    0{index + 1}
-                  </span>
+                    className="h-2 w-2 rounded-full bg-cyan-100/42"
+                  />
                 ))}
               </div>
             </aside>

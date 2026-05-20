@@ -100,7 +100,7 @@ export default function PricingPage() {
           </div>
 
           <div id="packages" className="grid scroll-mt-24 items-stretch gap-6 lg:grid-cols-3">
-          {tiers.map((tier, index) => (
+          {tiers.map((tier) => (
             <article
               key={tier.name}
               className={`pricing-card ${tier.featured ? "pricing-card-featured" : ""}`}
@@ -116,12 +116,9 @@ export default function PricingPage() {
               <div className="relative flex flex-1 flex-col">
                 <div className="flex items-start justify-between gap-5">
                   <div>
-                    <p className="pricing-card-kicker">Plan 0{index + 1}</p>
+                    <p className="pricing-card-kicker">Website Package</p>
                     <h2 className="pricing-card-title">{tier.name}</h2>
                   </div>
-                  <span className="pricing-card-mark" aria-hidden="true">
-                    0{index + 1}
-                  </span>
                 </div>
 
                 <p className="pricing-card-subtitle">

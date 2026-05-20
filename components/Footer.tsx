@@ -87,12 +87,6 @@ export default function Footer() {
           <p>(c) 2026 We Build Your Brands. All rights reserved.</p>
 
           <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-            <Link href="/privacy" className="transition hover:text-white hover:underline hover:underline-offset-4">
-              Privacy
-            </Link>
-            <Link href="/terms" className="transition hover:text-white hover:underline hover:underline-offset-4">
-              Terms
-            </Link>
             <div className="flex gap-3">
               {socialLinks.map(({ label, href, Icon }) => (
                 <Link

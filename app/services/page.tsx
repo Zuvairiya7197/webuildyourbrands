@@ -230,15 +230,12 @@ export default function ServicesPage() {
         title="Not sure what you need? Start here:"
       >
         <div className="grid gap-4 md:grid-cols-3">
-          {decisionPaths.map((path, index) => (
+          {decisionPaths.map((path) => (
             <article
               key={path.need}
               className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-[#00001F]/44 p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] sm:p-6"
             >
               <div className="flex items-center justify-between gap-4">
-                <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/30">
-                  0{index + 1}
-                </span>
                 <ArrowRight className="h-4 w-4 text-cyan-100/58 transition duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </div>
               <p className="mt-7 text-sm font-semibold leading-7 text-white/62">
@@ -274,7 +271,7 @@ export default function ServicesPage() {
         description="Pick one focused service, or combine multiple services into a complete website system."
       >
         <div className="grid gap-6">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <article
               key={service.title}
               className="group relative grid overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.48))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_30px_90px_rgba(22,216,255,0.12),0_18px_70px_rgba(124,60,255,0.16)] sm:rounded-[32px] lg:grid-cols-[0.38fr_0.62fr]"
@@ -292,9 +289,6 @@ export default function ServicesPage() {
                 <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-[#00001F]/62 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(53,92,255,0.22)] backdrop-blur-md transition duration-300 group-hover:border-cyan-300/28 group-hover:bg-[image:var(--button-gradient)]">
                   <service.Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <span className="absolute right-4 top-4 rounded-full border border-white/12 bg-[#00001F]/56 px-3 py-1 text-xs font-bold uppercase tracking-[0.22em] text-white/62 backdrop-blur-md transition duration-300 group-hover:text-cyan-100/80">
-                  0{index + 1}
-                </span>
               </div>
               <div className="flex flex-col p-5 sm:p-8">
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-100/58">
@@ -371,7 +365,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid gap-4">
-            {serviceSystems.map(({ title, description, Icon }, index) => (
+            {serviceSystems.map(({ title, description, Icon }) => (
               <article
                 key={title}
                 className="group flex gap-4 rounded-[24px] border border-white/10 bg-[#00001F]/44 p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/[0.055] sm:gap-5 sm:p-5"
@@ -381,9 +375,6 @@ export default function ServicesPage() {
                 </div>
                 <div>
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/30">
-                      0{index + 1}
-                    </span>
                     <h3 className="text-lg font-bold">{title}</h3>
                   </div>
                   <p className="mt-3 text-sm leading-7 text-white/62">

@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const offWhite = "#f1eee7";
+
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
@@ -9,6 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        white: offWhite,
         ring: "hsl(var(--ring))",
         primary: {
           foreground: "hsl(var(--primary-foreground))"

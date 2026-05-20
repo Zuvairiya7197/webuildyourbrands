@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground: 0 0% 100%;
-  --primary-foreground: 0 0% 100%;
+  --text-off-white: #f1eee7;
+  --text-soft-grey: #b8b6c7;
+  --foreground: 42 27% 93%;
+  --primary-foreground: 42 27% 93%;
   --ring: 0 0% 100%;
   --neon-cyan: #16d8ff;
   --site-gradient: linear-gradient(
@@ -783,6 +785,21 @@ textarea {
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.clarity-pipeline-metric {
+  display: inline-flex;
+  margin-top: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(22, 216, 255, 0.22);
+  background: rgba(22, 216, 255, 0.08);
+  padding: 8px 15px;
+  color: rgba(103, 232, 249, 0.86);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 0 26px rgba(22, 216, 255, 0.08);
 }
 
 @media (min-width: 1024px) {

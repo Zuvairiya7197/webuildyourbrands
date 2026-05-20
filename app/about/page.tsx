@@ -158,7 +158,7 @@ export default function AboutPage() {
         title="Simple rules. Websites that actually work."
       >
         <div className="grid gap-5 md:grid-cols-3">
-          {approach.map(({ title, text, Icon }, index) => (
+          {approach.map(({ title, text, Icon }) => (
             <article
               key={title}
               className="group relative min-h-[220px] overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.44))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28"
@@ -168,9 +168,6 @@ export default function AboutPage() {
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/58 text-white transition duration-300 group-hover:bg-[image:var(--button-gradient)]">
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/30">
-                  0{index + 1}
-                </span>
               </div>
               <h3 className="mt-10 text-xl font-bold text-white">{title}</h3>
               <p className="mt-4 text-sm leading-7 text-white/64">
@@ -217,9 +214,6 @@ export default function AboutPage() {
                   className="group relative rounded-2xl border border-white/10 bg-[#00001F]/64 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.06]"
                 >
                   <div className="flex items-center justify-between gap-3">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/34">
-                      0{index + 1}
-                    </span>
                     {index < process.length - 1 && (
                       <ArrowRight className="h-4 w-4 text-white/34 transition duration-300 group-hover:translate-x-1 group-hover:text-cyan-100" aria-hidden="true" />
                     )}
