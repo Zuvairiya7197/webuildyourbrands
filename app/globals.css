@@ -609,7 +609,7 @@ main {
   .process-cinema-axis {
     left: 50%;
     right: auto;
-    top: 230px;
+    top: 190px;
     bottom: 64px;
     width: 1px;
     height: auto;
@@ -657,7 +657,7 @@ main {
 
   .process-cinema-node-1 {
     left: 50%;
-    top: 230px;
+    top: 190px;
     height: 106px;
     width: 106px;
     margin-left: -53px;
@@ -665,7 +665,7 @@ main {
 
   .process-cinema-node-2 {
     left: 50%;
-    top: 346px;
+    top: 306px;
     height: 132px;
     width: 132px;
     margin-left: -66px;
@@ -673,7 +673,7 @@ main {
 
   .process-cinema-node-3 {
     left: 50%;
-    top: 492px;
+    top: 452px;
     height: 166px;
     width: 166px;
     margin-left: -83px;
@@ -682,7 +682,7 @@ main {
   .process-cinema-node-4 {
     left: 50%;
     right: auto;
-    top: 670px;
+    top: 630px;
     height: 118px;
     width: 118px;
     margin-left: -59px;

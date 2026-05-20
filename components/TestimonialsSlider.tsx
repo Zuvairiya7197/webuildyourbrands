@@ -162,7 +162,7 @@ function TestimonialsSliderComponent({
               <p className="max-w-[820px] text-sm font-medium leading-[1.55] tracking-normal text-white/80 sm:text-lg lg:text-[1.42rem]">
                 {activeTestimonial.quote}
               </p>
-              <p className="mt-6 text-sm font-medium text-[#9b98aa] sm:text-base">
+              <p className="mt-5 text-xs font-medium text-[#9b98aa] sm:text-sm">
                 {activeTestimonial.name}, {activeTestimonial.role}
               </p>
             </motion.div>
