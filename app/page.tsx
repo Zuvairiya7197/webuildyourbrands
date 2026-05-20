@@ -220,7 +220,7 @@ const testimonials = [
       "WBYB (we build your brands) develop our classes website (smclasses.in) which exceeds our expectations.. Website covers all informative content which were basically required for growth of any coaching classes..the best part is whenever modifications required they do immediately and with lots of ideas.. We recommend WBYB for anyone who like to build best website for their business..",
     name: "Saquib Dalvi",
     role: "Education Brand",
-    image: "/SM classes Founder.webp"
+    image: "/wbyb-sm-classes-founder.webp"
   },
   {
     title: "My work now feels easier to share and explain.",
@@ -242,7 +242,8 @@ const testimonials = [
     quote:
       "I own an appointment setting agency and get a lot of my leads from Facebook and LinkedIn, so I had an urgent requirement for professional covers. Zuvairiya delivered exceptionally beautiful and professional designs in no time, making sure everything matched my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing. I can't recommend her enough - she's my go-to for all things graphic design.",
     name: "Shreya Batra",
-    role: "Co-Founder @ Organic Appointments Agency"
+    role: "Co-Founder @ Organic Appointments Agency",
+    image: "/Shreya Batra.webp"
   }
 ];
 

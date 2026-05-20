@@ -47,12 +47,18 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
         const labels = gsap.utils.toArray<HTMLElement>(".process-cinema-label");
         const grids = gsap.utils.toArray<HTMLElement>(".process-cinema-node-grid");
         const axisParts = gsap.utils.toArray<HTMLElement>(".process-cinema-axis span");
+        const isMobileTimeline = window.matchMedia("(max-width: 640px)").matches;
+        const axisScaleProperty = isMobileTimeline ? "scaleY" : "scaleX";
 
         gsap.set(section, { autoAlpha: 1 });
         gsap.set(nodes, { opacity: 0, scale: 0.7, transformOrigin: "50% 50%" });
         gsap.set(labels, { opacity: 0, y: 12 });
         gsap.set(grids, { opacity: 0 });
-        gsap.set(axisParts, { scaleX: 0, transformOrigin: "left center" });
+        gsap.set(axisParts, {
+          scaleX: isMobileTimeline ? 1 : 0,
+          scaleY: isMobileTimeline ? 0 : 1,
+          transformOrigin: isMobileTimeline ? "center top" : "left center"
+        });
 
         // One pinned scrubbed timeline drives all transform/opacity/SVG stroke work.
         const timeline = gsap.timeline({
@@ -69,18 +75,18 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
         });
 
         timeline
-          .to(axisParts[0], { scaleX: 1, duration: 0.62 }, 0)
+          .to(axisParts[0], { [axisScaleProperty]: 1, duration: 0.62 }, 0)
           .to(nodes[0], { opacity: 1, scale: 1, duration: 0.9 }, 0.12)
           .to(labels[0], { opacity: 1, y: 0, duration: 0.7 }, 0.28)
-          .to(axisParts[1], { scaleX: 1, duration: 0.9 }, 0.54)
+          .to(axisParts[1], { [axisScaleProperty]: 1, duration: 0.9 }, 0.54)
           .to(nodes[1], { opacity: 1, scale: 1, duration: 1.2 }, 0.94)
           .to(grids[1], { opacity: 0.82, duration: 0.95 }, 1.04)
           .to(labels[1], { opacity: 1, y: 0, duration: 0.75 }, 1.12)
-          .to(axisParts[2], { scaleX: 1, duration: 1.18 }, 1.42)
+          .to(axisParts[2], { [axisScaleProperty]: 1, duration: 1.18 }, 1.42)
           .to(nodes[2], { opacity: 1, scale: 1, duration: 1.25 }, 1.88)
           .to(labels[2], { opacity: 1, y: 0, duration: 0.75 }, 2.08)
-          .to(axisParts[3], { scaleX: 1, duration: 0.56 }, 2.52)
-          .to(axisParts[4], { scaleX: 1, duration: 0.82 }, 2.7)
+          .to(axisParts[3], { [axisScaleProperty]: 1, duration: 0.56 }, 2.52)
+          .to(axisParts[4], { [axisScaleProperty]: 1, duration: 0.82 }, 2.7)
           .to(nodes[3], { opacity: 1, scale: 1, duration: 1.1 }, 2.86)
           .to(grids[3], { opacity: 0.82, duration: 0.9 }, 2.98)
           .to(labels[3], { opacity: 1, y: 0, duration: 0.75 }, 3.04);

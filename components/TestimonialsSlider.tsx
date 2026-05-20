@@ -3,7 +3,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 type Testimonial = {
   title: string;
@@ -145,7 +145,12 @@ function TestimonialsSliderComponent({
         </div>
 
         <div className="relative max-w-4xl lg:pl-10 lg:pt-[118px]">
-          <Quote className="mb-6 h-11 w-11 text-white/18 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.18))_drop-shadow(0_-2px_2px_rgba(0,0,31,0.55))_drop-shadow(0_8px_10px_rgba(0,0,31,0.34))] sm:mb-9 sm:h-14 sm:w-14" aria-hidden="true" />
+          <span
+            className="mb-5 block font-serif text-[4.6rem] font-bold leading-none text-[#16d8ff]/8 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.04))] sm:mb-7 sm:text-[6rem]"
+            aria-hidden="true"
+          >
+            &ldquo;
+          </span>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTestimonial.quote}
@@ -154,10 +159,10 @@ function TestimonialsSliderComponent({
               exit={{ opacity: 0, y: -14 }}
               transition={testimonialMotion}
             >
-              <p className="max-w-[860px] text-base font-medium leading-[1.48] tracking-normal text-white/82 sm:text-xl lg:text-[1.8rem]">
+              <p className="max-w-[820px] text-sm font-medium leading-[1.55] tracking-normal text-white/80 sm:text-lg lg:text-[1.42rem]">
                 {activeTestimonial.quote}
               </p>
-              <p className="mt-7 text-base font-medium text-[#9b98aa] sm:text-lg">
+              <p className="mt-6 text-sm font-medium text-[#9b98aa] sm:text-base">
                 {activeTestimonial.name}, {activeTestimonial.role}
               </p>
             </motion.div>
