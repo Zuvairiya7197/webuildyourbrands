@@ -279,7 +279,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.76),rgba(0,0,31,0.52)_50%,rgba(0,0,31,0.72)),linear-gradient(180deg,rgba(53,92,255,0.06),rgba(124,60,255,0.04)_38%,transparent_78%)]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#00001f] to-transparent" />
-        <div className="relative mx-auto grid min-h-[560px] w-full items-center gap-12 sm:min-h-[680px] lg:min-h-[calc(100svh-5rem)] lg:grid-cols-[0.9fr_1.05fr] lg:gap-10 xl:gap-14">
+        <div className="relative mx-auto grid min-h-[100svh] w-full items-center gap-12 lg:grid-cols-[0.9fr_1.05fr] lg:gap-10 xl:gap-14">
           <div className="max-w-2xl">
             <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md lg:text-[11px]">
               <span>Lead-focused websites</span>

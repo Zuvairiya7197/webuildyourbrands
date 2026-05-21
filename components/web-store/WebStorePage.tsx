@@ -41,9 +41,9 @@ const customPoints = [
 export default function WebStorePage() {
   return (
     <>
-      <section className="relative overflow-hidden px-4 pb-12 pt-0 sm:px-8 sm:pb-16 lg:px-24 lg:pb-16 xl:px-32">
+      <section className="relative flex min-h-[min(620px,100svh)] items-center overflow-hidden px-4 pb-12 pt-0 sm:px-8 sm:pb-16 lg:px-24 lg:pb-16 xl:px-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(22,216,255,0.18),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(124,60,255,0.24),transparent_38%)]" />
-        <div className="relative mx-auto max-w-6xl py-10 sm:py-14 lg:py-16">
+        <div className="relative mx-auto w-full max-w-6xl py-10 sm:py-14 lg:py-16">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-100/72">
               <Store className="h-4 w-4" aria-hidden="true" />
