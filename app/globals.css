@@ -651,7 +651,7 @@ main {
   height: 100vh;
   min-height: 592px;
   width: 100%;
-  max-width: none;
+  max-width: 1180px;
   margin-inline: auto;
 }
 
