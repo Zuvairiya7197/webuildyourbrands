@@ -6,7 +6,7 @@ const WebStorePage = dynamic(
   () => import("@/components/web-store/WebStorePage"),
   {
     loading: () => (
-      <div className="min-h-screen px-4 pt-32 sm:px-8 lg:px-24 xl:px-32">
+      <div className="min-h-screen px-4 pt-20 sm:px-8 lg:px-24 xl:px-32">
         <div className="mx-auto h-[420px] max-w-6xl rounded-[32px] border border-white/10 bg-white/[0.045]" />
       </div>
     )

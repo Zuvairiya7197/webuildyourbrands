@@ -90,7 +90,7 @@ export default function Hero({
   };
 
   return (
-    <section className="relative min-h-[min(760px,100svh)] overflow-hidden px-4 pb-14 pt-24 sm:px-8 sm:pt-32 lg:min-h-[100svh] lg:px-24 lg:pb-10 lg:pt-28 xl:px-32">
+    <section className="relative min-h-[min(760px,100svh)] overflow-hidden px-4 pb-14 pt-20 sm:px-8 sm:pt-20 lg:min-h-[100svh] lg:px-24 lg:pb-10 lg:pt-20 xl:px-32">
       {videoSrc && (
           <video
             className="absolute inset-0 h-full w-full object-cover"
@@ -109,7 +109,7 @@ export default function Hero({
       />
       <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
       <div
-        className="relative mx-auto flex min-h-[calc(100svh-6rem)] max-w-6xl items-center justify-center text-center lg:min-h-[calc(100svh-8.5rem)]"
+        className="relative mx-auto flex min-h-[calc(100svh-5rem)] max-w-6xl items-center justify-center text-center lg:min-h-[calc(100svh-5rem)]"
       >
         <div className="w-full max-w-5xl">
           <p className="mx-auto mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/28 bg-[#00001F]/50 px-3 py-2 text-xs font-medium text-white/62 shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-md sm:mb-8 sm:px-4 sm:text-base lg:mb-6 lg:text-sm">
