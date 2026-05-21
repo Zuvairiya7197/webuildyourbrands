@@ -110,8 +110,8 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="testimonial-grid-fade relative mx-auto h-[450px] w-full max-w-[520px] min-w-0 overflow-hidden rounded-[28px] [clip-path:inset(0_round_28px)] sm:h-[580px] sm:max-w-[580px] lg:mx-0 lg:h-[700px] lg:max-w-[700px]">
-          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(112%,520px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,560px)] sm:gap-4 lg:w-[min(100%,680px)] lg:gap-5">
+        <div className="testimonial-grid-fade relative mx-auto h-[min(132vw,520px)] w-full max-w-[560px] min-w-0 overflow-hidden rounded-[28px] [clip-path:inset(0_round_28px)] sm:h-[580px] sm:max-w-[580px] lg:mx-0 lg:h-[700px] lg:max-w-[700px]">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(126vw,580px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,560px)] sm:gap-4 lg:w-[min(100%,680px)] lg:gap-5">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
                 key={index}
@@ -143,7 +143,7 @@ function TestimonialsSliderComponent({
           </div>
         </div>
 
-        <div className="relative z-10 min-w-0 max-w-4xl overflow-hidden lg:-ml-20 lg:pl-0 lg:pt-0 xl:-ml-28">
+        <div className="relative z-10 -mt-16 min-w-0 max-w-4xl overflow-hidden px-3 sm:mt-0 sm:px-0 lg:-ml-20 lg:pl-0 lg:pt-0 xl:-ml-28">
           <span
             className="mb-2 block font-serif text-[3.6rem] font-bold leading-none text-[#16d8ff]/8 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.04))] sm:mb-7 sm:text-[6rem]"
             aria-hidden="true"
