@@ -62,10 +62,10 @@ function CountUpValue({
 
 function StatsBar({ stats }: StatsBarProps) {
   const pinRef = useRef<HTMLDivElement | null>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(0);
 
   useEffect(() => {
-    const updateProgress = () => {
+    const updateVisibleRows = () => {
       const node = pinRef.current;
 
       if (!node) {
@@ -74,20 +74,24 @@ function StatsBar({ stats }: StatsBarProps) {
 
       const rect = node.getBoundingClientRect();
       const viewportHeight = window.innerHeight || 1;
-      const scrollableDistance = Math.max(rect.height - viewportHeight, viewportHeight * 0.65);
-      const progressed = viewportHeight * 0.72 - rect.top;
-      const nextProgress = Math.min(Math.max(progressed / scrollableDistance, 0), 1);
+      const revealStart = viewportHeight * 0.74;
+      const revealDistance = Math.max(rect.height - viewportHeight * 0.82, viewportHeight * 0.85);
+      const progress = Math.min(Math.max((revealStart - rect.top) / revealDistance, 0), 1);
+      const nextVisibleCount = Math.min(
+        stats.length,
+        Math.max(0, Math.ceil(progress * stats.length))
+      );
 
-      setScrollProgress(nextProgress);
+      setVisibleCount(nextVisibleCount);
     };
 
     let frameId = 0;
     const requestUpdate = () => {
       cancelAnimationFrame(frameId);
-      frameId = requestAnimationFrame(updateProgress);
+      frameId = requestAnimationFrame(updateVisibleRows);
     };
 
-    updateProgress();
+    updateVisibleRows();
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
 
@@ -96,7 +100,7 @@ function StatsBar({ stats }: StatsBarProps) {
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
     };
-  }, []);
+  }, [stats.length]);
 
   return (
     <div ref={pinRef} className="stats-signal-pin">
@@ -112,8 +116,7 @@ function StatsBar({ stats }: StatsBarProps) {
 
         <div className="stats-signal-rails">
           {stats.map(({ value, suffix, status, label }, index) => {
-            const revealPoint = index / Math.max(stats.length, 1);
-            const isRowVisible = scrollProgress >= revealPoint + 0.04 || scrollProgress >= 0.96;
+            const isRowVisible = index < visibleCount;
 
             return (
               <article
