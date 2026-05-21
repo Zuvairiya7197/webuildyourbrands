@@ -16,7 +16,7 @@ const WebStorePage = dynamic(
 const siteUrl = "https://www.webuildyourbrands.com";
 const pageUrl = `${siteUrl}/web-store`;
 const description =
-  "Buy ready-made websites from WEBuildYourBrands. Explore fast loading, SEO optimized, fully responsive, conversion focused websites for service brands, educators, creators, and founders.";
+  "Browse premium ready-made websites from WEBuildYourBrands. Preview curated website templates for local services, creators, coaches, educators, and founders.";
 
 export const metadata: Metadata = {
   title: "Buy Ready-Made Websites | Web Store",

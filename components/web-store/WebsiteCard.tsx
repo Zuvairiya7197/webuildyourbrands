@@ -8,9 +8,6 @@ import {
   Gauge,
   RotateCcw,
   Search,
-  Smartphone,
-  Target,
-  Zap
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WebsiteStoreItem } from "@/lib/web-store-data";
@@ -19,13 +16,6 @@ import { cn } from "@/lib/utils";
 type WebsiteCardProps = {
   website: WebsiteStoreItem;
 };
-
-const highlights = [
-  { label: "Fast Loading", Icon: Zap },
-  { label: "SEO Optimized", Icon: Search },
-  { label: "Fully Responsive", Icon: Smartphone },
-  { label: "Conversion Focused", Icon: Target }
-];
 
 const faceClass =
   "relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/[0.055] bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.13),transparent_34%),radial-gradient(circle_at_88%_8%,rgba(124,60,255,0.2),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.085),rgba(255,255,255,0.032)_42%,rgba(0,0,31,0.58))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_24px_80px_rgba(0,0,31,0.25)] backdrop-blur-2xl [backface-visibility:hidden]";
@@ -102,7 +92,7 @@ function WebsiteCard({ website }: WebsiteCardProps) {
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0 pt-1">
                 <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.18em] text-cyan-100/52">
-                  Ready-made website
+                  {website.category}
                 </p>
                 <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
                   {website.title}
@@ -116,17 +106,9 @@ function WebsiteCard({ website }: WebsiteCardProps) {
               </div>
             </div>
 
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              {highlights.map(({ label, Icon }) => (
-                <span
-                  key={label}
-                  className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-white/[0.045] px-3 py-2 text-[10px] font-bold text-white/72 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
-                >
-                  <Icon className="h-3.5 w-3.5 shrink-0 text-cyan-100" />
-                  {label}
-                </span>
-              ))}
-            </div>
+            <p className="mt-4 line-clamp-3 text-sm leading-7 text-white/62">
+              {website.description}
+            </p>
 
             <button
               type="button"

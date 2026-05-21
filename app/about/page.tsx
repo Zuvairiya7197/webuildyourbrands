@@ -1,5 +1,17 @@
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, Compass, Eye, Paintbrush, Route, Telescope, Workflow } from "lucide-react";
+import {
+  ArrowRight,
+  Blocks,
+  CheckCircle2,
+  Compass,
+  Eye,
+  LayoutList,
+  Paintbrush,
+  RefreshCw,
+  Search,
+  Smartphone,
+  Sparkles
+} from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
@@ -9,76 +21,56 @@ import { glassCardClass, neonButtonClass } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn the story, beliefs, and working philosophy behind WEBuildYourBrands."
+    "The thinking, principles, and studio philosophy behind WEBuildYourBrands."
 };
 
-const approach = [
+const principles = [
   {
     title: "Clear First",
-    text: "Visitors should understand what you do in seconds.",
+    text: "Every page should feel easy to understand before it tries to impress.",
     Icon: Compass
   },
   {
-    title: "Built To Convert",
-    text: "A website that guides people toward action.",
-    Icon: Route
+    title: "Consistency Matters",
+    text: "Typography, spacing, visuals, and tone should feel like one connected system.",
+    Icon: Blocks
   },
   {
-    title: "No Noise",
-    text: "Fewer distractions. Stronger decisions.",
+    title: "Less Noise",
+    text: "A calm interface gives the important details more room to be noticed.",
+    Icon: Eye
+  },
+  {
+    title: "Designed To Age Well",
+    text: "We avoid trendy clutter and build visual systems that still feel considered later.",
     Icon: Paintbrush
   }
 ];
 
-const focusAreas = [
-  "Clear offer",
-  "First-time visitor trust",
-  "Every section has a job"
-];
-
-const process = [
+const buildDetails = [
   {
-    title: "Discover",
-    text: "Find what stops visitors from taking action."
+    title: "Mobile-first layouts",
+    Icon: Smartphone
   },
   {
-    title: "Design",
-    text: "Shape a clear path from trust to inquiry."
+    title: "Clean content hierarchy",
+    Icon: LayoutList
   },
   {
-    title: "Deliver",
-    text: "Launch fast, polished, and ready for leads."
-  }
-];
-
-const testimonials = [
-  {
-    name: "Saquib Dalvi",
-    role: "Education Brand",
-    title: "Our website became clear for parents.",
-    lines: [
-      "Important information was easy to find.",
-      "Updates were handled fast, with helpful ideas."
-    ],
-    featured: true
+    title: "Responsive structure",
+    Icon: Blocks
   },
   {
-    name: "Kopal Dhir",
-    role: "Founder at Organise With Kopal",
-    title: "My website was delivered fast and stress-free.",
-    lines: [
-      "The process felt clear from start to finish.",
-      "Edits were quick, and the site felt easy to share."
-    ]
+    title: "Easy future updates",
+    Icon: RefreshCw
   },
   {
-    name: "Zarrar Palekar",
-    role: "Portfolio Website Client",
-    title: "My work became easier to trust.",
-    lines: [
-      "The portfolio gave my projects a sharper presence.",
-      "Clients could understand my work faster."
-    ]
+    title: "Organized design systems",
+    Icon: Sparkles
+  },
+  {
+    title: "SEO-ready foundations",
+    Icon: Search
   }
 ];
 
@@ -86,91 +78,79 @@ export default function AboutPage() {
   return (
     <>
       <Hero
-        eyebrow="About"
-        title="We turn confusing websites into clear, client-winning machines."
-        description="Clear message. Premium design. A website people trust in seconds - and act on."
+        eyebrow="About The Studio"
+        title="We build websites with clarity, structure, and intention."
+        description="Designed for businesses that want to feel easier to understand and easier to trust online."
         videoSrc="/Abouthero.mp4"
         primaryLabel="Read Our Story"
         primaryHref="#our-story"
         secondaryLabel="View Services"
         secondaryHref="/services"
       />
+
       <Section
         id="our-story"
         className="pt-24 sm:pt-28 lg:pt-32"
         eyebrow="Our Story"
-        title="If people don't understand your website in seconds, they leave."
-        description="Most websites look good. But they quietly lose attention. People don't understand. They don't trust. They leave. We make the offer, design, and next step easier to see."
+        title="The studio began with a simple observation: most websites say too much and explain too little."
+        description="We noticed how often good businesses were hidden behind crowded pages, unclear messages, and designs that did not feel connected to who they really were. WEBuildYourBrands exists to make that first impression calmer, sharper, and more honest."
       >
-        <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-[radial-gradient(circle_at_12%_10%,rgba(22,216,255,0.13),transparent_30%),radial-gradient(circle_at_88%_84%,rgba(124,60,255,0.18),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.5))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_30px_100px_rgba(0,0,31,0.28)] backdrop-blur-xl sm:p-5">
-          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),rgba(124,60,255,0.6),transparent)]" />
-          <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
-          <article className={`${glassCardClass} group relative overflow-hidden p-5 text-white transition duration-300 hover:border-cyan-300/35 sm:p-8`}>
-            <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.8),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-            <p className="inline-flex rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/58">
-              Our Belief
+        <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
+          <article className={`${glassCardClass} relative overflow-hidden p-6 text-white sm:p-9`}>
+            <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.64),rgba(124,60,255,0.52),transparent)]" />
+            <p className="text-sm uppercase tracking-[0.22em] text-white/42">
+              The Thinking
             </p>
-            <h2 className="mt-8 max-w-2xl text-2xl font-semibold tracking-tight text-white sm:text-4xl">
-              If people understand you faster, they trust you faster - and take action.
-            </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {["What you do", "Why it matters", "What to do next"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-[#00001F]/42 p-4 text-sm font-bold text-white/76 transition duration-300 group-hover:border-cyan-300/22"
-                >
-                  <CheckCircle2 className="mb-3 h-4 w-4 text-cyan-100" aria-hidden="true" />
-                  {item}
-                </div>
-              ))}
+            <div className="mt-8 grid gap-6 text-base leading-8 text-white/66 sm:text-lg sm:leading-9">
+              <p>
+                A good website should create relief. It should help people know where they are, what matters, and why the business feels credible.
+              </p>
+              <p>
+                Our work is about reducing confusion. We shape content, layout, and visual rhythm so a brand feels composed from the first screen.
+              </p>
             </div>
           </article>
 
-          <article className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.12)_70%,rgba(0,0,31,0.52))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:border-cyan-300/28 sm:rounded-[32px] sm:p-8">
-            <div className="flex items-start justify-between gap-5">
-              <Telescope className="h-10 w-10 text-cyan-100" aria-hidden="true" />
-              <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/44">
-                Future Ready
-              </div>
-            </div>
-            <h3 className="mt-8 text-2xl font-semibold tracking-tight">
-              Built to stay clear as you grow.
+          <article className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(22,216,255,0.026)_38%,rgba(124,60,255,0.08)_78%,rgba(0,0,31,0.5))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-cyan-100/58">
+              Studio Lens
+            </p>
+            <h3 className="mt-8 max-w-sm text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+              We design for the moment someone is deciding whether you feel right.
             </h3>
-            <div className="mt-7 grid gap-3">
-              {["Easy to update", "Easy to scale", "Ready for more traffic"].map((item) => (
+            <div className="mt-8 grid gap-3">
+              {["Calm structure", "Thoughtful details", "A clearer identity"].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm font-bold text-white/72"
+                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.032] px-4 py-3 text-sm font-semibold text-white/68"
                 >
-                  <Eye className="h-4 w-4 text-cyan-100" aria-hidden="true" />
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100" aria-hidden="true" />
                   {item}
                 </div>
               ))}
             </div>
           </article>
-          </div>
         </div>
       </Section>
 
       <Section
         className="py-0"
         eyebrow="Our Philosophy"
-        title="Simple rules. Websites that actually work."
+        title="Principles We Design By"
+        description="A small set of rules keeps the work focused, balanced, and easy to live with."
       >
-        <div className="grid gap-5 md:grid-cols-3">
-          {approach.map(({ title, text, Icon }) => (
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {principles.map(({ title, text, Icon }) => (
             <article
               key={title}
-              className="group relative min-h-[220px] overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.44))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28"
+              className="group relative min-h-[230px] overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.056),rgba(22,216,255,0.024)_38%,rgba(124,60,255,0.07)_78%,rgba(0,0,31,0.48))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_24px_74px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24"
             >
-              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-              <div className="flex items-start justify-between gap-5">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/58 text-white transition duration-300 group-hover:bg-[image:var(--button-gradient)]">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
-                </div>
+              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.58),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/58 text-white transition duration-300 group-hover:bg-white/[0.08]">
+                <Icon className="h-6 w-6" aria-hidden="true" />
               </div>
-              <h3 className="mt-10 text-xl font-bold text-white">{title}</h3>
-              <p className="mt-4 text-sm leading-7 text-white/64">
+              <h3 className="mt-9 text-xl font-bold text-white">{title}</h3>
+              <p className="mt-4 text-sm leading-7 text-white/62">
                 {text}
               </p>
             </article>
@@ -179,124 +159,83 @@ export default function AboutPage() {
       </Section>
 
       <Section
-        eyebrow="Why It Matters"
-        title="Every section is built to guide one thing: action."
-        description="Understand. Trust. Act."
+        eyebrow="Inside The Build"
+        title="The details are quiet, but they hold the whole website together."
+        description="Behind the visual layer, we keep the structure organized so the site feels smooth to use and easier to maintain."
       >
-        <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-stretch">
-          <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[radial-gradient(circle_at_20%_0%,rgba(22,216,255,0.12),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.07),rgba(0,0,31,0.5))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-7">
-            <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)]" />
-            <Workflow className="h-9 w-9 text-cyan-100" aria-hidden="true" />
-            <h3 className="mt-8 text-2xl font-semibold tracking-tight">
-              What We Care About
-            </h3>
-            <div className="mt-6 space-y-4">
-              {focusAreas.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-4 text-sm font-semibold text-white/76 transition duration-300 hover:border-cyan-300/30 hover:bg-white/[0.06]"
-                >
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-cyan-100" aria-hidden="true" />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={`${glassCardClass} relative overflow-hidden p-5 text-white sm:p-7`}>
-            <h3 className="text-2xl font-semibold tracking-tight">
-              How We Work
-            </h3>
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              {process.map((item, index) => (
-                <article
-                  key={item.title}
-                  className="group relative rounded-2xl border border-white/10 bg-[#00001F]/64 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.06]"
-                >
-                  <div className="flex items-center justify-between gap-3">
-                    {index < process.length - 1 && (
-                      <ArrowRight className="h-4 w-4 text-white/34 transition duration-300 group-hover:translate-x-1 group-hover:text-cyan-100" aria-hidden="true" />
-                    )}
-                  </div>
-                  <h4 className="mt-8 text-lg font-bold">{item.title}</h4>
-                  <p className="mt-3 text-sm leading-7 text-white/62">
-                    {item.text}
-                  </p>
-                </article>
-              ))}
-            </div>
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.052),rgba(0,0,31,0.52))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_28px_86px_rgba(0,0,31,0.24)] backdrop-blur-xl sm:p-5">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(22,216,255,0.014)_1px,transparent_1px)] bg-[size:42px_42px] opacity-40 [mask-image:radial-gradient(circle_at_50%_50%,black,transparent_74%)]" />
+          <div className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {buildDetails.map(({ title, Icon }) => (
+              <article
+                key={title}
+                className="flex min-h-[118px] items-center gap-4 rounded-2xl border border-white/10 bg-[#00001F]/44 p-5 text-white transition duration-300 hover:border-cyan-300/24 hover:bg-white/[0.045]"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-cyan-100">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <h3 className="text-base font-semibold leading-snug text-white/82">
+                  {title}
+                </h3>
+              </article>
+            ))}
           </div>
         </div>
       </Section>
 
       <Section
         className="pt-0"
-        eyebrow="Trust"
-        title="Trusted by businesses that wanted better results"
+        eyebrow="Featured Client"
+        title="A clearer home for Organise With Kopal"
+        description="One curated client note, kept here as a quiet example of the kind of clarity we care about."
       >
-        <div className="-mt-4 mb-8 flex flex-wrap gap-2">
-          {["Fast delivery", "Clear communication", "Built to convert"].map((item) => (
-            <span
-              key={item}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/58"
-            >
-              <CheckCircle2 className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
-              {item}
-            </span>
-          ))}
-        </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <article
-              key={testimonial.name}
-              className={`group relative min-h-[260px] overflow-hidden rounded-[26px] border bg-[linear-gradient(145deg,rgba(255,255,255,0.075),rgba(22,216,255,0.035)_34%,rgba(124,60,255,0.1)_70%,rgba(0,0,31,0.44))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 ${
-                testimonial.featured ? "border-cyan-100/24" : "border-white/10"
-              }`}
-            >
-              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-              {testimonial.featured ? (
-                <p className="mb-4 inline-flex rounded-full border border-cyan-100/16 bg-cyan-100/[0.055] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100/72">
-                  Featured Client
-                </p>
-              ) : null}
-              <p className="text-sm font-bold text-white">{testimonial.name}</p>
-              <p className="mt-1 text-xs leading-5 text-white/48">{testimonial.role}</p>
-              <h3 className="mt-8 text-lg font-bold leading-snug text-white">
-                &quot;{testimonial.title}&quot;
+        <article className={`${glassCardClass} relative overflow-hidden p-6 text-white sm:p-9`}>
+          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.64),rgba(124,60,255,0.52),transparent)]" />
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="inline-flex rounded-full border border-cyan-100/16 bg-cyan-100/[0.055] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100/72">
+                Organise With Kopal
+              </p>
+              <h3 className="mt-8 max-w-md text-2xl font-semibold leading-tight tracking-tight sm:text-4xl">
+                A calm, polished website for a personal organizing brand.
               </h3>
-              <div className="mt-4 grid gap-2 text-sm leading-6 text-white/64">
-                {testimonial.lines.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+            </div>
+            <div>
+              <p className="text-xl leading-9 text-white/74 sm:text-2xl sm:leading-10">
+                &quot;She delivered the website within 2 days - at an affordable price. All edits were done within minutes.&quot;
+              </p>
+              <p className="mt-6 text-sm font-semibold text-white">
+                Kopal Dhir
+              </p>
+              <p className="mt-1 text-sm text-white/48">
+                Founder at Organise With Kopal
+              </p>
+            </div>
+          </div>
+        </article>
       </Section>
 
       <Section className="pt-0">
         <div className={`${glassCardClass} relative overflow-hidden p-6 text-center text-white sm:p-10`}>
-          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),rgba(124,60,255,0.6),transparent)]" />
+          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.64),rgba(124,60,255,0.52),transparent)]" />
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-white/44">
-            Build a website that actually works
+            Start With Clarity
           </p>
           <h2 className="mx-auto max-w-4xl text-2xl font-semibold tracking-tight text-white sm:text-4xl">
-            If your website isn&apos;t bringing inquiries, it&apos;s costing you business.
+            Let&apos;s build something clear and memorable.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/62 sm:text-base">
-            Let&apos;s fix it with a clear, fast, conversion-focused website.
+            We help businesses create websites that feel easier to understand and easier to trust.
           </p>
           <Button
             asChild
             className={`mt-8 h-12 rounded-full px-7 text-base font-bold ${neonButtonClass}`}
           >
             <CalendlyLink>
-              Book a Free Call →
+              Start Your Project
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </CalendlyLink>
           </Button>
-          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-white/42">
-            Limited projects each month to maintain quality.
-          </p>
         </div>
       </Section>
     </>

@@ -1,6 +1,7 @@
 export type WebsiteStoreItem = {
   id: string;
   title: string;
+  category: "Local Services" | "Real Estate" | "Education" | "Portfolio" | "Coaches" | "Creators";
   description: string;
   price: string;
   techStack: string[];
@@ -15,8 +16,9 @@ export const websiteStoreItems: WebsiteStoreItem[] = [
   {
     id: "ac-repair-website",
     title: "AC Repair Website",
+    category: "Local Services",
     description:
-      "A high-converting ready-made AC repair website built for emergency bookings, local service-area visibility, trust signals, and fast phone inquiries from homeowners needing urgent cooling repair.",
+      "A ready-made AC repair website with service-area structure, emergency contact sections, pricing highlights, and credibility blocks for local HVAC companies.",
     price: "$2000",
     techStack: ["Next.js", "React", "Tailwind CSS", "Local SEO Schema"],
     features: [
@@ -39,8 +41,9 @@ export const websiteStoreItems: WebsiteStoreItem[] = [
   {
     id: "emergency-plumbing-website",
     title: "Emergency Plumbing Website",
+    category: "Local Services",
     description:
-      "A high-converting ready-made plumbing website built for emergency calls, local service-area visibility, trust signals, and fast phone inquiries from homeowners who need help now.",
+      "A ready-made plumbing website with emergency service sections, local coverage areas, review-ready layouts, and clear contact paths for urgent repair work.",
     price: "$1500",
     techStack: ["Next.js", "React", "Tailwind CSS", "Local SEO Schema"],
     features: [
