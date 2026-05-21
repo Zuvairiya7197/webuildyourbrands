@@ -45,6 +45,19 @@ main {
   min-width: 0;
 }
 
+.testimonial-grid-fade {
+  mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.58) 13%, black 28%, black 72%, rgba(0, 0, 0, 0.58) 87%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.62) 12%, black 27%, black 73%, rgba(0, 0, 0, 0.62) 88%, transparent 100%),
+    radial-gradient(ellipse at center, black 38%, rgba(0, 0, 0, 0.72) 58%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.58) 13%, black 28%, black 72%, rgba(0, 0, 0, 0.58) 87%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.62) 12%, black 27%, black 73%, rgba(0, 0, 0, 0.62) 88%, transparent 100%),
+    radial-gradient(ellipse at center, black 38%, rgba(0, 0, 0, 0.72) 58%, transparent 100%);
+  -webkit-mask-composite: source-in, source-in;
+}
+
 .home-section {
   position: relative;
   isolation: isolate;

@@ -110,7 +110,7 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="relative mx-auto h-[390px] w-full max-w-[460px] min-w-0 overflow-hidden rounded-[28px] [clip-path:inset(0_round_28px)] [mask-image:radial-gradient(ellipse_at_center,black_54%,rgba(0,0,0,0.74)_70%,transparent_100%)] sm:h-[580px] sm:max-w-[580px] lg:mx-0 lg:h-[700px] lg:max-w-[700px]">
+        <div className="testimonial-grid-fade relative mx-auto h-[390px] w-full max-w-[460px] min-w-0 overflow-hidden rounded-[28px] [clip-path:inset(0_round_28px)] sm:h-[580px] sm:max-w-[580px] lg:mx-0 lg:h-[700px] lg:max-w-[700px]">
           <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,460px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,560px)] sm:gap-4 lg:w-[min(100%,680px)] lg:gap-5">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
