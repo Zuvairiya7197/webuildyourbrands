@@ -2783,11 +2783,6 @@ textarea {
     background-attachment: scroll;
   }
 
-  .mobile-render-defer {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 760px;
-  }
-
   .backdrop-blur-md,
   .backdrop-blur-xl,
   .backdrop-blur-2xl {
