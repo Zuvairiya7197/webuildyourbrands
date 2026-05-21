@@ -90,7 +90,7 @@ function TestimonialsSliderComponent({
 
   return (
     <div
-      className="relative mx-auto w-full overflow-hidden py-8 sm:py-12 lg:min-h-[640px] lg:py-0"
+      className="relative isolate mx-auto w-full overflow-hidden py-8 [clip-path:inset(0)] sm:py-12 lg:min-h-[700px] lg:py-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
@@ -99,10 +99,8 @@ function TestimonialsSliderComponent({
       tabIndex={0}
       aria-label="Client testimonial carousel"
     >
-      <div className="pointer-events-none absolute inset-y-0 left-[44%] hidden w-px bg-[linear-gradient(180deg,transparent,rgba(22,216,255,0.12),transparent)] lg:block" />
-
       <div
-        className="relative grid gap-3 sm:gap-8 lg:min-h-[640px] lg:grid-cols-[0.47fr_0.53fr] lg:items-start xl:grid-cols-[0.5fr_0.5fr]"
+        className="relative grid min-w-0 gap-3 overflow-hidden sm:gap-8 lg:min-h-[700px] lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-start xl:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)]"
         onTouchStart={(event) => {
           touchStartX.current = event.touches[0].clientX;
           setIsPaused(true);
@@ -112,8 +110,8 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="relative mx-auto h-[360px] w-full max-w-[420px] overflow-hidden sm:h-[520px] sm:max-w-[520px] lg:mx-0 lg:h-[640px] lg:max-w-[640px]">
-          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,420px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,500px)] sm:gap-4 lg:w-[min(100%,620px)] lg:gap-5">
+        <div className="relative mx-auto h-[390px] w-full max-w-[460px] min-w-0 overflow-hidden rounded-[28px] [clip-path:inset(0_round_28px)] [mask-image:radial-gradient(ellipse_at_center,black_54%,rgba(0,0,0,0.74)_70%,transparent_100%)] sm:h-[580px] sm:max-w-[580px] lg:mx-0 lg:h-[700px] lg:max-w-[700px]">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(100%,460px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,560px)] sm:gap-4 lg:w-[min(100%,680px)] lg:gap-5">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
                 key={index}
@@ -133,7 +131,7 @@ function TestimonialsSliderComponent({
                         src={portrait}
                         alt={`${activeTestimonial.name} testimonial`}
                         fill
-                        sizes="(min-width: 1024px) 193px, (min-width: 640px) 156px, 130px"
+                        sizes="(min-width: 1024px) 213px, (min-width: 640px) 176px, 143px"
                         className="object-cover object-center"
                       />
                       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(22,216,255,0.08),transparent_44%,rgba(124,60,255,0.16))]" />
@@ -145,7 +143,7 @@ function TestimonialsSliderComponent({
           </div>
         </div>
 
-        <div className="relative max-w-4xl lg:pl-10 lg:pt-0">
+        <div className="relative min-w-0 max-w-4xl overflow-hidden lg:pl-10 lg:pt-0">
           <span
             className="mb-2 block font-serif text-[3.6rem] font-bold leading-none text-[#16d8ff]/8 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.04))] sm:mb-7 sm:text-[6rem]"
             aria-hidden="true"

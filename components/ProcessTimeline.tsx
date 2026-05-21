@@ -146,7 +146,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
                 <p className="process-cinema-number text-[11px] font-semibold text-white/64">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="process-cinema-title text-xs font-medium text-white/76">
+                <h3 className="process-cinema-title text-base font-semibold text-white/82 sm:text-lg lg:text-xl">
                   <span>{step.title}</span>
                 </h3>
               </div>
