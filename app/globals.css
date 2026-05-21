@@ -434,10 +434,10 @@ main {
 
 .process-cinema-node-3 {
   left: 43.5%;
-  top: calc(58% - 210px);
+  top: calc(58% - 190px);
   z-index: 5;
-  height: 420px;
-  width: 420px;
+  height: 380px;
+  width: 380px;
   background:
     radial-gradient(circle at 78% 42%, rgba(124, 60, 255, 0.32), transparent 42%),
     radial-gradient(circle at 31% 52%, rgba(22, 216, 255, 0.1), transparent 36%),
@@ -543,33 +543,33 @@ main {
 
   .process-cinema-node-1 {
     left: 0;
-    top: calc(58% - 55px);
-    height: 110px;
-    width: 110px;
+    top: calc(58% - 66px);
+    height: 132px;
+    width: 132px;
     margin-left: 0;
   }
 
   .process-cinema-node-2 {
     left: 22%;
-    top: calc(58% - 72px);
-    height: 144px;
-    width: 144px;
+    top: calc(58% - 86px);
+    height: 172px;
+    width: 172px;
     margin-left: 0;
   }
 
   .process-cinema-node-3 {
     left: 48%;
-    top: calc(58% - 92px);
-    height: 184px;
-    width: 184px;
+    top: calc(58% - 107px);
+    height: 214px;
+    width: 214px;
     margin-left: 0;
   }
 
   .process-cinema-node-4 {
     right: 0;
-    top: calc(58% - 66px);
-    height: 132px;
-    width: 132px;
+    top: calc(58% - 80px);
+    height: 160px;
+    width: 160px;
     margin-left: 0;
   }
 
@@ -609,7 +609,7 @@ main {
   }
 
   .process-cinema-stage {
-    min-height: 980px;
+    min-height: 1040px;
   }
 
   .process-cinema-copy {
@@ -673,34 +673,34 @@ main {
   .process-cinema-node-1 {
     left: 50%;
     top: 190px;
-    height: 128px;
-    width: 128px;
-    margin-left: -64px;
+    height: 150px;
+    width: 150px;
+    margin-left: -75px;
   }
 
   .process-cinema-node-2 {
     left: 50%;
-    top: 330px;
-    height: 158px;
-    width: 158px;
-    margin-left: -79px;
+    top: 338px;
+    height: 184px;
+    width: 184px;
+    margin-left: -92px;
   }
 
   .process-cinema-node-3 {
     left: 50%;
-    top: 506px;
-    height: 198px;
-    width: 198px;
-    margin-left: -99px;
+    top: 532px;
+    height: 228px;
+    width: 228px;
+    margin-left: -114px;
   }
 
   .process-cinema-node-4 {
     left: 50%;
     right: auto;
-    top: 720px;
-    height: 144px;
-    width: 144px;
-    margin-left: -72px;
+    top: 780px;
+    height: 170px;
+    width: 170px;
+    margin-left: -85px;
   }
 
   .process-cinema-title {
