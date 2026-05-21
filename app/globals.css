@@ -1608,6 +1608,31 @@ textarea {
   background: linear-gradient(90deg, transparent, rgba(22, 216, 255, 0.72), transparent);
 }
 
+.what-you-get-card-ready {
+  border-color: rgba(255, 255, 255, 0.13);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(22, 216, 255, 0.08), transparent 32%),
+    radial-gradient(circle at 88% 18%, rgba(255, 244, 168, 0.075), transparent 28%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.052), rgba(124, 60, 255, 0.12) 46%, rgba(0, 0, 31, 0.52));
+}
+
+.what-you-get-card-ready .what-you-get-card-glow {
+  background:
+    radial-gradient(circle at 16% 0%, rgba(22, 216, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 86% 16%, rgba(255, 244, 168, 0.13), transparent 30%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(124, 60, 255, 0.18) 48%, rgba(16, 0, 48, 0.5));
+}
+
+.what-you-get-card-ready .what-you-get-card-glow::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 244, 168, 0.62), rgba(22, 216, 255, 0.62), transparent);
+}
+
+.what-you-get-card-ready .what-you-get-card-icon {
+  background:
+    linear-gradient(135deg, rgba(255, 244, 168, 0.16), rgba(124, 60, 255, 0.36)),
+    rgba(0, 0, 31, 0.58);
+}
+
 .what-you-get-card-head,
 .what-you-get-card-copy {
   position: relative;
