@@ -282,14 +282,13 @@ export default function Home() {
         <div className="relative mx-auto grid min-h-[100svh] w-full items-center gap-12 lg:grid-cols-[0.9fr_1.05fr] lg:gap-10 xl:gap-14">
           <div className="max-w-2xl">
             <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md lg:text-[11px]">
-              <span>Lead-focused websites</span>
+              <span>Custom websites</span>
             </p>
             <h1 className="mt-5 text-3xl font-bold leading-[1.08] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[2.35rem] xl:text-[2.65rem]">
-              We build high-converting websites that turn visitors into clients.
+              Launch a website people understand fast.
             </h1>
             <p className="mt-4 max-w-xl text-sm leading-7 text-white/64 sm:mt-6 sm:text-base sm:leading-8 lg:mt-4 lg:text-sm lg:leading-7">
-              Custom-designed, lightning-fast websites built to generate leads -
-              not just look good.
+              Clear design, sharp structure, and smooth performance for growing businesses.
             </p>
             <div className="mt-5 grid max-w-2xl gap-3 text-sm font-semibold text-white/62 sm:grid-cols-3 lg:text-xs">
               {["Fast to load", "Built to convert", "Ready for leads"].map(

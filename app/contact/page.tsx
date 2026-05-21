@@ -65,8 +65,8 @@ export default function ContactPage() {
     <>
       <Hero
         eyebrow="Contact"
-        title="Let's work together"
-        description="Tell us what you're building - we'll show you how to turn it into a website that brings inquiries. If your website isn't bringing inquiries, it's costing you every day. Simple process. Clear next steps. No pressure."
+        title="Tell us what you're building."
+        description="Share the idea, timeline, and goal. We'll reply with the clearest next step."
         videoSrc="/Contact page hero.mp4"
         primaryLabel="Book a Free Strategy Call"
         primaryHref="#contact-form"
@@ -77,9 +77,9 @@ export default function ContactPage() {
         id="contact-form"
         className="contact-form-section relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32"
       >
-        <div className="absolute inset-0 bg-[#00001F]/84" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[#00001F]/92" aria-hidden="true" />
         <div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,60,255,0.2),transparent_32%),radial-gradient(circle_at_84%_70%,rgba(22,216,255,0.12),transparent_30%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,60,255,0.1),transparent_32%),radial-gradient(circle_at_84%_70%,rgba(22,216,255,0.055),transparent_30%)]"
           aria-hidden="true"
         />
         <div className="relative mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
@@ -213,12 +213,12 @@ export default function ContactPage() {
           </aside>
 
           <div className="grid gap-8">
-            <div className="relative overflow-hidden rounded-[26px] border border-white/22 bg-white/[0.075] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),inset_0_-1px_0_rgba(255,255,255,0.06),0_28px_100px_rgba(0,0,31,0.38),0_0_52px_rgba(124,60,255,0.16)] backdrop-blur-2xl sm:rounded-[32px]">
+            <div className="relative overflow-hidden rounded-[26px] border border-white/12 bg-white/[0.04] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(255,255,255,0.035),0_28px_100px_rgba(0,0,31,0.42),0_0_42px_rgba(124,60,255,0.08)] backdrop-blur-2xl sm:rounded-[32px]">
               <div
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.16),transparent_34%),radial-gradient(circle_at_92%_10%,rgba(124,60,255,0.2),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.09),rgba(255,255,255,0.032)_44%,rgba(0,0,31,0.34))]"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.07),transparent_34%),radial-gradient(circle_at_92%_10%,rgba(124,60,255,0.1),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.045),rgba(255,255,255,0.018)_44%,rgba(0,0,31,0.44))]"
                 aria-hidden="true"
               />
-              <div className="relative border-b border-white/14 bg-white/[0.045] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-8">
+              <div className="relative border-b border-white/10 bg-white/[0.025] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.055)] backdrop-blur-xl sm:p-8">
                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/70">
                   Website inquiry
                 </p>
@@ -233,7 +233,7 @@ export default function ContactPage() {
               <div className="relative p-3 sm:p-5">
                 <Suspense
                   fallback={
-                    <div className="min-h-[420px] rounded-[26px] border border-white/12 bg-white/[0.055]" />
+                    <div className="min-h-[420px] rounded-[26px] border border-white/10 bg-white/[0.035]" />
                   }
                 >
                   <ContactInquiryForm />
@@ -241,13 +241,13 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-[26px] border border-white/22 bg-white/[0.075] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),inset_0_-1px_0_rgba(255,255,255,0.06),0_28px_100px_rgba(0,0,31,0.38),0_0_52px_rgba(124,60,255,0.16)] backdrop-blur-2xl sm:rounded-[32px]">
+            <div className="relative overflow-hidden rounded-[26px] border border-white/12 bg-white/[0.04] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(255,255,255,0.035),0_28px_100px_rgba(0,0,31,0.42),0_0_42px_rgba(124,60,255,0.08)] backdrop-blur-2xl sm:rounded-[32px]">
               <div
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.18),transparent_34%),radial-gradient(circle_at_92%_10%,rgba(124,60,255,0.24),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.1),rgba(255,255,255,0.035)_44%,rgba(0,0,31,0.38))]"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.075),transparent_34%),radial-gradient(circle_at_92%_10%,rgba(124,60,255,0.11),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.048),rgba(255,255,255,0.018)_44%,rgba(0,0,31,0.46))]"
                 aria-hidden="true"
               />
-              <div className="pointer-events-none absolute inset-x-8 top-0 z-10 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.9),rgba(22,216,255,0.72),transparent)]" />
-              <div className="relative border-b border-white/14 bg-white/[0.045] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-8">
+              <div className="pointer-events-none absolute inset-x-8 top-0 z-10 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.52),rgba(22,216,255,0.44),transparent)]" />
+              <div className="relative border-b border-white/10 bg-white/[0.025] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.055)] backdrop-blur-xl sm:p-8">
                 <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/70">
                   Schedule with WBYB
                 </p>
@@ -262,13 +262,13 @@ export default function ContactPage() {
               </div>
               <div className="relative p-3 sm:p-5">
                 <div
-                  className="absolute inset-3 rounded-[22px] bg-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_18px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:inset-5 sm:rounded-[26px]"
+                  className="absolute inset-3 rounded-[22px] bg-white/[0.035] shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:inset-5 sm:rounded-[26px]"
                   aria-hidden="true"
                 />
                 <iframe
                   src={CALENDLY_EMBED_URL}
                   title="WEBuildYourBrands Calendly scheduling page"
-                  className="relative h-[920px] min-h-[760px] w-full rounded-[20px] border border-white/14 bg-white/[0.04] shadow-[0_20px_80px_rgba(0,0,0,0.18)] sm:rounded-[24px]"
+                  className="relative h-[920px] min-h-[760px] w-full rounded-[20px] border border-white/10 bg-white/[0.025] shadow-[0_20px_80px_rgba(0,0,0,0.22)] sm:rounded-[24px]"
                   loading="lazy"
                 />
               </div>

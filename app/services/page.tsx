@@ -143,8 +143,8 @@ export default function ServicesPage() {
     <>
       <Hero
         eyebrow="Services"
-        title="Website services built around clarity, design, and performance."
-        description="Choose the right mix of strategy, design, development, and support for your current stage."
+        title="Choose the website service you need."
+        description="A simple catalog of design, development, strategy, and support."
         videoSrc="/Serviceshero.mp4"
         primaryLabel="View Services"
         primaryHref="#services"
@@ -169,9 +169,6 @@ export default function ServicesPage() {
       <Section
         id="services"
         className="scroll-mt-24 pt-10 sm:pt-12 lg:pt-16"
-        eyebrow="Services"
-        title="Browse what we offer"
-        description="A compact service catalog for common website needs."
       >
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {services.map((service) => (

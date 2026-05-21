@@ -83,8 +83,8 @@ export default function ProjectsPage() {
     <>
       <Hero
         eyebrow="Projects"
-        title="Selected work across strategy, design, and development."
-        description="These aren't just websites. They're built to make people trust faster and take action."
+        title="Websites we've built."
+        description="A focused gallery of real projects, live brands, and finished digital work."
         videoSrc="/Projectpagehero.mp4"
         primaryLabel="View Projects"
         primaryHref="#projects"
@@ -94,9 +94,6 @@ export default function ProjectsPage() {
       <Section
         id="projects"
         className="scroll-mt-24 pt-24 sm:pt-28 lg:pt-32"
-        eyebrow="Projects"
-        title="A premium gallery of websites built to be trusted fast."
-        description="These aren't just websites. They're built to make people trust faster and take action."
       >
         <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-[radial-gradient(circle_at_12%_8%,rgba(22,216,255,0.14),transparent_32%),radial-gradient(circle_at_90%_18%,rgba(124,60,255,0.2),transparent_34%),linear-gradient(145deg,rgba(255,255,255,0.075),rgba(0,0,31,0.52))] p-3 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_34px_120px_rgba(0,0,31,0.32)] backdrop-blur-xl sm:p-5">
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.78),rgba(124,60,255,0.68),transparent)]" />

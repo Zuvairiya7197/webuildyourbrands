@@ -79,8 +79,8 @@ export default function AboutPage() {
     <>
       <Hero
         eyebrow="About The Studio"
-        title="We build websites with clarity, structure, and intention."
-        description="Designed for businesses that want to feel easier to understand and easier to trust online."
+        title="The thinking behind the studio."
+        description="A quieter look at how we shape websites with structure, taste, and intention."
         videoSrc="/Abouthero.mp4"
         primaryLabel="Read Our Story"
         primaryHref="#our-story"

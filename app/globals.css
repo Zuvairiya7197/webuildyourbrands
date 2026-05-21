@@ -30,6 +30,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   background-attachment: fixed;
   color: hsl(var(--foreground));
   overflow-x: clip;
+  overscroll-behavior-y: none;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }

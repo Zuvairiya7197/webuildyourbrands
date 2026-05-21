@@ -50,10 +50,10 @@ export default function WebStorePage() {
               Web Store
             </p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl lg:text-[4rem] xl:text-[4.45rem]">
-              Ready-Made Websites Built To Launch Fast
+              Browse launch-ready websites.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
-              Premium websites designed for speed, SEO, and conversions.
+              Pick a polished starting point and preview it instantly.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button
@@ -73,9 +73,6 @@ export default function WebStorePage() {
       <Section
         id="ready-made-websites"
         className="scroll-mt-24 pt-8 sm:pt-12 lg:pt-16"
-        eyebrow="Ready-Made Websites For Sale"
-        title="Browse the collection"
-        description="Choose a premium starting point, preview the live website, and make it yours."
       >
         <div className="mb-7 flex flex-wrap gap-2">
           {["Fast", "SEO-ready", "Mobile-first", "Editable"].map((label) => (
