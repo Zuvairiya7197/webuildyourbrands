@@ -90,7 +90,7 @@ function TestimonialsSliderComponent({
 
   return (
     <div
-      className="relative isolate mx-auto w-full overflow-hidden py-8 [clip-path:inset(0)] sm:py-12 lg:min-h-[700px] lg:py-0"
+      className="relative isolate mx-auto w-full overflow-hidden pb-8 pt-2 [clip-path:inset(0)] sm:py-12 lg:min-h-[700px] lg:py-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
