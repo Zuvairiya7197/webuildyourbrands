@@ -542,6 +542,7 @@ main {
     bottom: 72px;
     width: 1px;
     height: auto;
+    z-index: 12;
     transform: translate3d(-50%, 0, 0);
   }
 
@@ -550,6 +551,7 @@ main {
     top: auto;
     width: 1px;
     height: auto;
+    transform: none !important;
   }
 
   .process-cinema-axis-dash {
@@ -672,6 +674,7 @@ main {
     bottom: 64px;
     width: 1px;
     height: auto;
+    z-index: 12;
     transform: translate3d(-50%, 0, 0);
   }
 
@@ -680,6 +683,7 @@ main {
     top: auto;
     width: 1px;
     height: auto;
+    transform: none !important;
   }
 
   .process-cinema-axis-dash {
