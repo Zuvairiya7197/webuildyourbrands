@@ -434,13 +434,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="home-section home-section-slim mobile-render-defer px-4 pb-14 pt-10 sm:px-8 sm:pb-20 sm:pt-14 lg:px-24 lg:pb-24 lg:pt-20 xl:px-32">
+        <StatsBar stats={stats} />
+      </section>
+
+      <section className="problem-scroll-section home-section home-section-muted mobile-render-defer relative min-h-[640vh] px-4 sm:px-8 lg:px-24 xl:px-32">
+        <div className="sticky top-0 flex min-h-screen items-center py-14 sm:py-20 lg:py-24">
+          <div className="relative mx-auto grid w-full gap-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
+            <div className="relative border-l border-violet-300/20 pl-5 sm:pl-7">
+              <Eyebrow>The Problem</Eyebrow>
+              <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
+                Most websites don&apos;t convert. Here&apos;s why:
+              </h2>
+              <p className="mt-5 max-w-sm text-sm leading-7 text-[#b8b6c7]">
+                Visitors need speed, clarity, and a reason to take action. We
+                fix all of this.
+              </p>
+            </div>
+
+            <ProblemAccordionCards items={audiences} />
+          </div>
+        </div>
+      </section>
+
       <section className="home-section home-section-panel mobile-render-defer relative px-4 pb-10 pt-14 sm:px-8 sm:pb-12 sm:pt-20 lg:px-24 lg:pb-14 lg:pt-24 xl:px-32">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
         <div className="mx-auto w-full text-white">
           <div className="grid gap-8">
             <div className="relative grid gap-8 border-l border-cyan-100/20 pl-5 sm:pl-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.62fr)] lg:items-start lg:gap-12">
               <div>
-                <Eyebrow>What You Get</Eyebrow>
+                <Eyebrow>Services / Solution</Eyebrow>
                 <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
                   A website system built to win leads.
                 </h2>
@@ -524,35 +547,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-section home-section-slim mobile-render-defer px-4 pb-14 pt-10 sm:px-8 sm:pb-20 sm:pt-14 lg:px-24 lg:pb-24 lg:pt-20 xl:px-32">
-        <StatsBar stats={stats} />
-      </section>
-
-      <section className="problem-scroll-section home-section home-section-muted mobile-render-defer relative min-h-[640vh] px-4 sm:px-8 lg:px-24 xl:px-32">
-        <div className="sticky top-0 flex min-h-screen items-center py-14 sm:py-20 lg:py-24">
-          <div className="relative mx-auto grid w-full gap-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
-            <div className="relative border-l border-violet-300/20 pl-5 sm:pl-7">
-              <Eyebrow>The Problem</Eyebrow>
-              <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
-                Most websites don&apos;t convert. Here&apos;s why:
-              </h2>
-              <p className="mt-5 max-w-sm text-sm leading-7 text-[#b8b6c7]">
-                Visitors need speed, clarity, and a reason to take action. We
-                fix all of this.
-              </p>
-            </div>
-
-            <ProblemAccordionCards items={audiences} />
-          </div>
-        </div>
-      </section>
-
-      <ProcessTimeline steps={process} />
-
       <section className="home-section home-section-deep mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="mx-auto grid w-full gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <Eyebrow>Selected Work</Eyebrow>
+            <Eyebrow>Case Studies</Eyebrow>
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
               Websites built to look premium and convert.
             </h2>
@@ -617,11 +615,21 @@ export default function Home() {
         </div>
       </section>
 
+      <ProcessTimeline steps={process} />
+
+      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-16 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.74),rgba(124,60,255,0.62),transparent)]" />
+        <div className="relative mx-auto w-full">
+          <TestimonialsSlider testimonials={testimonials} />
+        </div>
+      </section>
+
       <section className="business-results-section home-section mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="business-results-bg" aria-hidden="true" />
         <div className="relative mx-auto grid w-full gap-10 lg:grid-cols-[0.84fr_1.7fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <Eyebrow>Business Results</Eyebrow>
+            <Eyebrow>Why Choose Us</Eyebrow>
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
               Built for real business results
             </h2>
@@ -689,14 +697,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-16 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.74),rgba(124,60,255,0.62),transparent)]" />
-        <div className="relative mx-auto w-full">
-          <TestimonialsSlider testimonials={testimonials} />
         </div>
       </section>
     </>
