@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle2, Sparkles, Target } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
-import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { CALENDLY_URL } from "@/lib/constants";
 import { neonButtonClass } from "@/lib/utils";
@@ -66,17 +65,6 @@ const trustPoints = ["100% Custom Built", "Fast Delivery", "Conversion-Focused"]
 export default function PricingPage() {
   return (
     <>
-      <Hero
-        eyebrow="Pricing"
-        title="Choose the website that brings you more inquiries - not just a better design."
-        description="Clear packages designed to help your business attract, build trust, and convert visitors into leads."
-        videoSrc="/Serviceshero.mp4"
-        primaryLabel="Compare Packages"
-        primaryHref="#packages"
-        secondaryLabel="Book A Call"
-        secondaryHref={CALENDLY_URL}
-      />
-
       <section className="relative overflow-hidden bg-[var(--site-gradient)] px-5 py-24 text-white sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32">
         <div
           className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(124,60,255,0.18),transparent_32%),radial-gradient(circle_at_88%_12%,rgba(22,216,255,0.1),transparent_28%),radial-gradient(circle_at_50%_90%,rgba(34,0,103,0.32),transparent_38%)]"
