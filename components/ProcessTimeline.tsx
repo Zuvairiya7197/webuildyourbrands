@@ -67,7 +67,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
           scrollTrigger: {
             trigger: section,
             start: isMobileTimeline ? "top 78%" : "top top",
-            end: isMobileTimeline ? undefined : "+=360%",
+            end: isMobileTimeline ? undefined : "+=260%",
             pin: !isMobileTimeline,
             scrub: isMobileTimeline ? false : 1.15,
             toggleActions: isMobileTimeline ? "play none none none" : undefined,
@@ -96,6 +96,10 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
         if (isMobileTimeline) {
           timeline.timeScale(2.6);
         }
+
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh();
+        });
       }, section);
     };
 

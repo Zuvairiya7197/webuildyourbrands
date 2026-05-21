@@ -104,8 +104,15 @@ main {
   background: rgba(0, 0, 31, 0.28);
 }
 
+.stats-signal-pin {
+  min-height: 185vh;
+  position: relative;
+}
+
 .stats-signal {
   position: relative;
+  position: sticky;
+  top: clamp(78px, 10vh, 112px);
   margin-inline: auto;
   width: 100%;
   overflow: hidden;
@@ -192,15 +199,23 @@ main {
   gap: clamp(12px, 2vw, 24px);
   min-height: 112px;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
   border-block: 1px solid rgba(255, 255, 255, 0.095);
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.055), transparent 34%),
     rgba(255, 255, 255, 0.018);
   padding: 18px clamp(14px, 2.4vw, 28px);
   transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s ease var(--reveal-delay, 0ms),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
     border-color 0.45s ease,
     background-color 0.45s ease;
+}
+
+.stats-signal-row--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .stats-signal-row::before {
@@ -212,10 +227,11 @@ main {
   opacity: 0.6;
 }
 
-.stats-signal-row:hover {
+.stats-signal-row--visible:hover {
   transform: translateX(10px);
   border-color: rgba(22, 216, 255, 0.28);
   background-color: rgba(255, 255, 255, 0.03);
+  transition-delay: 0ms;
 }
 
 .stats-signal-index {
@@ -300,7 +316,12 @@ main {
 }
 
 @media (max-width: 899px) {
+  .stats-signal-pin {
+    min-height: 165vh;
+  }
+
   .stats-signal {
+    top: 74px;
     border-radius: 24px;
   }
 
@@ -319,7 +340,7 @@ main {
     padding: 18px 14px;
   }
 
-  .stats-signal-row:hover {
+  .stats-signal-row--visible:hover {
     transform: none;
   }
 
