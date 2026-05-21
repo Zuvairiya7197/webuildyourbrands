@@ -71,7 +71,7 @@ function Navbar() {
       )}
     >
       <nav
-        className="mx-auto flex h-20 w-full items-center justify-between"
+        className="relative mx-auto flex h-20 w-full items-center justify-between"
         aria-label="Main navigation"
       >
         <Link href="/" prefetch className="relative h-12 w-36 shrink-0 sm:h-16 sm:w-48">
@@ -81,10 +81,10 @@ function Navbar() {
             fill
             priority
             sizes="(min-width: 640px) 192px, 160px"
-            className="object-contain"
+            className="object-contain object-left"
           />
         </Link>
-        <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-[#00001F]/45 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_50px_rgba(0,0,31,0.28),0_0_32px_rgba(124,60,255,0.12)] backdrop-blur-xl md:flex">
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-white/10 bg-[#00001F]/45 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_50px_rgba(0,0,31,0.28),0_0_32px_rgba(124,60,255,0.12)] backdrop-blur-xl md:flex">
           {links.map((link) => {
             const isActive = pathname === link.href;
 
