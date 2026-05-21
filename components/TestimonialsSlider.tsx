@@ -100,7 +100,7 @@ function TestimonialsSliderComponent({
       aria-label="Client testimonial carousel"
     >
       <div
-        className="relative grid min-w-0 gap-3 overflow-hidden sm:gap-8 lg:min-h-[700px] lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-center xl:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)]"
+        className="relative grid min-w-0 gap-0 overflow-visible sm:gap-8 lg:min-h-[700px] lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-center lg:overflow-hidden xl:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)]"
         onTouchStart={(event) => {
           touchStartX.current = event.touches[0].clientX;
           setIsPaused(true);
@@ -143,7 +143,7 @@ function TestimonialsSliderComponent({
           </div>
         </div>
 
-        <div className="relative z-10 -mt-16 min-w-0 max-w-4xl overflow-hidden px-3 sm:mt-0 sm:px-0 lg:-ml-20 lg:pl-0 lg:pt-0 xl:-ml-28">
+        <div className="relative z-10 -mt-28 min-w-0 max-w-4xl overflow-visible px-3 sm:mt-0 sm:px-0 lg:-ml-20 lg:overflow-hidden lg:pl-0 lg:pt-0 xl:-ml-28">
           <span
             className="mb-2 block font-serif text-[3.6rem] font-bold leading-none text-[#16d8ff]/8 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.04))] sm:mb-7 sm:text-[6rem]"
             aria-hidden="true"
