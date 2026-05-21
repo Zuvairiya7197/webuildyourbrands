@@ -617,8 +617,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-section home-section-muted mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="mx-auto grid w-full gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+      <section className="business-results-section home-section mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+        <div className="business-results-bg" aria-hidden="true" />
+        <div className="relative mx-auto grid w-full gap-10 lg:grid-cols-[0.84fr_1.7fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Business Results</Eyebrow>
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
@@ -629,28 +630,64 @@ export default function Home() {
               before the first call.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-            {reasons.map(({ title, signal, visual, Icon }) => (
-              <article
-                key={title}
-                className="group relative overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.035] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24 hover:bg-white/[0.055] sm:p-6"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/42">
-                    {visual}
-                  </p>
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/42 text-cyan-100/78 transition duration-300 group-hover:border-cyan-300/24 group-hover:text-cyan-100">
-                    <Icon className="h-4 w-4" aria-hidden="true" />
-                  </span>
-                </div>
-                <h3 className="mt-8 text-xl font-semibold tracking-tight text-white">
-                  {title}
-                </h3>
-                <p className="mt-3 max-w-xs text-sm leading-6 text-white/54">
-                  {signal}
+          <div className="business-results-dashboard">
+            <div className="business-results-core">
+              <div className="business-results-core-grid" aria-hidden="true" />
+              <div className="business-results-rings" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+              <div className="business-results-core-content">
+                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-100/64">
+                  Conversion Engine
                 </p>
-              </article>
-            ))}
+                <h3 className="mt-4 max-w-sm text-3xl font-semibold leading-none tracking-tight text-white sm:text-5xl">
+                  Clarity that moves visitors.
+                </h3>
+                <div className="mt-7 grid gap-3 sm:grid-cols-3">
+                  {["Trust", "Speed", "Action"].map((item) => (
+                    <div key={item} className="business-results-chip">
+                      <CheckCircle2 className="h-4 w-4 text-cyan-100" aria-hidden="true" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="business-results-cards">
+              {reasons.map(({ title, signal, visual, Icon }, index) => (
+                <article
+                  key={title}
+                  className="business-results-card group"
+                >
+                  <div className="business-results-card-line" aria-hidden="true" />
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/42">
+                        {visual}
+                      </p>
+                      <p className="mt-3 text-[11px] font-bold text-cyan-100/58">
+                        0{index + 1}
+                      </p>
+                    </div>
+                    <span className="business-results-icon">
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                  </div>
+                  <h3 className="mt-8 text-xl font-semibold tracking-tight text-white">
+                    {title}
+                  </h3>
+                  <p className="mt-3 max-w-xs text-sm leading-6 text-[#b8b6c7]">
+                    {signal}
+                  </p>
+                  <div className="business-results-meter" aria-hidden="true">
+                    <span style={{ width: `${72 + index * 10}%` }} />
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
