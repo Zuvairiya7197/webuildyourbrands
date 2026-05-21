@@ -444,7 +444,7 @@ export default function Home() {
                 <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
                   A website system built to win leads.
                 </h2>
-                <p className="mt-5 max-w-[540px] text-sm leading-7 text-white/62 sm:text-base sm:leading-8">
+                <p className="mt-5 max-w-[540px] text-sm leading-7 text-[#b8b6c7] sm:text-base sm:leading-8">
                   Strategy, design, speed, SEO, and conversion flow shaped into
                   one custom build.
                 </p>
@@ -536,7 +536,7 @@ export default function Home() {
               <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
                 Most websites don&apos;t convert. Here&apos;s why:
               </h2>
-              <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+              <p className="mt-5 max-w-sm text-sm leading-7 text-[#b8b6c7]">
                 Visitors need speed, clarity, and a reason to take action. We
                 fix all of this.
               </p>
@@ -556,7 +556,7 @@ export default function Home() {
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
               Websites built to look premium and convert.
             </h2>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-[#b8b6c7]">
               Real projects for growing businesses that needed a stronger online
               presence.
             </p>
@@ -624,7 +624,7 @@ export default function Home() {
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
               Built for real business results
             </h2>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-white/58">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-[#b8b6c7]">
               Your website should help you grow, get found, and win more trust
               before the first call.
             </p>

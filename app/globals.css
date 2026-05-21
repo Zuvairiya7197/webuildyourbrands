@@ -110,10 +110,10 @@ main {
   overflow: hidden;
   padding-inline: 1rem;
   background:
-    radial-gradient(circle at 17% 47%, rgba(22, 216, 255, 0.12), transparent 27%),
-    radial-gradient(circle at 71% 45%, rgba(124, 60, 255, 0.2), transparent 36%),
-    radial-gradient(circle at 52% 82%, rgba(34, 0, 103, 0.16), transparent 34%),
-    linear-gradient(135deg, #00001f 0%, #030026 42%, #09002e 72%, #00001f 100%);
+    radial-gradient(circle at 17% 47%, rgba(22, 216, 255, 0.055), transparent 27%),
+    radial-gradient(circle at 71% 45%, rgba(124, 60, 255, 0.09), transparent 36%),
+    radial-gradient(circle at 52% 82%, rgba(34, 0, 103, 0.08), transparent 34%),
+    linear-gradient(135deg, #00001f 0%, #020022 42%, #050026 72%, #00001f 100%);
   color: var(--text-off-white);
   visibility: hidden;
 }
@@ -145,10 +145,10 @@ main {
   inset: 0;
   height: auto;
   background:
-    linear-gradient(rgba(241, 238, 231, 0.026) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(22, 216, 255, 0.018) 1px, transparent 1px);
+    linear-gradient(rgba(241, 238, 231, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 216, 255, 0.012) 1px, transparent 1px);
   background-size: 42px 42px;
-  opacity: 0.2;
+  opacity: 0.14;
   mask-image: radial-gradient(circle at 58% 52%, black, transparent 72%);
 }
 
@@ -165,10 +165,10 @@ main {
 }
 
 .process-cinema-grain {
-  opacity: 0.11;
+  opacity: 0.07;
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px),
-    radial-gradient(circle at 72% 62%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px);
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px),
+    radial-gradient(circle at 72% 62%, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px);
   background-size: 7px 7px, 11px 11px;
 }
 
@@ -357,12 +357,12 @@ main {
   display: grid;
   place-items: center;
   border-radius: 999px;
-  border: 1px solid rgba(241, 238, 231, 0.18);
+  border: 1px solid rgba(241, 238, 231, 0.12);
   background:
-    radial-gradient(circle at 30% 26%, rgba(22, 216, 255, 0.16), transparent 34%),
-    radial-gradient(circle at 72% 64%, rgba(124, 60, 255, 0.2), transparent 45%),
+    radial-gradient(circle at 30% 26%, rgba(22, 216, 255, 0.07), transparent 34%),
+    radial-gradient(circle at 72% 64%, rgba(124, 60, 255, 0.09), transparent 45%),
     radial-gradient(circle at 50% 118%, rgba(0, 0, 31, 0.86), transparent 45%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(0, 0, 31, 0.34) 42%, rgba(5, 0, 42, 0.78) 100%);
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 31, 0.42) 42%, rgba(5, 0, 42, 0.78) 100%);
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
 }
@@ -378,26 +378,26 @@ main {
 }
 
 .process-cinema-node::before {
-  border: 1px solid rgba(22, 216, 255, 0.1);
+  border: 1px solid rgba(22, 216, 255, 0.055);
   background:
-    radial-gradient(circle at 38% 32%, rgba(22, 216, 255, 0.085), transparent 36%),
-    radial-gradient(circle at 62% 74%, rgba(124, 60, 255, 0.12), transparent 48%),
+    radial-gradient(circle at 38% 32%, rgba(22, 216, 255, 0.045), transparent 36%),
+    radial-gradient(circle at 62% 74%, rgba(124, 60, 255, 0.065), transparent 48%),
     rgba(0, 0, 31, 0.12);
   transform: scale(0.58);
 }
 
 .process-cinema-node::after {
-  opacity: 0.72;
+  opacity: 0.5;
   background:
-    radial-gradient(circle at 34% 24%, rgba(241, 238, 231, 0.08), transparent 24%),
-    linear-gradient(115deg, rgba(255, 255, 255, 0.035), transparent 36%, rgba(124, 60, 255, 0.12) 72%, rgba(22, 216, 255, 0.04));
+    radial-gradient(circle at 34% 24%, rgba(241, 238, 231, 0.045), transparent 24%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.022), transparent 36%, rgba(124, 60, 255, 0.065) 72%, rgba(22, 216, 255, 0.025));
 }
 
 .process-cinema-node-grid {
   opacity: 0;
   background:
-    linear-gradient(rgba(241, 238, 231, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(22, 216, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(241, 238, 231, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 216, 255, 0.022) 1px, transparent 1px);
   background-size: 18px 18px;
   mask-image: linear-gradient(180deg, transparent 48%, black 100%);
 }
@@ -409,9 +409,9 @@ main {
   height: 188px;
   width: 188px;
   background:
-    radial-gradient(circle at 28% 28%, rgba(22, 216, 255, 0.18), transparent 36%),
-    radial-gradient(circle at 78% 76%, rgba(124, 60, 255, 0.14), transparent 42%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(0, 0, 31, 0.36) 46%, rgba(5, 0, 42, 0.78));
+    radial-gradient(circle at 28% 28%, rgba(22, 216, 255, 0.075), transparent 36%),
+    radial-gradient(circle at 78% 76%, rgba(124, 60, 255, 0.07), transparent 42%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 31, 0.44) 46%, rgba(5, 0, 42, 0.78));
 }
 
 .process-cinema-node-2 {
@@ -421,10 +421,10 @@ main {
   height: 300px;
   width: 300px;
   background:
-    radial-gradient(circle at 28% 25%, rgba(22, 216, 255, 0.18), transparent 38%),
-    radial-gradient(circle at 64% 78%, rgba(124, 60, 255, 0.22), transparent 48%),
-    radial-gradient(circle at 50% 112%, rgba(34, 0, 103, 0.24), transparent 44%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(0, 0, 31, 0.38) 46%, rgba(6, 0, 48, 0.82));
+    radial-gradient(circle at 28% 25%, rgba(22, 216, 255, 0.075), transparent 38%),
+    radial-gradient(circle at 64% 78%, rgba(124, 60, 255, 0.095), transparent 48%),
+    radial-gradient(circle at 50% 112%, rgba(34, 0, 103, 0.12), transparent 44%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 31, 0.46) 46%, rgba(6, 0, 48, 0.82));
 }
 
 .process-cinema-node-2 .process-cinema-node-grid,
@@ -439,10 +439,10 @@ main {
   height: 380px;
   width: 380px;
   background:
-    radial-gradient(circle at 78% 42%, rgba(124, 60, 255, 0.32), transparent 42%),
-    radial-gradient(circle at 31% 52%, rgba(22, 216, 255, 0.1), transparent 36%),
-    radial-gradient(circle at 48% 112%, rgba(34, 0, 103, 0.22), transparent 42%),
-    linear-gradient(110deg, rgba(0, 0, 31, 0.98) 0%, rgba(3, 0, 38, 0.84) 45%, rgba(18, 0, 66, 0.82) 100%);
+    radial-gradient(circle at 78% 42%, rgba(124, 60, 255, 0.14), transparent 42%),
+    radial-gradient(circle at 31% 52%, rgba(22, 216, 255, 0.05), transparent 36%),
+    radial-gradient(circle at 48% 112%, rgba(34, 0, 103, 0.1), transparent 42%),
+    linear-gradient(110deg, rgba(0, 0, 31, 0.98) 0%, rgba(3, 0, 38, 0.9) 45%, rgba(18, 0, 66, 0.84) 100%);
 }
 
 .process-cinema-node-4 {
@@ -452,10 +452,10 @@ main {
   height: 276px;
   width: 276px;
   background:
-    radial-gradient(circle at 48% 22%, rgba(124, 60, 255, 0.24), transparent 38%),
-    radial-gradient(circle at 72% 76%, rgba(22, 216, 255, 0.1), transparent 46%),
-    radial-gradient(circle at 50% 112%, rgba(34, 0, 103, 0.28), transparent 42%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.068), rgba(0, 0, 31, 0.36) 48%, rgba(7, 0, 50, 0.8));
+    radial-gradient(circle at 48% 22%, rgba(124, 60, 255, 0.105), transparent 38%),
+    radial-gradient(circle at 72% 76%, rgba(22, 216, 255, 0.05), transparent 46%),
+    radial-gradient(circle at 50% 112%, rgba(34, 0, 103, 0.13), transparent 42%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 31, 0.44) 48%, rgba(7, 0, 50, 0.8));
 }
 
 .process-cinema-label {
@@ -495,9 +495,9 @@ main {
 }
 
 .process-cinema-node-3::after {
-  border: 1px solid rgba(124, 60, 255, 0.12);
+  border: 1px solid rgba(124, 60, 255, 0.065);
   background:
-    radial-gradient(circle at 52% 36%, rgba(124, 60, 255, 0.18), transparent 42%),
+    radial-gradient(circle at 52% 36%, rgba(124, 60, 255, 0.08), transparent 42%),
     rgba(0, 0, 31, 0.08);
   transform: translateX(13%) scale(0.31);
 }
@@ -596,7 +596,7 @@ main {
 
   .process-cinema-node-2 {
     left: 50%;
-    top: 360px;
+    top: 358px;
     height: 204px;
     width: 204px;
     margin-left: -102px;
@@ -604,7 +604,7 @@ main {
 
   .process-cinema-node-3 {
     left: 50%;
-    top: 570px;
+    top: 562px;
     height: 244px;
     width: 244px;
     margin-left: -122px;
@@ -613,7 +613,7 @@ main {
   .process-cinema-node-4 {
     left: 50%;
     right: auto;
-    top: 820px;
+    top: 806px;
     height: 190px;
     width: 190px;
     margin-left: -95px;
@@ -728,7 +728,7 @@ main {
 
   .process-cinema-node-2 {
     left: 50%;
-    top: 338px;
+    top: 340px;
     height: 184px;
     width: 184px;
     margin-left: -92px;
@@ -736,7 +736,7 @@ main {
 
   .process-cinema-node-3 {
     left: 50%;
-    top: 532px;
+    top: 524px;
     height: 228px;
     width: 228px;
     margin-left: -114px;
@@ -745,7 +745,7 @@ main {
   .process-cinema-node-4 {
     left: 50%;
     right: auto;
-    top: 780px;
+    top: 752px;
     height: 170px;
     width: 170px;
     margin-left: -85px;
@@ -1388,21 +1388,21 @@ textarea {
   }
 
   .what-you-get-cards:hover .what-you-get-card:not(:hover),
-  .what-you-get-cards:focus-within .what-you-get-card:not(:focus-visible) {
+  .what-you-get-cards:has(.what-you-get-card:focus-visible) .what-you-get-card:not(:focus-visible) {
     flex-grow: 0.56;
     opacity: 0.38;
     transform: none;
   }
 
   .what-you-get-cards:hover .what-you-get-card:not(:hover) .what-you-get-card-copy,
-  .what-you-get-cards:focus-within .what-you-get-card:not(:focus-visible) .what-you-get-card-copy {
+  .what-you-get-cards:has(.what-you-get-card:focus-visible) .what-you-get-card:not(:focus-visible) .what-you-get-card-copy {
     opacity: 0;
     transform: translateY(14px);
     transition-delay: 0s;
   }
 
   .what-you-get-cards:hover .what-you-get-card:not(:hover) .what-you-get-card-index,
-  .what-you-get-cards:focus-within .what-you-get-card:not(:focus-visible) .what-you-get-card-index {
+  .what-you-get-cards:has(.what-you-get-card:focus-visible) .what-you-get-card:not(:focus-visible) .what-you-get-card-index {
     opacity: 0;
     transform: translateY(-8px);
   }
@@ -1554,14 +1554,15 @@ textarea {
 
 .problem-card__meta {
   display: inline-flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
   min-width: 0;
+  max-width: calc(100% - 74px);
   padding-top: 3px;
   text-align: right;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .problem-card__meta span,
@@ -1580,8 +1581,8 @@ textarea {
 .problem-card__meta p {
   max-width: none;
   color: rgba(207, 247, 255, 0.5);
-  line-height: 1;
-  white-space: nowrap;
+  line-height: 1.25;
+  white-space: normal;
 }
 
 .problem-card__body {
@@ -1658,6 +1659,35 @@ textarea {
   color: rgba(255, 255, 255, 0.9);
   font-size: 18px;
   line-height: 1.15;
+}
+
+@media (max-width: 639px) {
+  .problem-card__top {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+  }
+
+  .problem-card__icon {
+    height: 48px;
+    width: 48px;
+    flex-basis: 48px;
+    border-radius: 16px;
+  }
+
+  .problem-card__meta {
+    width: 100%;
+    max-width: none;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .problem-card__meta p {
+    font-size: 9px;
+    letter-spacing: 0.13em;
+    line-height: 1.35;
+  }
 }
 
 @keyframes problemTitleSheen {
