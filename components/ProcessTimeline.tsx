@@ -47,7 +47,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
         const labels = gsap.utils.toArray<HTMLElement>(".process-cinema-label");
         const grids = gsap.utils.toArray<HTMLElement>(".process-cinema-node-grid");
         const axisParts = gsap.utils.toArray<HTMLElement>(".process-cinema-axis span");
-        const isMobileTimeline = window.matchMedia("(max-width: 640px)").matches;
+        const isMobileTimeline = window.matchMedia("(max-width: 900px)").matches;
         const axisScaleProperty = isMobileTimeline ? "scaleY" : "scaleX";
 
         gsap.set(section, { autoAlpha: 1 });
