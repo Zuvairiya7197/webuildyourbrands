@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { CalendarDays, Code2, PenLine, Search } from "lucide-react";
 
 type ProcessStep = {
   title: string;
@@ -13,6 +14,8 @@ type ProcessTimelineProps = {
 
 export function ProcessTimeline({ steps }: ProcessTimelineProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const mobileProcessIcons = [Search, CalendarDays, PenLine, Code2];
+  const mobileProcessTitles = ["Discover", "Plan", "Design", "Develop"];
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -124,10 +127,15 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
       <div className="process-cinema-stage">
         <div className="process-cinema-copy">
           <p className="process-cinema-eyebrow">
-            Process
+            Our Process
           </p>
           <h2 id="process-heading">
-            From first idea to live launch.
+            <span className="process-cinema-heading-desktop">
+              From first idea to live launch.
+            </span>
+            <span className="process-cinema-heading-mobile">
+              A simple process that delivers exceptional results.
+            </span>
           </h2>
         </div>
 
@@ -145,14 +153,32 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
               key={step.title}
               className={`process-cinema-node process-cinema-node-${index + 1}`}
             >
+              {(() => {
+                const Icon = mobileProcessIcons[index] ?? Search;
+
+                return (
+                  <Icon
+                    className="process-cinema-mobile-icon"
+                    aria-hidden="true"
+                  />
+                );
+              })()}
               <span className="process-cinema-node-grid" aria-hidden="true" />
               <div className="process-cinema-label">
                 <p className="process-cinema-number text-[11px] font-semibold text-white/64">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="process-cinema-title text-base font-semibold text-white/82 sm:text-lg lg:text-xl">
-                  <span>{step.title}</span>
+                  <span className="process-cinema-title-desktop">{step.title}</span>
+                  <span className="process-cinema-title-mobile">
+                    {mobileProcessTitles[index] ?? step.title}
+                  </span>
                 </h3>
+                {step.description ? (
+                  <p className="process-cinema-description">
+                    {step.description}
+                  </p>
+                ) : null}
               </div>
             </article>
           ))}

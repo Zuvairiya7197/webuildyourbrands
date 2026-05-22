@@ -28,15 +28,32 @@ const icons = {
 export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const frameRef = useRef<number | null>(null);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [isMobile, setIsMobile] = useState(false);
   const [cursor, setCursor] = useState({ x: 72, y: 30 });
 
   useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 640px)");
 
+    const updateMobileState = () => {
+      setIsMobile(mobileQuery.matches);
+
+      if (mobileQuery.matches) {
+        setActiveIndex((current) =>
+          current !== null && current >= 0 && current < items.length
+            ? current
+            : 0
+        );
+      }
+    };
+
+    updateMobileState();
+    mobileQuery.addEventListener("change", updateMobileState);
+
     if (mobileQuery.matches) {
-      setActiveIndex(null);
-      return;
+      return () => {
+        mobileQuery.removeEventListener("change", updateMobileState);
+      };
     }
 
     const updateActiveCard = () => {
@@ -74,6 +91,7 @@ export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
     window.addEventListener("resize", scheduleUpdate);
 
     return () => {
+      mobileQuery.removeEventListener("change", updateMobileState);
       window.removeEventListener("scroll", scheduleUpdate);
       window.removeEventListener("resize", scheduleUpdate);
 
@@ -89,7 +107,9 @@ export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
     }
 
     event.preventDefault();
-    setActiveIndex((current) => (current === index ? null : index));
+    setActiveIndex((current) =>
+      isMobile ? index : current === index ? null : index
+    );
   };
 
   return (
@@ -127,7 +147,9 @@ export function ProblemAccordionCards({ items }: ProblemAccordionCardsProps) {
               });
             }}
             onClick={() => {
-              setActiveIndex((current) => (current === index ? null : index));
+              setActiveIndex((current) =>
+                isMobile ? index : current === index ? null : index
+              );
             }}
             onFocus={() => {
               if (!window.matchMedia("(max-width: 640px)").matches) {

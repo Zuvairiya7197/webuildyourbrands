@@ -90,7 +90,7 @@ function TestimonialsSliderComponent({
 
   return (
     <div
-      className="relative isolate mx-auto w-full overflow-hidden pb-8 pt-2 [clip-path:inset(0)] sm:py-12 lg:min-h-[700px] lg:py-0"
+      className="relative isolate mx-auto w-full overflow-hidden pb-4 pt-0 [clip-path:inset(0)] sm:py-12 lg:min-h-[700px] lg:py-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
@@ -110,8 +110,8 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="testimonial-grid-fade relative mx-auto h-[min(132vw,520px)] w-full max-w-[560px] min-w-0 overflow-hidden rounded-[28px] [clip-path:inset(0_round_28px)] sm:h-[580px] sm:max-w-[580px] lg:mx-0 lg:h-[700px] lg:max-w-[700px]">
-          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(126vw,580px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,560px)] sm:gap-4 lg:w-[min(100%,680px)] lg:gap-5">
+        <div className="testimonial-grid-fade relative mx-auto h-[min(112vw,440px)] w-full max-w-[560px] min-w-0 overflow-hidden rounded-[28px] [clip-path:inset(0_round_28px)] sm:h-[580px] sm:max-w-[580px] lg:mx-0 lg:h-[700px] lg:max-w-[700px]">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(112vw,500px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-2 opacity-70 sm:w-[min(100%,560px)] sm:gap-4 lg:w-[min(100%,680px)] lg:gap-5">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
                 key={index}
@@ -143,7 +143,7 @@ function TestimonialsSliderComponent({
           </div>
         </div>
 
-        <div className="relative z-10 -mt-28 min-w-0 max-w-4xl overflow-visible px-3 sm:mt-0 sm:px-0 lg:-ml-20 lg:overflow-hidden lg:pl-0 lg:pt-0 xl:-ml-28">
+        <div className="relative z-10 -mt-20 min-w-0 max-w-4xl overflow-visible px-3 sm:mt-0 sm:px-0 lg:-ml-20 lg:overflow-hidden lg:pl-0 lg:pt-0 xl:-ml-28">
           <span
             className="mb-2 block font-serif text-[3.6rem] font-bold leading-none text-[#16d8ff]/8 [filter:drop-shadow(0_1px_0_rgba(255,255,255,0.04))] sm:mb-7 sm:text-[6rem]"
             aria-hidden="true"
@@ -167,7 +167,7 @@ function TestimonialsSliderComponent({
             </motion.div>
           </AnimatePresence>
 
-          <div className="mt-9 flex gap-4">
+          <div className="mt-6 flex gap-3 sm:mt-9 sm:gap-4">
             <button
               type="button"
               onClick={goToPrevious}

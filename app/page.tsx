@@ -7,16 +7,15 @@ import {
   BriefcaseBusiness,
   CalendarDays,
   CheckCircle2,
-  FileSearch,
   Lightbulb,
   PanelsTopLeft,
-  PenTool,
   Rocket,
 } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
 import { Button } from "@/components/ui/button";
 import { ProblemAccordionCards } from "@/components/ProblemAccordionCards";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
+import { ServicesSolutionCards } from "@/components/ServicesSolutionCards";
 import { neonButtonClass } from "@/lib/utils";
 
 const StatsBar = dynamic(() => import("@/components/StatsBar"));
@@ -37,31 +36,31 @@ const services = [
     title: "Custom Design",
     description:
       "No templates. A website shaped around your offer, audience, and goals.",
-    Icon: PenTool,
+    icon: "penTool" as const,
   },
   {
     title: "High-Speed Performance",
     description:
       "Fast pages that feel smooth on mobile and keep visitors moving.",
-    Icon: Rocket,
+    icon: "rocket" as const,
   },
   {
     title: "SEO-Optimized Structure",
     description:
       "Clean pages built to rank, load fast, and get found on Google.",
-    Icon: FileSearch,
+    icon: "fileSearch" as const,
   },
   {
     title: "Conversion-Focused Layout",
     description:
       "Clear sections, strong CTAs, and a path that turns visitors into leads.",
-    Icon: PanelsTopLeft,
+    icon: "panelsTopLeft" as const,
   },
   {
     title: "Ready?",
     description:
       "Book a free strategy call and let us map the clearest path for your website.",
-    Icon: CalendarDays,
+    icon: "calendarDays" as const,
     cta: "Book a Call",
   },
 ];
@@ -127,19 +126,19 @@ const stats = [
 const process = [
   {
     title: "Discovery",
-    description: "",
+    description: "We learn about your goals, audience, and challenges.",
   },
   {
     title: "Strategy & Structure",
-    description: "",
+    description: "We strategize and plan the best approach.",
   },
   {
     title: "Design & Experience",
-    description: "",
+    description: "We create stunning, user-focused designs.",
   },
   {
     title: "Launch & Growth",
-    description: "",
+    description: "We build fast, secure, and conversion-ready websites.",
   },
 ];
 
@@ -201,21 +200,18 @@ const heroProjectPreviews = [
 
 const reasons = [
   {
-    title: "More Leads",
-    signal: "Clear paths to calls and inquiries.",
-    visual: "Leads",
+    title: "Clear Strategy",
+    signal: "Every section has a job, from first impression to inquiry.",
     Icon: Lightbulb,
   },
   {
-    title: "Better Conversions",
-    signal: "Less confusion. Faster decisions.",
-    visual: "Convert",
+    title: "Sharp Execution",
+    signal: "Clean design, fast pages, and a smooth mobile experience.",
     Icon: PanelsTopLeft,
   },
   {
-    title: "Strong Online Presence",
-    signal: "A sharper first impression.",
-    visual: "Trust",
+    title: "Built To Convert",
+    signal: "Simple paths that make it easy for visitors to take action.",
     Icon: Rocket,
   },
 ];
@@ -439,7 +435,7 @@ export default function Home() {
 
       <section className="problem-scroll-section home-section home-section-muted mobile-render-defer relative min-h-[640vh] px-4 sm:px-8 lg:px-24 xl:px-32">
         <div className="sticky top-0 flex min-h-screen items-center py-14 sm:py-20 lg:py-24">
-          <div className="relative mx-auto grid w-full gap-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
+          <div className="relative mx-auto grid w-full gap-5 sm:gap-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
             <div className="relative border-l border-violet-300/20 pl-5 sm:pl-7">
               <Eyebrow>The Problem</Eyebrow>
               <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
@@ -459,8 +455,8 @@ export default function Home() {
       <section className="home-section home-section-panel mobile-render-defer relative px-4 pb-10 pt-14 sm:px-8 sm:pb-12 sm:pt-20 lg:px-24 lg:pb-14 lg:pt-24 xl:px-32">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
         <div className="mx-auto w-full text-white">
-          <div className="grid gap-8">
-            <div className="relative grid gap-8 border-l border-cyan-100/20 pl-5 sm:pl-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.62fr)] lg:items-start lg:gap-12">
+          <div className="grid gap-5 sm:gap-8">
+            <div className="relative grid gap-5 border-l border-cyan-100/20 pl-5 sm:gap-8 sm:pl-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.62fr)] lg:items-start lg:gap-12">
               <div>
                 <Eyebrow>Services / Solution</Eyebrow>
                 <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
@@ -485,69 +481,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="what-you-get-cards">
-              {services.map(({ title, description, Icon, cta }) => {
-                const cardContent = (
-                  <>
-                    <div
-                      className="what-you-get-card-glow"
-                      aria-hidden="true"
-                    />
-                    <div className="what-you-get-card-head">
-                      <div className="what-you-get-card-icon">
-                        <Icon className="h-6 w-6" aria-hidden="true" />
-                      </div>
-                    </div>
-                    <div className="what-you-get-card-copy">
-                      <h3>{title}</h3>
-                      <p>{description}</p>
-                      {cta ? (
-                        <span className="what-you-get-card-cta">
-                          {cta}
-                          <ArrowRight
-                            className="h-3.5 w-3.5"
-                            aria-hidden="true"
-                          />
-                        </span>
-                      ) : (
-                        <span className="what-you-get-card-link">
-                          Explore
-                          <ArrowRight
-                            className="h-3.5 w-3.5"
-                            aria-hidden="true"
-                          />
-                        </span>
-                      )}
-                    </div>
-                  </>
-                );
-
-                return cta ? (
-                  <CalendlyLink
-                    key={title}
-                    className="what-you-get-card what-you-get-card-ready"
-                    aria-label="Book a free strategy call"
-                  >
-                    {cardContent}
-                  </CalendlyLink>
-                ) : (
-                  <Link
-                    key={title}
-                    href="/services"
-                    className="what-you-get-card"
-                    aria-label={`${title}: view services`}
-                  >
-                    {cardContent}
-                  </Link>
-                );
-              })}
-            </div>
+            <ServicesSolutionCards services={services} />
           </div>
         </div>
       </section>
 
       <section className="home-section home-section-deep mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
-        <div className="mx-auto grid w-full gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
+        <div className="mx-auto grid w-full gap-6 sm:gap-10 lg:grid-cols-[0.92fr_2fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Case Studies</Eyebrow>
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
@@ -571,7 +511,7 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-5">
               {projects.map((project, index) => (
                 <Link
                   key={project.title}
@@ -616,7 +556,7 @@ export default function Home() {
 
       <ProcessTimeline steps={process} />
 
-      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-16 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-10 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.74),rgba(124,60,255,0.62),transparent)]" />
         <div className="relative mx-auto w-full">
@@ -626,72 +566,39 @@ export default function Home() {
 
       <section className="business-results-section home-section mobile-render-defer px-4 py-14 sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="business-results-bg" aria-hidden="true" />
-        <div className="relative mx-auto grid w-full gap-10 lg:grid-cols-[0.84fr_1.7fr] lg:items-start">
+        <div className="relative mx-auto grid w-full gap-6 sm:gap-10 lg:grid-cols-[0.84fr_1.7fr] lg:items-start">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Why Choose Us</Eyebrow>
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
-              Built for real business results
+              Websites with purpose, not noise.
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-7 text-[#b8b6c7]">
-              Your website should help you grow, get found, and win more trust
-              before the first call.
+              We keep the build focused on what matters: clarity, speed, and
+              action.
             </p>
           </div>
           <div className="business-results-dashboard">
-            <div className="business-results-core">
-              <div className="business-results-core-grid" aria-hidden="true" />
-              <div className="business-results-rings" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="business-results-core-content">
-                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-100/64">
-                  Conversion Engine
-                </p>
-                <h3 className="mt-4 max-w-sm text-3xl font-semibold leading-none tracking-tight text-white sm:text-5xl">
-                  Clarity that moves visitors.
-                </h3>
-                <div className="mt-7 grid gap-3 sm:grid-cols-3">
-                  {["Trust", "Speed", "Action"].map((item) => (
-                    <div key={item} className="business-results-chip">
-                      <CheckCircle2 className="h-4 w-4 text-cyan-100" aria-hidden="true" />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
             <div className="business-results-cards">
-              {reasons.map(({ title, signal, visual, Icon }, index) => (
+              {reasons.map(({ title, signal, Icon }, index) => (
                 <article
                   key={title}
                   className="business-results-card group"
                 >
                   <div className="business-results-card-line" aria-hidden="true" />
                   <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/42">
-                        {visual}
-                      </p>
-                      <p className="mt-3 text-[11px] font-bold text-cyan-100/58">
-                        0{index + 1}
-                      </p>
-                    </div>
+                    <p className="text-[11px] font-bold text-cyan-100/58">
+                      0{index + 1}
+                    </p>
                     <span className="business-results-icon">
                       <Icon className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </div>
-                  <h3 className="mt-8 text-xl font-semibold tracking-tight text-white">
+                  <h3 className="mt-6 text-xl font-semibold tracking-tight text-white">
                     {title}
                   </h3>
                   <p className="mt-3 max-w-xs text-sm leading-6 text-[#b8b6c7]">
                     {signal}
                   </p>
-                  <div className="business-results-meter" aria-hidden="true">
-                    <span style={{ width: `${72 + index * 10}%` }} />
-                  </div>
                 </article>
               ))}
             </div>
