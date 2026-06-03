@@ -39,7 +39,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/_we_build_your_brands_/",
+    href: "https://www.instagram.com/_wbyb_/",
     Icon: Instagram,
   },
   {
