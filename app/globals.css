@@ -11,9 +11,9 @@
   --neon-cyan: #16d8ff;
   --site-gradient: linear-gradient(
     135deg,
-    rgba(0, 0, 31, 1) 0%,
-    #00001f 50%,
-    rgba(0, 0, 31, 1) 100%
+    rgba(0, 0, 10, 1) 0%,
+    #000000 50%,
+    rgba(0, 0, 10, 1) 100%
   );
   --button-gradient: linear-gradient(
     110deg,
