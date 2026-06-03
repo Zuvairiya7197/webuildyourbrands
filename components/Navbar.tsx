@@ -187,7 +187,7 @@ function Navbar() {
           onMouseMove={handleDockMouseMove}
           onMouseLeave={resetDockReflection}
           className={cn(
-            "wbyb-nav-dock pointer-events-auto relative hidden w-fit max-w-full items-center gap-3 overflow-hidden rounded-[34px] px-3 py-2 transition-all duration-300 ease-out lg:flex",
+            "wbyb-nav-dock pointer-events-auto relative hidden h-16 w-fit max-w-full items-center gap-3 overflow-hidden rounded-[34px] px-3 py-2 transition-all duration-300 ease-out lg:flex",
             isScrolled && "wbyb-nav-dock--scrolled scale-[0.965] px-2.5 py-1.5"
           )}
         >
@@ -201,14 +201,14 @@ function Navbar() {
               aria-label="WEBuildYourBrands home"
               onMouseMove={handleMagneticMove}
               onMouseLeave={resetMagneticMove}
-              className="wbyb-magnetic relative flex h-12 w-[136px] items-center justify-center rounded-full px-3 outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70"
+              className="wbyb-magnetic relative flex -my-2 h-20 w-[200px] items-center justify-center rounded-full px-3 outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70"
             >
               <Image
                 src="/wbyblogo.webp"
                 alt="WEBuildYourBrands"
                 fill
                 priority
-                sizes="136px"
+                sizes="200px"
                 className="wbyb-logo-mark object-contain"
               />
             </Link>
@@ -234,7 +234,7 @@ function Navbar() {
             onMouseMove={handleDockMouseMove}
             onMouseLeave={resetDockReflection}
             className={cn(
-              "wbyb-nav-dock relative flex w-full items-center justify-between overflow-hidden rounded-[30px] px-3 py-2 transition-all duration-300 ease-out",
+              "wbyb-nav-dock relative flex h-14 w-full items-center justify-between overflow-hidden rounded-[30px] px-3 py-2 transition-all duration-300 ease-out",
               isScrolled && "wbyb-nav-dock--scrolled scale-[0.98] py-1.5"
             )}
           >
@@ -242,14 +242,14 @@ function Navbar() {
               href="/"
               prefetch
               aria-label="WEBuildYourBrands home"
-              className="relative z-10 flex h-11 w-[118px] items-center rounded-full px-3 outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70"
+              className="relative z-10 flex h-16 w-[160px] items-center rounded-full px-3 outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70"
             >
               <Image
                 src="/wbyblogo.webp"
                 alt="WEBuildYourBrands"
                 fill
                 priority
-                sizes="118px"
+                sizes="160px"
                 className="wbyb-logo-mark object-contain"
               />
             </Link>
