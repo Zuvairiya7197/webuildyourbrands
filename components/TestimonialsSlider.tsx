@@ -15,11 +15,11 @@ type Testimonial = {
 
 const testimonialMotion = {
   duration: 0.58,
-  ease: [0.22, 1, 0.36, 1]
+  ease: [0.22, 1, 0.36, 1],
 } as const;
 
 function TestimonialsSliderComponent({
-  testimonials
+  testimonials,
 }: {
   testimonials: Testimonial[];
 }) {
@@ -29,18 +29,18 @@ function TestimonialsSliderComponent({
 
   const slides = useMemo(
     () => testimonials.map((testimonial) => testimonial),
-    [testimonials]
+    [testimonials],
   );
 
   const goToPrevious = useCallback(() => {
     setActiveIndex((current) =>
-      current === 0 ? slides.length - 1 : current - 1
+      current === 0 ? slides.length - 1 : current - 1,
     );
   }, [slides.length]);
 
   const goToNext = useCallback(() => {
     setActiveIndex((current) =>
-      current === slides.length - 1 ? 0 : current + 1
+      current === slides.length - 1 ? 0 : current + 1,
     );
   }, [slides.length]);
 
@@ -86,7 +86,8 @@ function TestimonialsSliderComponent({
   };
 
   const activeTestimonial = slides[activeIndex];
-  const portrait = activeTestimonial.image ?? "/project-organise-with-kopal.webp";
+  const portrait =
+    activeTestimonial.image ?? "/project-organise-with-kopal.webp";
 
   return (
     <div
@@ -110,12 +111,12 @@ function TestimonialsSliderComponent({
           setIsPaused(false);
         }}
       >
-        <div className="testimonial-grid-fade relative mx-auto h-[min(112vw,440px)] w-full max-w-[560px] min-w-0 overflow-hidden rounded-[28px] [clip-path:inset(0_round_28px)] sm:h-[580px] sm:max-w-[580px] lg:mx-0 lg:h-[700px] lg:max-w-[700px]">
-          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(112vw,500px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-2 opacity-70 sm:w-[min(100%,560px)] sm:gap-4 lg:w-[min(100%,680px)] lg:gap-5">
+        <div className="testimonial-grid-fade relative mx-auto h-[min(112vw,500px)] w-full max-w-[650px] min-w-0 overflow-hidden rounded-[32px] [clip-path:inset(0_round_32px)] sm:h-[650px] sm:max-w-[650px] lg:mx-0 lg:h-[820px] lg:max-w-[820px]">
+          <div className="absolute left-1/2 top-1/2 grid aspect-square w-[min(112vw,560px)] -translate-x-1/2 -translate-y-1/2 grid-cols-3 grid-rows-3 gap-3 opacity-70 sm:w-[min(100%,650px)] sm:gap-5 lg:w-[min(100%,780px)] lg:gap-6">
             {Array.from({ length: 9 }).map((_, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden rounded-[18px] border border-white/[0.05] bg-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]"
+                className="relative overflow-hidden rounded-[22px] border border-white/[0.05] bg-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]"
               >
                 {index === 4 ? (
                   <AnimatePresence mode="wait">
