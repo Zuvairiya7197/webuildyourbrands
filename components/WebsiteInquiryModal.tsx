@@ -54,7 +54,9 @@ export function WebsiteInquiryModal({
       )}
       <div
         className={`fixed inset-0 z-50 flex items-center justify-center overflow-y-auto px-4 py-8 transition-opacity duration-300 ${
-          isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+          isOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
         onClick={(e) => {
           if (e.target === e.currentTarget) {
