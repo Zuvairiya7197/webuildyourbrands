@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import {
   CheckCircle2,
   Instagram,
@@ -9,7 +8,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { CalendlyLink } from "@/components/CalendlyModal";
-import ContactInquiryForm from "@/components/contact/ContactInquiryForm";
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { CALENDLY_EMBED_URL } from "@/lib/constants";
@@ -77,7 +75,10 @@ export default function ContactPage() {
         id="contact-form"
         className="contact-form-section relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-8 sm:py-28 lg:px-24 lg:py-32 xl:px-32"
       >
-        <div className="fixed inset-0 bg-[#00001F]/95 pointer-events-none" aria-hidden="true" />
+        <div
+          className="fixed inset-0 bg-[#00001F]/95 pointer-events-none"
+          aria-hidden="true"
+        />
         <div
           className="fixed inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,60,255,0.02),transparent_32%),radial-gradient(circle_at_84%_70%,rgba(22,216,255,0.01),transparent_30%)] pointer-events-none"
           aria-hidden="true"
@@ -213,34 +214,6 @@ export default function ContactPage() {
           </aside>
 
           <div className="grid gap-8">
-            <div className="relative overflow-hidden rounded-[26px] border border-white/12 bg-white/[0.04] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(255,255,255,0.035),0_28px_100px_rgba(0,0,31,0.42),0_0_42px_rgba(124,60,255,0.08)] backdrop-blur-2xl sm:rounded-[32px]">
-              <div
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.07),transparent_34%),radial-gradient(circle_at_92%_10%,rgba(124,60,255,0.1),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.045),rgba(255,255,255,0.018)_44%,rgba(0,0,31,0.44))]"
-                aria-hidden="true"
-              />
-              <div className="relative border-b border-white/10 bg-white/[0.025] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.055)] backdrop-blur-xl sm:p-8">
-                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/70">
-                  Website inquiry
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-                  Send your details directly.
-                </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-7 text-white/62">
-                  If you came from the Web Store, your selected website is
-                  prefilled and included with the inquiry.
-                </p>
-              </div>
-              <div className="relative p-3 sm:p-5">
-                <Suspense
-                  fallback={
-                    <div className="min-h-[420px] rounded-[26px] border border-white/10 bg-white/[0.035]" />
-                  }
-                >
-                  <ContactInquiryForm />
-                </Suspense>
-              </div>
-            </div>
-
             <div className="relative overflow-hidden rounded-[26px] border border-white/12 bg-white/[0.04] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(255,255,255,0.035),0_28px_100px_rgba(0,0,31,0.42),0_0_42px_rgba(124,60,255,0.08)] backdrop-blur-2xl sm:rounded-[32px]">
               <div
                 className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(22,216,255,0.075),transparent_34%),radial-gradient(circle_at_92%_10%,rgba(124,60,255,0.11),transparent_38%),linear-gradient(145deg,rgba(255,255,255,0.048),rgba(255,255,255,0.018)_44%,rgba(0,0,31,0.46))]"

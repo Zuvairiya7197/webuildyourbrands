@@ -10,6 +10,7 @@ import {
   Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { WebsiteInquiryModal } from "@/components/WebsiteInquiryModal";
 import { WebsiteStoreItem } from "@/lib/web-store-data";
 import { cn } from "@/lib/utils";
 
@@ -22,12 +23,14 @@ const faceClass =
 
 function WebsiteCard({ website }: WebsiteCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <article
-      id={website.id}
-      className="group relative h-full scroll-mt-28 [perspective:1600px]"
-    >
+    <>
+      <article
+        id={website.id}
+        className="group relative h-full scroll-mt-28 [perspective:1600px]"
+      >
       <div
         className={cn(
           "relative h-full transition-transform duration-500 [transform-style:preserve-3d]",
@@ -137,15 +140,10 @@ function WebsiteCard({ website }: WebsiteCardProps) {
                 </Link>
               </Button>
               <Button
-                asChild
+                onClick={() => setIsModalOpen(true)}
                 className="h-11 rounded-full border-0 bg-[linear-gradient(120deg,#001173_0%,#220067_58%,#4b0bbd_100%)] px-3 text-[11px] font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.24),inset_0_-3px_0_rgba(0,0,31,0.28),0_12px_28px_rgba(34,0,103,0.3),0_0_28px_rgba(124,60,255,0.2)] hover:-translate-y-1 hover:brightness-110 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_-3px_0_rgba(0,0,31,0.24),0_18px_36px_rgba(34,0,103,0.36),0_0_34px_rgba(22,216,255,0.16)] sm:px-4 sm:text-xs"
               >
-                <Link
-                  href={`/contact?website=${website.id}`}
-                  className="whitespace-nowrap"
-                >
-                  Own This Website
-                </Link>
+                Own This Website
               </Button>
             </div>
           </div>
@@ -218,7 +216,13 @@ function WebsiteCard({ website }: WebsiteCardProps) {
           </div>
         </div>
       </div>
-    </article>
+      </article>
+      <WebsiteInquiryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        websiteId={website.id}
+      />
+    </>
   );
 }
 
