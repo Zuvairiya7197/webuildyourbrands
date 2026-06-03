@@ -94,7 +94,7 @@ export default function Hero({
   };
 
   return (
-    <section className="relative overflow-hidden px-4 pb-10 pt-20 sm:px-8 lg:px-24 xl:px-32">
+    <section className="relative overflow-hidden px-4 pb-10 pt-8 sm:px-8 sm:pt-12 lg:px-24 lg:pt-14 xl:px-32">
       {videoSrc && (
         <video
           className="absolute inset-0 h-full w-full object-cover"
