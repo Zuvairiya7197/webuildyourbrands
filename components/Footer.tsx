@@ -5,7 +5,7 @@ import { Instagram, Linkedin } from "lucide-react";
 import { FooterInteractionShell } from "@/components/FooterInteractionShell";
 
 const FooterCTA = dynamic(() => import("@/components/FooterCTA"), {
-  loading: () => null
+  loading: () => null,
 });
 
 const footerLinks = [
@@ -14,25 +14,25 @@ const footerLinks = [
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "/contact" }
+  { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/webuildyourbrands",
-    Icon: Linkedin
+    Icon: Linkedin,
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/_we_build_your_brands_/",
-    Icon: Instagram
+    href: "https://www.instagram.com/_wbyb_/",
+    Icon: Instagram,
   },
   {
     label: "Facebook",
     href: "https://www.facebook.com/profile.php?id=61589040772725",
-    Icon: null
-  }
+    Icon: null,
+  },
 ];
 
 export default function Footer() {
@@ -47,12 +47,15 @@ export default function Footer() {
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-[#00001F]/86" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(124,60,255,0.18),transparent_30%),radial-gradient(circle_at_86%_18%,rgba(22,216,255,0.12),transparent_28%)]" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(124,60,255,0.18),transparent_30%),radial-gradient(circle_at_86%_18%,rgba(22,216,255,0.12),transparent_28%)]"
+        aria-hidden="true"
+      />
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover/footer:opacity-100"
         style={{
           background:
-            "radial-gradient(circle at var(--footer-spotlight-x) var(--footer-spotlight-y), rgba(22,216,255,0.16), rgba(124,60,255,0.08) 22%, transparent 42%)"
+            "radial-gradient(circle at var(--footer-spotlight-x) var(--footer-spotlight-y), rgba(22,216,255,0.16), rgba(124,60,255,0.08) 22%, transparent 42%)",
         }}
         aria-hidden="true"
       />
@@ -76,7 +79,6 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-
         </div>
 
         <div className="flex flex-col gap-5 border-t border-cyan-300/10 py-6 text-xs text-white/48 md:flex-row md:items-center md:justify-between">
@@ -94,7 +96,10 @@ export default function Footer() {
                   className="group/social flex h-11 w-11 items-center justify-center rounded-full border border-cyan-300/10 bg-white/[0.04] text-white/78 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-[image:var(--button-gradient)] hover:text-white hover:shadow-[0_0_26px_rgba(22,216,255,0.18)] active:scale-95"
                 >
                   {Icon ? (
-                    <Icon className="h-4 w-4 transition duration-300 group-hover/social:scale-110" aria-hidden="true" />
+                    <Icon
+                      className="h-4 w-4 transition duration-300 group-hover/social:scale-110"
+                      aria-hidden="true"
+                    />
                   ) : label === "Facebook" ? (
                     <svg
                       viewBox="0 0 24 24"

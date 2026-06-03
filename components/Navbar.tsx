@@ -8,7 +8,7 @@ import {
   useEffect,
   useRef,
   useState,
-  type MouseEvent
+  type MouseEvent,
 } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -24,13 +24,13 @@ type NavLink = {
 const leftLinks: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" }
+  { href: "/services", label: "Services" },
 ];
 
 const rightLinks: NavLink[] = [
   { href: "/projects", label: "Projects" },
   { href: "/web-store", label: "Store" },
-  { href: "/contact", label: "Contact" }
+  { href: "/contact", label: "Contact" },
 ];
 
 const links = [...leftLinks, ...rightLinks];
@@ -39,7 +39,7 @@ const activePillTransition = {
   type: "spring",
   stiffness: 420,
   damping: 36,
-  mass: 0.82
+  mass: 0.82,
 } as const;
 
 const isActivePath = (pathname: string, href: string) => {
@@ -57,7 +57,7 @@ function Navbar() {
   const isScrolledRef = useRef(false);
   const toggleMenu = useCallback(
     () => setIsMenuOpen((current) => !current),
-    []
+    [],
   );
 
   useEffect(() => {
@@ -99,13 +99,16 @@ function Navbar() {
       event.currentTarget.style.setProperty("--dock-x", `${x.toFixed(2)}%`);
       event.currentTarget.style.setProperty("--dock-y", `${y.toFixed(2)}%`);
     },
-    []
+    [],
   );
 
-  const resetDockReflection = useCallback((event: MouseEvent<HTMLDivElement>) => {
-    event.currentTarget.style.setProperty("--dock-x", "50%");
-    event.currentTarget.style.setProperty("--dock-y", "50%");
-  }, []);
+  const resetDockReflection = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      event.currentTarget.style.setProperty("--dock-x", "50%");
+      event.currentTarget.style.setProperty("--dock-y", "50%");
+    },
+    [],
+  );
 
   const handleMagneticMove = useCallback((event: MouseEvent<HTMLElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -134,7 +137,7 @@ function Navbar() {
         onMouseLeave={resetMagneticMove}
         className={cn(
           "wbyb-magnetic relative isolate flex h-11 items-center justify-center rounded-full px-4 text-[0.94rem] font-medium text-[#fff]/70 outline-none transition-colors duration-300 ease-out hover:text-[#fff] focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70 xl:px-5",
-          isActive && "text-[#fff]"
+          isActive && "text-[#fff]",
         )}
       >
         {isActive && (
@@ -160,7 +163,7 @@ function Navbar() {
         aria-current={isActive ? "page" : undefined}
         className={cn(
           "relative isolate flex min-h-12 items-center rounded-2xl px-4 text-base font-medium text-[#fff]/75 outline-none transition duration-300 hover:bg-[#fff]/[0.07] hover:text-[#fff] focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70",
-          isActive && "text-[#fff]"
+          isActive && "text-[#fff]",
         )}
       >
         {isActive && (
@@ -176,9 +179,7 @@ function Navbar() {
   };
 
   return (
-    <header
-      className="pointer-events-none fixed inset-x-0 top-5 z-50 px-4 text-[#fff] sm:px-6 lg:px-8"
-    >
+    <header className="pointer-events-none fixed inset-x-0 top-5 z-50 px-4 text-[#fff] sm:px-6 lg:px-8">
       <nav
         className="relative mx-auto flex w-full max-w-[1180px] justify-center"
         aria-label="Main navigation"
@@ -188,7 +189,7 @@ function Navbar() {
           onMouseLeave={resetDockReflection}
           className={cn(
             "wbyb-nav-dock pointer-events-auto relative hidden h-16 w-fit max-w-full items-center gap-3 overflow-hidden rounded-[34px] px-3 py-2 transition-all duration-300 ease-out lg:flex",
-            isScrolled && "wbyb-nav-dock--scrolled scale-[0.965] px-2.5 py-1.5"
+            isScrolled && "wbyb-nav-dock--scrolled scale-[0.965] px-2.5 py-1.5",
           )}
         >
           <div className="relative z-10 flex items-center gap-2">
@@ -222,7 +223,10 @@ function Navbar() {
             onMouseLeave={resetMagneticMove}
             className="wbyb-nav-cta wbyb-magnetic relative z-10 inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium text-[#fff] outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70 xl:px-6"
           >
-            <CalendarDays className="relative z-10 h-4 w-4" aria-hidden="true" />
+            <CalendarDays
+              className="relative z-10 h-4 w-4"
+              aria-hidden="true"
+            />
             <span className="relative z-10 whitespace-nowrap">
               Book Discovery Call
             </span>
@@ -235,14 +239,14 @@ function Navbar() {
             onMouseLeave={resetDockReflection}
             className={cn(
               "wbyb-nav-dock relative flex h-14 w-full items-center justify-between overflow-hidden rounded-[30px] px-3 py-2 transition-all duration-300 ease-out",
-              isScrolled && "wbyb-nav-dock--scrolled scale-[0.98] py-1.5"
+              isScrolled && "wbyb-nav-dock--scrolled scale-[0.98] py-1.5",
             )}
           >
             <Link
               href="/"
               prefetch
               aria-label="WEBuildYourBrands home"
-              className="relative z-10 flex h-16 w-[160px] items-center rounded-full px-3 outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70"
+              className="relative z-10 flex h-16 w-[130px] items-center rounded-full -ml-3 px-2 outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70 min-[400px]:w-[160px] min-[400px]:px-3 min-[400px]:-ml-1"
             >
               <Image
                 src="/wbyblogo.webp"
@@ -255,7 +259,10 @@ function Navbar() {
             </Link>
             <div className="relative z-10 flex items-center gap-2">
               <CalendlyLink className="wbyb-nav-cta relative inline-flex h-10 items-center justify-center gap-2 rounded-full px-3 text-xs font-medium text-[#fff] outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70 min-[420px]:px-4">
-                <CalendarDays className="relative z-10 h-4 w-4" aria-hidden="true" />
+                <CalendarDays
+                  className="relative z-10 h-4 w-4"
+                  aria-hidden="true"
+                />
                 <span className="relative z-10 hidden whitespace-nowrap min-[420px]:inline">
                   Book Call
                 </span>
@@ -280,12 +287,15 @@ function Navbar() {
               "wbyb-mobile-panel fixed inset-x-4 top-[92px] max-h-[calc(100dvh-7rem)] overflow-y-auto rounded-[28px] p-3 transition duration-300 ease-out",
               isMenuOpen
                 ? "pointer-events-auto translate-y-0 opacity-100"
-                : "pointer-events-none -translate-y-3 opacity-0"
+                : "pointer-events-none -translate-y-3 opacity-0",
             )}
           >
             <div className="grid gap-1">{links.map(renderMobileLink)}</div>
             <CalendlyLink className="wbyb-nav-cta mt-3 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 text-sm font-medium text-[#fff] outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70">
-              <CalendarDays className="relative z-10 h-4 w-4" aria-hidden="true" />
+              <CalendarDays
+                className="relative z-10 h-4 w-4"
+                aria-hidden="true"
+              />
               <span className="relative z-10">Book Discovery Call</span>
             </CalendlyLink>
           </div>
