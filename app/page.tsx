@@ -277,7 +277,7 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#00001f] to-transparent" />
         <div className="relative mx-auto grid min-h-[clamp(460px,calc(100svh-12rem),660px)] w-full items-center gap-12 lg:grid-cols-[0.9fr_1.05fr] lg:gap-10 xl:gap-14">
           <div className="max-w-2xl">
-            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md lg:text-[11px]">
+            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.035] px-4 py-2 text-xs font-bold uppercase tracking-wide text-white/58 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md lg:text-[11px]">
               <span>Custom websites</span>
             </p>
             <h1 className="mt-5 text-3xl font-bold leading-[1.08] text-white min-[360px]:text-4xl sm:text-5xl lg:text-[2.35rem] xl:text-[2.65rem]">
@@ -291,7 +291,7 @@ export default function Home() {
                 (item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-2 rounded-full border border-white/10 bg-[#00001F]/36 px-3 py-2 whitespace-nowrap"
+                    className="flex items-center gap-2 rounded-full border border-white/[0.08] bg-[#00001F]/36 px-3 py-2 whitespace-nowrap"
                   >
                     <CheckCircle2
                       className="h-4 w-4 shrink-0 text-cyan-100"
@@ -333,11 +333,11 @@ export default function Home() {
 
           <div className="relative hidden min-h-[430px] lg:block xl:min-h-[480px]">
             <div className="absolute inset-y-2 right-0 w-[min(520px,100%)] xl:w-[min(560px,100%)]">
-              <div className="absolute -right-8 top-10 h-64 w-64 rounded-full border border-cyan-200/10 bg-cyan-200/[0.035] blur-2xl" />
-              <div className="absolute -bottom-4 left-10 h-72 w-72 rounded-full border border-violet-300/10 bg-violet-400/[0.055] blur-2xl" />
-              <div className="relative h-full rounded-[30px] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025)_36%,rgba(124,60,255,0.08)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_34px_120px_rgba(0,0,31,0.5)] backdrop-blur-2xl">
+              <div className="absolute -right-8 top-10 h-64 w-64 rounded-full border border-white/[0.08] bg-cyan-200/[0.035] blur-2xl" />
+              <div className="absolute -bottom-4 left-10 h-72 w-72 rounded-full border border-white/[0.08] bg-violet-400/[0.055] blur-2xl" />
+              <div className="relative h-full rounded-[30px] border border-white/[0.08] bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.025)_36%,rgba(124,60,255,0.08)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_34px_120px_rgba(0,0,31,0.5)] backdrop-blur-2xl">
                 <div className="grid h-full grid-cols-[88px_1fr] gap-5">
-                  <div className="relative flex flex-col items-center justify-between rounded-[26px] border border-white/10 bg-[#00001F]/46 px-4 py-8">
+                  <div className="relative flex flex-col items-center justify-between rounded-[26px] border border-white/[0.08] bg-[#00001F]/46 px-4 py-8">
                     <span className="absolute inset-y-12 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-cyan-100/36 to-transparent" />
                     {["Plan", "Design", "Launch"].map((item) => (
                       <div
@@ -351,7 +351,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#00001F]/62">
+                  <div className="relative overflow-hidden rounded-[28px] border border-white/[0.08] bg-[#00001F]/62">
                     <div className="relative h-full min-h-[360px] xl:min-h-[410px]">
                       {heroProjectPreviews.map((project, index) => (
                         <Image
@@ -366,7 +366,7 @@ export default function Home() {
                       ))}
                     </div>
                     <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,31,0.98),rgba(0,0,31,0.72)_54%,rgba(0,0,31,0.34)),linear-gradient(0deg,rgba(0,0,31,0.98),rgba(0,0,31,0.64)_48%,transparent_76%)]" />
-                    <div className="absolute left-8 top-8 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.075] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 backdrop-blur-md">
+                    <div className="absolute left-8 top-8 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.075] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 backdrop-blur-md">
                       <span className="h-2 w-2 rounded-full bg-cyan-200 shadow-[0_0_16px_rgba(22,216,255,0.9)]" />
                       Live Work Preview
                     </div>
@@ -393,7 +393,7 @@ export default function Home() {
                           </Link>
                         </Button>
                       </div>
-                      <div className="self-start rounded-[20px] border border-white/12 bg-[#05051b]/82 p-2.5 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
+                      <div className="self-start rounded-[20px] border border-white/[0.08] bg-[#05051b]/82 p-2.5 shadow-[0_24px_80px_rgba(0,0,31,0.42)] backdrop-blur-xl">
                         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#00001F]/72">
                           {heroProjectPreviews.map((_, index) => {
                             const upcomingProject =
@@ -436,7 +436,7 @@ export default function Home() {
       <section className="problem-scroll-section home-section home-section-muted mobile-render-defer relative min-h-[640vh] px-4 sm:px-8 lg:px-24 xl:px-32">
         <div className="sticky top-0 flex min-h-screen items-center py-14 sm:py-20 lg:py-24">
           <div className="relative mx-auto grid w-full gap-5 sm:gap-8 lg:grid-cols-[0.85fr_1.35fr] lg:items-start">
-            <div className="relative border-l border-violet-300/20 pl-5 sm:pl-7">
+            <div className="relative border-l border-white/[0.08] pl-5 sm:pl-7">
               <Eyebrow>The Problem</Eyebrow>
               <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
                 Most websites don&apos;t convert. Here&apos;s why:
@@ -453,10 +453,10 @@ export default function Home() {
       </section>
 
       <section className="home-section home-section-panel mobile-render-defer relative px-4 pb-10 pt-14 sm:px-8 sm:pb-12 sm:pt-20 lg:px-24 lg:pb-14 lg:pt-24 xl:px-32">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent)]" />
         <div className="mx-auto w-full text-white">
           <div className="grid gap-5 sm:gap-8">
-            <div className="relative grid gap-5 border-l border-cyan-100/20 pl-5 sm:gap-8 sm:pl-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.62fr)] lg:items-start lg:gap-12">
+            <div className="relative grid gap-5 border-l border-white/[0.08] pl-5 sm:gap-8 sm:pl-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.62fr)] lg:items-start lg:gap-12">
               <div>
                 <Eyebrow>Services / Solution</Eyebrow>
                 <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
@@ -471,7 +471,7 @@ export default function Home() {
                 <Button
                   asChild
                   variant="outline"
-                  className="h-12 w-full justify-between rounded-full border-white/16 bg-white/[0.035] px-6 text-xs font-bold uppercase tracking-[0.18em] hover:bg-white hover:text-[#00001F] sm:max-w-[260px] lg:justify-center lg:justify-self-end"
+                  className="h-12 w-full justify-between rounded-full border-white/[0.08] bg-white/[0.035] px-6 text-xs font-bold uppercase tracking-[0.18em] hover:border-white/[0.14] hover:bg-white/[0.08] hover:text-white sm:max-w-[260px] lg:justify-center lg:justify-self-end"
                 >
                   <Link href="/services">
                     View Services
@@ -503,7 +503,7 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-11 w-full rounded-full border-white/14 bg-white/[0.035] px-5 text-xs font-bold uppercase tracking-[0.16em] hover:bg-white hover:text-[#00001F] sm:w-auto"
+                className="h-11 w-full rounded-full border-white/[0.08] bg-white/[0.035] px-5 text-xs font-bold uppercase tracking-[0.16em] hover:border-white/[0.14] hover:bg-white/[0.08] hover:text-white sm:w-auto"
               >
                 <Link href="/projects">
                   View All Projects
@@ -518,9 +518,9 @@ export default function Home() {
                   href={project.projectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/28 ${index === 0 ? "sm:col-span-2" : ""}`}
+                  className={`group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-white/[0.14] ${index === 0 ? "sm:col-span-2" : ""}`}
                 >
-                  <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.72),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.28),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
                   <div
                     className={`relative overflow-hidden rounded-xl ${index === 0 ? "aspect-[16/8]" : "aspect-[16/11]"}`}
                   >
@@ -532,7 +532,7 @@ export default function Home() {
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02)_0%,rgba(0,0,31,0.18)_48%,rgba(0,0,31,0.82)_100%)]" />
-                    <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/16 bg-white/10 text-white opacity-0 shadow-[0_14px_36px_rgba(0,0,31,0.28)] backdrop-blur-md transition duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:translate-x-2">
+                    <div className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/10 text-white opacity-0 shadow-[0_14px_36px_rgba(0,0,31,0.28)] backdrop-blur-md transition duration-300 group-hover:translate-x-0 group-hover:opacity-100 sm:translate-x-2">
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </div>
                   </div>
@@ -558,7 +558,7 @@ export default function Home() {
 
       <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-10 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.74),rgba(124,60,255,0.62),transparent)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.22),rgba(124,60,255,0.18),transparent)]" />
         <div className="relative mx-auto w-full">
           <TestimonialsSlider testimonials={testimonials} />
         </div>

@@ -114,7 +114,7 @@ export default function Hero({
       <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
       <div className="relative mx-auto flex min-h-[clamp(420px,calc(100svh-12rem),620px)] max-w-6xl items-center justify-center text-center">
         <div className="w-full max-w-5xl">
-          <p className="mx-auto mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/28 bg-[#00001F]/50 px-3 py-2 text-xs font-medium text-white/62 shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-md sm:mb-8 sm:px-4 sm:text-base lg:mb-6 lg:text-sm">
+          <p className="mx-auto mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/[0.08] bg-[#00001F]/50 px-3 py-2 text-xs font-medium text-white/62 shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-md sm:mb-8 sm:px-4 sm:text-base lg:mb-6 lg:text-sm">
             <Sparkles
               className="h-4 w-4 text-white/70 sm:h-5 sm:w-5"
               aria-hidden="true"

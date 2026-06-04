@@ -359,7 +359,7 @@ main {
   width: 100%;
   overflow: hidden;
   border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
     linear-gradient(90deg, rgba(22, 216, 255, 0.08), transparent 32%, rgba(124, 60, 255, 0.09) 70%, transparent),
     linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(0, 0, 31, 0.64));
@@ -443,7 +443,7 @@ main {
   overflow: hidden;
   opacity: 0;
   transform: translateY(28px) scale(0.985);
-  border-block: 1px solid rgba(255, 255, 255, 0.095);
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.055), transparent 34%),
     rgba(255, 255, 255, 0.018);
@@ -471,7 +471,7 @@ main {
 
 .stats-signal-row--visible:hover {
   transform: translateX(10px);
-  border-color: rgba(22, 216, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.14);
   background-color: rgba(255, 255, 255, 0.03);
   transition-delay: 0ms;
 }
@@ -635,7 +635,7 @@ main {
 .business-results-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.024) 42%, rgba(0, 0, 31, 0.44)),
     rgba(0, 0, 31, 0.52);
@@ -708,7 +708,7 @@ main {
   align-items: center;
   gap: 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
   padding: 10px 14px;
   color: rgba(255, 255, 255, 0.72);
@@ -752,7 +752,7 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(0, 0, 31, 0.48);
   color: rgba(207, 247, 255, 0.72);
   transition:
@@ -763,7 +763,7 @@ main {
 
 .business-results-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(22, 216, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.14);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(22, 216, 255, 0.026) 42%, rgba(124, 60, 255, 0.1)),
     rgba(0, 0, 31, 0.56);
@@ -778,7 +778,7 @@ main {
 }
 
 .business-results-card:hover .business-results-icon {
-  border-color: rgba(22, 216, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.14);
   background-image: var(--button-gradient);
   color: #fff;
 }
@@ -1042,7 +1042,7 @@ main {
   display: grid;
   place-items: center;
   border-radius: 999px;
-  border: 1px solid rgba(241, 238, 231, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
     radial-gradient(circle at 30% 26%, rgba(22, 216, 255, 0.07), transparent 34%),
     radial-gradient(circle at 72% 64%, rgba(124, 60, 255, 0.09), transparent 45%),
@@ -1356,7 +1356,7 @@ main {
 
   .process-cinema-node {
     z-index: 2;
-    border-color: rgba(111, 132, 158, 0.42);
+    border-color: rgba(255, 255, 255, 0.08);
     background:
       radial-gradient(circle at 34% 28%, rgba(0, 117, 255, 0.16), transparent 38%),
       radial-gradient(circle at 72% 68%, rgba(124, 60, 255, 0.16), transparent 42%),
@@ -1370,7 +1370,7 @@ main {
 
   .process-cinema-node::before {
     inset: 11px;
-    border-color: rgba(22, 216, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.08);
     background:
       radial-gradient(circle at 30% 34%, rgba(22, 216, 255, 0.2), transparent 42%),
       radial-gradient(circle at 72% 68%, rgba(124, 60, 255, 0.18), transparent 42%);
@@ -1577,7 +1577,7 @@ main {
 }
 
 .process-future-line-base {
-  stroke: rgba(255, 255, 255, 0.16);
+  stroke: rgba(255, 255, 255, 0.08);
   stroke-width: 1.2;
 }
 
@@ -1613,7 +1613,7 @@ main {
   height: 172px;
   width: 172px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 46%, rgba(22, 216, 255, 0.14)) border-box;
   opacity: 0.66;
@@ -1630,7 +1630,7 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035)),
     rgba(5, 5, 5, 0.72);
@@ -1836,7 +1836,7 @@ textarea {
   min-height: 168px;
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.035);
   padding: 20px;
   color: #fff;
@@ -1874,7 +1874,7 @@ textarea {
 }
 
 .what-you-get-card-ready {
-  border-color: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.08);
   background:
     radial-gradient(circle at 18% 12%, rgba(22, 216, 255, 0.08), transparent 32%),
     radial-gradient(circle at 88% 18%, rgba(255, 244, 168, 0.075), transparent 28%),
@@ -1919,7 +1919,7 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(0, 0, 31, 0.58);
   color: #fff;
   box-shadow:
@@ -1933,7 +1933,7 @@ textarea {
 
 .what-you-get-card-index {
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
   padding: 4px 12px;
   color: rgba(255, 255, 255, 0.36);
@@ -1977,7 +1977,7 @@ textarea {
 
 .what-you-get-card-cta {
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background-image: var(--button-gradient);
   padding: 10px 16px;
   color: #fff;
@@ -1987,7 +1987,7 @@ textarea {
 }
 
 .what-you-get-card:is(:hover, :focus-visible) {
-  border-color: rgba(22, 216, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.06);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
@@ -2004,7 +2004,7 @@ textarea {
 
 .what-you-get-card:is(:hover, :focus-visible) .what-you-get-card-icon,
 .what-you-get-card:first-child .what-you-get-card-icon {
-  border-color: rgba(22, 216, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.14);
   background-image: var(--button-gradient);
   box-shadow: 0 0 34px rgba(22, 216, 255, 0.18);
 }
@@ -2020,7 +2020,7 @@ textarea {
   }
 
   .what-you-get-cards:has(.what-you-get-card:is(:hover, :focus-visible)) .what-you-get-card:first-child:not(:hover, :focus-visible) .what-you-get-card-icon {
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.08);
     background: rgba(0, 0, 31, 0.58);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
@@ -2277,7 +2277,7 @@ textarea {
   position: relative;
   min-height: 74px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   background:
     radial-gradient(circle at var(--cursor-x, 72%) var(--cursor-y, 30%), rgba(22, 216, 255, 0.08), transparent 28%),
@@ -2306,7 +2306,7 @@ textarea {
   position: absolute;
   inset: auto 24px -1px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
   transition:
     opacity 0.48s ease,
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -2315,7 +2315,7 @@ textarea {
 .problem-card.is-active {
   min-height: 314px;
   padding: 18px;
-  border-color: rgba(22, 216, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.14);
   background:
     radial-gradient(circle at var(--cursor-x, 72%) var(--cursor-y, 30%), rgba(22, 216, 255, 0.2), transparent 30%),
     radial-gradient(circle at 80% 16%, rgba(124, 60, 255, 0.22), transparent 34%),
@@ -2388,7 +2388,7 @@ textarea {
   flex: 0 0 56px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   background: rgba(0, 0, 31, 0.54);
   color: rgba(255, 255, 255, 0.84);
@@ -2403,7 +2403,7 @@ textarea {
 }
 
 .problem-card.is-active .problem-card__icon {
-  border-color: rgba(22, 216, 255, 0.34);
+  border-color: rgba(255, 255, 255, 0.14);
   background-image: var(--button-gradient);
   color: #fff;
   box-shadow:
@@ -2611,7 +2611,7 @@ textarea {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background:
     radial-gradient(circle at 18% 0%, rgba(22, 216, 255, 0.11), transparent 34%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.078), rgba(124, 60, 255, 0.11) 68%, rgba(0, 0, 31, 0.44));
@@ -2641,7 +2641,7 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(0, 0, 31, 0.58);
   color: #fff;
   box-shadow:
@@ -2653,7 +2653,7 @@ textarea {
   display: inline-flex;
   margin-top: 24px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
   padding: 8px 15px;
   color: rgba(207, 247, 255, 0.72);
@@ -2732,7 +2732,7 @@ textarea {
     gap: 18px;
     overflow: visible;
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     background:
       radial-gradient(circle at 18% 0%, rgba(22, 216, 255, 0.11), transparent 34%),
       linear-gradient(145deg, rgba(255, 255, 255, 0.078), rgba(124, 60, 255, 0.11) 68%, rgba(0, 0, 31, 0.44));
@@ -2761,7 +2761,7 @@ textarea {
   }
 
   .clarity-pipeline-card:hover {
-    border-color: rgba(22, 216, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.14);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.14),
       0 30px 90px rgba(22, 216, 255, 0.12),
@@ -2786,7 +2786,7 @@ textarea {
     height: 18px;
     width: 18px;
     border-radius: 999px;
-    border: 2px solid rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     background: #08012f;
     animation: pipelineNodePulse 2.8s ease-in-out infinite;
     transform: translateY(-50%);
@@ -2843,7 +2843,7 @@ textarea {
     align-items: center;
     justify-content: center;
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(0, 0, 31, 0.58);
     color: #fff;
     box-shadow:
@@ -2856,7 +2856,7 @@ textarea {
   }
 
   .clarity-pipeline-card:hover .clarity-pipeline-icon {
-    border-color: rgba(22, 216, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.14);
     background: var(--button-gradient);
     box-shadow: 0 0 34px rgba(22, 216, 255, 0.2);
   }
@@ -2865,7 +2865,7 @@ textarea {
     display: inline-flex;
     margin-top: 0;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.04);
     padding: 8px 15px;
     color: rgba(207, 247, 255, 0.72);
