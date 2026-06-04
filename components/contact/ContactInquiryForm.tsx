@@ -13,6 +13,9 @@ function ContactInquiryForm() {
   const websiteFromQuery = searchParams.get("website")?.trim() ?? "";
   const [websiteSource, setWebsiteSource] = useState("");
   const [message, setMessage] = useState("");
+  const labelClass = "grid gap-1.5 text-sm font-semibold text-white/82";
+  const inputClass =
+    "h-10 rounded-xl border border-white/[0.08] bg-white/95 px-3 text-sm text-black placeholder:text-black/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white";
 
   useEffect(() => {
     const storedWebsite = window.localStorage.getItem(STORAGE_KEY) ?? "";
@@ -70,55 +73,63 @@ function ContactInquiryForm() {
       method="post"
       encType="text/plain"
       onSubmit={handleSubmit}
-      className="grid gap-4 rounded-[26px] border border-white/12 bg-white/[0.055] p-5 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.09)] backdrop-blur-xl sm:p-6"
+      className="grid gap-3 p-1 text-left sm:p-2"
     >
       <input type="hidden" name="website_source" value={websiteSource} />
 
       {websiteSource && (
-        <div className="rounded-2xl border border-cyan-300/16 bg-cyan-300/10 px-4 py-3 text-sm font-semibold text-cyan-50">
+        <div className="break-words px-1 text-xs font-semibold leading-5 text-cyan-50/85">
           Interested Website: {websiteSource}
         </div>
       )}
 
-      <label className="grid gap-2 text-sm font-semibold text-white/82">
-        Name
-        <input
-          required
-          name="name"
-          autoComplete="name"
-          className="h-12 rounded-2xl border border-white/12 bg-[#00001F]/52 px-4 text-base text-white placeholder:text-white/34 focus-visible:ring-2 focus-visible:ring-white"
-          placeholder="Your name"
-        />
-      </label>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className={labelClass}>
+          <span>
+            Name <span className="text-cyan-100">*</span>
+          </span>
+          <input
+            required
+            name="name"
+            autoComplete="name"
+            className={inputClass}
+            placeholder="Your name"
+          />
+        </label>
 
-      <label className="grid gap-2 text-sm font-semibold text-white/82">
-        Email
-        <input
-          required
-          type="email"
-          name="email"
-          autoComplete="email"
-          className="h-12 rounded-2xl border border-white/12 bg-[#00001F]/52 px-4 text-base text-white placeholder:text-white/34 focus-visible:ring-2 focus-visible:ring-white"
-          placeholder="you@example.com"
-        />
-      </label>
+        <label className={labelClass}>
+          <span>
+            Email <span className="text-cyan-100">*</span>
+          </span>
+          <input
+            required
+            type="email"
+            name="email"
+            autoComplete="email"
+            className={inputClass}
+            placeholder="you@example.com"
+          />
+        </label>
+      </div>
 
-      <label className="grid gap-2 text-sm font-semibold text-white/82">
-        Message
+      <label className={labelClass}>
+        <span>
+          Message <span className="text-cyan-100">*</span>
+        </span>
         <textarea
           required
           name="message"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          rows={6}
-          className="min-h-36 resize-y rounded-2xl border border-white/12 bg-[#00001F]/52 px-4 py-3 text-base leading-7 text-white placeholder:text-white/34 focus-visible:ring-2 focus-visible:ring-white"
+          rows={4}
+          className="min-h-28 resize-y rounded-xl border border-white/[0.08] bg-white/95 px-3 py-2 text-sm leading-6 text-black placeholder:text-black/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           placeholder="Tell us what you want to launch."
         />
       </label>
 
       <Button
         type="submit"
-        className={`mt-2 h-12 rounded-full text-base font-bold ${neonButtonClass}`}
+        className={`mt-1 h-10 rounded-full text-sm font-bold ${neonButtonClass}`}
       >
         <Send className="h-4 w-4" aria-hidden="true" />
         Send Inquiry
