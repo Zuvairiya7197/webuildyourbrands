@@ -188,49 +188,46 @@ function Navbar() {
           onMouseMove={handleDockMouseMove}
           onMouseLeave={resetDockReflection}
           className={cn(
-            "wbyb-nav-dock pointer-events-auto relative hidden h-16 w-fit max-w-full items-center gap-3 overflow-hidden rounded-[34px] px-3 py-2 transition-all duration-300 ease-out lg:flex",
+            "wbyb-nav-dock pointer-events-auto relative hidden h-16 w-full max-w-full items-center justify-between gap-3 overflow-hidden rounded-[34px] px-3 py-2 transition-all duration-300 ease-out lg:flex",
             isScrolled && "wbyb-nav-dock--scrolled scale-[0.965] px-2.5 py-1.5",
           )}
         >
-          <div className="relative z-10 flex items-center gap-2">
-            <div className="flex w-[268px] items-center justify-end gap-1 xl:w-[292px]">
-              {leftLinks.map(renderDesktopLink)}
-            </div>
-            <Link
-              href="/"
-              prefetch
-              aria-label="WEBuildYourBrands home"
-              onMouseMove={handleMagneticMove}
-              onMouseLeave={resetMagneticMove}
-              className="wbyb-magnetic relative flex -my-2 h-20 w-[200px] items-center justify-center rounded-full px-3 outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70"
-            >
-              <Image
-                src="/wbyblogo.webp"
-                alt="WEBuildYourBrands"
-                fill
-                priority
-                sizes="200px"
-                className="wbyb-logo-mark object-contain"
-              />
-            </Link>
-            <div className="flex w-[268px] items-center justify-start gap-1 xl:w-[292px]">
-              {rightLinks.map(renderDesktopLink)}
-            </div>
-          </div>
-          <div className="relative z-10 h-8 w-px bg-[#fff]/[0.08]" />
-          <CalendlyLink
+          <Link
+            href="/"
+            prefetch
+            aria-label="WEBuildYourBrands home"
             onMouseMove={handleMagneticMove}
             onMouseLeave={resetMagneticMove}
-            className="wbyb-nav-cta wbyb-magnetic relative z-10 inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium text-[#fff] outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70 xl:px-6"
+            className="wbyb-magnetic relative z-10 flex -my-2 h-20 w-[190px] shrink-0 items-center justify-start rounded-full px-2 outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70 xl:w-[210px] xl:px-3"
           >
-            <CalendarDays
-              className="relative z-10 h-4 w-4"
-              aria-hidden="true"
+            <Image
+              src="/wbyblogo.webp"
+              alt="WEBuildYourBrands"
+              fill
+              priority
+              sizes="210px"
+              className="wbyb-logo-mark object-contain"
             />
-            <span className="relative z-10 whitespace-nowrap">
-              Book Discovery Call
-            </span>
-          </CalendlyLink>
+          </Link>
+          <div className="relative z-10 flex min-w-0 flex-1 items-center justify-center gap-1">
+            {links.map(renderDesktopLink)}
+          </div>
+          <div className="relative z-10 flex shrink-0 items-center gap-3">
+            <div className="h-8 w-px bg-[#fff]/[0.08]" />
+            <CalendlyLink
+              onMouseMove={handleMagneticMove}
+              onMouseLeave={resetMagneticMove}
+              className="wbyb-nav-cta wbyb-magnetic inline-flex h-11 items-center justify-center gap-2 rounded-full px-5 text-sm font-medium text-[#fff] outline-none focus-visible:ring-2 focus-visible:ring-[#7c3cff]/70 xl:px-6"
+            >
+              <CalendarDays
+                className="relative z-10 h-4 w-4"
+                aria-hidden="true"
+              />
+              <span className="relative z-10 whitespace-nowrap">
+                Book Discovery Call
+              </span>
+            </CalendlyLink>
+          </div>
         </div>
 
         <div className="pointer-events-auto w-full lg:hidden">
