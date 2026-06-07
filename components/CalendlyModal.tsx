@@ -30,7 +30,7 @@ export const CalendlyLink = forwardRef<HTMLAnchorElement, CalendlyLinkProps>(
         {children}
       </a>
     );
-  }
+  },
 );
 
 CalendlyLink.displayName = "CalendlyLink";
@@ -53,7 +53,7 @@ export function CalendlyModalProvider() {
   useModalAccessibility({
     isOpen,
     onClose: closeModal,
-    containerRef: dialogRef
+    containerRef: dialogRef,
   });
 
   if (!isOpen) {
@@ -86,7 +86,7 @@ export function CalendlyModalProvider() {
               id="calendly-title"
               className="mt-3 text-xl font-semibold tracking-tight text-white sm:text-2xl"
             >
-              Book time with Zarrar Palekar
+              Book time with Us
             </h2>
           </div>
           <button
