@@ -94,7 +94,7 @@ export default function Hero({
   };
 
   return (
-    <section className="relative overflow-hidden px-4 pb-10 pt-8 sm:px-8 sm:pt-12 lg:px-24 lg:pt-14 xl:px-32">
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden px-4 pb-10 pt-[calc(5rem+env(safe-area-inset-top)+1.75rem)] sm:px-8 sm:pt-28 lg:px-24 lg:pt-24 xl:px-32">
       {videoSrc && (
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -112,7 +112,7 @@ export default function Hero({
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
-      <div className="relative mx-auto flex min-h-[clamp(420px,calc(100svh-12rem),620px)] max-w-6xl items-center justify-center text-center">
+      <div className="relative mx-auto flex w-full max-w-6xl items-center justify-center text-center">
         <div className="w-full max-w-5xl">
           <p className="mx-auto mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/[0.08] bg-[#00001F]/50 px-3 py-2 text-xs font-medium text-white/62 shadow-[0_12px_36px_rgba(0,0,0,0.35)] backdrop-blur-md sm:mb-8 sm:px-4 sm:text-base lg:mb-6 lg:text-sm">
             <Sparkles

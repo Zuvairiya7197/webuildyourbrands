@@ -12,11 +12,9 @@ export function ScrollRestorationGuard() {
         window.history.scrollRestoration = "manual";
       }
 
-      const [navigation] = performance.getEntriesByType("navigation") as PerformanceNavigationTiming[];
-      const isReload = navigation?.type === "reload";
       const hasHash = window.location.hash.length > 0;
 
-      if (pathname === "/" && isReload && !hasHash) {
+      if (!hasHash) {
         window.scrollTo({ top: 0, left: 0, behavior: "auto" });
         requestAnimationFrame(() => window.scrollTo(0, 0));
       }
