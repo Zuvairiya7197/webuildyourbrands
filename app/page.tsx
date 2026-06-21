@@ -19,9 +19,9 @@ import { ServicesSolutionCards } from "@/components/ServicesSolutionCards";
 import { neonButtonClass } from "@/lib/utils";
 
 const StatsBar = dynamic(() => import("@/components/StatsBar"));
-const TestimonialsSlider = dynamic(() =>
-  import("@/components/TestimonialsSlider").then(
-    (module) => module.TestimonialsSlider,
+const ScrollReelTestimonials = dynamic(() =>
+  import("@/components/ui/scroll-reel-testimonials").then(
+    (module) => module.ScrollReelTestimonials,
   ),
 );
 
@@ -216,37 +216,34 @@ const reasons = [
   },
 ];
 
-const testimonials = [
+const scrollReelTestimonials = [
   {
-    title: "Our coaching website finally had everything parents needed.",
     quote:
-      "WBYB (we build your brands) develop our classes website (smclasses.in) which exceeds our expectations.. Website covers all informative content which were basically required for growth of any coaching classes..the best part is whenever modifications required they do immediately and with lots of ideas.. We recommend WBYB for anyone who like to build best website for their business..",
-    name: "Saquib Dalvi",
-    role: "Education Brand",
+      "WBYB exceeded our expectations. The website covers all the content our coaching classes needed, and whenever modifications were required they delivered immediately with great ideas.",
+    author: "Saquib Dalvi, Education Brand",
     image: "/wbyb-sm-classes-founder.webp",
+    alt: "Portrait of Saquib Dalvi",
   },
   {
-    title: "My work now feels easier to share and explain.",
     quote:
-      "The portfolio website gave my work a sharper, more polished presence online. It became much easier to share my projects, explain what I do, and make a strong first impression with clients.",
-    name: "Zarrar Palekar",
-    role: "Portfolio Website Client",
+      "The portfolio website gave my work a sharper, more polished presence online. It became much easier to share my projects and make a strong first impression with clients.",
+    author: "Zarrar Palekar, Portfolio Client",
     image: "/Zarrar-Photo.webp",
+    alt: "Portrait of Zarrar Palekar",
   },
   {
-    title: "My website was live in two days, without the stress.",
     quote:
-      "Hi, I'm Kopal and I run my business called Organise with Kopal. I needed a website for my business and I already knew that Zuvairiya would be the right call. She delivered the website within 2 days - at an affordable price. All edits were done within minutes.",
-    name: "Kopal Dhir",
-    role: "Founder at Organise With Kopal",
+      "I needed a website for my business and Zuvairiya was the right call. She delivered within 2 days at an affordable price, and all edits were done within minutes.",
+    author: "Kopal Dhir, Founder at Organise With Kopal",
+    image: "/project-organise-with-kopal.webp",
+    alt: "Organise With Kopal website by Kopal Dhir",
   },
   {
-    title: "She understood my brand and made it look polished fast.",
     quote:
-      "I own an appointment setting agency and get a lot of my leads from Facebook and LinkedIn, so I had an urgent requirement for professional covers. Zuvairiya delivered exceptionally beautiful and professional designs in no time, making sure everything matched my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing. I can't recommend her enough - she's my go-to for all things graphic design.",
-    name: "Shreya Batra",
-    role: "Co-Founder @ Organic Appointments Agency",
+      "Zuvairiya delivered exceptionally beautiful designs in no time, matching my brand palette perfectly. Her turnaround time, quick edits, and patience were amazing.",
+    author: "Shreya Batra, Co-Founder at Organic Appointments",
     image: "/Shreya Batra.webp",
+    alt: "Portrait of Shreya Batra",
   },
 ];
 
@@ -556,11 +553,17 @@ export default function Home() {
 
       <ProcessTimeline steps={process} />
 
-      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-10 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-14 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.22),rgba(124,60,255,0.18),transparent)]" />
         <div className="relative mx-auto w-full">
-          <TestimonialsSlider testimonials={testimonials} />
+          <div className="mb-10 border-l border-white/[0.08] pl-5 sm:pl-7">
+            <Eyebrow>What Clients Say</Eyebrow>
+            <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
+              Real results from real businesses.
+            </h2>
+          </div>
+          <ScrollReelTestimonials testimonials={scrollReelTestimonials} />
         </div>
       </section>
 
