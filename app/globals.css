@@ -1508,7 +1508,7 @@ main {
 
 @media (min-width: 641px) and (max-width: 1023px) {
   .problem-scroll-section {
-    min-height: 500vh !important;
+    min-height: 190vh !important;
   }
 }
 
