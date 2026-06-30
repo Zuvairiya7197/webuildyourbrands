@@ -15,8 +15,17 @@ export function ScrollRestorationGuard() {
       const hasHash = window.location.hash.length > 0;
 
       if (!hasHash) {
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-        requestAnimationFrame(() => window.scrollTo(0, 0));
+        // `scroll-behavior: smooth` on <html> hijacks even "auto" scrollTo calls
+        // in some browsers, animating the jump to top on every route change.
+        // Disable it for the instant reset, then restore it.
+        const root = document.documentElement;
+        const previousScrollBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        window.scrollTo(0, 0);
+        requestAnimationFrame(() => {
+          window.scrollTo(0, 0);
+          root.style.scrollBehavior = previousScrollBehavior;
+        });
       }
     } catch {
       // Some embedded/mobile browsers expose partial history/performance APIs.
