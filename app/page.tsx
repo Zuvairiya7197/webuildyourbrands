@@ -259,7 +259,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <>
-      <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-[#00001f] px-4 pb-12 pt-[calc(5rem+env(safe-area-inset-top)+2rem)] sm:px-8 sm:pb-16 sm:pt-28 lg:px-24 lg:pb-10 lg:pt-24 xl:px-32">
+      <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-[#00001f] px-4 pb-12 pt-[calc(5rem+env(safe-area-inset-top)+2rem)] sm:px-8 sm:pb-16 sm:pt-28 lg:items-start lg:px-24 lg:pb-10 lg:pt-32 xl:px-32">
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-60"
           src="/Homehero.mp4"
