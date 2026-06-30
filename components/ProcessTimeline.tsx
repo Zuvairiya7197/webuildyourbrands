@@ -30,6 +30,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
     }
 
     let context: { revert: () => void } | undefined;
+    let scrollTriggerCtor: typeof import("gsap/ScrollTrigger").ScrollTrigger | undefined;
     let isCancelled = false;
 
     // GSAP is lazy-loaded only when the section mounts, keeping the initial route bundle lean.
@@ -44,6 +45,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
       }
 
       gsap.registerPlugin(ScrollTrigger);
+      scrollTriggerCtor = ScrollTrigger;
 
       context = gsap.context(() => {
         const nodes = gsap.utils.toArray<HTMLElement>(".process-cinema-node");
@@ -110,7 +112,17 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
 
     return () => {
       isCancelled = true;
+      // Killing every ScrollTrigger tied to this section first unwraps GSAP's
+      // pin-spacer. GSAP's pin moves this section outside the DOM position React
+      // expects, so even after unwrapping, React's reconciler can lose track of
+      // it on route change and leave it orphaned in the new page. Removing the
+      // node directly guarantees it never survives the navigation.
+      scrollTriggerCtor
+        ?.getAll()
+        .filter((trigger) => trigger.trigger === section)
+        .forEach((trigger) => trigger.kill());
       context?.revert();
+      section.remove();
     };
   }, []);
 
