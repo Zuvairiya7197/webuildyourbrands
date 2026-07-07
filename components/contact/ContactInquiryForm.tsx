@@ -87,7 +87,7 @@ function ContactInquiryForm() {
       <div className="grid gap-2 sm:grid-cols-2 sm:gap-3">
         <label className={labelClass}>
           <span>
-            Name <span className="text-cyan-100">*</span>
+            Name <span className="text-white/45">*</span>
           </span>
           <input
             required
@@ -100,7 +100,7 @@ function ContactInquiryForm() {
 
         <label className={labelClass}>
           <span>
-            Email <span className="text-cyan-100">*</span>
+            Email <span className="text-white/45">*</span>
           </span>
           <input
             required
@@ -115,7 +115,7 @@ function ContactInquiryForm() {
 
       <label className={labelClass}>
         <span>
-          Message <span className="text-cyan-100">*</span>
+          Message <span className="text-white/45">*</span>
         </span>
         <textarea
           required

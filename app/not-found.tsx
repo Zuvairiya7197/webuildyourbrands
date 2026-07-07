@@ -50,7 +50,7 @@ export default function NotFound() {
 
         <div className="mt-14 flex flex-wrap items-center justify-center gap-2">
           <span className="inline-flex items-center gap-1.5 pr-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/36">
-            <Compass className="h-3.5 w-3.5 text-cyan-100/70" aria-hidden="true" />
+            <Compass className="h-3.5 w-3.5 text-white/40" aria-hidden="true" />
             Try instead
           </span>
           {quickLinks.map((link) => (

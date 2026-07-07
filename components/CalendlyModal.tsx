@@ -79,7 +79,7 @@ export function CalendlyModalProvider() {
         <div className="pointer-events-none absolute inset-x-10 top-0 z-10 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.85),rgba(124,60,255,0.85),transparent)]" />
         <div className="flex items-center justify-between gap-6 border-b border-[#7c3cff]/20 bg-[radial-gradient(circle_at_15%_0%,rgba(22,216,255,0.16),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.055),rgba(124,60,255,0.18)_48%,rgba(0,0,31,0.62))] px-5 py-5 sm:px-8">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.42em] text-cyan-100">
+            <p className="text-[11px] font-bold uppercase tracking-[0.42em] text-white/45">
               Schedule a call
             </p>
             <h2

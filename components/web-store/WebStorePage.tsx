@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Section from "@/components/Section";
 import { Button } from "@/components/ui/button";
+import AnimatedShaderBackground from "@/components/ui/animated-shader-background";
 import { websiteStoreItems } from "@/lib/web-store-data";
 import { neonButtonClass } from "@/lib/utils";
 import WebStoreGrid from "./WebStoreGrid";
@@ -41,11 +42,12 @@ const customPoints = [
 export default function WebStorePage() {
   return (
     <>
-      <section className="relative flex min-h-[clamp(420px,calc(100svh-5rem),620px)] items-center overflow-hidden px-4 pb-12 pt-24 sm:px-8 sm:pb-16 lg:px-24 lg:pb-16 xl:px-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(22,216,255,0.18),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(124,60,255,0.24),transparent_38%)]" />
+      <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-[#00001F] px-4 pb-12 pt-24 sm:px-8 sm:pb-16 lg:px-24 lg:pb-16 xl:px-32">
+        <AnimatedShaderBackground className="absolute inset-0 h-full w-full overflow-hidden opacity-70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(22,216,255,0.12),transparent_34%),radial-gradient(circle_at_82%_12%,rgba(124,60,255,0.16),transparent_38%),linear-gradient(180deg,rgba(0,0,31,0.15)_0%,rgba(0,0,31,0.55)_70%,rgba(0,0,31,0.85)_100%)]" />
         <div className="relative mx-auto w-full max-w-6xl py-10 sm:py-14 lg:py-16">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-100/72">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-white/45">
               <Store className="h-4 w-4" aria-hidden="true" />
               Web Store
             </p>
@@ -80,7 +82,7 @@ export default function WebStorePage() {
               key={label}
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-white/58"
             >
-              <CheckCircle2 className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
+              <CheckCircle2 className="h-3.5 w-3.5 text-white/40" aria-hidden="true" />
               {label}
             </span>
           ))}
@@ -97,9 +99,9 @@ export default function WebStorePage() {
           {storeBenefits.map(({ title, Icon }) => (
             <article
               key={title}
-              className="min-h-[150px] rounded-[24px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.055),rgba(22,216,255,0.025)_45%,rgba(0,0,31,0.48))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl"
+              className="group min-h-[150px] rounded-[24px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.055),rgba(22,216,255,0.025)_45%,rgba(0,0,31,0.48))] p-5 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl transition duration-300 hover:border-cyan-300/24"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#00001F]/54 text-cyan-100">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#00001F]/54 text-white/40 transition duration-300 group-hover:text-cyan-100">
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </span>
               <h3 className="mt-6 text-sm font-bold leading-6 text-white/82">
@@ -139,7 +141,7 @@ export default function WebStorePage() {
                   <h3 className="text-2xl font-semibold tracking-tight">{title}</h3>
                   <p className="mt-3 max-w-md text-sm leading-7 text-white/58">{note}</p>
                 </div>
-                <Blocks className="h-6 w-6 shrink-0 text-cyan-100/72" aria-hidden="true" />
+                <Blocks className="h-6 w-6 shrink-0 text-white/40" aria-hidden="true" />
               </div>
               <div className="mt-7 grid gap-3">
                 {points.map((point) => (
@@ -147,7 +149,7 @@ export default function WebStorePage() {
                     key={point}
                     className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm font-semibold text-white/70"
                   >
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100" aria-hidden="true" />
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-white/40" aria-hidden="true" />
                     {point}
                   </div>
                 ))}

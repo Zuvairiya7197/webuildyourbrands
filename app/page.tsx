@@ -291,7 +291,7 @@ export default function Home() {
                     className="flex items-center gap-2 rounded-full border border-white/[0.08] bg-[#00001F]/36 px-3 py-2 whitespace-nowrap"
                   >
                     <CheckCircle2
-                      className="h-4 w-4 shrink-0 text-cyan-100"
+                      className="h-4 w-4 shrink-0 text-white/40"
                       aria-hidden="true"
                     />
                     <span>{item}</span>
@@ -589,7 +589,7 @@ export default function Home() {
                 >
                   <div className="business-results-card-line" aria-hidden="true" />
                   <div className="flex items-start justify-between gap-4">
-                    <p className="text-[11px] font-bold text-cyan-100/58">
+                    <p className="text-[11px] font-bold text-white/45 transition duration-300 group-hover:text-cyan-100/58">
                       0{index + 1}
                     </p>
                     <span className="business-results-icon">

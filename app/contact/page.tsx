@@ -89,7 +89,7 @@ export default function ContactPage() {
           >
             <p className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/58">
               <Sparkles
-                className="h-3.5 w-3.5 text-cyan-100"
+                className="h-3.5 w-3.5 text-white/40"
                 aria-hidden="true"
               />
               Start here
@@ -109,7 +109,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/58"
                 >
                   <CheckCircle2
-                    className="h-3.5 w-3.5 text-cyan-100"
+                    className="h-3.5 w-3.5 text-white/40"
                     aria-hidden="true"
                   />
                   {point}
@@ -133,7 +133,7 @@ export default function ContactPage() {
                       <p className="mt-1 text-sm leading-6 text-white/56">
                         {description}
                       </p>
-                      <p className="mt-2 break-words text-sm font-semibold text-cyan-100/82">
+                      <p className="mt-2 break-words text-sm font-semibold text-white/45 transition duration-300 group-hover:text-cyan-100/82">
                         {value}
                       </p>
                     </div>
@@ -187,10 +187,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-2xl border border-cyan-300/14 bg-[#00001F]/46 p-5">
+            <div className="mt-8 rounded-2xl border border-white/10 bg-[#00001F]/46 p-5">
               <h3 className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-white/54">
                 <MessageSquare
-                  className="h-4 w-4 text-cyan-100"
+                  className="h-4 w-4 text-white/40"
                   aria-hidden="true"
                 />
                 Useful to include
@@ -203,7 +203,7 @@ export default function ContactPage() {
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle2
-                      className="mt-0.5 h-4 w-4 shrink-0 text-cyan-100"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-white/40"
                       aria-hidden="true"
                     />
                     {item}
@@ -221,7 +221,7 @@ export default function ContactPage() {
               />
               <div className="pointer-events-none absolute inset-x-8 top-0 z-10 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.52),rgba(22,216,255,0.44),transparent)]" />
               <div className="relative border-b border-white/10 bg-white/[0.025] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.055)] backdrop-blur-xl sm:p-8">
-                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/70">
+                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-white/45">
                   Schedule with WBYB
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">

@@ -69,14 +69,14 @@ function WebsiteCard({ website }: WebsiteCardProps) {
                   <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-[#00001F]/72 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white/78 shadow-[0_10px_24px_rgba(0,0,31,0.24)] backdrop-blur-md">
                       <Search
-                        className="h-3.5 w-3.5 text-cyan-100"
+                        className="h-3.5 w-3.5 text-white/40"
                         aria-hidden="true"
                       />
                       SEO {website.seoScore}
                     </span>
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-[#00001F]/72 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white/78 shadow-[0_10px_24px_rgba(0,0,31,0.24)] backdrop-blur-md">
                       <Gauge
-                        className="h-3.5 w-3.5 text-cyan-100"
+                        className="h-3.5 w-3.5 text-white/40"
                         aria-hidden="true"
                       />
                       Speed {website.performanceScore}
@@ -89,7 +89,7 @@ function WebsiteCard({ website }: WebsiteCardProps) {
             <div className="flex flex-1 flex-col px-4 pb-4 pt-2 sm:px-5 sm:pb-5">
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0 pt-1">
-                  <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.18em] text-cyan-100/52">
+                  <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/45">
                     {website.category}
                   </p>
                   <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
@@ -116,7 +116,7 @@ function WebsiteCard({ website }: WebsiteCardProps) {
                 className="mt-4 flex min-h-11 w-full items-center justify-between rounded-2xl bg-[#00001F]/32 px-4 py-3 text-left text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:bg-white/[0.055] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 View details
-                <span className="rounded-full bg-white/[0.06] px-2 py-1 text-[9px] font-black uppercase tracking-[0.16em] text-cyan-100/62">
+                <span className="rounded-full bg-white/[0.06] px-2 py-1 text-[9px] font-black uppercase tracking-[0.16em] text-white/45">
                   Flip
                 </span>
               </button>
@@ -157,7 +157,7 @@ function WebsiteCard({ website }: WebsiteCardProps) {
             <div className="flex h-full flex-col p-5">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-100/58">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/45">
                     Website Details
                   </p>
                   <h3 className="mt-2 text-2xl font-bold tracking-tight text-white">
@@ -188,7 +188,7 @@ function WebsiteCard({ website }: WebsiteCardProps) {
                     className="flex items-start gap-2 rounded-xl bg-white/[0.04] px-3 py-2 text-[12px]"
                   >
                     <CheckCircle2
-                      className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-100"
+                      className="mt-0.5 h-3.5 w-3.5 shrink-0 text-white/40"
                       aria-hidden="true"
                     />
                     {feature}

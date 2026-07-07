@@ -118,7 +118,7 @@ export default function ProjectsPage() {
           <div className="grid gap-5 lg:grid-cols-[96px_1fr]">
             <aside className="hidden rounded-[26px] border border-white/10 bg-[#00001F]/46 p-4 lg:flex lg:flex-col lg:items-center lg:justify-between">
               <div className="flex flex-col items-center gap-3">
-                <Sparkles className="h-5 w-5 text-cyan-100" aria-hidden="true" />
+                <Sparkles className="h-5 w-5 text-white/40" aria-hidden="true" />
                 <p className="-rotate-90 whitespace-nowrap pt-16 text-[10px] font-bold uppercase tracking-[0.24em] text-white/42">
                   Live Work
                 </p>
@@ -127,7 +127,7 @@ export default function ProjectsPage() {
                 {projects.map((project) => (
                   <span
                     key={project.title}
-                    className="h-2 w-2 rounded-full bg-cyan-100/42"
+                    className="h-2 w-2 rounded-full bg-white/30"
                   />
                 ))}
               </div>
@@ -159,11 +159,11 @@ export default function ProjectsPage() {
                     )}
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.04),rgba(0,0,31,0.14)_40%,rgba(0,0,31,0.9)),linear-gradient(90deg,rgba(0,0,31,0.52),transparent_46%)]" />
                     <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#00001F]/58 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/76 backdrop-blur-md">
-                      <MonitorSmartphone className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
+                      <MonitorSmartphone className="h-3.5 w-3.5 text-white/40" aria-hidden="true" />
                       Signature Showcase
                     </div>
                     <div className="absolute bottom-5 left-5 max-w-xl">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/66">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-white/45">
                         {projects[0].category}
                       </p>
                       <h3 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-5xl">
@@ -247,7 +247,7 @@ export default function ProjectsPage() {
                           <p>{project.proofBefore}</p>
                           <p>{project.proofAfter}</p>
                         </div>
-                        <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-cyan-100/64">
+                        <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-white/45 transition duration-300 group-hover:text-cyan-100/64">
                           {project.result}
                         </p>
                         {project.extra && (
@@ -273,7 +273,7 @@ export default function ProjectsPage() {
                 key={point}
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/58"
               >
-                <CheckCircle2 className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
+                <CheckCircle2 className="h-3.5 w-3.5 text-white/40" aria-hidden="true" />
                 {point}
               </span>
             ))}

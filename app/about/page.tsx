@@ -112,7 +112,7 @@ export default function AboutPage() {
           </article>
 
           <article className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(22,216,255,0.026)_38%,rgba(124,60,255,0.08)_78%,rgba(0,0,31,0.5))] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl sm:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-cyan-100/58">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/45">
               Studio Lens
             </p>
             <h3 className="mt-8 max-w-sm text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
@@ -124,7 +124,7 @@ export default function AboutPage() {
                   key={item}
                   className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.032] px-4 py-3 text-sm font-semibold text-white/68"
                 >
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-100" aria-hidden="true" />
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-white/40" aria-hidden="true" />
                   {item}
                 </div>
               ))}
@@ -169,9 +169,9 @@ export default function AboutPage() {
             {buildDetails.map(({ title, Icon }) => (
               <article
                 key={title}
-                className="flex min-h-[118px] items-center gap-4 rounded-2xl border border-white/10 bg-[#00001F]/44 p-5 text-white transition duration-300 hover:border-cyan-300/24 hover:bg-white/[0.045]"
+                className="group flex min-h-[118px] items-center gap-4 rounded-2xl border border-white/10 bg-[#00001F]/44 p-5 text-white transition duration-300 hover:border-cyan-300/24 hover:bg-white/[0.045]"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-cyan-100">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white/40 transition duration-300 group-hover:text-cyan-100">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h3 className="text-base font-semibold leading-snug text-white/82">
@@ -193,7 +193,7 @@ export default function AboutPage() {
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.64),rgba(124,60,255,0.52),transparent)]" />
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="inline-flex rounded-full border border-cyan-100/16 bg-cyan-100/[0.055] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100/72">
+              <p className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white/45">
                 Organise With Kopal
               </p>
               <h3 className="mt-8 max-w-md text-2xl font-semibold leading-tight tracking-tight sm:text-4xl">

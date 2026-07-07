@@ -72,7 +72,7 @@ export default function PricingPage() {
         />
         <div className="relative mx-auto max-w-6xl">
           <div className="mx-auto mb-10 max-w-3xl text-center">
-            <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-100/58">
+            <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-white/45">
               Pricing
             </p>
             <h2 className="mt-3 text-2xl font-bold leading-tight sm:text-4xl">
@@ -117,7 +117,7 @@ export default function PricingPage() {
                     <p className="pricing-fit-label">Best for</p>
                     <p className="pricing-fit-value">{tier.bestFor}</p>
                   </div>
-                  <Target className="h-5 w-5 text-cyan-100/70" aria-hidden="true" />
+                  <Target className="h-5 w-5 text-white/40" aria-hidden="true" />
                 </div>
 
                 <div className="pricing-price-panel">
@@ -126,7 +126,7 @@ export default function PricingPage() {
                 </div>
 
                 <div className="pricing-outcome">
-                  <Sparkles className="h-4 w-4 text-cyan-100" aria-hidden="true" />
+                  <Sparkles className="h-4 w-4 text-white/40" aria-hidden="true" />
                   <span>{tier.outcome}</span>
                 </div>
 
@@ -172,7 +172,7 @@ export default function PricingPage() {
                 key={point}
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/58"
               >
-                <CheckCircle2 className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
+                <CheckCircle2 className="h-3.5 w-3.5 text-white/40" aria-hidden="true" />
                 {point}
               </span>
             ))}

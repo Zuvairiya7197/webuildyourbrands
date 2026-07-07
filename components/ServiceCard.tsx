@@ -32,7 +32,7 @@ export function ServiceCard({ service }: { service: ServiceCardData }) {
           className="object-contain object-center p-4 transition duration-700 group-hover:scale-[1.03]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02),rgba(0,0,31,0.28)_58%,rgba(0,0,31,0.92))]" />
-        <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-[#00001F]/62 text-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition duration-300 group-hover:text-cyan-100">
+        <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#00001F]/62 text-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition duration-300 group-hover:border-cyan-300/24 group-hover:text-cyan-100">
           {service.icon}
         </div>
         <h2 className="absolute bottom-5 left-5 right-5 text-lg font-bold leading-tight tracking-tight text-white transition duration-300 group-hover:-translate-y-[3.5rem]">

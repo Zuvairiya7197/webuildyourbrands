@@ -61,7 +61,7 @@ export function ProjectExtraWorkLabel({ label }: { label: string }) {
 
   return (
     <span
-      className="relative z-10 mt-3 inline-flex w-fit items-center gap-1.5 text-xs font-semibold text-cyan-100/80 underline decoration-cyan-100/40 underline-offset-4"
+      className="relative z-10 mt-3 inline-flex w-fit items-center gap-1.5 text-xs font-semibold text-white/50 underline decoration-white/25 underline-offset-4 transition duration-300 hover:text-cyan-100/80 hover:decoration-cyan-100/40"
       onMouseEnter={() => setShowExtra(true)}
       onMouseLeave={() => setShowExtra(false)}
       onClick={(event) => event.preventDefault()}
