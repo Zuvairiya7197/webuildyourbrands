@@ -6,6 +6,11 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { Button } from "@/components/ui/button";
 import { neonButtonClass } from "@/lib/utils";
+import {
+  ProjectExtraWorkImage,
+  ProjectExtraWorkLabel,
+  ProjectExtraWorkProvider
+} from "@/components/ProjectExtraWork";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -22,7 +27,11 @@ const projects = [
     proofBefore: "Built From Scratch: No existing structure or system.",
     proofAfter: "Now: A clean, premium website with a strong first impression and clear brand positioning.",
     image: "/project-organise-with-kopal.webp",
-    projectUrl: "https://www.organisewithkopal.com/"
+    projectUrl: "https://www.organisewithkopal.com/",
+    extra: {
+      label: "We also designed a business card for this brand.",
+      image: "/Graphic design/KOPAL Business card.webp"
+    }
   },
   {
     title: "SM Classes",
@@ -32,7 +41,11 @@ const projects = [
     proofBefore: "Before: Unclear structure. Parents had to search to understand programs.",
     proofAfter: "After: Clear layout with easy navigation. Parents can quickly find and trust the right information.",
     image: "/project-sm-classes.webp",
-    projectUrl: "https://smclasses.in/"
+    projectUrl: "https://smclasses.in/",
+    extra: {
+      label: "We also designed flyers and score cards for this brand.",
+      image: "/Graphic design/SM CLASSES FLYER 11th.webp"
+    }
   },
   {
     title: "Little Ilmies",
@@ -52,7 +65,11 @@ const projects = [
     proofBefore: "Before: Work was scattered and hard to present professionally.",
     proofAfter: "After: Structured portfolio that showcases projects clearly and builds instant credibility.",
     image: "/project-zarrar-palekar.webp",
-    projectUrl: "https://zarrarpalekar.vercel.app/"
+    projectUrl: "https://zarrarpalekar.vercel.app/",
+    extra: {
+      label: "We also designed a logo for this brand.",
+      image: "/Graphic design/ZP-Logo.webp"
+    }
   },
   {
     title: "Emlak Real Estate",
@@ -61,8 +78,8 @@ const projects = [
     result: "Premium property presentation with a smoother path to contact.",
     proofBefore: "Built From Scratch: No dedicated property experience for visitors to explore listings clearly.",
     proofAfter: "Now: A refined real estate website with strong visuals, cleaner browsing, and direct inquiry flow.",
-    image: "/Project Emlak.webp",
-    projectUrl: "https://emlakrealestatellc.vercel.app/"
+    image: "/Project-Emlak.png",
+    projectUrl: "https://emlakrealestatellc.com/"
   },
   {
     title: "Zuvi Personal Portfolio",
@@ -117,109 +134,134 @@ export default function ProjectsPage() {
             </aside>
 
             <div className="grid gap-5">
-              <Link
-                href={projects[0].projectUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative grid overflow-hidden rounded-[28px] border border-white/10 bg-[#00001F]/48 p-3 transition duration-300 hover:border-cyan-300/28 lg:grid-cols-[1fr_320px]"
-              >
-                <div className="relative min-h-[360px] overflow-hidden rounded-[22px] bg-[#00001F]/70 sm:min-h-[460px]">
-                  <Image
-                    src={projects[0].image}
-                    alt={`${projects[0].title} project preview`}
-                    fill
-                    sizes="(min-width: 1024px) 62vw, 100vw"
-                    className="object-cover object-top transition duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.04),rgba(0,0,31,0.14)_40%,rgba(0,0,31,0.9)),linear-gradient(90deg,rgba(0,0,31,0.52),transparent_46%)]" />
-                  <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#00001F]/58 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/76 backdrop-blur-md">
-                    <MonitorSmartphone className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
-                    Signature Showcase
+              <ProjectExtraWorkProvider>
+                <Link
+                  href={projects[0].projectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative grid overflow-hidden rounded-[28px] border border-white/10 bg-[#00001F]/48 p-3 transition duration-300 hover:border-cyan-300/28 lg:grid-cols-[1fr_320px]"
+                >
+                  <div className="relative min-h-[360px] overflow-hidden rounded-[22px] bg-[#00001F]/70 sm:min-h-[460px]">
+                    <Image
+                      src={projects[0].image}
+                      alt={`${projects[0].title} project preview`}
+                      fill
+                      sizes="(min-width: 1024px) 62vw, 100vw"
+                      className="object-cover object-top transition duration-700 group-hover:scale-105"
+                    />
+                    {projects[0].extra && (
+                      <ProjectExtraWorkImage
+                        projectTitle={projects[0].title}
+                        image={projects[0].extra.image}
+                        sizes="(min-width: 1024px) 62vw, 100vw"
+                        className="object-cover object-top"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.04),rgba(0,0,31,0.14)_40%,rgba(0,0,31,0.9)),linear-gradient(90deg,rgba(0,0,31,0.52),transparent_46%)]" />
+                    <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/14 bg-[#00001F]/58 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/76 backdrop-blur-md">
+                      <MonitorSmartphone className="h-3.5 w-3.5 text-cyan-100" aria-hidden="true" />
+                      Signature Showcase
+                    </div>
+                    <div className="absolute bottom-5 left-5 max-w-xl">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/66">
+                        {projects[0].category}
+                      </p>
+                      <h3 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-5xl">
+                        {projects[0].title}
+                      </h3>
+                      <p className="mt-4 max-w-md text-sm font-semibold leading-6 text-white/68">
+                        {projects[0].result}
+                      </p>
+                    </div>
                   </div>
-                  <div className="absolute bottom-5 left-5 max-w-xl">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-100/66">
-                      {projects[0].category}
-                    </p>
-                    <h3 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-5xl">
-                      {projects[0].title}
-                    </h3>
-                    <p className="mt-4 max-w-md text-sm font-semibold leading-6 text-white/68">
-                      {projects[0].result}
-                    </p>
-                  </div>
-                </div>
 
-                <div className="flex flex-col justify-between p-4 sm:p-6">
-                  <div className="grid gap-3">
-                    {["Clear message", "Trust-led structure", "Easy next step"].map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-bold text-white/74"
-                      >
-                        {item}
+                  <div className="flex flex-col justify-between p-4 sm:p-6">
+                    <div className="grid gap-3">
+                      {["Clear message", "Trust-led structure", "Easy next step"].map((item) => (
+                        <div
+                          key={item}
+                          className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-bold text-white/74"
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-8">
+                      <p className="text-sm leading-7 text-white/58">
+                        {projects[0].description}
+                      </p>
+                      <div className="mt-4 grid gap-2 text-sm font-semibold leading-6 text-white/70">
+                        <p>{projects[0].proofBefore}</p>
+                        <p>{projects[0].proofAfter}</p>
                       </div>
-                    ))}
-                  </div>
-                  <div className="mt-8">
-                    <p className="text-sm leading-7 text-white/58">
-                      {projects[0].description}
-                    </p>
-                    <div className="mt-4 grid gap-2 text-sm font-semibold leading-6 text-white/70">
-                      <p>{projects[0].proofBefore}</p>
-                      <p>{projects[0].proofAfter}</p>
-                    </div>
-                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-white">
-                      View Live Project
-                      <ArrowUpRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
+                      <div className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-white">
+                        View Live Project
+                        <ArrowUpRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
+                      </div>
+                      {projects[0].extra && (
+                        <ProjectExtraWorkLabel label={projects[0].extra.label} />
+                      )}
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </ProjectExtraWorkProvider>
 
               <div className="grid gap-4">
                 {projects.slice(1).map((project, index) => (
-                  <Link
-                    key={project.title}
-                    href={project.projectUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group grid overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.065),rgba(22,216,255,0.026)_42%,rgba(124,60,255,0.08))] p-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 sm:grid-cols-[260px_1fr_auto] sm:items-center"
-                  >
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-[#00001F]/70 sm:aspect-[4/3]">
-                      <Image
-                        src={project.image}
-                        alt={`${project.title} project preview`}
-                        fill
-                        sizes="(min-width: 1024px) 260px, 100vw"
-                        className="object-cover object-top transition duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02),rgba(0,0,31,0.72))]" />
-                      <span className="absolute left-4 top-4 rounded-full border border-white/14 bg-[#00001F]/58 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/72 backdrop-blur-md">
-                        0{index + 2}
-                      </span>
-                    </div>
-
-                    <div className="px-4 py-5 sm:px-6">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/36 group-hover:text-cyan-100/70">
-                        {project.category}
-                      </p>
-                      <h3 className="mt-3 text-2xl font-bold text-white">{project.title}</h3>
-                      <p className="mt-3 text-sm leading-6 text-white/58">{project.description}</p>
-                      <div className="mt-3 grid gap-1.5 text-sm font-semibold leading-6 text-white/70">
-                        <p>{project.proofBefore}</p>
-                        <p>{project.proofAfter}</p>
+                  <ProjectExtraWorkProvider key={project.title}>
+                    <Link
+                      href={project.projectUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group grid overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.065),rgba(22,216,255,0.026)_42%,rgba(124,60,255,0.08))] p-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/28 sm:grid-cols-[260px_1fr_auto] sm:items-center"
+                    >
+                      <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-[#00001F]/70 sm:aspect-[4/3]">
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} project preview`}
+                          fill
+                          sizes="(min-width: 1024px) 260px, 100vw"
+                          className="object-cover object-top transition duration-500 group-hover:scale-105"
+                        />
+                        {project.extra && (
+                          <ProjectExtraWorkImage
+                            projectTitle={project.title}
+                            image={project.extra.image}
+                            sizes="(min-width: 1024px) 260px, 100vw"
+                            className="object-cover object-top"
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02),rgba(0,0,31,0.72))]" />
+                        <span className="absolute left-4 top-4 rounded-full border border-white/14 bg-[#00001F]/58 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/72 backdrop-blur-md">
+                          0{index + 2}
+                        </span>
                       </div>
-                      <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-cyan-100/64">
-                        {project.result}
-                      </p>
-                    </div>
 
-                    <div className="hidden h-full min-w-24 items-center justify-center border-l border-white/10 sm:flex">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.05] transition duration-300 group-hover:bg-white group-hover:text-[#00001F]">
-                        <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
-                      </span>
-                    </div>
-                  </Link>
+                      <div className="px-4 py-5 sm:px-6">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/36 group-hover:text-cyan-100/70">
+                          {project.category}
+                        </p>
+                        <h3 className="mt-3 text-2xl font-bold text-white">{project.title}</h3>
+                        <p className="mt-3 text-sm leading-6 text-white/58">{project.description}</p>
+                        <div className="mt-3 grid gap-1.5 text-sm font-semibold leading-6 text-white/70">
+                          <p>{project.proofBefore}</p>
+                          <p>{project.proofAfter}</p>
+                        </div>
+                        <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-cyan-100/64">
+                          {project.result}
+                        </p>
+                        {project.extra && (
+                          <ProjectExtraWorkLabel label={project.extra.label} />
+                        )}
+                      </div>
+
+                      <div className="hidden h-full min-w-24 items-center justify-center border-l border-white/10 sm:flex">
+                        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/12 bg-white/[0.05] transition duration-300 group-hover:bg-white group-hover:text-[#00001F]">
+                          <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      </div>
+                    </Link>
+                  </ProjectExtraWorkProvider>
                 ))}
               </div>
             </div>

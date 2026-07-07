@@ -164,8 +164,8 @@ const projects = [
   {
     title: "Emlak Real Estate",
     category: "Real Estate Website",
-    image: "/Project Emlak.webp",
-    projectUrl: "https://emlakrealestatellc.vercel.app/",
+    image: "/Project-Emlak.png",
+    projectUrl: "https://emlakrealestatellc.com/",
   },
   {
     title: "Zuvi Personal Portfolio",
@@ -190,7 +190,7 @@ const heroProjectPreviews = [
   },
   {
     title: "Emlak Real Estate",
-    image: "/Project Emlak.webp",
+    image: "/Project-Emlak.png",
   },
   {
     title: "Zuvi Personal Portfolio",
