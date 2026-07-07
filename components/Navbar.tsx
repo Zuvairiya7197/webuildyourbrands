@@ -50,24 +50,55 @@ const isActivePath = (pathname: string, href: string) => {
   return pathname === href || pathname.startsWith(`${href}/`);
 };
 
+const HIDE_THRESHOLD_PX = 96;
+const HOVER_REVEAL_ZONE_PX = 72;
+
 function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const isScrolledRef = useRef(false);
+  const isHiddenRef = useRef(false);
+  const isHoveredRef = useRef(false);
+  const lastScrollYRef = useRef(0);
   const toggleMenu = useCallback(
     () => setIsMenuOpen((current) => !current),
     [],
   );
 
+  const setHidden = useCallback((next: boolean) => {
+    if (isHiddenRef.current !== next) {
+      isHiddenRef.current = next;
+      setIsHidden(next);
+    }
+  }, []);
+
   useEffect(() => {
+    lastScrollYRef.current = window.scrollY;
+
     const updateScrollState = () => {
-      const nextIsScrolled = window.scrollY > 24;
+      const scrollY = window.scrollY;
+      const nextIsScrolled = scrollY > 24;
 
       if (nextIsScrolled !== isScrolledRef.current) {
         isScrolledRef.current = nextIsScrolled;
         setIsScrolled(nextIsScrolled);
       }
+
+      const delta = scrollY - lastScrollYRef.current;
+
+      if (scrollY <= HIDE_THRESHOLD_PX) {
+        setHidden(false);
+      } else if (!isHoveredRef.current) {
+        if (delta > 0) {
+          setHidden(true);
+        } else if (delta < 0) {
+          setHidden(false);
+        }
+      }
+
+      lastScrollYRef.current = scrollY;
     };
 
     updateScrollState();
@@ -76,7 +107,26 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", updateScrollState);
     };
-  }, []);
+  }, [setHidden]);
+
+  useEffect(() => {
+    const handlePointerMove = (event: PointerEvent) => {
+      const isNearTop = event.clientY <= HOVER_REVEAL_ZONE_PX;
+      isHoveredRef.current = isNearTop;
+
+      if (isNearTop) {
+        setHidden(false);
+      }
+    };
+
+    window.addEventListener("pointermove", handlePointerMove, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+    };
+  }, [setHidden]);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -85,10 +135,14 @@ function Navbar() {
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
 
+    if (isMenuOpen) {
+      setHidden(false);
+    }
+
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, setHidden]);
 
   const handleDockMouseMove = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {
@@ -179,7 +233,12 @@ function Navbar() {
   };
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-5 z-50 px-4 text-[#fff] sm:px-6 lg:px-8">
+    <header
+      className={cn(
+        "pointer-events-none fixed inset-x-0 top-5 z-50 px-4 text-[#fff] transition-transform duration-300 ease-out sm:px-6 lg:px-8",
+        isHidden && "-translate-y-[calc(100%+2rem)]",
+      )}
+    >
       <nav
         className="relative mx-auto flex w-full max-w-[1180px] justify-center"
         aria-label="Main navigation"
