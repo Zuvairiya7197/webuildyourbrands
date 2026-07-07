@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowDown,
   ArrowRight,
   Check,
   ClipboardList,
-  Gauge,
   LifeBuoy,
   MousePointerClick,
   Paintbrush,
@@ -21,6 +19,7 @@ import { CalendlyLink } from "@/components/CalendlyModal";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { Button } from "@/components/ui/button";
+import { ServiceCard } from "@/components/ServiceCard";
 import { glassCardClass, neonButtonClass } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -170,83 +169,15 @@ export default function ServicesPage() {
         id="services"
         className="scroll-mt-24 pt-10 sm:pt-12 lg:pt-16"
       >
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {services.map((service) => (
-            <article
+        <div className="grid items-start gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {services.map(({ Icon, ...service }) => (
+            <ServiceCard
               key={service.title}
-              className="group relative flex min-h-[520px] flex-col overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.064),rgba(22,216,255,0.026)_38%,rgba(124,60,255,0.08)_78%,rgba(0,0,31,0.5))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_78px_rgba(0,0,31,0.2)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/24"
-            >
-              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.68),transparent)] opacity-0 transition duration-300 group-hover:opacity-100" />
-              <div className="relative h-52 overflow-hidden bg-[#00001F]/66">
-                <Image
-                  src={service.image}
-                  alt={`${service.title} service visual`}
-                  fill
-                  sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-contain object-center p-2 transition duration-700 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,31,0.02),rgba(0,0,31,0.2)_52%,rgba(0,0,31,0.82))]" />
-                <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/12 bg-[#00001F]/62 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md">
-                  <service.Icon className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <p className="absolute bottom-4 left-4 rounded-full border border-white/10 bg-[#00001F]/62 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100/66 backdrop-blur-md">
-                  {service.category}
-                </p>
-              </div>
-
-              <div className="flex flex-1 flex-col p-5">
-                <h2 className="text-xl font-bold tracking-tight text-white">
-                  {service.title}
-                </h2>
-                <p className="mt-3 text-sm leading-7 text-white/62">
-                  {service.summary}
-                </p>
-
-                <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/38">
-                    Best For
-                  </p>
-                  <p className="mt-1 text-sm font-semibold text-white/76">
-                    {service.bestFor}
-                  </p>
-                </div>
-
-                <ul className="mt-5 grid gap-2">
-                  {service.highlights.map((highlight) => (
-                    <li
-                      key={highlight}
-                      className="flex items-start gap-2 text-sm leading-6 text-white/68"
-                    >
-                      <Check
-                        className="mt-1 h-3.5 w-3.5 shrink-0 text-cyan-100"
-                        aria-hidden="true"
-                      />
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-auto grid gap-2 pt-6 sm:grid-cols-2">
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="h-10 rounded-full border-white/12 bg-white/[0.035] px-4 text-xs font-bold hover:bg-white hover:text-[#00001F]"
-                  >
-                    <Link href={`/contact?service=${encodeURIComponent(service.title)}`}>
-                      Learn More
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    className={`h-10 rounded-full px-4 text-xs font-bold ${neonButtonClass}`}
-                  >
-                    <CalendlyLink>
-                      Get Started
-                    </CalendlyLink>
-                  </Button>
-                </div>
-              </div>
-            </article>
+              service={{
+                ...service,
+                icon: <Icon className="h-5 w-5" aria-hidden="true" />
+              }}
+            />
           ))}
         </div>
       </Section>
