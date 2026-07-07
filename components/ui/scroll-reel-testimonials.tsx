@@ -205,11 +205,11 @@ export function ScrollReelTestimonials({
       tabIndex={0}
       onKeyDown={onKeyDown}
       className={cn(
-        "relative isolate mx-auto w-full overflow-hidden pb-4 pt-0 [clip-path:inset(0)] outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] sm:py-12 lg:min-h-[700px] lg:py-0",
+        "relative isolate mx-auto w-full overflow-hidden pb-4 pt-0 [clip-path:inset(0)] outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] sm:py-12 lg:min-h-[500px] lg:py-0",
         className
       )}
     >
-      <div className="relative grid min-w-0 gap-0 overflow-visible sm:gap-8 lg:min-h-[700px] lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-center lg:overflow-hidden xl:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)]">
+      <div className="relative grid min-w-0 gap-0 overflow-visible sm:gap-8 lg:min-h-[500px] lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-center lg:overflow-hidden xl:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)]">
 
         {/* Reel — styled as the old testimonial-grid-fade photo grid */}
         <div className="testimonial-grid-fade relative mx-auto h-[min(112vw,500px)] w-full max-w-[650px] min-w-0 overflow-hidden rounded-[32px] [clip-path:inset(0_round_32px)] sm:h-[500px] sm:max-w-[650px] lg:mx-0 lg:h-[500px] lg:max-w-[820px]">
