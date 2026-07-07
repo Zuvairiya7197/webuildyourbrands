@@ -14,6 +14,10 @@ type ProcessTimelineProps = {
 
 export function ProcessTimeline({ steps }: ProcessTimelineProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
+  // Survives React Strict Mode's dev-only mount->cleanup->remount cycle
+  // (refs keep their identity across it) so cleanup can tell that cycle
+  // apart from a real unmount, where no later generation ever starts.
+  const effectGenerationRef = useRef(0);
   const mobileProcessIcons = [Search, CalendarDays, PenLine, Code2];
   const mobileProcessTitles = ["Discover", "Plan", "Design", "Develop"];
 
@@ -22,6 +26,8 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
     if (!section) {
       return;
     }
+
+    const generation = ++effectGenerationRef.current;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) {
@@ -40,7 +46,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
         import("gsap/ScrollTrigger")
       ]);
 
-      if (isCancelled) {
+      if (isCancelled || !section.isConnected) {
         return;
       }
 
@@ -113,16 +119,27 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
     return () => {
       isCancelled = true;
       // Killing every ScrollTrigger tied to this section first unwraps GSAP's
-      // pin-spacer. GSAP's pin moves this section outside the DOM position React
-      // expects, so even after unwrapping, React's reconciler can lose track of
-      // it on route change and leave it orphaned in the new page. Removing the
-      // node directly guarantees it never survives the navigation.
+      // pin-spacer. The site's global DOM-mutation guard (app/layout.tsx)
+      // silently no-ops any removeChild whose parentNode doesn't match,
+      // which can make React's own unmount of this section a no-op after
+      // GSAP has touched the DOM — so on a real route change the (invisible
+      // but full-height) section can get stuck at the top of the next
+      // page. Removing it directly guarantees it never survives navigation.
       scrollTriggerCtor
         ?.getAll()
         .filter((trigger) => trigger.trigger === section)
         .forEach((trigger) => trigger.kill());
       context?.revert();
-      section.remove();
+
+      // Defer the removal by a tick so React Strict Mode's dev-only
+      // mount->cleanup->remount can be told apart from a genuine unmount:
+      // the remount bumps effectGenerationRef synchronously within the
+      // same microtask queue flush, before this runs.
+      queueMicrotask(() => {
+        if (effectGenerationRef.current === generation) {
+          section.remove();
+        }
+      });
     };
   }, []);
 
