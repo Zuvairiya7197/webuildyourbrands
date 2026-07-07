@@ -98,19 +98,19 @@ const audiences = [
 
 const stats = [
   {
-    value: 100,
+    value: 98,
     suffix: "%",
     status: "Responsive",
     label: "Pixel-perfect on every device",
   },
   {
-    value: 100,
+    value: 96,
     suffix: "%",
     status: "Fast",
     label: "Optimized for speed and performance",
   },
   {
-    value: 100,
+    value: 92,
     suffix: "%",
     status: "Conversion Focused",
     label: "Designed to turn visitors into leads",
