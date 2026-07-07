@@ -250,7 +250,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="px-4 pb-16 sm:px-8 sm:pb-28 lg:px-24 lg:pb-32 xl:px-32">
+      <section className="px-4 pt-16 pb-16 sm:px-8 sm:pt-24 sm:pb-28 lg:px-24 lg:pt-28 lg:pb-32 xl:px-32">
         <div
           className={`${glassCardClass} mx-auto max-w-6xl p-6 text-center text-white sm:p-10`}
         >
