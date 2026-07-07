@@ -553,11 +553,11 @@ export default function Home() {
 
       <ProcessTimeline steps={process} />
 
-      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-14 text-white sm:px-8 sm:py-20 lg:px-24 lg:py-24 xl:px-32">
+      <section className="home-section home-section-deep mobile-render-defer relative overflow-hidden bg-[#00001F] px-4 py-14 text-white sm:px-8 sm:py-14 lg:px-24 lg:py-10 xl:px-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_54%_12%,rgba(22,216,255,0.1),transparent_30%),radial-gradient(circle_at_75%_78%,rgba(124,60,255,0.14),transparent_34%)]" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(22,216,255,0.22),rgba(124,60,255,0.18),transparent)]" />
         <div className="relative mx-auto w-full">
-          <div className="mb-10 border-l border-white/[0.08] pl-5 sm:pl-7">
+          <div className="mb-4 border-l border-white/[0.08] pl-5 sm:mb-5 sm:pl-7">
             <Eyebrow>What Clients Say</Eyebrow>
             <h2 className="max-w-md text-2xl font-semibold leading-tight text-white sm:text-4xl">
               Real results from real businesses.

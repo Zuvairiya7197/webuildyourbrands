@@ -212,7 +212,7 @@ export function ScrollReelTestimonials({
       <div className="relative grid min-w-0 gap-0 overflow-visible sm:gap-8 lg:min-h-[700px] lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-center lg:overflow-hidden xl:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)]">
 
         {/* Reel — styled as the old testimonial-grid-fade photo grid */}
-        <div className="testimonial-grid-fade relative mx-auto h-[min(112vw,500px)] w-full max-w-[650px] min-w-0 overflow-hidden rounded-[32px] [clip-path:inset(0_round_32px)] sm:h-[650px] sm:max-w-[650px] lg:mx-0 lg:h-[820px] lg:max-w-[820px]">
+        <div className="testimonial-grid-fade relative mx-auto h-[min(112vw,500px)] w-full max-w-[650px] min-w-0 overflow-hidden rounded-[32px] [clip-path:inset(0_round_32px)] sm:h-[500px] sm:max-w-[650px] lg:mx-0 lg:h-[500px] lg:max-w-[820px]">
           <div className="absolute inset-0 flex items-center justify-center gap-[10px] opacity-90">
             {/* Left column — counter-rotates */}
             <div
