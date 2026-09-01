@@ -49,12 +49,12 @@ const projects = [
   },
   {
     title: "Little Ilmies",
-    category: "Learning Platform",
-    description: "A friendly learning platform designed to make exploration simple and keep families moving forward.",
-    result: "Clearer learner pathways and a smoother first experience.",
-    proofBefore: "Built From Scratch: No clear structure or guided learning flow.",
-    proofAfter: "Now: Simple, friendly pathways that make exploring and understanding easy for users.",
-    image: "/project-little-ilmies.webp",
+    category: "Ebook Webstore",
+    description: "An ecommerce bookstore built for browsing, discovering, and buying online ebooks with ease.",
+    result: "Cleaner ebook discovery and a smoother path to purchase.",
+    proofBefore: "Built From Scratch: No dedicated online store for ebook browsing and sales.",
+    proofAfter: "Now: A focused ebook webstore with clear categories, product pages, and simple checkout flow.",
+    image: "/Little Ilmies.png",
     projectUrl: "https://littleilmies.com/"
   },
   {
